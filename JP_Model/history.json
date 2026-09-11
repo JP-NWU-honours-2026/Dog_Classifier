@@ -1,0 +1,22 @@
+{
+  "model_name": "Transfer-EfficientNetV2-S",
+  "num_classes": 120,
+  "device": "cuda",
+  "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "epochs": 1,
+  "batch_size": 32,
+  "lr": 0.0003,
+  "seed": 42,
+  "train_loss": [
+    4.622360929119371
+  ],
+  "train_acc": [
+    8.786610878661087
+  ],
+  "val_loss": [
+    4.151820587006625
+  ],
+  "val_acc": [
+    39.0728476821192
+  ]
+}
