@@ -80,9 +80,9 @@ The final ITRI626 submission requires comparing **3 model families** across the 
 ### Steps to Scale:
 1. **Extend Breeds in `dataset.py`**:
    Replace `DEFAULT_BREEDS` with the target list of breeds or all 120 breeds from `archive/images/Images`.
-2. **Assign Architectures per Team Member**:
-   - Team Member 1 (e.g., Custom CNN / Baseline): `BaselineCNN` with deeper blocks or residual connections.
-   - Team Member 2 (e.g., CNN Family): `ResNet50`, `ConvNeXt`, or `DenseNet121`.
-   - Team Member 3 (e.g., Transformer Family): `Vision Transformer (ViT-B/16)` or `Swin Transformer`.
+2. **Assigned Architecture Families**:
+   - **Lindani** (`Lindani_Model/`): Small Custom Baseline CNN (from scratch benchmark).
+   - **JP** (`JP_Model/`): EfficientNetV2 (Modern compound-scaled CNN with transfer learning).
+   - **Sulaiman** (`Sulaiman_Model/`): Swin Transformer (`swin_t` / `swin_s` hierarchical vision transformer with transfer learning).
 3. **Keep the Shared Split**:
    Share the generated `split_manifest.json` across all three models so that all team members evaluate on the **exact same test set**, as strictly required by Rubric 7.1.
