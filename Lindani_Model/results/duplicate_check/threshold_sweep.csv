@@ -1,0 +1,8 @@
+cutoff,pairs,same_breed_pairs,different_breed_pairs,phash_agrees_pct,train_val_pairs,train_test_pairs,val_test_pairs,test_photos_with_copy_in_train,test_leaked_pct,val_photos_with_copy_in_train,val_leaked_pct
+0,114,70,44,93.9,21,25,3,25,0.78,21,0.69
+2,136,87,49,90.4,25,28,4,28,0.88,25,0.83
+4,166,113,53,84.9,34,33,5,33,1.03,34,1.12
+5,186,125,61,78.5,39,35,5,35,1.09,38,1.26
+6,222,138,84,74.8,52,39,5,39,1.22,46,1.52
+8,459,178,281,41.4,101,81,14,71,2.22,63,2.08
+10,1645,243,1402,13.4,355,298,52,182,5.69,180,5.95

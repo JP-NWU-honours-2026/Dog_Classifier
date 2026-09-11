@@ -1,0 +1,32 @@
+NEAR-DUPLICATE CHECK ON THE SHARED SPLIT
+====================================================================================================
+Photos fingerprinted     20580 of 20580 (0 could not be read)
+Exact file copies        89 groups of identical files, 89 extra copies, 37 exact pairs in different piles
+Pairs within distance 10  1645
+
+WHAT EACH CUT-OFF WOULD FLAG AS A COPY
+cut-off  pairs   same   diff   pHash  tr-val  tr-test  val-test      test leaked       val leaked
+                breed  breed  agrees   pairs    pairs     pairs       photos (%)       photos (%)
+      0    114     70     44   93.9%      21       25         3       25 ( 0.78%)       21 ( 0.69%)
+      2    136     87     49   90.4%      25       28         4       28 ( 0.88%)       25 ( 0.83%)
+      4    166    113     53   84.9%      34       33         5       33 ( 1.03%)       34 ( 1.12%)
+      5    186    125     61   78.5%      39       35         5       35 ( 1.09%)       38 ( 1.26%)
+      6    222    138     84   74.8%      52       39         5       39 ( 1.22%)       46 ( 1.52%)
+      8    459    178    281   41.4%     101       81        14       71 ( 2.22%)       63 ( 2.08%)
+     10   1645    243   1402   13.4%     355      298        52      182 ( 5.69%)      180 ( 5.95%)
+
+THE CHOSEN RULE: both methods agreeing, dHash 5 or less and pHash 10 or less
+  Confirmed copies             173 pairs, 74 of them in different piles
+  Test photos with a copy in training        34 (1.06 per cent of the test pile)
+  Validation photos with a copy in training  35 (1.16 per cent of the validation pile)
+  Same photograph, two breed labels          50 pairs, touching 40 breeds
+  Saved as confirmed_copies.csv, leaked_photos.csv and label_conflicts.csv.
+  leaked_photos.csv is the exclusion list for reporting a clean test score.
+
+Reading the table:
+  test leaked = test photos that have a look-alike in training. These are the leak.
+  diff breed  = the same picture filed under two different breeds, so one label is wrong.
+  pHash agrees = share of flagged pairs the second method also calls a copy.
+                 Where this falls away sharply, the cut-off has become too loose.
+
+Next: look at the pairs_distance_*.png sheets and choose the cut-off.

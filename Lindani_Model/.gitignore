@@ -1,0 +1,3 @@
+# The saved fingerprints are 3.4MB and can be recreated at any time by deleting
+# this file and rerunning duplicate_check.py, so they are not worth committing.
+results/duplicate_check/fingerprints.csv
