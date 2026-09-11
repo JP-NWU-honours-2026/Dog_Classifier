@@ -1,0 +1,12 @@
+{
+  "model_name": "Transfer-EfficientNetV2-S",
+  "num_classes": 120,
+  "test_images_count": 3200,
+  "overall": {
+    "top1_accuracy": 0.4159375,
+    "top5_accuracy": 0.6659375,
+    "macro_precision": 0.4213897388146149,
+    "macro_recall": 0.4093062901152732,
+    "macro_f1": 0.34975601684910784
+  }
+}
