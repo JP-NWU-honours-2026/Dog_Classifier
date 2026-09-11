@@ -1,0 +1,2434 @@
+{
+  "metadata": {
+    "seed": 42,
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15,
+    "breeds": {
+      "0": "n02085620-Chihuahua",
+      "1": "n02110185-Siberian_husky"
+    },
+    "counts": {
+      "train": 240,
+      "val": 50,
+      "test": 54,
+      "total": 344
+    }
+  },
+  "splits": {
+    "train": [
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3093.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3093.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_7738.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_7738.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4572.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4572.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_574.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_574.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3485.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3485.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1862.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1862.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1271.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1271.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1492.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1492.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3677.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3677.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2973.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2973.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4673.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4673.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3928.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3928.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_10074.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_10074.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_8636.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_8636.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_5093.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_5093.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2188.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2188.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2590.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2590.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_5771.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_5771.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_9399.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_9399.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3877.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3877.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_10621.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_10621.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_6399.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_6399.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2706.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2706.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3488.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3488.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4998.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4998.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_275.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_275.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2937.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2937.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1073.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1073.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1916.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1916.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_806.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_806.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4290.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4290.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_7436.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_7436.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2650.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2650.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1558.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1558.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_8491.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_8491.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1205.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1205.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_8637.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_8637.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_7700.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_7700.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3006.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3006.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_6295.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_6295.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4266.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4266.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3763.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3763.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_326.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_326.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3838.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3838.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_477.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_477.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4207.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4207.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_12334.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_12334.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3593.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3593.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3045.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3045.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2693.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2693.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_9414.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_9414.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_588.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_588.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3110.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3110.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_735.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_735.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3409.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3409.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4515.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4515.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_7440.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_7440.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1765.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1765.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4016.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4016.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_575.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_575.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3033.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3033.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1235.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1235.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_13964.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_13964.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_7292.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_7292.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_10976.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_10976.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3880.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3880.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_8578.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_8578.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2053.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2053.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_9654.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_9654.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_500.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_500.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3875.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3875.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_8420.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_8420.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_382.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_382.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1502.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1502.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4814.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4814.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_13151.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_13151.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_11477.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_11477.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1617.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1617.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_9351.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_9351.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_5496.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_5496.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2507.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2507.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1298.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1298.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4441.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4441.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3742.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3742.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_7613.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_7613.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_6931.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_6931.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_473.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_473.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_5661.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_5661.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3975.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3975.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4980.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4980.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4602.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4602.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1455.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1455.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3826.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3826.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4951.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4951.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_8585.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_8585.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3942.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3942.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1346.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1346.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3423.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3423.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2479.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2479.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_368.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_368.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3681.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3681.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1816.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1816.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_949.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_949.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1152.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1152.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_5713.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_5713.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_12101.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_12101.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8005.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8005.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8564.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8564.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13855.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13855.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9194.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9194.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_725.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_725.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_15063.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_15063.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_12478.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_12478.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11445.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11445.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10844.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10844.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5716.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5716.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1534.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1534.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9001.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9001.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8216.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8216.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8154.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8154.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13282.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13282.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_12748.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_12748.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9177.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9177.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8923.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8923.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2672.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2672.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7413.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7413.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1130.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1130.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1598.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1598.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11636.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11636.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10171.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10171.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8360.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8360.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_184.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_184.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6351.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6351.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_4694.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_4694.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1338.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1338.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13434.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13434.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14594.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14594.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7117.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7117.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_12120.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_12120.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_3406.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_3406.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7980.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7980.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_12656.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_12656.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_12380.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_12380.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_12498.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_12498.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9833.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9833.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_931.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_931.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13423.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13423.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_15019.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_15019.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7888.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7888.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1532.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1532.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5622.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5622.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9334.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9334.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13187.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13187.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5143.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5143.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6094.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6094.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1178.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1178.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2614.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2614.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9086.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9086.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_4906.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_4906.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_4060.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_4060.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8748.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8748.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2728.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2728.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10875.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10875.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10175.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10175.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1794.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1794.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11635.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11635.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_353.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_353.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5172.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5172.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14650.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14650.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5159.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5159.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_3302.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_3302.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9855.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9855.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5392.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5392.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10898.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10898.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6105.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6105.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_3039.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_3039.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2701.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2701.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1497.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1497.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6775.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6775.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_56.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_56.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_4115.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_4115.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6850.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6850.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_519.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_519.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11580.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11580.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_3328.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_3328.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_58.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_58.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6438.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6438.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14766.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14766.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2736.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2736.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_4030.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_4030.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7210.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7210.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10955.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10955.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13158.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13158.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7044.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7044.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1066.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1066.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_3589.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_3589.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8600.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8600.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2446.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2446.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7246.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7246.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10597.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10597.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2941.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2941.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1439.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1439.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_388.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_388.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_712.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_712.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9712.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9712.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14056.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14056.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_248.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_248.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_698.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_698.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10902.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10902.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11626.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11626.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13821.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13821.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_3808.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_3808.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_4186.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_4186.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_3540.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_3540.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11841.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11841.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1446.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1446.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_4522.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_4522.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1511.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1511.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6780.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6780.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8327.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8327.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7762.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7762.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14906.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14906.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9429.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9429.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14523.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14523.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2593.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2593.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_12441.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_12441.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6564.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6564.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14597.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14597.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10849.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10849.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7329.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7329.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_4294.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_4294.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8397.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8397.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8708.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8708.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7879.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7879.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_632.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_632.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11114.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11114.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11287.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11287.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10116.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10116.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14061.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14061.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14289.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14289.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      }
+    ],
+    "val": [
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3208.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3208.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2903.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2903.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4159.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4159.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_11140.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_11140.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4700.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4700.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1569.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1569.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3651.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3651.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2208.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2208.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_712.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_712.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_242.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_242.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_11818.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_11818.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2517.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2517.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_11696.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_11696.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_11948.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_11948.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_7.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_7.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_431.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_431.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_5927.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_5927.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_14413.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_14413.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_12718.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_12718.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_9357.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_9357.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2204.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2204.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_8611.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_8611.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10360.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10360.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2604.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2604.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11131.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11131.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14283.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14283.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14560.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14560.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11783.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11783.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5030.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5030.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6263.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6263.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_4677.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_4677.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8966.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8966.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_3651.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_3651.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1748.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1748.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13794.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13794.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8860.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8860.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13942.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13942.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_4133.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_4133.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8749.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8749.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9846.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9846.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13127.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13127.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6746.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6746.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5495.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5495.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7594.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7594.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_120.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_120.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6411.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6411.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11138.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11138.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5624.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5624.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11409.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11409.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11396.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11396.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      }
+    ],
+    "test": [
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_199.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_199.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_10131.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_10131.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3407.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3407.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_5312.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_5312.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2815.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2815.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4875.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4875.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2614.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2614.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_952.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_952.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_730.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_730.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2921.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2921.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2793.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2793.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_13383.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_13383.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_11258.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_11258.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_11337.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_11337.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_4919.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_4919.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1321.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1321.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_8558.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_8558.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_14252.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_14252.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_1620.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_1620.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2887.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2887.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_2981.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_2981.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_3402.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_3402.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_11238.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_11238.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02085620-Chihuahua\\n02085620_14516.jpg",
+        "rel_path": "images\\Images\\n02085620-Chihuahua\\n02085620_14516.jpg",
+        "label": 0,
+        "breed_folder": "n02085620-Chihuahua",
+        "breed_name": "Chihuahua"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_699.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_699.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_8162.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_8162.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10967.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10967.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_14479.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_14479.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1614.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1614.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2820.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2820.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_11773.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_11773.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10273.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10273.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5628.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5628.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_2368.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_2368.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7379.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7379.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_10047.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_10047.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6409.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6409.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_6473.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_6473.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1289.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1289.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_3291.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_3291.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_12678.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_12678.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13704.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13704.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7564.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7564.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9461.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9461.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_815.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_815.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1552.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1552.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_7936.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_7936.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1164.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1164.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5973.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5973.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_13197.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_13197.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_5871.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_5871.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_1469.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_1469.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9975.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9975.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      },
+      {
+        "path": "C:\\Users\\jpret\\Documents\\NWU\\2026\\Sem 2\\ITRI626 AI\\Mini-Project\\Dog_Classifier\\archive\\images\\Images\\n02110185-Siberian_husky\\n02110185_9396.jpg",
+        "rel_path": "images\\Images\\n02110185-Siberian_husky\\n02110185_9396.jpg",
+        "label": 1,
+        "breed_folder": "n02110185-Siberian_husky",
+        "breed_name": "Siberian Husky"
+      }
+    ]
+  }
+}
