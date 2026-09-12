@@ -33,15 +33,19 @@ Input is 224 by 224 pixels, three colour channels, matching the other two models
 
 | Block | Layers | Channels | Output size | Parameters |
 |---|---|---|---|---|
-| 1 | 3x3 conv, batch norm, ReLU, 2x2 max pool | 3 to 32 | 112 x 112 | about 0.9k |
-| 2 | 3x3 conv, batch norm, ReLU, 2x2 max pool | 32 to 64 | 56 x 56 | about 18.5k |
-| 3 | 3x3 conv, batch norm, ReLU, 2x2 max pool | 64 to 128 | 28 x 28 | about 73.9k |
-| 4 | 3x3 conv, batch norm, ReLU, 2x2 max pool | 128 to 256 | 14 x 14 | about 295.2k |
-| 5 | 3x3 conv, batch norm, ReLU, 2x2 max pool | 256 to 512 | 7 x 7 | about 1,180.2k |
-| Head | global average pool, dropout 0.3, linear to 120 | 512 to 120 | 120 | about 61.6k |
+| 1 | 3x3 conv, batch norm, ReLU, 2x2 max pool | 3 to 32 | 112 x 112 | 928 |
+| 2 | 3x3 conv, batch norm, ReLU, 2x2 max pool | 32 to 64 | 56 x 56 | 18,560 |
+| 3 | 3x3 conv, batch norm, ReLU, 2x2 max pool | 64 to 128 | 28 x 28 | 73,984 |
+| 4 | 3x3 conv, batch norm, ReLU, 2x2 max pool | 128 to 256 | 14 x 14 | 295,424 |
+| 5 | 3x3 conv, batch norm, ReLU, 2x2 max pool | 256 to 512 | 7 x 7 | 1,180,672 |
+| Head | global average pool, dropout 0.3, linear to 120 | 512 to 120 | 120 | 61,560 |
 
-**Total: roughly 1.63 million trainable parameters.** The exact figure will be printed
-from the code and reported, rather than quoted from this table.
+**Total: 1,631,128 trainable parameters**, counted from the built model by
+`python Lindani_Model/model.py` on 12 September 2026, not estimated. The convolutions
+carry no bias term, since the batch normalisation that follows each one applies its own
+shift, which makes a bias redundant.
+
+The shape test in the same script confirms the ladder: 224, 112, 56, 28, 14, 7.
 
 For context to confirm before use in the report: EfficientNetV2-S is roughly 21 million
 parameters and Swin-T roughly 28 million. So this model is in the order of fifteen to
