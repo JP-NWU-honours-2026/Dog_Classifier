@@ -1,3 +1,8 @@
 # The saved fingerprints are 3.4MB and can be recreated at any time by deleting
 # this file and rerunning duplicate_check.py, so they are not worth committing.
 results/duplicate_check/fingerprints.csv
+
+# Measured once from the photographs and rebuilt by dataset_figures.py, so these
+# two caches are not worth committing either.
+results/dataset_figures/image_sizes.csv
+results/dataset_figures/bounding_boxes.csv

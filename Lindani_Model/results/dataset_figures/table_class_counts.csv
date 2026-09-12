@@ -1,0 +1,122 @@
+label,breed_folder,breed_name,total_images,train,val,test,confirmed_duplicate_pairs,test_photos_excluded,test_after_exclusion
+0,n02085620-Chihuahua,Chihuahua,152,106,22,24,0,0,24
+1,n02085782-Japanese_spaniel,Japanese Spaniel,185,129,27,29,6,0,29
+2,n02085936-Maltese_dog,Maltese Dog,252,176,37,39,0,0,39
+3,n02086079-Pekinese,Pekinese,149,104,22,23,0,0,23
+4,n02086240-Shih-Tzu,Shih-Tzu,214,149,32,33,1,0,33
+5,n02086646-Blenheim_spaniel,Blenheim Spaniel,188,131,28,29,3,0,29
+6,n02086910-papillon,Papillon,196,137,29,30,1,0,30
+7,n02087046-toy_terrier,Toy Terrier,172,120,25,27,1,0,27
+8,n02087394-Rhodesian_ridgeback,Rhodesian Ridgeback,172,120,25,27,0,0,27
+9,n02088094-Afghan_hound,Afghan Hound,239,167,35,37,1,0,37
+10,n02088238-basset,Basset,175,122,26,27,0,0,27
+11,n02088364-beagle,Beagle,195,136,29,30,0,0,30
+12,n02088466-bloodhound,Bloodhound,187,130,28,29,3,0,29
+13,n02088632-bluetick,Bluetick,171,119,25,27,3,0,27
+14,n02089078-black-and-tan_coonhound,Black-And-Tan Coonhound,159,111,23,25,3,0,25
+15,n02089867-Walker_hound,Walker Hound,153,107,22,24,8,3,21
+16,n02089973-English_foxhound,English Foxhound,157,109,23,25,7,0,25
+17,n02090379-redbone,Redbone,148,103,22,23,2,1,22
+18,n02090622-borzoi,Borzoi,151,105,22,24,0,0,24
+19,n02090721-Irish_wolfhound,Irish Wolfhound,218,152,32,34,0,0,34
+20,n02091032-Italian_greyhound,Italian Greyhound,182,127,27,28,0,0,28
+21,n02091134-whippet,Whippet,187,130,28,29,2,0,29
+22,n02091244-Ibizan_hound,Ibizan Hound,188,131,28,29,0,0,29
+23,n02091467-Norwegian_elkhound,Norwegian Elkhound,196,137,29,30,0,0,30
+24,n02091635-otterhound,Otterhound,151,105,22,24,1,1,23
+25,n02091831-Saluki,Saluki,200,140,30,30,1,0,30
+26,n02092002-Scottish_deerhound,Scottish Deerhound,232,162,34,36,3,1,35
+27,n02092339-Weimaraner,Weimaraner,160,112,24,24,0,0,24
+28,n02093256-Staffordshire_bullterrier,Staffordshire Bullterrier,155,108,23,24,3,0,24
+29,n02093428-American_Staffordshire_terrier,American Staffordshire Terrier,164,114,24,26,3,0,26
+30,n02093647-Bedlington_terrier,Bedlington Terrier,182,127,27,28,3,1,27
+31,n02093754-Border_terrier,Border Terrier,172,120,25,27,0,0,27
+32,n02093859-Kerry_blue_terrier,Kerry Blue Terrier,179,125,26,28,3,0,28
+33,n02093991-Irish_terrier,Irish Terrier,169,118,25,26,2,1,25
+34,n02094114-Norfolk_terrier,Norfolk Terrier,172,120,25,27,6,0,27
+35,n02094258-Norwich_terrier,Norwich Terrier,185,129,27,29,3,0,29
+36,n02094433-Yorkshire_terrier,Yorkshire Terrier,164,114,24,26,0,0,26
+37,n02095314-wire-haired_fox_terrier,Wire-Haired Fox Terrier,157,109,23,25,9,0,25
+38,n02095570-Lakeland_terrier,Lakeland Terrier,197,137,29,31,7,0,31
+39,n02095889-Sealyham_terrier,Sealyham Terrier,202,141,30,31,7,3,28
+40,n02096051-Airedale,Airedale,202,141,30,31,0,0,31
+41,n02096177-cairn,Cairn,197,137,29,31,0,0,31
+42,n02096294-Australian_terrier,Australian Terrier,196,137,29,30,0,0,30
+43,n02096437-Dandie_Dinmont,Dandie Dinmont,180,125,27,28,1,0,28
+44,n02096585-Boston_bull,Boston Bull,182,127,27,28,0,0,28
+45,n02097047-miniature_schnauzer,Miniature Schnauzer,154,107,23,24,2,0,24
+46,n02097130-giant_schnauzer,Giant Schnauzer,157,109,23,25,2,1,24
+47,n02097209-standard_schnauzer,Standard Schnauzer,155,108,23,24,4,2,22
+48,n02097298-Scotch_terrier,Scotch Terrier,158,110,23,25,1,0,25
+49,n02097474-Tibetan_terrier,Tibetan Terrier,206,144,30,32,5,1,31
+50,n02097658-silky_terrier,Silky Terrier,183,128,27,28,1,0,28
+51,n02098105-soft-coated_wheaten_terrier,Soft-Coated Wheaten Terrier,156,109,23,24,2,0,24
+52,n02098286-West_Highland_white_terrier,West Highland White Terrier,169,118,25,26,1,0,26
+53,n02098413-Lhasa,Lhasa,186,130,27,29,0,0,29
+54,n02099267-flat-coated_retriever,Flat-Coated Retriever,152,106,22,24,0,0,24
+55,n02099429-curly-coated_retriever,Curly-Coated Retriever,151,105,22,24,1,0,24
+56,n02099601-golden_retriever,Golden Retriever,150,105,22,23,0,0,23
+57,n02099712-Labrador_retriever,Labrador Retriever,171,119,25,27,1,0,27
+58,n02099849-Chesapeake_Bay_retriever,Chesapeake Bay Retriever,167,116,25,26,0,0,26
+59,n02100236-German_short-haired_pointer,German Short-Haired Pointer,152,106,22,24,0,0,24
+60,n02100583-vizsla,Vizsla,154,107,23,24,0,0,24
+61,n02100735-English_setter,English Setter,161,112,24,25,1,0,25
+62,n02100877-Irish_setter,Irish Setter,155,108,23,24,0,0,24
+63,n02101006-Gordon_setter,Gordon Setter,153,107,22,24,0,0,24
+64,n02101388-Brittany_spaniel,Brittany Spaniel,152,106,22,24,0,0,24
+65,n02101556-clumber,Clumber,150,105,22,23,2,1,22
+66,n02102040-English_springer,English Springer,159,111,23,25,1,0,25
+67,n02102177-Welsh_springer_spaniel,Welsh Springer Spaniel,150,105,22,23,1,0,23
+68,n02102318-cocker_spaniel,Cocker Spaniel,159,111,23,25,0,0,25
+69,n02102480-Sussex_spaniel,Sussex Spaniel,151,105,22,24,8,3,21
+70,n02102973-Irish_water_spaniel,Irish Water Spaniel,150,105,22,23,4,0,23
+71,n02104029-kuvasz,Kuvasz,150,105,22,23,2,0,23
+72,n02104365-schipperke,Schipperke,154,107,23,24,3,1,23
+73,n02105056-groenendael,Groenendael,150,105,22,23,3,1,22
+74,n02105162-malinois,Malinois,150,105,22,23,1,0,23
+75,n02105251-briard,Briard,152,106,22,24,5,0,24
+76,n02105412-kelpie,Kelpie,153,107,22,24,0,0,24
+77,n02105505-komondor,Komondor,154,107,23,24,0,0,24
+78,n02105641-Old_English_sheepdog,Old English Sheepdog,169,118,25,26,0,0,26
+79,n02105855-Shetland_sheepdog,Shetland Sheepdog,157,109,23,25,0,0,25
+80,n02106030-collie,Collie,153,107,22,24,6,1,23
+81,n02106166-Border_collie,Border Collie,150,105,22,23,6,0,23
+82,n02106382-Bouvier_des_Flandres,Bouvier Des Flandres,150,105,22,23,2,0,23
+83,n02106550-Rottweiler,Rottweiler,152,106,22,24,1,1,23
+84,n02106662-German_shepherd,German Shepherd,152,106,22,24,0,0,24
+85,n02107142-Doberman,Doberman,150,105,22,23,0,0,23
+86,n02107312-miniature_pinscher,Miniature Pinscher,184,128,27,29,0,0,29
+87,n02107574-Greater_Swiss_Mountain_dog,Greater Swiss Mountain Dog,168,117,25,26,4,0,26
+88,n02107683-Bernese_mountain_dog,Bernese Mountain Dog,218,152,32,34,3,1,33
+89,n02107908-Appenzeller,Appenzeller,151,105,22,24,3,0,24
+90,n02108000-EntleBucher,Entlebucher,202,141,30,31,2,1,30
+91,n02108089-boxer,Boxer,151,105,22,24,0,0,24
+92,n02108422-bull_mastiff,Bull Mastiff,156,109,23,24,1,0,24
+93,n02108551-Tibetan_mastiff,Tibetan Mastiff,152,106,22,24,1,1,23
+94,n02108915-French_bulldog,French Bulldog,159,111,23,25,0,0,25
+95,n02109047-Great_Dane,Great Dane,156,109,23,24,0,0,24
+96,n02109525-Saint_Bernard,Saint Bernard,170,118,25,27,1,0,27
+97,n02109961-Eskimo_dog,Eskimo Dog,150,105,22,23,2,2,21
+98,n02110063-malamute,Malamute,178,124,26,28,0,0,28
+99,n02110185-Siberian_husky,Siberian Husky,192,134,28,30,2,0,30
+100,n02110627-affenpinscher,Affenpinscher,150,105,22,23,3,0,23
+101,n02110806-basenji,Basenji,209,146,31,32,0,0,32
+102,n02110958-pug,Pug,200,140,30,30,0,0,30
+103,n02111129-Leonberg,Leonberg,210,147,31,32,8,0,32
+104,n02111277-Newfoundland,Newfoundland,195,136,29,30,0,0,30
+105,n02111500-Great_Pyrenees,Great Pyrenees,213,149,31,33,0,0,33
+106,n02111889-Samoyed,Samoyed,218,152,32,34,0,0,34
+107,n02112018-Pomeranian,Pomeranian,219,153,32,34,0,0,34
+108,n02112137-chow,Chow,196,137,29,30,0,0,30
+109,n02112350-keeshond,Keeshond,158,110,23,25,0,0,25
+110,n02112706-Brabancon_griffon,Brabancon Griffon,153,107,22,24,7,2,22
+111,n02113023-Pembroke,Pembroke,181,126,27,28,0,0,28
+112,n02113186-Cardigan,Cardigan,155,108,23,24,1,1,23
+113,n02113624-toy_poodle,Toy Poodle,151,105,22,24,3,1,23
+114,n02113712-miniature_poodle,Miniature Poodle,155,108,23,24,4,0,24
+115,n02113799-standard_poodle,Standard Poodle,159,111,23,25,1,0,25
+116,n02113978-Mexican_hairless,Mexican Hairless,155,108,23,24,10,1,23
+117,n02115641-dingo,Dingo,156,109,23,24,2,0,24
+118,n02115913-dhole,Dhole,150,105,22,23,6,1,22
+119,n02116738-African_hunting_dog,African Hunting Dog,169,118,25,26,0,0,26
+,TOTAL,All breeds,20580,14355,3025,3200,223,34,3166

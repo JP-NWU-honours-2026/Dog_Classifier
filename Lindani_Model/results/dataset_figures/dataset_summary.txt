@@ -1,0 +1,56 @@
+STANFORD DOGS, DATASET DESCRIPTION FOR THE REPORT
+========================================================================
+Photographs                20580
+Breeds                     120
+Colour modes               {'RGB': 20579, 'RGBA': 1}
+
+PHOTOGRAPHS PER BREED
+  Fewest                   148 (Redbone)
+  Most                     252 (Maltese Dog)
+  Mean                     171.5
+  Median                   159.5
+  Imbalance ratio          1.70 to 1
+
+THE SPLIT, AS SHARED BY THE GROUP
+  Train                    14355
+  Validation               3025
+  Test                     3200
+
+AFTER CLEANING
+  No photograph is deleted. The confirmed duplicates found by
+  duplicate_check.py are recorded, and the leaked test photographs are
+  set aside so a clean test score can be reported alongside the full one.
+  Confirmed duplicate pair mentions per breed, total   223
+  Test photographs set aside as leaked                 34
+  Effective test set                                   3166
+
+DIMENSIONS
+  Width                    97 to 3264 px, median 500
+  Height                   100 to 2562 px, median 375
+  Smaller than 224 px on at least one side   1577 (7.66 per cent)
+    These are enlarged to reach the model input size, which softens them.
+
+SHAPES
+  Landscape                14142 (68.72 per cent)
+  Portrait                 5341 (25.95 per cent)
+  Near square              1097 (5.33 per cent)
+  Median shape             1.33 wide for every 1 tall
+    The shared pipeline resizes straight to 224 by 224, so photographs that
+    are not square are squashed rather than cropped. Worth stating in the
+    methodology, since it distorts the shape of the dog.
+
+WHERE THE DOG SITS IN THE FRAME, FROM THE SUPPLIED BOXES
+  Median share of the frame covered by the dog   55.3 per cent
+  Dog covers less than a quarter of the frame    2989 (14.52 per cent)
+  Smallest single subject                        0.9 per cent of the frame
+  More than one dog under one breed label       1358 (6.60 per cent), up to 6 in one photograph
+    Photographs where the dog is small, and photographs where several dogs
+    share a single label, are limitations of the data rather than of any
+    model. See fig_smallest_subjects.png.
+
+FIGURES
+  fig_class_examples.png      one training photograph from every breed
+  fig_smallest_subjects.png   the photographs where the dog fills least of the frame
+  fig_class_distribution.png  photographs per breed, and how breed sizes cluster
+  fig_image_sizes.png         dimensions and shapes against the 224 px input
+  table_class_counts.csv      the per-breed table, before and after cleaning
