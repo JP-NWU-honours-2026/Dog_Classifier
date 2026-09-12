@@ -6,3 +6,7 @@ results/duplicate_check/fingerprints.csv
 # two caches are not worth committing either.
 results/dataset_figures/image_sizes.csv
 results/dataset_figures/bounding_boxes.csv
+
+# The audit sheets are redrawn exactly from seed 42 by label_audit.py, so the
+# script, the tally and the summary are the record worth keeping.
+results/label_audit/audit_sheet_*.png
