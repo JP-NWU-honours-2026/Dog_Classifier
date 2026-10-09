@@ -165,8 +165,33 @@ no model is quietly advantaged.
 
 ## Expected outcome, and how to read it
 
-Roughly **20 to 30 per cent** top one accuracy on the 120 way test set, against a chance
-level of 0.83 per cent. The pretrained models should land far higher.
+**Predicted before training:** roughly 20 to 30 per cent top one accuracy on the 120 way
+test set, against a chance level of 0.83 per cent.
+
+**Measured, iteration 1, on the validation set:** 50.51 per cent accuracy, 95 per cent
+interval 48.73 to 52.29, macro F1 0.497, top five accuracy 81.36 per cent. Early stopping
+fired at epoch 59 of 60, taking the weights from epoch 54. Trained in 64.7 minutes on a
+Tesla T4.
+
+The prediction was wrong, by roughly twenty points, and it is recorded here rather than
+quietly replaced. The underestimate came from assuming a five layer network on 120
+photographs per class would plateau early. It did not: the batch normalisation,
+the global average pooling head and the full sixty epoch budget together got far more out
+of the architecture than expected.
+
+What the measurement shows, which the prediction could not:
+
+- **Top five accuracy of 81 per cent against top one of 50 per cent.** The model has
+  learned what dogs look like. What it cannot do is make the last fine distinction. The
+  failure is discrimination, not recognition.
+- **Training loss 1.16 against validation loss 1.90**, with validation flat from about
+  epoch 45. The binding constraint is overfitting, not capacity, which is what any further
+  iteration has to address.
+- **Six of the twenty most frequent confusions are breed pairs the dataset itself labels
+  inconsistently**, as established in Stage 2. Part of the remaining error is the data
+  being wrong rather than the model.
+
+The pretrained models should still land far higher.
 
 That gap is the finding, but it must be stated carefully. It is not evidence that
 transfer learning is cheating. It is evidence that starting from a model which has

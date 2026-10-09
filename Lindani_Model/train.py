@@ -200,6 +200,9 @@ def parse_args():
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--dropout", type=float, default=0.3)
+    parser.add_argument("--convs-per-block", default="1,1,1,1,1",
+                        help="convolutions in each of the five blocks, "
+                             "for example 1,1,1,2,2 for the deeper variant")
     parser.add_argument("--label-smoothing", type=float, default=0.0,
                         help="keep identical across all three models")
     parser.add_argument("--patience", type=int, default=5,
@@ -235,7 +238,9 @@ def main():
         batch_size=args.batch_size, num_workers=args.num_workers, seed=args.seed)
     num_classes = len(class_names)
 
-    model = BaselineCNN(num_classes=num_classes, dropout=args.dropout).to(device)
+    convs_per_block = tuple(int(n) for n in args.convs_per_block.split(","))
+    model = BaselineCNN(num_classes=num_classes, dropout=args.dropout,
+                        convs_per_block=convs_per_block).to(device)
     criterion = nn.CrossEntropyLoss(label_smoothing=args.label_smoothing)
     optimiser = torch.optim.AdamW(model.parameters(), lr=args.lr,
                                   weight_decay=args.weight_decay)
@@ -250,6 +255,7 @@ def main():
         "model": "BaselineCNN, five convolutional blocks, trained from scratch",
         "pretrained_weights": "none",
         "trainable_parameters": count_parameters(model),
+        "convs_per_block": list(convs_per_block),
         "input_size": INPUT_SIZE,
         "classes": num_classes,
         "optimiser": "AdamW",

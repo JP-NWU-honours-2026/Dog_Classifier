@@ -62,9 +62,12 @@ def load_model(run_dir, device):
     """Loads the best weights saved during training, with the run's own settings."""
     checkpoint = torch.load(run_dir / "best_model.pth", map_location=device, weights_only=False)
     class_names = checkpoint["class_names"]
-    dropout = checkpoint.get("config", {}).get("dropout", 0.3)
+    config = checkpoint.get("config", {})
+    dropout = config.get("dropout", 0.3)
+    # Older runs predate the variant setting, so they are one conv per block.
+    convs = tuple(config.get("convs_per_block", (1, 1, 1, 1, 1)))
 
-    model = BaselineCNN(num_classes=len(class_names), dropout=dropout)
+    model = BaselineCNN(num_classes=len(class_names), dropout=dropout, convs_per_block=convs)
     model.load_state_dict(checkpoint["model_state_dict"])
     model.to(device).eval()
     return model, class_names, checkpoint

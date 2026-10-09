@@ -30,9 +30,13 @@ CHANNELS = (32, 64, 128, 256, 512)
 DROPOUT = 0.3
 
 
-def conv_block(in_channels, out_channels):
+def conv_block(in_channels, out_channels, convs=1):
     """
-    One block of the network, in four steps:
+    One block of the network. With convs=1 it is four steps; with convs=2 the
+    convolution, normalisation and activation repeat before the single pooling
+    step, which deepens the block without changing the image size ladder.
+
+    The four steps:
 
       Conv2d      slides 3 by 3 windows over the image looking for patterns.
                   out_channels is how many different patterns it looks for.
@@ -49,12 +53,16 @@ def conv_block(in_channels, out_channels):
                   each 2 by 2 patch, so the next block sees a larger area of the
                   original photograph through the same size window.
     """
-    return nn.Sequential(
-        nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1, bias=False),
-        nn.BatchNorm2d(out_channels),
-        nn.ReLU(inplace=True),
-        nn.MaxPool2d(kernel_size=2, stride=2),
-    )
+    layers = []
+    for n in range(convs):
+        layers += [
+            nn.Conv2d(in_channels if n == 0 else out_channels, out_channels,
+                      kernel_size=3, padding=1, bias=False),
+            nn.BatchNorm2d(out_channels),
+            nn.ReLU(inplace=True),
+        ]
+    layers.append(nn.MaxPool2d(kernel_size=2, stride=2))
+    return nn.Sequential(*layers)
 
 
 class BaselineCNN(nn.Module):
@@ -63,13 +71,22 @@ class BaselineCNN(nn.Module):
     final feature maps into 120 breed scores.
     """
 
-    def __init__(self, num_classes=NUM_CLASSES, channels=CHANNELS, dropout=DROPOUT):
+    def __init__(self, num_classes=NUM_CLASSES, channels=CHANNELS, dropout=DROPOUT,
+                 convs_per_block=None):
         super().__init__()
+
+        # One convolution per block is iteration 1, the design in MODEL_DESIGN.md.
+        # Passing (1, 1, 1, 2, 2) doubles the convolutions in the last two blocks,
+        # which is the deeper variant tested in iteration 2.
+        convs_per_block = convs_per_block or (1,) * len(channels)
+        assert len(convs_per_block) == len(channels), \
+            "convs_per_block must give one number per block"
+        self.convs_per_block = tuple(convs_per_block)
 
         blocks = []
         in_channels = 3  # a colour photograph starts with red, green and blue
-        for out_channels in channels:
-            blocks.append(conv_block(in_channels, out_channels))
+        for out_channels, convs in zip(channels, self.convs_per_block):
+            blocks.append(conv_block(in_channels, out_channels, convs))
             in_channels = out_channels
         self.features = nn.Sequential(*blocks)
 
@@ -122,6 +139,11 @@ def count_parameters(model):
 def main():
     model = BaselineCNN()
     print(model)
+
+    print("\nVARIANTS")
+    for label, convs in [("iteration 1, one conv per block", (1, 1, 1, 1, 1)),
+                         ("iteration 2, two convs in blocks 4 and 5", (1, 1, 1, 2, 2))]:
+        print(f"  {label:<44} {count_parameters(BaselineCNN(convs_per_block=convs)):>10,}")
 
     print("\nTRAINABLE PARAMETERS")
     for n, block in enumerate(model.features, 1):
