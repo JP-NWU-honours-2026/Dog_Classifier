@@ -1,0 +1,21 @@
+true_breed,predicted_breed,times,share_of_breed
+Chow,Pomeranian,9,0.31
+Scottish Deerhound,Irish Wolfhound,8,0.235
+Eskimo Dog,Siberian Husky,8,0.364
+Greater Swiss Mountain Dog,Appenzeller,7,0.28
+Siberian Husky,Malamute,7,0.25
+Papillon,Japanese Spaniel,6,0.207
+Walker Hound,English Foxhound,6,0.273
+Yorkshire Terrier,Australian Terrier,6,0.25
+Entlebucher,Appenzeller,6,0.2
+Shih-Tzu,Lhasa,5,0.156
+Rhodesian Ridgeback,Redbone,5,0.2
+Beagle,Basset,5,0.172
+English Foxhound,Walker Hound,5,0.217
+Italian Greyhound,Whippet,5,0.185
+Whippet,Italian Greyhound,5,0.179
+Miniature Schnauzer,Standard Schnauzer,5,0.217
+Standard Schnauzer,Miniature Schnauzer,5,0.217
+Silky Terrier,Yorkshire Terrier,5,0.185
+Lhasa,Maltese Dog,5,0.185
+Gordon Setter,Rottweiler,5,0.227
