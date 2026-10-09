@@ -1,3 +1,0 @@
-epoch,learning_rate,train_loss,train_accuracy,train_macro_f1,val_loss,val_accuracy,val_macro_f1,seconds,best_so_far
-1,0.001,4.93337,0.00781,0.00168,4.71672,0.00781,0.00146,21.5,True
-2,0.0005,4.87865,0.01758,0.00275,4.66575,0.07031,0.00156,6.6,True
