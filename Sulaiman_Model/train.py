@@ -41,6 +41,34 @@ Writes to Sulaiman_Model/results/runs/<name>/:
     metrics.csv             one row per epoch, the source of the training curves
     best_model.pth          weights from the best epoch (ignored by git, too big)
     val_confusion_best.csv  validation confusion matrix at the best epoch
+
+RESULT OF THE MAIN RUN (17 October 2026), for quick reference
+---------------------------------------------------------------
+Command        python Sulaiman_Model/train.py   (all defaults above)
+Saved in       Sulaiman_Model/results/runs/swin_t/
+Hardware       NVIDIA GeForce RTX 4060 Laptop GPU (8 GB), about 71 s per epoch
+Total time     19.0 minutes, 15 of 15 epochs (cap reached, no early stop)
+Best epoch     15 (weights saved in best_model.pth)
+
+VALIDATION set (3,025 photos), best epoch:
+  accuracy     86.61 per cent
+  macro F1     0.8644
+  (Lindani's scratch CNN for comparison: 50.51 per cent, macro F1 0.4969)
+
+Validation macro F1 by epoch:
+  1: 0.757   5: 0.839   10: 0.860   12: 0.863   15: 0.864
+  Flat from epoch 12, so the cap was reached but the model was no longer
+  meaningfully improving. More epochs were judged not worth it.
+
+Things to say in the report:
+  - Epoch 1 already reached 77 per cent: the pretrained backbone already
+    knew what dogs look like, only the final breed decision had to be learned.
+  - Final training accuracy 97.72 per cent against 86.61 per cent validation:
+    mild overfitting. Validation loss was lowest at epoch 4 (0.513) and crept
+    up to 0.533, while accuracy kept rising: the model got more answers right
+    but grew overconfident on the ones it got wrong.
+  - These are VALIDATION scores. The final reported scores come from the
+    test set, scored once by evaluate.py.
 """
 
 import argparse

@@ -33,6 +33,12 @@ Self-test, from the repository root:
 
     python Sulaiman_Model/model.py
 
+Measured parameter counts (from the self-test, 17 October 2026):
+    total            27,611,634   all trainable (full fine-tuning)
+    new head             92,280   (768 x 120 weights + 120 biases)
+    backbone         27,519,354   pretrained on ImageNet-1K
+Compare: Lindani's baseline CNN has 1,631,128, about 17 times fewer.
+
 The first run downloads the pretrained weights (about 110 MB) into PyTorch's
 cache folder. Later runs reuse them.
 """
