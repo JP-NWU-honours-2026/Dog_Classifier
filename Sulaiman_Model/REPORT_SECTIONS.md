@@ -5,8 +5,9 @@ structure from the brief (sections 4 to 7, plus references). Numbers come
 from `results/runs/swin_t/`. Figure names refer to files in
 `results/runs/swin_t/eval_test/`.
 
-Items marked **[CHECK]** need confirming before submission. Items marked
-**[GROUP]** depend on JP's or Lindani's final numbers.
+Facts about Swin-T, torchvision and the references were checked against
+their sources on 18 October 2026. Items marked **[GROUP]** depend on JP's or
+Lindani's final numbers. The architecture diagram is `swin_architecture.png`.
 
 ---
 
@@ -50,19 +51,23 @@ photographs.
    averaged into one 768-number summary of the photograph, which a linear
    layer maps to one score per class.
 
-Swin-T ("Tiny") is the smallest standard variant: four stages with 2, 2, 6
-and 2 blocks, and 3, 6, 12 and 24 attention heads. **[CHECK against Liu
-*et al.*, 2021, Table 1]**
+Swin-T ("Tiny") is the smallest standard variant: C = 96, four stages with
+2, 2, 6 and 2 blocks, 3, 6, 12 and 24 attention heads (32 dimensions per
+head), and window size M = 7 (Liu *et al.*, 2021).
 
-*(Suggested figure: a diagram of patch partition, the four stages with patch
-merging between them, and one pair of regular and shifted windows. Draw it
-ourselves or redraw from the paper with a citation.)*
+![Swin-T architecture](swin_architecture.png)
+
+*Figure: Swin-T as used in this project. Top: the four stages and the new
+120-breed head. Bottom left: regular and shifted windows. Bottom right: the
+layers inside one pair of Swin blocks. Drawn for this report, based on Liu
+et al. (2021).*
 
 ### 4.x.3 Transfer learning approach
 
 The model was loaded from torchvision with the ImageNet-1K weights
-`Swin_T_Weights.IMAGENET1K_V1`, which reach about 81.5 per cent top-1
-accuracy on ImageNet **[CHECK torchvision documentation]**. The original
+`Swin_T_Weights.IMAGENET1K_V1`, which reach 81.47 per cent top-1 and
+95.78 per cent top-5 accuracy on ImageNet-1K, with 28,288,354 parameters
+including the original 1,000-class head (PyTorch, 2026). The original
 1,000-class head was replaced by dropout (p = 0.3) followed by a new linear
 layer from 768 features to 120 breeds. The new layer starts from random
 weights; everything else keeps its pretrained weights.
@@ -106,7 +111,7 @@ same 3,166 photographs for every model.
 | Optimiser | AdamW (Loshchilov & Hutter, 2019) | Standard for transformers; weight decay separate from the gradient step |
 | Learning rate | 1e-4 | Small, so pretrained weights are adjusted rather than overwritten |
 | Schedule | 1 epoch linear warm-up, then cosine decay to 0, per batch | Protects the backbone while the new head is random; fine steps at the end |
-| Weight decay | 0.05 | Value used for Swin in the original paper **[CHECK]** |
+| Weight decay | 0.05 | The value Liu *et al.* (2021) used to train Swin on ImageNet-1K with AdamW, cosine decay and linear warm-up |
 | Batch size | 32, no gradient accumulation | Fits the 8 GB GPU with mixed precision |
 | Epochs | Up to 15, early stopping patience 4 | Pretrained models converge quickly |
 | Dropout | 0.3 before the new head | Same value as the baseline CNN |
@@ -236,14 +241,23 @@ rather than in either model.
 
 *(Figure: `fig_wrong.png`, the twelve most confident mistakes.)*
 
-The most confident mistakes are often not mistakes. Among the photographs
-the model got "wrong" with near 100 per cent confidence, the one labelled
-French Bulldog shows a Boston Terrier, the one labelled Schipperke shows a
-much larger dog that matches the Groenendael the model predicted, and the
-one labelled Doberman looks like the Miniature Pinscher the model predicted.
-**[CHECK: confirm each by eye before stating it]** The Stanford Dogs labels
-come from ImageNet and were not independently verified (see the dataset
-section), so a share of the measured error is label noise.
+Several of the most confident mistakes are not model errors. The twelve
+photographs in `fig_wrong.png` were checked by eye at full size and against
+the duplicate-check results:
+
+| Labelled as | Model said | Verdict |
+|---|---|---|
+| Schipperke | Groenendael | **Label error.** A large, long-legged, long-tailed black shepherd, not the small Schipperke. The same photograph is also in the training set labelled Groenendael, so the dataset gives it two labels. |
+| French Bulldog | Boston Bull (Boston Terrier) | **Label error.** Black-and-white tuxedo markings and the build of a Boston Terrier. |
+| Giant Schnauzer | Standard Schnauzer | **Conflicting labels.** The same photograph is in the training set labelled Standard Schnauzer. Size, the only real difference, cannot be judged from the photograph. |
+| Doberman | Miniature Pinscher | **Probable label error.** A close-up of a small dog that looks like a Miniature Pinscher, but a close-up makes size hard to judge. |
+
+*Judged by eye by a non-expert. The two conflicting-label cases are confirmed
+by Lindani's duplicate check, independent of judgement.*
+
+The Stanford Dogs labels come from ImageNet and were not independently
+verified, so part of the measured error is label noise, and the model is
+sometimes penalised for being right.
 
 ### 7.x.3 Leakage and memorisation
 
@@ -300,49 +314,68 @@ Points to make once the table is complete:
   test set untouched and the comparison fair.
 - Photographs are squashed to 224 x 224 rather than cropped, which distorts
   body proportions, one of the cues that separates similar breeds.
+- The shared pipeline resizes straight to 224 x 224 with bilinear
+  interpolation, whereas the torchvision weights were trained with a resize
+  to 232 (bicubic) and a centre crop to 224 (PyTorch, 2026). The input
+  therefore differs slightly from what the backbone saw in pretraining. This
+  applies equally to EfficientNetV2-S, so the comparison stays fair.
 - Label noise and ImageNet overlap, as above.
 
 ---
 
-## References (NWU Harvard, draft) [CHECK format against the NWU guide]
+## References (NWU Harvard)
 
-DENG, J., DONG, W., SOCHER, R., LI, L.-J., LI, K. & FEI-FEI, L. 2009.
-ImageNet: a large-scale hierarchical image database. Paper presented at the
-IEEE Conference on Computer Vision and Pattern Recognition, Miami, FL.
+Formatted to the NWU Harvard referencing guide: all authors up to seven,
+otherwise the first six, an ellipsis and the last; conference papers as
+"paper delivered at" with URL and date of access. Journal and book titles
+would be in italics; none are cited here.
 
-DOSOVITSKIY, A., BEYER, L., KOLESNIKOV, A., WEISSENBORN, D., ZHAI, X.,
-UNTERTHINER, T., DEHGHANI, M., MINDERER, M., HEIGOLD, G., GELLY, S.,
-USZKOREIT, J. & HOULSBY, N. 2021. An image is worth 16x16 words:
-transformers for image recognition at scale. Paper presented at the
-International Conference on Learning Representations (ICLR).
+Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K. & Fei-Fei, L. 2009.
+ImageNet: a large-scale hierarchical image database. Paper delivered at the
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Miami, FL.
+https://ieeexplore.ieee.org/document/5206848 Date of access: 18 Oct. 2026.
 
-KHOSLA, A., JAYADEVAPRAKASH, N., YAO, B. & FEI-FEI, L. 2011. Novel dataset
-for fine-grained image categorization. Paper presented at the First Workshop
+Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X.,
+Unterthiner, T., ... Houlsby, N. 2021. An image is worth 16x16 words:
+transformers for image recognition at scale. Paper delivered at the
+International Conference on Learning Representations (ICLR 2021).
+https://arxiv.org/abs/2010.11929 Date of access: 18 Oct. 2026.
+
+Khosla, A., Jayadevaprakash, N., Yao, B. & Fei-Fei, L. 2011. Novel dataset
+for fine-grained image categorization. Paper delivered at the First Workshop
 on Fine-Grained Visual Categorization, IEEE Conference on Computer Vision and
 Pattern Recognition, Colorado Springs, CO.
+https://people.csail.mit.edu/khosla/papers/fgvc2011.pdf Date of access: 18
+Oct. 2026.
 
-LIU, Z., LIN, Y., CAO, Y., HU, H., WEI, Y., ZHANG, Z., LIN, S. & GUO, B.
-2021. Swin Transformer: hierarchical vision transformer using shifted
-windows. Paper presented at the IEEE/CVF International Conference on
-Computer Vision (ICCV), Montreal.
+Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., ... Guo, B. 2021.
+Swin Transformer: hierarchical vision transformer using shifted windows.
+Paper delivered at the IEEE/CVF International Conference on Computer Vision
+(ICCV 2021).
+https://openaccess.thecvf.com/content/ICCV2021/papers/Liu_Swin_Transformer_Hierarchical_Vision_Transformer_Using_Shifted_Windows_ICCV_2021_paper.pdf
+Date of access: 18 Oct. 2026.
 
-LOSHCHILOV, I. & HUTTER, F. 2019. Decoupled weight decay regularization.
-Paper presented at the International Conference on Learning Representations
-(ICLR), New Orleans, LA.
+Loshchilov, I. & Hutter, F. 2019. Decoupled weight decay regularization.
+Paper delivered at the International Conference on Learning Representations
+(ICLR 2019), New Orleans, LA. https://arxiv.org/abs/1711.05101 Date of
+access: 18 Oct. 2026.
 
-PASZKE, A. *et al.* 2019. PyTorch: an imperative style, high-performance deep
-learning library. Paper presented at Advances in Neural Information
-Processing Systems 32 (NeurIPS), Vancouver. [CHECK: full author list]
+Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., ...
+Chintala, S. 2019. PyTorch: an imperative style, high-performance deep
+learning library. Paper delivered at the 33rd Conference on Neural
+Information Processing Systems (NeurIPS 2019), Vancouver.
+https://proceedings.neurips.cc/paper/2019/hash/bdbca288fee7f92f2bfa9f7012727740-Abstract.html
+Date of access: 18 Oct. 2026.
 
-TORCHVISION. 2026. Models and pre-trained weights: swin_t.
-https://pytorch.org/vision/stable/models/swin_transformer.html [CHECK URL
-and date accessed]
+PyTorch. 2026. swin_t: TorchVision documentation.
+https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.swin_t.html
+Date of access: 18 Oct. 2026.
 
 ---
 
 ## Oral presentation: Swin-T slide and likely questions
 
-**One slide:** the Swin diagram, the three numbers (85.4 % test accuracy,
+**One slide:** the Swin diagram (`swin_architecture.png`), the three numbers (85.4 % test accuracy,
 0.849 macro F1, 98.6 % top-5), and one sentence: "Pretrained attention model;
 most errors are look-alike breeds, and some are label errors."
 
