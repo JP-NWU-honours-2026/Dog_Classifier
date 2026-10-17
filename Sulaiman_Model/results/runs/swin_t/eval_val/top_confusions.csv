@@ -1,0 +1,21 @@
+true_breed,predicted_breed,times,share_of_breed
+Siberian Husky,Eskimo Dog,10,0.357
+American Staffordshire Terrier,Staffordshire Bullterrier,9,0.375
+Collie,Border Collie,7,0.318
+Eskimo Dog,Siberian Husky,7,0.318
+Lhasa,Shih-Tzu,6,0.222
+Scottish Deerhound,Irish Wolfhound,5,0.147
+Standard Schnauzer,Miniature Schnauzer,5,0.217
+Shih-Tzu,Lhasa,4,0.125
+Rhodesian Ridgeback,Redbone,4,0.16
+English Foxhound,Beagle,4,0.174
+Irish Wolfhound,Scottish Deerhound,4,0.125
+Staffordshire Bullterrier,American Staffordshire Terrier,4,0.174
+Kuvasz,Great Pyrenees,4,0.182
+Eskimo Dog,Malamute,4,0.182
+Toy Poodle,Miniature Poodle,4,0.182
+Shih-Tzu,Tibetan Terrier,3,0.094
+Beagle,Walker Hound,3,0.103
+Bloodhound,Rhodesian Ridgeback,3,0.107
+English Foxhound,Walker Hound,3,0.13
+Norfolk Terrier,Norwich Terrier,3,0.12

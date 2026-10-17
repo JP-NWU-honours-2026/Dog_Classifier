@@ -1,0 +1,38 @@
+EVALUATION OF SWIN_T ON THE VAL SET
+==============================================================================
+Weights                  epoch 15 (validation macro F1 0.8644 when trained)
+Parameters               27,611,634
+Photographs scored       3025
+Breeds                   120, chance level 0.83 per cent
+
+HEADLINE
+  Accuracy               86.61 per cent (95 per cent interval 85.35 to 87.78)
+  Top-5 accuracy         98.88 per cent
+  Macro F1               0.8644
+  Macro precision        0.8685
+  Macro recall           0.8649
+  Weighted F1            0.8650
+
+STRONGEST BREEDS BY F1
+  Weimaraner                         F1 1.000  (24 photographs)
+  Bedlington Terrier                 F1 1.000  (27 photographs)
+  Scotch Terrier                     F1 1.000  (23 photographs)
+  Keeshond                           F1 1.000  (23 photographs)
+  Brabancon Griffon                  F1 1.000  (22 photographs)
+
+WEAKEST BREEDS BY F1
+  Eskimo Dog                         F1 0.455  (22 photographs)
+  Siberian Husky                     F1 0.531  (28 photographs)
+  Collie                             F1 0.579  (22 photographs)
+  American Staffordshire Terrier     F1 0.585  (24 photographs)
+  Appenzeller                        F1 0.651  (22 photographs)
+
+MOST FREQUENT MISTAKES, top 8
+  Siberian Husky                 called Eskimo Dog                     10 times
+  American Staffordshire Terrier called Staffordshire Bullterrier      9 times
+  Collie                         called Border Collie                  7 times
+  Eskimo Dog                     called Siberian Husky                 7 times
+  Lhasa                          called Shih-Tzu                       6 times
+  Scottish Deerhound             called Irish Wolfhound                5 times
+  Standard Schnauzer             called Miniature Schnauzer            5 times
+  Shih-Tzu                       called Lhasa                          4 times
