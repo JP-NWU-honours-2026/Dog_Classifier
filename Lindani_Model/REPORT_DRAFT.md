@@ -301,7 +301,25 @@ Seeding fixes the data order, the initialisation and the augmentation, so a run 
 repeatable in structure. It does not make GPU arithmetic bitwise identical between runs,
 because some CUDA operations accumulate in a non-fixed order. Deterministic algorithms can
 be forced by a command line flag at a cost in speed, and were not used for the reported
-runs. This is stated rather than implied.
+runs.
+
+The size of that variation was measured rather than assumed. Both iteration 2
+configurations were, by accident, executed twice with identical code and identical seed,
+once in an interactive session and once in a committed run:
+
+| Configuration | Execution 1 | Execution 2 | Spread |
+|---|---|---|---|
+| 2A, regularised | 0.4944 | 0.4911 | 0.3 points |
+| 2B, deeper | 0.5527 | 0.5649 | 1.2 points |
+
+Early stopping also halted at different epochs, 60 against 57 and 51 against 59, since a
+small difference in trajectory changes where the patience window expires.
+
+**A difference of about one point in validation macro F1 is therefore not evidence of
+anything in this setup.** All comparisons in section 4 are read against that floor: the
+6.8 point gain of iteration 2B is far outside it, and the 0.6 point loss of iteration 2A is
+well inside it. The figures reported throughout are those from the committed runs, which
+are reproducible from a saved notebook version, rather than from the interactive session.
 
 ### 3.3 Protocol for iteration
 
@@ -343,9 +361,9 @@ identifies overfitting rather than insufficient capacity as the binding constrai
 That the epoch cap did not bind is reported explicitly, since a cap that silently binds is
 an unnoticed handicap on a model.
 
-### 4.2 Iteration 2 **[PENDING]**
+### 4.2 Iteration 2
 
-Two variants were trained, each changing one factor and each judged on validation only:
+Two variants were trained, each changing one factor, each judged on validation only.
 
 - **Run A, stronger regularisation:** dropout raised from 0.3 to 0.5 and weight decay from
   1e-4 to 1e-3, architecture unchanged. Directed at the overfitting identified in 4.1.
@@ -353,8 +371,28 @@ Two variants were trained, each changing one factor and each judged on validatio
   5, raising the parameter count from 1,631,128 to 4,581,784. Directed at the gap between
   top-5 and top-1 accuracy.
 
-Insert the comparison table of the three runs, state which was selected and on what
-criterion, and report honestly if neither improved on iteration 1.
+| Run | Parameters | Dropout | Weight decay | Accuracy | Top-5 | Macro F1 | Train minus validation accuracy |
+|---|---|---|---|---|---|---|---|
+| 1, baseline | 1,631,128 | 0.3 | 1e-4 | 50.51 % | 81.36 % | 0.4969 | 15.8 points |
+| 2A, regularised | 1,631,128 | 0.5 | 1e-3 | 50.05 % | 81.62 % | 0.4911 | **8.9 points** |
+| 2B, deeper | 4,581,784 | 0.3 | 1e-4 | **56.96 %** | **84.89 %** | **0.5648** | **33.0 points** |
+
+**Run A behaved exactly as intended and achieved nothing.** Stronger regularisation nearly
+halved the overfitting gap, from 15.8 points to 8.9, and accuracy did not move: 50.05 per
+cent against 50.51, a difference inside run-to-run variation (section 3.2). The treatment
+worked on the symptom and left the result unchanged.
+
+**Run B did the opposite and won.** Tripling the parameters **doubled** the overfitting gap
+to 33.0 points and raised accuracy by 6.5 points and macro F1 by 6.8.
+
+The two runs together refute the natural reading of iteration 1's loss curves. A widening
+gap between training and validation loss was taken to mean that overfitting was the binding
+constraint; the experiment shows it was not. The size of the overfitting gap turned out to
+be a poor guide to what would improve the model, and capacity for fine discrimination was
+the real limit. **This is the central methodological finding of the iteration sequence, and
+it was only visible because the regularisation hypothesis was tested rather than assumed.**
+
+Run 2B was selected on validation macro F1.
 
 ### 4.3 Test set, scored once **[PENDING]**
 

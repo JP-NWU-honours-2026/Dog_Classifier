@@ -1,0 +1,21 @@
+true_breed,predicted_breed,times,share_of_breed
+Shih-Tzu,Lhasa,9,0.281
+Beagle,Basset,8,0.276
+Greater Swiss Mountain Dog,Appenzeller,8,0.32
+Yorkshire Terrier,Australian Terrier,7,0.292
+Chow,Pomeranian,7,0.241
+Whippet,Italian Greyhound,6,0.214
+Bernese Mountain Dog,Greater Swiss Mountain Dog,6,0.188
+Entlebucher,Appenzeller,6,0.2
+Malamute,Siberian Husky,6,0.231
+Great Pyrenees,Samoyed,6,0.194
+Chesapeake Bay Retriever,Weimaraner,5,0.2
+Bernese Mountain Dog,Appenzeller,5,0.156
+Appenzeller,Greater Swiss Mountain Dog,5,0.227
+Appenzeller,Entlebucher,5,0.227
+Bull Mastiff,Bloodhound,5,0.217
+Eskimo Dog,Siberian Husky,5,0.227
+Siberian Husky,Malamute,5,0.179
+Samoyed,Great Pyrenees,5,0.156
+Toy Poodle,Miniature Poodle,5,0.227
+Miniature Poodle,Toy Poodle,5,0.217
