@@ -3,10 +3,10 @@
   "num_classes": 120,
   "test_images_count": 3200,
   "overall": {
-    "top1_accuracy": 0.1146875,
-    "top5_accuracy": 0.3009375,
-    "macro_precision": 0.11189448198849186,
-    "macro_recall": 0.11598309148420753,
-    "macro_f1": 0.09964224806850733
+    "top1_accuracy": 0.83125,
+    "top5_accuracy": 0.9775,
+    "macro_precision": 0.8325675511754158,
+    "macro_recall": 0.8287247065223801,
+    "macro_f1": 0.8253581159782105
   }
 }

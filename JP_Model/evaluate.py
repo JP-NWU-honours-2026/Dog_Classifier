@@ -121,7 +121,12 @@ def evaluate_checkpoint(
     checkpoint = torch.load(checkpoint_path, map_location=device)
     num_classes = checkpoint.get("num_classes", 120)
     raw_class_names = checkpoint.get("class_names", {})
-    class_names = {int(k): v for k, v in raw_class_names.items()}
+    if isinstance(raw_class_names, dict):
+        class_names = {int(k): v for k, v in raw_class_names.items()}
+    elif isinstance(raw_class_names, list):
+        class_names = {i: v for i, v in enumerate(raw_class_names)}
+    else:
+        class_names = {}
 
     model = get_model(num_classes=num_classes, pretrained=False)
     model.load_state_dict(checkpoint["state_dict"])

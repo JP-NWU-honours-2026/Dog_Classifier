@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CanineVision AI - Dog Breed Classifier</title>
+  <title>CanineVision AI - Dog Breed Classifier & Image Explorer</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,20 +28,49 @@
         </div>
         <div>
           <h1 class="brand-title">CanineVision <span class="accent-text">AI</span></h1>
-          <p class="brand-subtitle">Deep Learning Dog Breed Classifier</p>
+          <p class="brand-subtitle">120-Breed Deep Learning Classifier & Dataset Explorer</p>
         </div>
       </div>
 
+      <!-- Mode Navigation Tabs -->
+      <nav class="nav-tabs">
+        <button type="button" class="nav-tab active" id="tabClassifier">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          <span>AI Classifier</span>
+        </button>
+        <button type="button" class="nav-tab" id="tabGallery">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span>Breed Image Explorer</span>
+        </button>
+        <button type="button" class="nav-tab" id="tabAudit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          <span>Data Cleaning Studio</span>
+          <span class="badge-tab-count" id="auditPendingBadge">173</span>
+        </button>
+      </nav>
+
       <div class="header-badges">
-        <span class="badge badge-course">ITRI626 Mini-Project</span>
+        <span class="badge badge-course">ITRI626 Project</span>
         <span class="badge badge-model" id="modelBadge">
           <span class="status-dot"></span> Model: EfficientNetV2-S
         </span>
       </div>
     </header>
 
-    <!-- Main Content Grid -->
-    <main class="main-grid">
+    <!-- VIEW 1: Main Classifier Grid -->
+    <main class="main-grid" id="viewClassifier">
       <!-- Left Card: Upload & Input -->
       <section class="card upload-card">
         <div class="card-header">
@@ -79,15 +108,30 @@
 
         <!-- Quick 1-Click Samples -->
         <div class="samples-section">
-          <span class="samples-label">Quick 1-Click Test Samples:</span>
-          <div class="samples-group">
-            <button type="button" class="sample-btn" id="btnSampleHusky">
-              <span class="sample-icon">🐺</span>
-              <span>Sample Husky</span>
+          <div class="samples-header">
+            <span class="samples-label">Quick Test Samples</span>
+            <span class="samples-counter">5 Breeds</span>
+          </div>
+          <div class="samples-group" id="samplesGroup">
+            <button type="button" class="sample-btn" data-id="golden_retriever" data-url="/static/samples/golden_retriever_sample.jpg" data-name="Golden Retriever">
+              <span class="sample-icon">🦮</span>
+              <span class="sample-text">Golden Retriever</span>
             </button>
-            <button type="button" class="sample-btn" id="btnSampleChihuahua">
+            <button type="button" class="sample-btn" data-id="german_shepherd" data-url="/static/samples/german_shepherd_sample.jpg" data-name="German Shepherd">
+              <span class="sample-icon">🐕‍🦺</span>
+              <span class="sample-text">German Shepherd</span>
+            </button>
+            <button type="button" class="sample-btn" data-id="siberian_husky" data-url="/static/samples/siberian_husky_sample.jpg" data-name="Siberian Husky">
+              <span class="sample-icon">🐺</span>
+              <span class="sample-text">Siberian Husky</span>
+            </button>
+            <button type="button" class="sample-btn" data-id="french_bulldog" data-url="/static/samples/french_bulldog_sample.jpg" data-name="French Bulldog">
               <span class="sample-icon">🐶</span>
-              <span>Sample Chihuahua</span>
+              <span class="sample-text">French Bulldog</span>
+            </button>
+            <button type="button" class="sample-btn" data-id="chihuahua" data-url="/static/samples/chihuahua_sample.jpg" data-name="Chihuahua">
+              <span class="sample-icon">🐕</span>
+              <span class="sample-text">Chihuahua</span>
             </button>
           </div>
         </div>
@@ -120,7 +164,7 @@
             </svg>
           </div>
           <h3>Awaiting Dog Image</h3>
-          <p>Select a sample or upload a photo on the left, then click <strong>Classify Dog Breed</strong> to see live neural network outputs.</p>
+          <p>Upload any dog photo or click a quick-test sample on the left, then click <strong>Classify Dog Breed</strong> to see live neural network outputs.</p>
         </div>
 
         <!-- Active Results State -->
@@ -142,7 +186,10 @@
 
           <!-- Probability Comparison Bars -->
           <div class="prob-section">
-            <h4 class="section-title">Comparative Probability Breakdown</h4>
+            <div class="prob-section-header">
+              <h4 class="section-title">Top 5 Dog Classifications</h4>
+              <span class="badge-classes" id="classesBadge">120 Breeds Evaluated</span>
+            </div>
             <div class="prob-bars-list" id="probBarsList">
               <!-- Dynamically rendered via JS -->
             </div>
@@ -165,8 +212,8 @@
                 <span class="telemetry-val">224 × 224 px</span>
               </div>
               <div class="telemetry-item">
-                <span class="telemetry-label">Test Set Acc</span>
-                <span class="telemetry-val highlight-green">100.0%</span>
+                <span class="telemetry-label">Total Classes</span>
+                <span class="telemetry-val highlight-green" id="telClasses">120 Breeds</span>
               </div>
             </div>
           </div>
@@ -174,10 +221,159 @@
       </section>
     </main>
 
+    <!-- VIEW 2: Breed Image Explorer & Gallery -->
+    <section class="card gallery-card hidden" id="viewGallery">
+      <div class="gallery-controls-header">
+        <div>
+          <h2>Stanford Dogs Dataset Explorer</h2>
+          <p class="card-desc">Browse, search, and view all photographs across all 120 dog breeds.</p>
+        </div>
+        <div class="gallery-stats-pill" id="galleryStatsPill">
+          <span class="status-dot"></span>
+          <span id="galleryBreedCountText">Loading breeds...</span>
+        </div>
+      </div>
+
+      <!-- Search & Dropdown Control Bar -->
+      <div class="explorer-bar">
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="breedSearchInput" class="search-input" placeholder="Search breeds by name (e.g. Golden, Husky, Corgi, Bulldog)..." autocomplete="off">
+          <button type="button" class="btn-clear-search hidden" id="btnClearSearch">&times;</button>
+          <div class="search-suggestions-dropdown hidden" id="searchSuggestions"></div>
+        </div>
+
+        <div class="select-box">
+          <label for="breedSelect" class="select-label">Choose Breed:</label>
+          <select id="breedSelect" class="breed-dropdown">
+            <option value="" disabled selected>Select from 120 Dog Breeds...</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Selected Breed Header Info Card -->
+      <div class="breed-banner hidden" id="breedBanner">
+        <div class="breed-banner-left">
+          <span class="breed-synset" id="breedSynset">n02099601</span>
+          <h3 class="breed-banner-title" id="breedBannerTitle">Golden Retriever</h3>
+          <p class="breed-banner-desc" id="breedBannerDesc">Stanford Dogs Dataset &bull; ImageNet Dogs Synset</p>
+        </div>
+        <div class="breed-banner-right">
+          <span class="badge-image-count" id="breedImageCount">152 Images</span>
+        </div>
+      </div>
+
+      <!-- Gallery Grid of Dog Photos -->
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-empty-state">
+          <div class="idle-graphic">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+          <h3>Select a Dog Breed Above</h3>
+          <p>Choose any of the 120 dog breeds from the dropdown or search to load and view all photographs in the dataset.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: Data Cleaning & Duplicate Audit Studio -->
+    <section class="card audit-card hidden" id="viewAudit">
+      <div class="audit-header">
+        <div>
+          <h2>Dataset Deduplication & Conflict Studio</h2>
+          <p class="card-desc">Review duplicate candidate photos and cross-breed label conflicts side-by-side to approve removals across all splits.</p>
+        </div>
+        <div class="audit-action-buttons">
+          <button type="button" class="btn-batch-action" id="btnBatchRecommended" title="Approve recommended decisions for all pending pairs">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Apply Recommended to All</span>
+          </button>
+          <button type="button" class="btn-generate-clean" id="btnGenerateCleanManifest" title="Generate split_manifest_clean.json from approved removals">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            <span>Generate Clean Manifest</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Telemetry Progress Cards -->
+      <div class="audit-stats-grid">
+        <div class="audit-stat-card">
+          <span class="stat-num" id="statTotalPairs">173</span>
+          <span class="stat-label">Total Pairs</span>
+        </div>
+        <div class="audit-stat-card stat-pending">
+          <span class="stat-num" id="statPendingPairs">173</span>
+          <span class="stat-label">Pending Review</span>
+        </div>
+        <div class="audit-stat-card stat-removed">
+          <span class="stat-num" id="statPhotosToRemove">0</span>
+          <span class="stat-label">Photos to Remove</span>
+        </div>
+        <div class="audit-stat-card stat-kept">
+          <span class="stat-num" id="statPairsKept">0</span>
+          <span class="stat-label">Pairs Kept (Distinct)</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills & Search -->
+      <div class="audit-filter-bar">
+        <div class="filter-pills" id="auditFilterPills">
+          <button type="button" class="filter-pill active" data-filter="all">All (173)</button>
+          <button type="button" class="filter-pill" data-filter="label_conflict">Label Conflicts (50)</button>
+          <button type="button" class="filter-pill" data-filter="cross_split_leak">Cross-Split Leaks (74)</button>
+          <button type="button" class="filter-pill" data-filter="same_split_duplicate">Same-Split (49)</button>
+          <button type="button" class="filter-pill" data-filter="pending">Pending</button>
+          <button type="button" class="filter-pill" data-filter="reviewed">Reviewed</button>
+        </div>
+        <div class="audit-search">
+          <input type="text" id="auditSearchInput" placeholder="Search by breed or filename..." class="search-input">
+        </div>
+      </div>
+
+      <!-- Manifest Generation Status Alert Banner -->
+      <div class="manifest-alert hidden" id="manifestAlert">
+        <span class="alert-icon">✓</span>
+        <div class="alert-content">
+          <strong>Clean Manifest Generated!</strong>
+          <span id="manifestAlertText">split_manifest_clean.json has been generated successfully.</span>
+        </div>
+      </div>
+
+      <!-- Candidate Pairs Deck -->
+      <div class="audit-pairs-deck" id="auditPairsDeck">
+        <div class="gallery-empty-state">
+          <div class="btn-spinner" style="width: 32px; height: 32px; margin: 0 auto 12px auto;"></div>
+          <p>Loading candidate duplicate pairs...</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="app-footer">
-      <p>ITRI626 Deep Learning Project &bull; Dog Breed Classifier Proof-of-Concept &bull; NWU 2026</p>
+      <p>ITRI626 Deep Learning Project &bull; Stanford Dogs 120-Breed Classifier &bull; NWU 2026</p>
     </footer>
+  </div>
+
+  <!-- Fullscreen Image Lightbox Modal -->
+  <div class="lightbox-modal hidden" id="lightboxModal">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content">
+      <button type="button" class="lightbox-close" id="lightboxClose">&times;</button>
+      <img id="lightboxImg" alt="Dog breed photograph" class="lightbox-img">
+      <div class="lightbox-meta">
+        <span class="lightbox-breed" id="lightboxBreedName">Golden Retriever</span>
+        <button type="button" class="btn-classify-from-gallery" id="btnClassifyFromGallery">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>Classify This Photo in AI Model</span>
+        </button>
+      </div>
+    </div>
   </div>
 
   <script src="/static/app.js"></script>

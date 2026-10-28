@@ -4,26 +4,36 @@
   "device": "cuda",
   "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
   "head_epochs": 0,
-  "fine_tune_epochs": 1,
-  "total_epochs": 1,
+  "fine_tune_epochs": 3,
+  "total_epochs": 3,
   "head_lr": 0.0003,
   "fine_tune_lr": 1e-05,
   "unfreeze_from_stage": 6,
   "batch_size": 32,
   "seed": 42,
   "train_loss": [
-    4.318733116905393
+    1.3869983162044524,
+    1.3561691000253138,
+    1.2750687924630548
   ],
   "train_acc": [
-    27.33612273361227
+    82.80738418669453,
+    83.74782305816788,
+    87.02194357366771
   ],
   "val_loss": [
-    4.5991400693426066
+    1.2889269026448904,
+    1.2587299385543698,
+    1.255009279921035
   ],
   "val_acc": [
-    10.596026490066226
+    84.62809917355372,
+    85.9504132231405,
+    85.78512396694215
   ],
   "phase": [
+    "Fine-Tune (Upper Stages)",
+    "Fine-Tune (Upper Stages)",
     "Fine-Tune (Upper Stages)"
   ]
 }

@@ -1,0 +1,5192 @@
+[
+  {
+    "pair_id": 44,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Japanese Spaniel' vs 'Blenheim Spaniel'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_both",
+    "status": "approved_remove_a",
+    "photo_a": {
+      "key": "n02085782-Japanese_spaniel/n02085782_186.jpg",
+      "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_186.jpg",
+      "breed_folder": "n02085782-Japanese_spaniel",
+      "breed_name": "Japanese Spaniel",
+      "pile": "val",
+      "label": 1
+    },
+    "photo_b": {
+      "key": "n02086646-Blenheim_spaniel/n02086646_172.jpg",
+      "url": "/archive_images/n02086646-Blenheim_spaniel/n02086646_172.jpg",
+      "breed_folder": "n02086646-Blenheim_spaniel",
+      "breed_name": "Blenheim Spaniel",
+      "pile": "train",
+      "label": 5
+    }
+  },
+  {
+    "pair_id": 49,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Japanese Spaniel' vs 'Tibetan Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02085782-Japanese_spaniel/n02085782_2459.jpg",
+      "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_2459.jpg",
+      "breed_folder": "n02085782-Japanese_spaniel",
+      "breed_name": "Japanese Spaniel",
+      "pile": "train",
+      "label": 1
+    },
+    "photo_b": {
+      "key": "n02097474-Tibetan_terrier/n02097474_1962.jpg",
+      "url": "/archive_images/n02097474-Tibetan_terrier/n02097474_1962.jpg",
+      "breed_folder": "n02097474-Tibetan_terrier",
+      "breed_name": "Tibetan Terrier",
+      "pile": "train",
+      "label": 49
+    }
+  },
+  {
+    "pair_id": 50,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02085782-Japanese_spaniel/n02085782_2655.jpg",
+      "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_2655.jpg",
+      "breed_folder": "n02085782-Japanese_spaniel",
+      "breed_name": "Japanese Spaniel",
+      "pile": "train",
+      "label": 1
+    },
+    "photo_b": {
+      "key": "n02085782-Japanese_spaniel/n02085782_2796.jpg",
+      "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_2796.jpg",
+      "breed_folder": "n02085782-Japanese_spaniel",
+      "breed_name": "Japanese Spaniel",
+      "pile": "train",
+      "label": 1
+    }
+  },
+  {
+    "pair_id": 51,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Japanese Spaniel' vs 'Blenheim Spaniel'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02085782-Japanese_spaniel/n02085782_313.jpg",
+      "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_313.jpg",
+      "breed_folder": "n02085782-Japanese_spaniel",
+      "breed_name": "Japanese Spaniel",
+      "pile": "train",
+      "label": 1
+    },
+    "photo_b": {
+      "key": "n02086646-Blenheim_spaniel/n02086646_280.jpg",
+      "url": "/archive_images/n02086646-Blenheim_spaniel/n02086646_280.jpg",
+      "breed_folder": "n02086646-Blenheim_spaniel",
+      "breed_name": "Blenheim Spaniel",
+      "pile": "train",
+      "label": 5
+    }
+  },
+  {
+    "pair_id": 52,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Japanese Spaniel' vs 'English Springer'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02085782-Japanese_spaniel/n02085782_381.jpg",
+      "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_381.jpg",
+      "breed_folder": "n02085782-Japanese_spaniel",
+      "breed_name": "Japanese Spaniel",
+      "pile": "train",
+      "label": 1
+    },
+    "photo_b": {
+      "key": "n02102040-English_springer/n02102040_639.jpg",
+      "url": "/archive_images/n02102040-English_springer/n02102040_639.jpg",
+      "breed_folder": "n02102040-English_springer",
+      "breed_name": "English Springer",
+      "pile": "train",
+      "label": 66
+    }
+  },
+  {
+    "pair_id": 54,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Japanese Spaniel' vs 'Papillon'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02085782-Japanese_spaniel/n02085782_50.jpg",
+      "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_50.jpg",
+      "breed_folder": "n02085782-Japanese_spaniel",
+      "breed_name": "Japanese Spaniel",
+      "pile": "train",
+      "label": 1
+    },
+    "photo_b": {
+      "key": "n02086910-papillon/n02086910_103.jpg",
+      "url": "/archive_images/n02086910-papillon/n02086910_103.jpg",
+      "breed_folder": "n02086910-papillon",
+      "breed_name": "Papillon",
+      "pile": "train",
+      "label": 6
+    }
+  },
+  {
+    "pair_id": 331,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Shih-Tzu' vs 'Tibetan Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02086240-Shih-Tzu/n02086240_3921.jpg",
+      "url": "/archive_images/n02086240-Shih-Tzu/n02086240_3921.jpg",
+      "breed_folder": "n02086240-Shih-Tzu",
+      "breed_name": "Shih-Tzu",
+      "pile": "train",
+      "label": 4
+    },
+    "photo_b": {
+      "key": "n02097474-Tibetan_terrier/n02097474_7300.jpg",
+      "url": "/archive_images/n02097474-Tibetan_terrier/n02097474_7300.jpg",
+      "breed_folder": "n02097474-Tibetan_terrier",
+      "breed_name": "Tibetan Terrier",
+      "pile": "train",
+      "label": 49
+    }
+  },
+  {
+    "pair_id": 345,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02086646-Blenheim_spaniel/n02086646_1445.jpg",
+      "url": "/archive_images/n02086646-Blenheim_spaniel/n02086646_1445.jpg",
+      "breed_folder": "n02086646-Blenheim_spaniel",
+      "breed_name": "Blenheim Spaniel",
+      "pile": "train",
+      "label": 5
+    },
+    "photo_b": {
+      "key": "n02086646-Blenheim_spaniel/n02086646_422.jpg",
+      "url": "/archive_images/n02086646-Blenheim_spaniel/n02086646_422.jpg",
+      "breed_folder": "n02086646-Blenheim_spaniel",
+      "breed_name": "Blenheim Spaniel",
+      "pile": "train",
+      "label": 5
+    }
+  },
+  {
+    "pair_id": 364,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 4,
+    "phash_distance": 8,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02087046-toy_terrier/n02087046_2419.jpg",
+      "url": "/archive_images/n02087046-toy_terrier/n02087046_2419.jpg",
+      "breed_folder": "n02087046-toy_terrier",
+      "breed_name": "Toy Terrier",
+      "pile": "val",
+      "label": 7
+    },
+    "photo_b": {
+      "key": "n02087046-toy_terrier/n02087046_6003.jpg",
+      "url": "/archive_images/n02087046-toy_terrier/n02087046_6003.jpg",
+      "breed_folder": "n02087046-toy_terrier",
+      "breed_name": "Toy Terrier",
+      "pile": "train",
+      "label": 7
+    }
+  },
+  {
+    "pair_id": 391,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 4,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02088094-Afghan_hound/n02088094_1270.jpg",
+      "url": "/archive_images/n02088094-Afghan_hound/n02088094_1270.jpg",
+      "breed_folder": "n02088094-Afghan_hound",
+      "breed_name": "Afghan Hound",
+      "pile": "train",
+      "label": 9
+    },
+    "photo_b": {
+      "key": "n02088094-Afghan_hound/n02088094_3989.jpg",
+      "url": "/archive_images/n02088094-Afghan_hound/n02088094_3989.jpg",
+      "breed_folder": "n02088094-Afghan_hound",
+      "breed_name": "Afghan Hound",
+      "pile": "val",
+      "label": 9
+    }
+  },
+  {
+    "pair_id": 453,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02088466-bloodhound/n02088466_7015.jpg",
+      "url": "/archive_images/n02088466-bloodhound/n02088466_7015.jpg",
+      "breed_folder": "n02088466-bloodhound",
+      "breed_name": "Bloodhound",
+      "pile": "train",
+      "label": 12
+    },
+    "photo_b": {
+      "key": "n02088466-bloodhound/n02088466_8078.jpg",
+      "url": "/archive_images/n02088466-bloodhound/n02088466_8078.jpg",
+      "breed_folder": "n02088466-bloodhound",
+      "breed_name": "Bloodhound",
+      "pile": "train",
+      "label": 12
+    }
+  },
+  {
+    "pair_id": 460,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Bloodhound' vs 'Redbone'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02088466-bloodhound/n02088466_7462.jpg",
+      "url": "/archive_images/n02088466-bloodhound/n02088466_7462.jpg",
+      "breed_folder": "n02088466-bloodhound",
+      "breed_name": "Bloodhound",
+      "pile": "val",
+      "label": 12
+    },
+    "photo_b": {
+      "key": "n02090379-redbone/n02090379_3300.jpg",
+      "url": "/archive_images/n02090379-redbone/n02090379_3300.jpg",
+      "breed_folder": "n02090379-redbone",
+      "breed_name": "Redbone",
+      "pile": "train",
+      "label": 17
+    }
+  },
+  {
+    "pair_id": 464,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 1,
+    "phash_distance": 0,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02088466-bloodhound/n02088466_9023.jpg",
+      "url": "/archive_images/n02088466-bloodhound/n02088466_9023.jpg",
+      "breed_folder": "n02088466-bloodhound",
+      "breed_name": "Bloodhound",
+      "pile": "train",
+      "label": 12
+    },
+    "photo_b": {
+      "key": "n02088466-bloodhound/n02088466_9356.jpg",
+      "url": "/archive_images/n02088466-bloodhound/n02088466_9356.jpg",
+      "breed_folder": "n02088466-bloodhound",
+      "breed_name": "Bloodhound",
+      "pile": "val",
+      "label": 12
+    }
+  },
+  {
+    "pair_id": 475,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02088632-bluetick/n02088632_4334.jpg",
+      "url": "/archive_images/n02088632-bluetick/n02088632_4334.jpg",
+      "breed_folder": "n02088632-bluetick",
+      "breed_name": "Bluetick",
+      "pile": "train",
+      "label": 13
+    },
+    "photo_b": {
+      "key": "n02088632-bluetick/n02088632_4584.jpg",
+      "url": "/archive_images/n02088632-bluetick/n02088632_4584.jpg",
+      "breed_folder": "n02088632-bluetick",
+      "breed_name": "Bluetick",
+      "pile": "train",
+      "label": 13
+    }
+  },
+  {
+    "pair_id": 476,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02088632-bluetick/n02088632_4360.jpg",
+      "url": "/archive_images/n02088632-bluetick/n02088632_4360.jpg",
+      "breed_folder": "n02088632-bluetick",
+      "breed_name": "Bluetick",
+      "pile": "train",
+      "label": 13
+    },
+    "photo_b": {
+      "key": "n02088632-bluetick/n02088632_600.jpg",
+      "url": "/archive_images/n02088632-bluetick/n02088632_600.jpg",
+      "breed_folder": "n02088632-bluetick",
+      "breed_name": "Bluetick",
+      "pile": "train",
+      "label": 13
+    }
+  },
+  {
+    "pair_id": 478,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02088632-bluetick/n02088632_819.jpg",
+      "url": "/archive_images/n02088632-bluetick/n02088632_819.jpg",
+      "breed_folder": "n02088632-bluetick",
+      "breed_name": "Bluetick",
+      "pile": "train",
+      "label": 13
+    },
+    "photo_b": {
+      "key": "n02088632-bluetick/n02088632_982.jpg",
+      "url": "/archive_images/n02088632-bluetick/n02088632_982.jpg",
+      "breed_folder": "n02088632-bluetick",
+      "breed_name": "Bluetick",
+      "pile": "train",
+      "label": 13
+    }
+  },
+  {
+    "pair_id": 482,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'val' split",
+    "dhash_distance": 1,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "val-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089078-black-and-tan_coonhound/n02089078_19.jpg",
+      "url": "/archive_images/n02089078-black-and-tan_coonhound/n02089078_19.jpg",
+      "breed_folder": "n02089078-black-and-tan_coonhound",
+      "breed_name": "Black-And-Tan Coonhound",
+      "pile": "val",
+      "label": 14
+    },
+    "photo_b": {
+      "key": "n02089078-black-and-tan_coonhound/n02089078_2417.jpg",
+      "url": "/archive_images/n02089078-black-and-tan_coonhound/n02089078_2417.jpg",
+      "breed_folder": "n02089078-black-and-tan_coonhound",
+      "breed_name": "Black-And-Tan Coonhound",
+      "pile": "val",
+      "label": 14
+    }
+  },
+  {
+    "pair_id": 483,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089078-black-and-tan_coonhound/n02089078_19.jpg",
+      "url": "/archive_images/n02089078-black-and-tan_coonhound/n02089078_19.jpg",
+      "breed_folder": "n02089078-black-and-tan_coonhound",
+      "breed_name": "Black-And-Tan Coonhound",
+      "pile": "val",
+      "label": 14
+    },
+    "photo_b": {
+      "key": "n02089078-black-and-tan_coonhound/n02089078_3078.jpg",
+      "url": "/archive_images/n02089078-black-and-tan_coonhound/n02089078_3078.jpg",
+      "breed_folder": "n02089078-black-and-tan_coonhound",
+      "breed_name": "Black-And-Tan Coonhound",
+      "pile": "train",
+      "label": 14
+    }
+  },
+  {
+    "pair_id": 484,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 1,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089078-black-and-tan_coonhound/n02089078_2417.jpg",
+      "url": "/archive_images/n02089078-black-and-tan_coonhound/n02089078_2417.jpg",
+      "breed_folder": "n02089078-black-and-tan_coonhound",
+      "breed_name": "Black-And-Tan Coonhound",
+      "pile": "val",
+      "label": 14
+    },
+    "photo_b": {
+      "key": "n02089078-black-and-tan_coonhound/n02089078_3078.jpg",
+      "url": "/archive_images/n02089078-black-and-tan_coonhound/n02089078_3078.jpg",
+      "breed_folder": "n02089078-black-and-tan_coonhound",
+      "breed_name": "Black-And-Tan Coonhound",
+      "pile": "train",
+      "label": 14
+    }
+  },
+  {
+    "pair_id": 490,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089867-Walker_hound/n02089867_1882.jpg",
+      "url": "/archive_images/n02089867-Walker_hound/n02089867_1882.jpg",
+      "breed_folder": "n02089867-Walker_hound",
+      "breed_name": "Walker Hound",
+      "pile": "train",
+      "label": 15
+    },
+    "photo_b": {
+      "key": "n02089973-English_foxhound/n02089973_2093.jpg",
+      "url": "/archive_images/n02089973-English_foxhound/n02089973_2093.jpg",
+      "breed_folder": "n02089973-English_foxhound",
+      "breed_name": "English Foxhound",
+      "pile": "train",
+      "label": 16
+    }
+  },
+  {
+    "pair_id": 491,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 2,
+    "phash_distance": 0,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089867-Walker_hound/n02089867_2382.jpg",
+      "url": "/archive_images/n02089867-Walker_hound/n02089867_2382.jpg",
+      "breed_folder": "n02089867-Walker_hound",
+      "breed_name": "Walker Hound",
+      "pile": "train",
+      "label": 15
+    },
+    "photo_b": {
+      "key": "n02089867-Walker_hound/n02089867_24.jpg",
+      "url": "/archive_images/n02089867-Walker_hound/n02089867_24.jpg",
+      "breed_folder": "n02089867-Walker_hound",
+      "breed_name": "Walker Hound",
+      "pile": "test",
+      "label": 15
+    }
+  },
+  {
+    "pair_id": 492,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'",
+    "dhash_distance": 1,
+    "phash_distance": 0,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089867-Walker_hound/n02089867_2653.jpg",
+      "url": "/archive_images/n02089867-Walker_hound/n02089867_2653.jpg",
+      "breed_folder": "n02089867-Walker_hound",
+      "breed_name": "Walker Hound",
+      "pile": "train",
+      "label": 15
+    },
+    "photo_b": {
+      "key": "n02089973-English_foxhound/n02089973_2905.jpg",
+      "url": "/archive_images/n02089973-English_foxhound/n02089973_2905.jpg",
+      "breed_folder": "n02089973-English_foxhound",
+      "breed_name": "English Foxhound",
+      "pile": "train",
+      "label": 16
+    }
+  },
+  {
+    "pair_id": 493,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'",
+    "dhash_distance": 0,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089867-Walker_hound/n02089867_2880.jpg",
+      "url": "/archive_images/n02089867-Walker_hound/n02089867_2880.jpg",
+      "breed_folder": "n02089867-Walker_hound",
+      "breed_name": "Walker Hound",
+      "pile": "test",
+      "label": 15
+    },
+    "photo_b": {
+      "key": "n02089973-English_foxhound/n02089973_3160.jpg",
+      "url": "/archive_images/n02089973-English_foxhound/n02089973_3160.jpg",
+      "breed_folder": "n02089973-English_foxhound",
+      "breed_name": "English Foxhound",
+      "pile": "train",
+      "label": 16
+    }
+  },
+  {
+    "pair_id": 494,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089867-Walker_hound/n02089867_3108.jpg",
+      "url": "/archive_images/n02089867-Walker_hound/n02089867_3108.jpg",
+      "breed_folder": "n02089867-Walker_hound",
+      "breed_name": "Walker Hound",
+      "pile": "test",
+      "label": 15
+    },
+    "photo_b": {
+      "key": "n02089867-Walker_hound/n02089867_3177.jpg",
+      "url": "/archive_images/n02089867-Walker_hound/n02089867_3177.jpg",
+      "breed_folder": "n02089867-Walker_hound",
+      "breed_name": "Walker Hound",
+      "pile": "train",
+      "label": 15
+    }
+  },
+  {
+    "pair_id": 496,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'",
+    "dhash_distance": 2,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "test-test",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089867-Walker_hound/n02089867_3608.jpg",
+      "url": "/archive_images/n02089867-Walker_hound/n02089867_3608.jpg",
+      "breed_folder": "n02089867-Walker_hound",
+      "breed_name": "Walker Hound",
+      "pile": "test",
+      "label": 15
+    },
+    "photo_b": {
+      "key": "n02089973-English_foxhound/n02089973_1076.jpg",
+      "url": "/archive_images/n02089973-English_foxhound/n02089973_1076.jpg",
+      "breed_folder": "n02089973-English_foxhound",
+      "breed_name": "English Foxhound",
+      "pile": "test",
+      "label": 16
+    }
+  },
+  {
+    "pair_id": 497,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "val-val",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089867-Walker_hound/n02089867_3840.jpg",
+      "url": "/archive_images/n02089867-Walker_hound/n02089867_3840.jpg",
+      "breed_folder": "n02089867-Walker_hound",
+      "breed_name": "Walker Hound",
+      "pile": "val",
+      "label": 15
+    },
+    "photo_b": {
+      "key": "n02089973-English_foxhound/n02089973_2211.jpg",
+      "url": "/archive_images/n02089973-English_foxhound/n02089973_2211.jpg",
+      "breed_folder": "n02089973-English_foxhound",
+      "breed_name": "English Foxhound",
+      "pile": "val",
+      "label": 16
+    }
+  },
+  {
+    "pair_id": 498,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "val-val",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089867-Walker_hound/n02089867_4001.jpg",
+      "url": "/archive_images/n02089867-Walker_hound/n02089867_4001.jpg",
+      "breed_folder": "n02089867-Walker_hound",
+      "breed_name": "Walker Hound",
+      "pile": "val",
+      "label": 15
+    },
+    "photo_b": {
+      "key": "n02089973-English_foxhound/n02089973_1957.jpg",
+      "url": "/archive_images/n02089973-English_foxhound/n02089973_1957.jpg",
+      "breed_folder": "n02089973-English_foxhound",
+      "breed_name": "English Foxhound",
+      "pile": "val",
+      "label": 16
+    }
+  },
+  {
+    "pair_id": 508,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 4,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02089973-English_foxhound/n02089973_2045.jpg",
+      "url": "/archive_images/n02089973-English_foxhound/n02089973_2045.jpg",
+      "breed_folder": "n02089973-English_foxhound",
+      "breed_name": "English Foxhound",
+      "pile": "train",
+      "label": 16
+    },
+    "photo_b": {
+      "key": "n02089973-English_foxhound/n02089973_2608.jpg",
+      "url": "/archive_images/n02089973-English_foxhound/n02089973_2608.jpg",
+      "breed_folder": "n02089973-English_foxhound",
+      "breed_name": "English Foxhound",
+      "pile": "train",
+      "label": 16
+    }
+  },
+  {
+    "pair_id": 527,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02090379-redbone/n02090379_4667.jpg",
+      "url": "/archive_images/n02090379-redbone/n02090379_4667.jpg",
+      "breed_folder": "n02090379-redbone",
+      "breed_name": "Redbone",
+      "pile": "test",
+      "label": 17
+    },
+    "photo_b": {
+      "key": "n02090379-redbone/n02090379_855.jpg",
+      "url": "/archive_images/n02090379-redbone/n02090379_855.jpg",
+      "breed_folder": "n02090379-redbone",
+      "breed_name": "Redbone",
+      "pile": "train",
+      "label": 17
+    }
+  },
+  {
+    "pair_id": 557,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Whippet' vs 'Briard'",
+    "dhash_distance": 5,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02091134-whippet/n02091134_16337.jpg",
+      "url": "/archive_images/n02091134-whippet/n02091134_16337.jpg",
+      "breed_folder": "n02091134-whippet",
+      "breed_name": "Whippet",
+      "pile": "train",
+      "label": 21
+    },
+    "photo_b": {
+      "key": "n02105251-briard/n02105251_4659.jpg",
+      "url": "/archive_images/n02105251-briard/n02105251_4659.jpg",
+      "breed_folder": "n02105251-briard",
+      "breed_name": "Briard",
+      "pile": "train",
+      "label": 75
+    }
+  },
+  {
+    "pair_id": 558,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Whippet' vs 'Briard'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02091134-whippet/n02091134_16337.jpg",
+      "url": "/archive_images/n02091134-whippet/n02091134_16337.jpg",
+      "breed_folder": "n02091134-whippet",
+      "breed_name": "Whippet",
+      "pile": "train",
+      "label": 21
+    },
+    "photo_b": {
+      "key": "n02105251-briard/n02105251_7647.jpg",
+      "url": "/archive_images/n02105251-briard/n02105251_7647.jpg",
+      "breed_folder": "n02105251-briard",
+      "breed_name": "Briard",
+      "pile": "train",
+      "label": 75
+    }
+  },
+  {
+    "pair_id": 615,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 1,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02091635-otterhound/n02091635_4698.jpg",
+      "url": "/archive_images/n02091635-otterhound/n02091635_4698.jpg",
+      "breed_folder": "n02091635-otterhound",
+      "breed_name": "Otterhound",
+      "pile": "train",
+      "label": 24
+    },
+    "photo_b": {
+      "key": "n02091635-otterhound/n02091635_873.jpg",
+      "url": "/archive_images/n02091635-otterhound/n02091635_873.jpg",
+      "breed_folder": "n02091635-otterhound",
+      "breed_name": "Otterhound",
+      "pile": "test",
+      "label": 24
+    }
+  },
+  {
+    "pair_id": 626,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02091831-Saluki/n02091831_13767.jpg",
+      "url": "/archive_images/n02091831-Saluki/n02091831_13767.jpg",
+      "breed_folder": "n02091831-Saluki",
+      "breed_name": "Saluki",
+      "pile": "val",
+      "label": 25
+    },
+    "photo_b": {
+      "key": "n02091831-Saluki/n02091831_6323.jpg",
+      "url": "/archive_images/n02091831-Saluki/n02091831_6323.jpg",
+      "breed_folder": "n02091831-Saluki",
+      "breed_name": "Saluki",
+      "pile": "train",
+      "label": 25
+    }
+  },
+  {
+    "pair_id": 637,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02092002-Scottish_deerhound/n02092002_1767.jpg",
+      "url": "/archive_images/n02092002-Scottish_deerhound/n02092002_1767.jpg",
+      "breed_folder": "n02092002-Scottish_deerhound",
+      "breed_name": "Scottish Deerhound",
+      "pile": "train",
+      "label": 26
+    },
+    "photo_b": {
+      "key": "n02092002-Scottish_deerhound/n02092002_4745.jpg",
+      "url": "/archive_images/n02092002-Scottish_deerhound/n02092002_4745.jpg",
+      "breed_folder": "n02092002-Scottish_deerhound",
+      "breed_name": "Scottish Deerhound",
+      "pile": "train",
+      "label": 26
+    }
+  },
+  {
+    "pair_id": 642,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02092002-Scottish_deerhound/n02092002_2448.jpg",
+      "url": "/archive_images/n02092002-Scottish_deerhound/n02092002_2448.jpg",
+      "breed_folder": "n02092002-Scottish_deerhound",
+      "breed_name": "Scottish Deerhound",
+      "pile": "test",
+      "label": 26
+    },
+    "photo_b": {
+      "key": "n02092002-Scottish_deerhound/n02092002_6503.jpg",
+      "url": "/archive_images/n02092002-Scottish_deerhound/n02092002_6503.jpg",
+      "breed_folder": "n02092002-Scottish_deerhound",
+      "breed_name": "Scottish Deerhound",
+      "pile": "train",
+      "label": 26
+    }
+  },
+  {
+    "pair_id": 645,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02092002-Scottish_deerhound/n02092002_5504.jpg",
+      "url": "/archive_images/n02092002-Scottish_deerhound/n02092002_5504.jpg",
+      "breed_folder": "n02092002-Scottish_deerhound",
+      "breed_name": "Scottish Deerhound",
+      "pile": "train",
+      "label": 26
+    },
+    "photo_b": {
+      "key": "n02092002-Scottish_deerhound/n02092002_5557.jpg",
+      "url": "/archive_images/n02092002-Scottish_deerhound/n02092002_5557.jpg",
+      "breed_folder": "n02092002-Scottish_deerhound",
+      "breed_name": "Scottish Deerhound",
+      "pile": "train",
+      "label": 26
+    }
+  },
+  {
+    "pair_id": 703,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Staffordshire Bullterrier' vs 'American Staffordshire Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-val",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093256-Staffordshire_bullterrier/n02093256_4090.jpg",
+      "url": "/archive_images/n02093256-Staffordshire_bullterrier/n02093256_4090.jpg",
+      "breed_folder": "n02093256-Staffordshire_bullterrier",
+      "breed_name": "Staffordshire Bullterrier",
+      "pile": "test",
+      "label": 28
+    },
+    "photo_b": {
+      "key": "n02093428-American_Staffordshire_terrier/n02093428_5635.jpg",
+      "url": "/archive_images/n02093428-American_Staffordshire_terrier/n02093428_5635.jpg",
+      "breed_folder": "n02093428-American_Staffordshire_terrier",
+      "breed_name": "American Staffordshire Terrier",
+      "pile": "val",
+      "label": 29
+    }
+  },
+  {
+    "pair_id": 706,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Staffordshire Bullterrier' vs 'American Staffordshire Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-val",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093256-Staffordshire_bullterrier/n02093256_5988.jpg",
+      "url": "/archive_images/n02093256-Staffordshire_bullterrier/n02093256_5988.jpg",
+      "breed_folder": "n02093256-Staffordshire_bullterrier",
+      "breed_name": "Staffordshire Bullterrier",
+      "pile": "val",
+      "label": 28
+    },
+    "photo_b": {
+      "key": "n02093428-American_Staffordshire_terrier/n02093428_1378.jpg",
+      "url": "/archive_images/n02093428-American_Staffordshire_terrier/n02093428_1378.jpg",
+      "breed_folder": "n02093428-American_Staffordshire_terrier",
+      "breed_name": "American Staffordshire Terrier",
+      "pile": "test",
+      "label": 29
+    }
+  },
+  {
+    "pair_id": 707,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Staffordshire Bullterrier' vs 'American Staffordshire Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093256-Staffordshire_bullterrier/n02093256_6177.jpg",
+      "url": "/archive_images/n02093256-Staffordshire_bullterrier/n02093256_6177.jpg",
+      "breed_folder": "n02093256-Staffordshire_bullterrier",
+      "breed_name": "Staffordshire Bullterrier",
+      "pile": "train",
+      "label": 28
+    },
+    "photo_b": {
+      "key": "n02093428-American_Staffordshire_terrier/n02093428_8454.jpg",
+      "url": "/archive_images/n02093428-American_Staffordshire_terrier/n02093428_8454.jpg",
+      "breed_folder": "n02093428-American_Staffordshire_terrier",
+      "breed_name": "American Staffordshire Terrier",
+      "pile": "train",
+      "label": 29
+    }
+  },
+  {
+    "pair_id": 749,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093647-Bedlington_terrier/n02093647_1766.jpg",
+      "url": "/archive_images/n02093647-Bedlington_terrier/n02093647_1766.jpg",
+      "breed_folder": "n02093647-Bedlington_terrier",
+      "breed_name": "Bedlington Terrier",
+      "pile": "train",
+      "label": 30
+    },
+    "photo_b": {
+      "key": "n02093647-Bedlington_terrier/n02093647_3277.jpg",
+      "url": "/archive_images/n02093647-Bedlington_terrier/n02093647_3277.jpg",
+      "breed_folder": "n02093647-Bedlington_terrier",
+      "breed_name": "Bedlington Terrier",
+      "pile": "train",
+      "label": 30
+    }
+  },
+  {
+    "pair_id": 761,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093647-Bedlington_terrier/n02093647_2585.jpg",
+      "url": "/archive_images/n02093647-Bedlington_terrier/n02093647_2585.jpg",
+      "breed_folder": "n02093647-Bedlington_terrier",
+      "breed_name": "Bedlington Terrier",
+      "pile": "train",
+      "label": 30
+    },
+    "photo_b": {
+      "key": "n02093647-Bedlington_terrier/n02093647_518.jpg",
+      "url": "/archive_images/n02093647-Bedlington_terrier/n02093647_518.jpg",
+      "breed_folder": "n02093647-Bedlington_terrier",
+      "breed_name": "Bedlington Terrier",
+      "pile": "test",
+      "label": 30
+    }
+  },
+  {
+    "pair_id": 762,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'test'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093647-Bedlington_terrier/n02093647_2626.jpg",
+      "url": "/archive_images/n02093647-Bedlington_terrier/n02093647_2626.jpg",
+      "breed_folder": "n02093647-Bedlington_terrier",
+      "breed_name": "Bedlington Terrier",
+      "pile": "val",
+      "label": 30
+    },
+    "photo_b": {
+      "key": "n02093647-Bedlington_terrier/n02093647_2687.jpg",
+      "url": "/archive_images/n02093647-Bedlington_terrier/n02093647_2687.jpg",
+      "breed_folder": "n02093647-Bedlington_terrier",
+      "breed_name": "Bedlington Terrier",
+      "pile": "test",
+      "label": 30
+    }
+  },
+  {
+    "pair_id": 793,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Kerry Blue Terrier' vs 'Wire-Haired Fox Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093859-Kerry_blue_terrier/n02093859_1697.jpg",
+      "url": "/archive_images/n02093859-Kerry_blue_terrier/n02093859_1697.jpg",
+      "breed_folder": "n02093859-Kerry_blue_terrier",
+      "breed_name": "Kerry Blue Terrier",
+      "pile": "train",
+      "label": 32
+    },
+    "photo_b": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_3495.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_3495.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "train",
+      "label": 37
+    }
+  },
+  {
+    "pair_id": 799,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 5,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093859-Kerry_blue_terrier/n02093859_2579.jpg",
+      "url": "/archive_images/n02093859-Kerry_blue_terrier/n02093859_2579.jpg",
+      "breed_folder": "n02093859-Kerry_blue_terrier",
+      "breed_name": "Kerry Blue Terrier",
+      "pile": "train",
+      "label": 32
+    },
+    "photo_b": {
+      "key": "n02093859-Kerry_blue_terrier/n02093859_998.jpg",
+      "url": "/archive_images/n02093859-Kerry_blue_terrier/n02093859_998.jpg",
+      "breed_folder": "n02093859-Kerry_blue_terrier",
+      "breed_name": "Kerry Blue Terrier",
+      "pile": "train",
+      "label": 32
+    }
+  },
+  {
+    "pair_id": 800,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093859-Kerry_blue_terrier/n02093859_3209.jpg",
+      "url": "/archive_images/n02093859-Kerry_blue_terrier/n02093859_3209.jpg",
+      "breed_folder": "n02093859-Kerry_blue_terrier",
+      "breed_name": "Kerry Blue Terrier",
+      "pile": "val",
+      "label": 32
+    },
+    "photo_b": {
+      "key": "n02093859-Kerry_blue_terrier/n02093859_324.jpg",
+      "url": "/archive_images/n02093859-Kerry_blue_terrier/n02093859_324.jpg",
+      "breed_folder": "n02093859-Kerry_blue_terrier",
+      "breed_name": "Kerry Blue Terrier",
+      "pile": "train",
+      "label": 32
+    }
+  },
+  {
+    "pair_id": 814,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Irish Terrier' vs 'Wire-Haired Fox Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "test-test",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093991-Irish_terrier/n02093991_114.jpg",
+      "url": "/archive_images/n02093991-Irish_terrier/n02093991_114.jpg",
+      "breed_folder": "n02093991-Irish_terrier",
+      "breed_name": "Irish Terrier",
+      "pile": "test",
+      "label": 33
+    },
+    "photo_b": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_80.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_80.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "test",
+      "label": 37
+    }
+  },
+  {
+    "pair_id": 816,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02093991-Irish_terrier/n02093991_2923.jpg",
+      "url": "/archive_images/n02093991-Irish_terrier/n02093991_2923.jpg",
+      "breed_folder": "n02093991-Irish_terrier",
+      "breed_name": "Irish Terrier",
+      "pile": "test",
+      "label": 33
+    },
+    "photo_b": {
+      "key": "n02093991-Irish_terrier/n02093991_4670.jpg",
+      "url": "/archive_images/n02093991-Irish_terrier/n02093991_4670.jpg",
+      "breed_folder": "n02093991-Irish_terrier",
+      "breed_name": "Irish Terrier",
+      "pile": "train",
+      "label": 33
+    }
+  },
+  {
+    "pair_id": 821,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 2,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02094114-Norfolk_terrier/n02094114_1020.jpg",
+      "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_1020.jpg",
+      "breed_folder": "n02094114-Norfolk_terrier",
+      "breed_name": "Norfolk Terrier",
+      "pile": "train",
+      "label": 34
+    },
+    "photo_b": {
+      "key": "n02094114-Norfolk_terrier/n02094114_745.jpg",
+      "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_745.jpg",
+      "breed_folder": "n02094114-Norfolk_terrier",
+      "breed_name": "Norfolk Terrier",
+      "pile": "train",
+      "label": 34
+    }
+  },
+  {
+    "pair_id": 822,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Norfolk Terrier' vs 'Norwich Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02094114-Norfolk_terrier/n02094114_1020.jpg",
+      "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_1020.jpg",
+      "breed_folder": "n02094114-Norfolk_terrier",
+      "breed_name": "Norfolk Terrier",
+      "pile": "train",
+      "label": 34
+    },
+    "photo_b": {
+      "key": "n02094258-Norwich_terrier/n02094258_880.jpg",
+      "url": "/archive_images/n02094258-Norwich_terrier/n02094258_880.jpg",
+      "breed_folder": "n02094258-Norwich_terrier",
+      "breed_name": "Norwich Terrier",
+      "pile": "train",
+      "label": 35
+    }
+  },
+  {
+    "pair_id": 828,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 4,
+    "phash_distance": 8,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02094114-Norfolk_terrier/n02094114_1676.jpg",
+      "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_1676.jpg",
+      "breed_folder": "n02094114-Norfolk_terrier",
+      "breed_name": "Norfolk Terrier",
+      "pile": "train",
+      "label": 34
+    },
+    "photo_b": {
+      "key": "n02094114-Norfolk_terrier/n02094114_3172.jpg",
+      "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_3172.jpg",
+      "breed_folder": "n02094114-Norfolk_terrier",
+      "breed_name": "Norfolk Terrier",
+      "pile": "train",
+      "label": 34
+    }
+  },
+  {
+    "pair_id": 829,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 5,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02094114-Norfolk_terrier/n02094114_1676.jpg",
+      "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_1676.jpg",
+      "breed_folder": "n02094114-Norfolk_terrier",
+      "breed_name": "Norfolk Terrier",
+      "pile": "train",
+      "label": 34
+    },
+    "photo_b": {
+      "key": "n02094114-Norfolk_terrier/n02094114_754.jpg",
+      "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_754.jpg",
+      "breed_folder": "n02094114-Norfolk_terrier",
+      "breed_name": "Norfolk Terrier",
+      "pile": "train",
+      "label": 34
+    }
+  },
+  {
+    "pair_id": 830,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Norfolk Terrier' vs 'Norwich Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02094114-Norfolk_terrier/n02094114_1696.jpg",
+      "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_1696.jpg",
+      "breed_folder": "n02094114-Norfolk_terrier",
+      "breed_name": "Norfolk Terrier",
+      "pile": "train",
+      "label": 34
+    },
+    "photo_b": {
+      "key": "n02094258-Norwich_terrier/n02094258_1408.jpg",
+      "url": "/archive_images/n02094258-Norwich_terrier/n02094258_1408.jpg",
+      "breed_folder": "n02094258-Norwich_terrier",
+      "breed_name": "Norwich Terrier",
+      "pile": "train",
+      "label": 35
+    }
+  },
+  {
+    "pair_id": 853,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Norfolk Terrier' vs 'Norwich Terrier'",
+    "dhash_distance": 2,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02094114-Norfolk_terrier/n02094114_745.jpg",
+      "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_745.jpg",
+      "breed_folder": "n02094114-Norfolk_terrier",
+      "breed_name": "Norfolk Terrier",
+      "pile": "train",
+      "label": 34
+    },
+    "photo_b": {
+      "key": "n02094258-Norwich_terrier/n02094258_880.jpg",
+      "url": "/archive_images/n02094258-Norwich_terrier/n02094258_880.jpg",
+      "breed_folder": "n02094258-Norwich_terrier",
+      "breed_name": "Norwich Terrier",
+      "pile": "train",
+      "label": 35
+    }
+  },
+  {
+    "pair_id": 890,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'val' split",
+    "dhash_distance": 1,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "val-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_1820.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_1820.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "val",
+      "label": 37
+    },
+    "photo_b": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_1894.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_1894.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "val",
+      "label": 37
+    }
+  },
+  {
+    "pair_id": 895,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Wire-Haired Fox Terrier' vs 'Lakeland Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_2038.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_2038.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "train",
+      "label": 37
+    },
+    "photo_b": {
+      "key": "n02095570-Lakeland_terrier/n02095570_95.jpg",
+      "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_95.jpg",
+      "breed_folder": "n02095570-Lakeland_terrier",
+      "breed_name": "Lakeland Terrier",
+      "pile": "train",
+      "label": 38
+    }
+  },
+  {
+    "pair_id": 898,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Wire-Haired Fox Terrier' vs 'Lakeland Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_2754.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_2754.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "train",
+      "label": 37
+    },
+    "photo_b": {
+      "key": "n02095570-Lakeland_terrier/n02095570_3101.jpg",
+      "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_3101.jpg",
+      "breed_folder": "n02095570-Lakeland_terrier",
+      "breed_name": "Lakeland Terrier",
+      "pile": "train",
+      "label": 38
+    }
+  },
+  {
+    "pair_id": 899,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Wire-Haired Fox Terrier' vs 'Lakeland Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_2964.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_2964.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "train",
+      "label": 37
+    },
+    "photo_b": {
+      "key": "n02095570-Lakeland_terrier/n02095570_5404.jpg",
+      "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_5404.jpg",
+      "breed_folder": "n02095570-Lakeland_terrier",
+      "breed_name": "Lakeland Terrier",
+      "pile": "train",
+      "label": 38
+    }
+  },
+  {
+    "pair_id": 900,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Wire-Haired Fox Terrier' vs 'Sealyham Terrier'",
+    "dhash_distance": 1,
+    "phash_distance": 0,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_3166.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_3166.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "train",
+      "label": 37
+    },
+    "photo_b": {
+      "key": "n02095889-Sealyham_terrier/n02095889_1820.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_1820.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "train",
+      "label": 39
+    }
+  },
+  {
+    "pair_id": 901,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_3189.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_3189.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "train",
+      "label": 37
+    },
+    "photo_b": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_3227.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_3227.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "val",
+      "label": 37
+    }
+  },
+  {
+    "pair_id": 903,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Wire-Haired Fox Terrier' vs 'Lakeland Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095314-wire-haired_fox_terrier/n02095314_3509.jpg",
+      "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_3509.jpg",
+      "breed_folder": "n02095314-wire-haired_fox_terrier",
+      "breed_name": "Wire-Haired Fox Terrier",
+      "pile": "train",
+      "label": 37
+    },
+    "photo_b": {
+      "key": "n02095570-Lakeland_terrier/n02095570_6443.jpg",
+      "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_6443.jpg",
+      "breed_folder": "n02095570-Lakeland_terrier",
+      "breed_name": "Lakeland Terrier",
+      "pile": "train",
+      "label": 38
+    }
+  },
+  {
+    "pair_id": 913,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 3,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095570-Lakeland_terrier/n02095570_1482.jpg",
+      "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_1482.jpg",
+      "breed_folder": "n02095570-Lakeland_terrier",
+      "breed_name": "Lakeland Terrier",
+      "pile": "train",
+      "label": 38
+    },
+    "photo_b": {
+      "key": "n02095570-Lakeland_terrier/n02095570_845.jpg",
+      "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_845.jpg",
+      "breed_folder": "n02095570-Lakeland_terrier",
+      "breed_name": "Lakeland Terrier",
+      "pile": "val",
+      "label": 38
+    }
+  },
+  {
+    "pair_id": 915,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Lakeland Terrier' vs 'Sealyham Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095570-Lakeland_terrier/n02095570_1575.jpg",
+      "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_1575.jpg",
+      "breed_folder": "n02095570-Lakeland_terrier",
+      "breed_name": "Lakeland Terrier",
+      "pile": "train",
+      "label": 38
+    },
+    "photo_b": {
+      "key": "n02095889-Sealyham_terrier/n02095889_1582.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_1582.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "val",
+      "label": 39
+    }
+  },
+  {
+    "pair_id": 920,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'test' split",
+    "dhash_distance": 4,
+    "phash_distance": 8,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "test-test",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095570-Lakeland_terrier/n02095570_2418.jpg",
+      "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_2418.jpg",
+      "breed_folder": "n02095570-Lakeland_terrier",
+      "breed_name": "Lakeland Terrier",
+      "pile": "test",
+      "label": 38
+    },
+    "photo_b": {
+      "key": "n02095570-Lakeland_terrier/n02095570_3711.jpg",
+      "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_3711.jpg",
+      "breed_folder": "n02095570-Lakeland_terrier",
+      "breed_name": "Lakeland Terrier",
+      "pile": "test",
+      "label": 38
+    }
+  },
+  {
+    "pair_id": 942,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095889-Sealyham_terrier/n02095889_1019.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_1019.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "train",
+      "label": 39
+    },
+    "photo_b": {
+      "key": "n02095889-Sealyham_terrier/n02095889_47.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_47.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "test",
+      "label": 39
+    }
+  },
+  {
+    "pair_id": 949,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095889-Sealyham_terrier/n02095889_2031.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_2031.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "test",
+      "label": 39
+    },
+    "photo_b": {
+      "key": "n02095889-Sealyham_terrier/n02095889_5011.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_5011.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "train",
+      "label": 39
+    }
+  },
+  {
+    "pair_id": 950,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095889-Sealyham_terrier/n02095889_2134.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_2134.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "train",
+      "label": 39
+    },
+    "photo_b": {
+      "key": "n02095889-Sealyham_terrier/n02095889_2471.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_2471.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "test",
+      "label": 39
+    }
+  },
+  {
+    "pair_id": 951,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 5,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095889-Sealyham_terrier/n02095889_2162.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_2162.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "val",
+      "label": 39
+    },
+    "photo_b": {
+      "key": "n02095889-Sealyham_terrier/n02095889_4649.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_4649.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "train",
+      "label": 39
+    }
+  },
+  {
+    "pair_id": 954,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02095889-Sealyham_terrier/n02095889_3354.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_3354.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "train",
+      "label": 39
+    },
+    "photo_b": {
+      "key": "n02095889-Sealyham_terrier/n02095889_6458.jpg",
+      "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_6458.jpg",
+      "breed_folder": "n02095889-Sealyham_terrier",
+      "breed_name": "Sealyham Terrier",
+      "pile": "train",
+      "label": 39
+    }
+  },
+  {
+    "pair_id": 1010,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 0,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02096437-Dandie_Dinmont/n02096437_2580.jpg",
+      "url": "/archive_images/n02096437-Dandie_Dinmont/n02096437_2580.jpg",
+      "breed_folder": "n02096437-Dandie_Dinmont",
+      "breed_name": "Dandie Dinmont",
+      "pile": "train",
+      "label": 43
+    },
+    "photo_b": {
+      "key": "n02096437-Dandie_Dinmont/n02096437_3112.jpg",
+      "url": "/archive_images/n02096437-Dandie_Dinmont/n02096437_3112.jpg",
+      "breed_folder": "n02096437-Dandie_Dinmont",
+      "breed_name": "Dandie Dinmont",
+      "pile": "val",
+      "label": 43
+    }
+  },
+  {
+    "pair_id": 1024,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Miniature Schnauzer' vs 'Standard Schnauzer'",
+    "dhash_distance": 1,
+    "phash_distance": 0,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02097047-miniature_schnauzer/n02097047_2426.jpg",
+      "url": "/archive_images/n02097047-miniature_schnauzer/n02097047_2426.jpg",
+      "breed_folder": "n02097047-miniature_schnauzer",
+      "breed_name": "Miniature Schnauzer",
+      "pile": "train",
+      "label": 45
+    },
+    "photo_b": {
+      "key": "n02097209-standard_schnauzer/n02097209_1170.jpg",
+      "url": "/archive_images/n02097209-standard_schnauzer/n02097209_1170.jpg",
+      "breed_folder": "n02097209-standard_schnauzer",
+      "breed_name": "Standard Schnauzer",
+      "pile": "test",
+      "label": 47
+    }
+  },
+  {
+    "pair_id": 1027,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Miniature Schnauzer' vs 'Standard Schnauzer'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02097047-miniature_schnauzer/n02097047_951.jpg",
+      "url": "/archive_images/n02097047-miniature_schnauzer/n02097047_951.jpg",
+      "breed_folder": "n02097047-miniature_schnauzer",
+      "breed_name": "Miniature Schnauzer",
+      "pile": "train",
+      "label": 45
+    },
+    "photo_b": {
+      "key": "n02097209-standard_schnauzer/n02097209_583.jpg",
+      "url": "/archive_images/n02097209-standard_schnauzer/n02097209_583.jpg",
+      "breed_folder": "n02097209-standard_schnauzer",
+      "breed_name": "Standard Schnauzer",
+      "pile": "train",
+      "label": 47
+    }
+  },
+  {
+    "pair_id": 1033,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02097130-giant_schnauzer/n02097130_4193.jpg",
+      "url": "/archive_images/n02097130-giant_schnauzer/n02097130_4193.jpg",
+      "breed_folder": "n02097130-giant_schnauzer",
+      "breed_name": "Giant Schnauzer",
+      "pile": "train",
+      "label": 46
+    },
+    "photo_b": {
+      "key": "n02097130-giant_schnauzer/n02097130_5576.jpg",
+      "url": "/archive_images/n02097130-giant_schnauzer/n02097130_5576.jpg",
+      "breed_folder": "n02097130-giant_schnauzer",
+      "breed_name": "Giant Schnauzer",
+      "pile": "train",
+      "label": 46
+    }
+  },
+  {
+    "pair_id": 1036,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Giant Schnauzer' vs 'Standard Schnauzer'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02097130-giant_schnauzer/n02097130_857.jpg",
+      "url": "/archive_images/n02097130-giant_schnauzer/n02097130_857.jpg",
+      "breed_folder": "n02097130-giant_schnauzer",
+      "breed_name": "Giant Schnauzer",
+      "pile": "test",
+      "label": 46
+    },
+    "photo_b": {
+      "key": "n02097209-standard_schnauzer/n02097209_585.jpg",
+      "url": "/archive_images/n02097209-standard_schnauzer/n02097209_585.jpg",
+      "breed_folder": "n02097209-standard_schnauzer",
+      "breed_name": "Standard Schnauzer",
+      "pile": "train",
+      "label": 47
+    }
+  },
+  {
+    "pair_id": 1040,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 3,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02097209-standard_schnauzer/n02097209_2992.jpg",
+      "url": "/archive_images/n02097209-standard_schnauzer/n02097209_2992.jpg",
+      "breed_folder": "n02097209-standard_schnauzer",
+      "breed_name": "Standard Schnauzer",
+      "pile": "test",
+      "label": 47
+    },
+    "photo_b": {
+      "key": "n02097209-standard_schnauzer/n02097209_3831.jpg",
+      "url": "/archive_images/n02097209-standard_schnauzer/n02097209_3831.jpg",
+      "breed_folder": "n02097209-standard_schnauzer",
+      "breed_name": "Standard Schnauzer",
+      "pile": "train",
+      "label": 47
+    }
+  },
+  {
+    "pair_id": 1045,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Scotch Terrier' vs 'West Highland White Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "test-test",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02097298-Scotch_terrier/n02097298_2083.jpg",
+      "url": "/archive_images/n02097298-Scotch_terrier/n02097298_2083.jpg",
+      "breed_folder": "n02097298-Scotch_terrier",
+      "breed_name": "Scotch Terrier",
+      "pile": "test",
+      "label": 48
+    },
+    "photo_b": {
+      "key": "n02098286-West_Highland_white_terrier/n02098286_830.jpg",
+      "url": "/archive_images/n02098286-West_Highland_white_terrier/n02098286_830.jpg",
+      "breed_folder": "n02098286-West_Highland_white_terrier",
+      "breed_name": "West Highland White Terrier",
+      "pile": "test",
+      "label": 52
+    }
+  },
+  {
+    "pair_id": 1064,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 5,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02097474-Tibetan_terrier/n02097474_2113.jpg",
+      "url": "/archive_images/n02097474-Tibetan_terrier/n02097474_2113.jpg",
+      "breed_folder": "n02097474-Tibetan_terrier",
+      "breed_name": "Tibetan Terrier",
+      "pile": "train",
+      "label": 49
+    },
+    "photo_b": {
+      "key": "n02097474-Tibetan_terrier/n02097474_4287.jpg",
+      "url": "/archive_images/n02097474-Tibetan_terrier/n02097474_4287.jpg",
+      "breed_folder": "n02097474-Tibetan_terrier",
+      "breed_name": "Tibetan Terrier",
+      "pile": "train",
+      "label": 49
+    }
+  },
+  {
+    "pair_id": 1065,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Tibetan Terrier' vs 'Soft-Coated Wheaten Terrier'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02097474-Tibetan_terrier/n02097474_4907.jpg",
+      "url": "/archive_images/n02097474-Tibetan_terrier/n02097474_4907.jpg",
+      "breed_folder": "n02097474-Tibetan_terrier",
+      "breed_name": "Tibetan Terrier",
+      "pile": "train",
+      "label": 49
+    },
+    "photo_b": {
+      "key": "n02098105-soft-coated_wheaten_terrier/n02098105_2456.jpg",
+      "url": "/archive_images/n02098105-soft-coated_wheaten_terrier/n02098105_2456.jpg",
+      "breed_folder": "n02098105-soft-coated_wheaten_terrier",
+      "breed_name": "Soft-Coated Wheaten Terrier",
+      "pile": "train",
+      "label": 51
+    }
+  },
+  {
+    "pair_id": 1066,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 4,
+    "phash_distance": 10,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02097474-Tibetan_terrier/n02097474_494.jpg",
+      "url": "/archive_images/n02097474-Tibetan_terrier/n02097474_494.jpg",
+      "breed_folder": "n02097474-Tibetan_terrier",
+      "breed_name": "Tibetan Terrier",
+      "pile": "test",
+      "label": 49
+    },
+    "photo_b": {
+      "key": "n02097474-Tibetan_terrier/n02097474_6306.jpg",
+      "url": "/archive_images/n02097474-Tibetan_terrier/n02097474_6306.jpg",
+      "breed_folder": "n02097474-Tibetan_terrier",
+      "breed_name": "Tibetan Terrier",
+      "pile": "train",
+      "label": 49
+    }
+  },
+  {
+    "pair_id": 1081,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02097658-silky_terrier/n02097658_4201.jpg",
+      "url": "/archive_images/n02097658-silky_terrier/n02097658_4201.jpg",
+      "breed_folder": "n02097658-silky_terrier",
+      "breed_name": "Silky Terrier",
+      "pile": "train",
+      "label": 50
+    },
+    "photo_b": {
+      "key": "n02097658-silky_terrier/n02097658_8018.jpg",
+      "url": "/archive_images/n02097658-silky_terrier/n02097658_8018.jpg",
+      "breed_folder": "n02097658-silky_terrier",
+      "breed_name": "Silky Terrier",
+      "pile": "train",
+      "label": 50
+    }
+  },
+  {
+    "pair_id": 1083,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02098105-soft-coated_wheaten_terrier/n02098105_1090.jpg",
+      "url": "/archive_images/n02098105-soft-coated_wheaten_terrier/n02098105_1090.jpg",
+      "breed_folder": "n02098105-soft-coated_wheaten_terrier",
+      "breed_name": "Soft-Coated Wheaten Terrier",
+      "pile": "train",
+      "label": 51
+    },
+    "photo_b": {
+      "key": "n02098105-soft-coated_wheaten_terrier/n02098105_2945.jpg",
+      "url": "/archive_images/n02098105-soft-coated_wheaten_terrier/n02098105_2945.jpg",
+      "breed_folder": "n02098105-soft-coated_wheaten_terrier",
+      "breed_name": "Soft-Coated Wheaten Terrier",
+      "pile": "val",
+      "label": 51
+    }
+  },
+  {
+    "pair_id": 1145,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02099429-curly-coated_retriever/n02099429_2263.jpg",
+      "url": "/archive_images/n02099429-curly-coated_retriever/n02099429_2263.jpg",
+      "breed_folder": "n02099429-curly-coated_retriever",
+      "breed_name": "Curly-Coated Retriever",
+      "pile": "train",
+      "label": 55
+    },
+    "photo_b": {
+      "key": "n02099429-curly-coated_retriever/n02099429_3513.jpg",
+      "url": "/archive_images/n02099429-curly-coated_retriever/n02099429_3513.jpg",
+      "breed_folder": "n02099429-curly-coated_retriever",
+      "breed_name": "Curly-Coated Retriever",
+      "pile": "train",
+      "label": 55
+    }
+  },
+  {
+    "pair_id": 1179,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 5,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02099712-Labrador_retriever/n02099712_5689.jpg",
+      "url": "/archive_images/n02099712-Labrador_retriever/n02099712_5689.jpg",
+      "breed_folder": "n02099712-Labrador_retriever",
+      "breed_name": "Labrador Retriever",
+      "pile": "train",
+      "label": 57
+    },
+    "photo_b": {
+      "key": "n02099712-Labrador_retriever/n02099712_6619.jpg",
+      "url": "/archive_images/n02099712-Labrador_retriever/n02099712_6619.jpg",
+      "breed_folder": "n02099712-Labrador_retriever",
+      "breed_name": "Labrador Retriever",
+      "pile": "val",
+      "label": 57
+    }
+  },
+  {
+    "pair_id": 1222,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02100735-English_setter/n02100735_2684.jpg",
+      "url": "/archive_images/n02100735-English_setter/n02100735_2684.jpg",
+      "breed_folder": "n02100735-English_setter",
+      "breed_name": "English Setter",
+      "pile": "train",
+      "label": 61
+    },
+    "photo_b": {
+      "key": "n02100735-English_setter/n02100735_5988.jpg",
+      "url": "/archive_images/n02100735-English_setter/n02100735_5988.jpg",
+      "breed_folder": "n02100735-English_setter",
+      "breed_name": "English Setter",
+      "pile": "train",
+      "label": 61
+    }
+  },
+  {
+    "pair_id": 1255,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 0,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02101556-clumber/n02101556_4965.jpg",
+      "url": "/archive_images/n02101556-clumber/n02101556_4965.jpg",
+      "breed_folder": "n02101556-clumber",
+      "breed_name": "Clumber",
+      "pile": "train",
+      "label": 65
+    },
+    "photo_b": {
+      "key": "n02101556-clumber/n02101556_4994.jpg",
+      "url": "/archive_images/n02101556-clumber/n02101556_4994.jpg",
+      "breed_folder": "n02101556-clumber",
+      "breed_name": "Clumber",
+      "pile": "test",
+      "label": 65
+    }
+  },
+  {
+    "pair_id": 1256,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02101556-clumber/n02101556_5512.jpg",
+      "url": "/archive_images/n02101556-clumber/n02101556_5512.jpg",
+      "breed_folder": "n02101556-clumber",
+      "breed_name": "Clumber",
+      "pile": "train",
+      "label": 65
+    },
+    "photo_b": {
+      "key": "n02101556-clumber/n02101556_5903.jpg",
+      "url": "/archive_images/n02101556-clumber/n02101556_5903.jpg",
+      "breed_folder": "n02101556-clumber",
+      "breed_name": "Clumber",
+      "pile": "train",
+      "label": 65
+    }
+  },
+  {
+    "pair_id": 1263,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102177-Welsh_springer_spaniel/n02102177_1999.jpg",
+      "url": "/archive_images/n02102177-Welsh_springer_spaniel/n02102177_1999.jpg",
+      "breed_folder": "n02102177-Welsh_springer_spaniel",
+      "breed_name": "Welsh Springer Spaniel",
+      "pile": "train",
+      "label": 67
+    },
+    "photo_b": {
+      "key": "n02102177-Welsh_springer_spaniel/n02102177_2388.jpg",
+      "url": "/archive_images/n02102177-Welsh_springer_spaniel/n02102177_2388.jpg",
+      "breed_folder": "n02102177-Welsh_springer_spaniel",
+      "breed_name": "Welsh Springer Spaniel",
+      "pile": "val",
+      "label": 67
+    }
+  },
+  {
+    "pair_id": 1287,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102480-Sussex_spaniel/n02102480_101.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_101.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "test",
+      "label": 69
+    },
+    "photo_b": {
+      "key": "n02102480-Sussex_spaniel/n02102480_6229.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_6229.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "train",
+      "label": 69
+    }
+  },
+  {
+    "pair_id": 1289,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102480-Sussex_spaniel/n02102480_2041.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_2041.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "train",
+      "label": 69
+    },
+    "photo_b": {
+      "key": "n02102480-Sussex_spaniel/n02102480_3436.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_3436.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "train",
+      "label": 69
+    }
+  },
+  {
+    "pair_id": 1292,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 5,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102480-Sussex_spaniel/n02102480_4322.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_4322.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "train",
+      "label": 69
+    },
+    "photo_b": {
+      "key": "n02102480-Sussex_spaniel/n02102480_6593.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_6593.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "train",
+      "label": 69
+    }
+  },
+  {
+    "pair_id": 1294,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 4,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102480-Sussex_spaniel/n02102480_4373.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_4373.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "train",
+      "label": 69
+    },
+    "photo_b": {
+      "key": "n02102480-Sussex_spaniel/n02102480_5651.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_5651.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "test",
+      "label": 69
+    }
+  },
+  {
+    "pair_id": 1295,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 4,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102480-Sussex_spaniel/n02102480_5031.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_5031.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "train",
+      "label": 69
+    },
+    "photo_b": {
+      "key": "n02102480-Sussex_spaniel/n02102480_5734.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_5734.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "test",
+      "label": 69
+    }
+  },
+  {
+    "pair_id": 1297,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 5,
+    "phash_distance": 8,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102480-Sussex_spaniel/n02102480_5031.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_5031.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "train",
+      "label": 69
+    },
+    "photo_b": {
+      "key": "n02102480-Sussex_spaniel/n02102480_8240.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_8240.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "val",
+      "label": 69
+    }
+  },
+  {
+    "pair_id": 1298,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102480-Sussex_spaniel/n02102480_5158.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_5158.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "val",
+      "label": 69
+    },
+    "photo_b": {
+      "key": "n02102480-Sussex_spaniel/n02102480_6027.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_6027.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "train",
+      "label": 69
+    }
+  },
+  {
+    "pair_id": 1299,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'val'",
+    "dhash_distance": 1,
+    "phash_distance": 10,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102480-Sussex_spaniel/n02102480_5734.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_5734.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "test",
+      "label": 69
+    },
+    "photo_b": {
+      "key": "n02102480-Sussex_spaniel/n02102480_8240.jpg",
+      "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_8240.jpg",
+      "breed_folder": "n02102480-Sussex_spaniel",
+      "breed_name": "Sussex Spaniel",
+      "pile": "val",
+      "label": 69
+    }
+  },
+  {
+    "pair_id": 1308,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102973-Irish_water_spaniel/n02102973_1615.jpg",
+      "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_1615.jpg",
+      "breed_folder": "n02102973-Irish_water_spaniel",
+      "breed_name": "Irish Water Spaniel",
+      "pile": "train",
+      "label": 70
+    },
+    "photo_b": {
+      "key": "n02102973-Irish_water_spaniel/n02102973_1714.jpg",
+      "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_1714.jpg",
+      "breed_folder": "n02102973-Irish_water_spaniel",
+      "breed_name": "Irish Water Spaniel",
+      "pile": "train",
+      "label": 70
+    }
+  },
+  {
+    "pair_id": 1309,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102973-Irish_water_spaniel/n02102973_1723.jpg",
+      "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_1723.jpg",
+      "breed_folder": "n02102973-Irish_water_spaniel",
+      "breed_name": "Irish Water Spaniel",
+      "pile": "train",
+      "label": 70
+    },
+    "photo_b": {
+      "key": "n02102973-Irish_water_spaniel/n02102973_3564.jpg",
+      "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_3564.jpg",
+      "breed_folder": "n02102973-Irish_water_spaniel",
+      "breed_name": "Irish Water Spaniel",
+      "pile": "train",
+      "label": 70
+    }
+  },
+  {
+    "pair_id": 1311,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102973-Irish_water_spaniel/n02102973_2442.jpg",
+      "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_2442.jpg",
+      "breed_folder": "n02102973-Irish_water_spaniel",
+      "breed_name": "Irish Water Spaniel",
+      "pile": "val",
+      "label": 70
+    },
+    "photo_b": {
+      "key": "n02102973-Irish_water_spaniel/n02102973_541.jpg",
+      "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_541.jpg",
+      "breed_folder": "n02102973-Irish_water_spaniel",
+      "breed_name": "Irish Water Spaniel",
+      "pile": "train",
+      "label": 70
+    }
+  },
+  {
+    "pair_id": 1312,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02102973-Irish_water_spaniel/n02102973_2645.jpg",
+      "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_2645.jpg",
+      "breed_folder": "n02102973-Irish_water_spaniel",
+      "breed_name": "Irish Water Spaniel",
+      "pile": "val",
+      "label": 70
+    },
+    "photo_b": {
+      "key": "n02102973-Irish_water_spaniel/n02102973_4469.jpg",
+      "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_4469.jpg",
+      "breed_folder": "n02102973-Irish_water_spaniel",
+      "breed_name": "Irish Water Spaniel",
+      "pile": "train",
+      "label": 70
+    }
+  },
+  {
+    "pair_id": 1327,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 3,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02104029-kuvasz/n02104029_2417.jpg",
+      "url": "/archive_images/n02104029-kuvasz/n02104029_2417.jpg",
+      "breed_folder": "n02104029-kuvasz",
+      "breed_name": "Kuvasz",
+      "pile": "train",
+      "label": 71
+    },
+    "photo_b": {
+      "key": "n02104029-kuvasz/n02104029_690.jpg",
+      "url": "/archive_images/n02104029-kuvasz/n02104029_690.jpg",
+      "breed_folder": "n02104029-kuvasz",
+      "breed_name": "Kuvasz",
+      "pile": "train",
+      "label": 71
+    }
+  },
+  {
+    "pair_id": 1333,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 3,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02104029-kuvasz/n02104029_3526.jpg",
+      "url": "/archive_images/n02104029-kuvasz/n02104029_3526.jpg",
+      "breed_folder": "n02104029-kuvasz",
+      "breed_name": "Kuvasz",
+      "pile": "train",
+      "label": 71
+    },
+    "photo_b": {
+      "key": "n02104029-kuvasz/n02104029_4392.jpg",
+      "url": "/archive_images/n02104029-kuvasz/n02104029_4392.jpg",
+      "breed_folder": "n02104029-kuvasz",
+      "breed_name": "Kuvasz",
+      "pile": "train",
+      "label": 71
+    }
+  },
+  {
+    "pair_id": 1339,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02104365-schipperke/n02104365_4190.jpg",
+      "url": "/archive_images/n02104365-schipperke/n02104365_4190.jpg",
+      "breed_folder": "n02104365-schipperke",
+      "breed_name": "Schipperke",
+      "pile": "train",
+      "label": 72
+    },
+    "photo_b": {
+      "key": "n02104365-schipperke/n02104365_5670.jpg",
+      "url": "/archive_images/n02104365-schipperke/n02104365_5670.jpg",
+      "breed_folder": "n02104365-schipperke",
+      "breed_name": "Schipperke",
+      "pile": "train",
+      "label": 72
+    }
+  },
+  {
+    "pair_id": 1340,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02104365-schipperke/n02104365_5740.jpg",
+      "url": "/archive_images/n02104365-schipperke/n02104365_5740.jpg",
+      "breed_folder": "n02104365-schipperke",
+      "breed_name": "Schipperke",
+      "pile": "train",
+      "label": 72
+    },
+    "photo_b": {
+      "key": "n02104365-schipperke/n02104365_7953.jpg",
+      "url": "/archive_images/n02104365-schipperke/n02104365_7953.jpg",
+      "breed_folder": "n02104365-schipperke",
+      "breed_name": "Schipperke",
+      "pile": "train",
+      "label": 72
+    }
+  },
+  {
+    "pair_id": 1353,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Schipperke' vs 'Groenendael'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02104365-schipperke/n02104365_9552.jpg",
+      "url": "/archive_images/n02104365-schipperke/n02104365_9552.jpg",
+      "breed_folder": "n02104365-schipperke",
+      "breed_name": "Schipperke",
+      "pile": "test",
+      "label": 72
+    },
+    "photo_b": {
+      "key": "n02105056-groenendael/n02105056_2194.jpg",
+      "url": "/archive_images/n02105056-groenendael/n02105056_2194.jpg",
+      "breed_folder": "n02105056-groenendael",
+      "breed_name": "Groenendael",
+      "pile": "train",
+      "label": 73
+    }
+  },
+  {
+    "pair_id": 1358,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02105056-groenendael/n02105056_3499.jpg",
+      "url": "/archive_images/n02105056-groenendael/n02105056_3499.jpg",
+      "breed_folder": "n02105056-groenendael",
+      "breed_name": "Groenendael",
+      "pile": "train",
+      "label": 73
+    },
+    "photo_b": {
+      "key": "n02105056-groenendael/n02105056_961.jpg",
+      "url": "/archive_images/n02105056-groenendael/n02105056_961.jpg",
+      "breed_folder": "n02105056-groenendael",
+      "breed_name": "Groenendael",
+      "pile": "test",
+      "label": 73
+    }
+  },
+  {
+    "pair_id": 1360,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02105056-groenendael/n02105056_5700.jpg",
+      "url": "/archive_images/n02105056-groenendael/n02105056_5700.jpg",
+      "breed_folder": "n02105056-groenendael",
+      "breed_name": "Groenendael",
+      "pile": "train",
+      "label": 73
+    },
+    "photo_b": {
+      "key": "n02105056-groenendael/n02105056_785.jpg",
+      "url": "/archive_images/n02105056-groenendael/n02105056_785.jpg",
+      "breed_folder": "n02105056-groenendael",
+      "breed_name": "Groenendael",
+      "pile": "train",
+      "label": 73
+    }
+  },
+  {
+    "pair_id": 1374,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02105162-malinois/n02105162_2079.jpg",
+      "url": "/archive_images/n02105162-malinois/n02105162_2079.jpg",
+      "breed_folder": "n02105162-malinois",
+      "breed_name": "Malinois",
+      "pile": "val",
+      "label": 74
+    },
+    "photo_b": {
+      "key": "n02105162-malinois/n02105162_6449.jpg",
+      "url": "/archive_images/n02105162-malinois/n02105162_6449.jpg",
+      "breed_folder": "n02105162-malinois",
+      "breed_name": "Malinois",
+      "pile": "train",
+      "label": 74
+    }
+  },
+  {
+    "pair_id": 1379,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 4,
+    "phash_distance": 10,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02105251-briard/n02105251_224.jpg",
+      "url": "/archive_images/n02105251-briard/n02105251_224.jpg",
+      "breed_folder": "n02105251-briard",
+      "breed_name": "Briard",
+      "pile": "train",
+      "label": 75
+    },
+    "photo_b": {
+      "key": "n02105251-briard/n02105251_8560.jpg",
+      "url": "/archive_images/n02105251-briard/n02105251_8560.jpg",
+      "breed_folder": "n02105251-briard",
+      "breed_name": "Briard",
+      "pile": "train",
+      "label": 75
+    }
+  },
+  {
+    "pair_id": 1383,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 5,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02105251-briard/n02105251_4659.jpg",
+      "url": "/archive_images/n02105251-briard/n02105251_4659.jpg",
+      "breed_folder": "n02105251-briard",
+      "breed_name": "Briard",
+      "pile": "train",
+      "label": 75
+    },
+    "photo_b": {
+      "key": "n02105251-briard/n02105251_7647.jpg",
+      "url": "/archive_images/n02105251-briard/n02105251_7647.jpg",
+      "breed_folder": "n02105251-briard",
+      "breed_name": "Briard",
+      "pile": "train",
+      "label": 75
+    }
+  },
+  {
+    "pair_id": 1384,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 4,
+    "phash_distance": 10,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02105251-briard/n02105251_4893.jpg",
+      "url": "/archive_images/n02105251-briard/n02105251_4893.jpg",
+      "breed_folder": "n02105251-briard",
+      "breed_name": "Briard",
+      "pile": "train",
+      "label": 75
+    },
+    "photo_b": {
+      "key": "n02105251-briard/n02105251_7600.jpg",
+      "url": "/archive_images/n02105251-briard/n02105251_7600.jpg",
+      "breed_folder": "n02105251-briard",
+      "breed_name": "Briard",
+      "pile": "train",
+      "label": 75
+    }
+  },
+  {
+    "pair_id": 1417,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02106030-collie/n02106030_10021.jpg",
+      "url": "/archive_images/n02106030-collie/n02106030_10021.jpg",
+      "breed_folder": "n02106030-collie",
+      "breed_name": "Collie",
+      "pile": "train",
+      "label": 80
+    },
+    "photo_b": {
+      "key": "n02106166-Border_collie/n02106166_4107.jpg",
+      "url": "/archive_images/n02106166-Border_collie/n02106166_4107.jpg",
+      "breed_folder": "n02106166-Border_collie",
+      "breed_name": "Border Collie",
+      "pile": "train",
+      "label": 81
+    }
+  },
+  {
+    "pair_id": 1418,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02106030-collie/n02106030_14811.jpg",
+      "url": "/archive_images/n02106030-collie/n02106030_14811.jpg",
+      "breed_folder": "n02106030-collie",
+      "breed_name": "Collie",
+      "pile": "train",
+      "label": 80
+    },
+    "photo_b": {
+      "key": "n02106166-Border_collie/n02106166_6084.jpg",
+      "url": "/archive_images/n02106166-Border_collie/n02106166_6084.jpg",
+      "breed_folder": "n02106166-Border_collie",
+      "breed_name": "Border Collie",
+      "pile": "train",
+      "label": 81
+    }
+  },
+  {
+    "pair_id": 1420,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02106030-collie/n02106030_15829.jpg",
+      "url": "/archive_images/n02106030-collie/n02106030_15829.jpg",
+      "breed_folder": "n02106030-collie",
+      "breed_name": "Collie",
+      "pile": "train",
+      "label": 80
+    },
+    "photo_b": {
+      "key": "n02106166-Border_collie/n02106166_6512.jpg",
+      "url": "/archive_images/n02106166-Border_collie/n02106166_6512.jpg",
+      "breed_folder": "n02106166-Border_collie",
+      "breed_name": "Border Collie",
+      "pile": "train",
+      "label": 81
+    }
+  },
+  {
+    "pair_id": 1421,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02106030-collie/n02106030_16338.jpg",
+      "url": "/archive_images/n02106030-collie/n02106030_16338.jpg",
+      "breed_folder": "n02106030-collie",
+      "breed_name": "Collie",
+      "pile": "val",
+      "label": 80
+    },
+    "photo_b": {
+      "key": "n02106166-Border_collie/n02106166_6710.jpg",
+      "url": "/archive_images/n02106166-Border_collie/n02106166_6710.jpg",
+      "breed_folder": "n02106166-Border_collie",
+      "breed_name": "Border Collie",
+      "pile": "train",
+      "label": 81
+    }
+  },
+  {
+    "pair_id": 1423,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02106030-collie/n02106030_2522.jpg",
+      "url": "/archive_images/n02106030-collie/n02106030_2522.jpg",
+      "breed_folder": "n02106030-collie",
+      "breed_name": "Collie",
+      "pile": "test",
+      "label": 80
+    },
+    "photo_b": {
+      "key": "n02106166-Border_collie/n02106166_1031.jpg",
+      "url": "/archive_images/n02106166-Border_collie/n02106166_1031.jpg",
+      "breed_folder": "n02106166-Border_collie",
+      "breed_name": "Border Collie",
+      "pile": "train",
+      "label": 81
+    }
+  },
+  {
+    "pair_id": 1424,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02106030-collie/n02106030_873.jpg",
+      "url": "/archive_images/n02106030-collie/n02106030_873.jpg",
+      "breed_folder": "n02106030-collie",
+      "breed_name": "Collie",
+      "pile": "train",
+      "label": 80
+    },
+    "photo_b": {
+      "key": "n02106166-Border_collie/n02106166_346.jpg",
+      "url": "/archive_images/n02106166-Border_collie/n02106166_346.jpg",
+      "breed_folder": "n02106166-Border_collie",
+      "breed_name": "Border Collie",
+      "pile": "val",
+      "label": 81
+    }
+  },
+  {
+    "pair_id": 1427,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 3,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02106382-Bouvier_des_Flandres/n02106382_1454.jpg",
+      "url": "/archive_images/n02106382-Bouvier_des_Flandres/n02106382_1454.jpg",
+      "breed_folder": "n02106382-Bouvier_des_Flandres",
+      "breed_name": "Bouvier Des Flandres",
+      "pile": "train",
+      "label": 82
+    },
+    "photo_b": {
+      "key": "n02106382-Bouvier_des_Flandres/n02106382_2021.jpg",
+      "url": "/archive_images/n02106382-Bouvier_des_Flandres/n02106382_2021.jpg",
+      "breed_folder": "n02106382-Bouvier_des_Flandres",
+      "breed_name": "Bouvier Des Flandres",
+      "pile": "train",
+      "label": 82
+    }
+  },
+  {
+    "pair_id": 1428,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02106382-Bouvier_des_Flandres/n02106382_29.jpg",
+      "url": "/archive_images/n02106382-Bouvier_des_Flandres/n02106382_29.jpg",
+      "breed_folder": "n02106382-Bouvier_des_Flandres",
+      "breed_name": "Bouvier Des Flandres",
+      "pile": "train",
+      "label": 82
+    },
+    "photo_b": {
+      "key": "n02106382-Bouvier_des_Flandres/n02106382_4291.jpg",
+      "url": "/archive_images/n02106382-Bouvier_des_Flandres/n02106382_4291.jpg",
+      "breed_folder": "n02106382-Bouvier_des_Flandres",
+      "breed_name": "Bouvier Des Flandres",
+      "pile": "train",
+      "label": 82
+    }
+  },
+  {
+    "pair_id": 1433,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 5,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02106550-Rottweiler/n02106550_11693.jpg",
+      "url": "/archive_images/n02106550-Rottweiler/n02106550_11693.jpg",
+      "breed_folder": "n02106550-Rottweiler",
+      "breed_name": "Rottweiler",
+      "pile": "train",
+      "label": 83
+    },
+    "photo_b": {
+      "key": "n02106550-Rottweiler/n02106550_6074.jpg",
+      "url": "/archive_images/n02106550-Rottweiler/n02106550_6074.jpg",
+      "breed_folder": "n02106550-Rottweiler",
+      "breed_name": "Rottweiler",
+      "pile": "test",
+      "label": 83
+    }
+  },
+  {
+    "pair_id": 1464,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_1180.jpg",
+      "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_1180.jpg",
+      "breed_folder": "n02107574-Greater_Swiss_Mountain_dog",
+      "breed_name": "Greater Swiss Mountain Dog",
+      "pile": "train",
+      "label": 87
+    },
+    "photo_b": {
+      "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_1706.jpg",
+      "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_1706.jpg",
+      "breed_folder": "n02107574-Greater_Swiss_Mountain_dog",
+      "breed_name": "Greater Swiss Mountain Dog",
+      "pile": "train",
+      "label": 87
+    }
+  },
+  {
+    "pair_id": 1467,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_2100.jpg",
+      "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_2100.jpg",
+      "breed_folder": "n02107574-Greater_Swiss_Mountain_dog",
+      "breed_name": "Greater Swiss Mountain Dog",
+      "pile": "train",
+      "label": 87
+    },
+    "photo_b": {
+      "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_870.jpg",
+      "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_870.jpg",
+      "breed_folder": "n02107574-Greater_Swiss_Mountain_dog",
+      "breed_name": "Greater Swiss Mountain Dog",
+      "pile": "train",
+      "label": 87
+    }
+  },
+  {
+    "pair_id": 1468,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_2325.jpg",
+      "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_2325.jpg",
+      "breed_folder": "n02107574-Greater_Swiss_Mountain_dog",
+      "breed_name": "Greater Swiss Mountain Dog",
+      "pile": "val",
+      "label": 87
+    },
+    "photo_b": {
+      "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_988.jpg",
+      "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_988.jpg",
+      "breed_folder": "n02107574-Greater_Swiss_Mountain_dog",
+      "breed_name": "Greater Swiss Mountain Dog",
+      "pile": "train",
+      "label": 87
+    }
+  },
+  {
+    "pair_id": 1469,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 1,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_261.jpg",
+      "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_261.jpg",
+      "breed_folder": "n02107574-Greater_Swiss_Mountain_dog",
+      "breed_name": "Greater Swiss Mountain Dog",
+      "pile": "train",
+      "label": 87
+    },
+    "photo_b": {
+      "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_910.jpg",
+      "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_910.jpg",
+      "breed_folder": "n02107574-Greater_Swiss_Mountain_dog",
+      "breed_name": "Greater Swiss Mountain Dog",
+      "pile": "val",
+      "label": 87
+    }
+  },
+  {
+    "pair_id": 1472,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'test' split",
+    "dhash_distance": 1,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "test-test",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02107683-Bernese_mountain_dog/n02107683_2881.jpg",
+      "url": "/archive_images/n02107683-Bernese_mountain_dog/n02107683_2881.jpg",
+      "breed_folder": "n02107683-Bernese_mountain_dog",
+      "breed_name": "Bernese Mountain Dog",
+      "pile": "test",
+      "label": 88
+    },
+    "photo_b": {
+      "key": "n02107683-Bernese_mountain_dog/n02107683_570.jpg",
+      "url": "/archive_images/n02107683-Bernese_mountain_dog/n02107683_570.jpg",
+      "breed_folder": "n02107683-Bernese_mountain_dog",
+      "breed_name": "Bernese Mountain Dog",
+      "pile": "test",
+      "label": 88
+    }
+  },
+  {
+    "pair_id": 1475,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Bernese Mountain Dog' vs 'Appenzeller'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02107683-Bernese_mountain_dog/n02107683_5397.jpg",
+      "url": "/archive_images/n02107683-Bernese_mountain_dog/n02107683_5397.jpg",
+      "breed_folder": "n02107683-Bernese_mountain_dog",
+      "breed_name": "Bernese Mountain Dog",
+      "pile": "train",
+      "label": 88
+    },
+    "photo_b": {
+      "key": "n02107908-Appenzeller/n02107908_3531.jpg",
+      "url": "/archive_images/n02107908-Appenzeller/n02107908_3531.jpg",
+      "breed_folder": "n02107908-Appenzeller",
+      "breed_name": "Appenzeller",
+      "pile": "train",
+      "label": 89
+    }
+  },
+  {
+    "pair_id": 1478,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Bernese Mountain Dog' vs 'Appenzeller'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02107683-Bernese_mountain_dog/n02107683_71.jpg",
+      "url": "/archive_images/n02107683-Bernese_mountain_dog/n02107683_71.jpg",
+      "breed_folder": "n02107683-Bernese_mountain_dog",
+      "breed_name": "Bernese Mountain Dog",
+      "pile": "test",
+      "label": 88
+    },
+    "photo_b": {
+      "key": "n02107908-Appenzeller/n02107908_47.jpg",
+      "url": "/archive_images/n02107908-Appenzeller/n02107908_47.jpg",
+      "breed_folder": "n02107908-Appenzeller",
+      "breed_name": "Appenzeller",
+      "pile": "train",
+      "label": 89
+    }
+  },
+  {
+    "pair_id": 1479,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 2,
+    "phash_distance": 8,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02107908-Appenzeller/n02107908_2608.jpg",
+      "url": "/archive_images/n02107908-Appenzeller/n02107908_2608.jpg",
+      "breed_folder": "n02107908-Appenzeller",
+      "breed_name": "Appenzeller",
+      "pile": "train",
+      "label": 89
+    },
+    "photo_b": {
+      "key": "n02107908-Appenzeller/n02107908_599.jpg",
+      "url": "/archive_images/n02107908-Appenzeller/n02107908_599.jpg",
+      "breed_folder": "n02107908-Appenzeller",
+      "breed_name": "Appenzeller",
+      "pile": "train",
+      "label": 89
+    }
+  },
+  {
+    "pair_id": 1481,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02108000-EntleBucher/n02108000_2891.jpg",
+      "url": "/archive_images/n02108000-EntleBucher/n02108000_2891.jpg",
+      "breed_folder": "n02108000-EntleBucher",
+      "breed_name": "Entlebucher",
+      "pile": "val",
+      "label": 90
+    },
+    "photo_b": {
+      "key": "n02108000-EntleBucher/n02108000_331.jpg",
+      "url": "/archive_images/n02108000-EntleBucher/n02108000_331.jpg",
+      "breed_folder": "n02108000-EntleBucher",
+      "breed_name": "Entlebucher",
+      "pile": "train",
+      "label": 90
+    }
+  },
+  {
+    "pair_id": 1482,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 4,
+    "phash_distance": 0,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02108000-EntleBucher/n02108000_3113.jpg",
+      "url": "/archive_images/n02108000-EntleBucher/n02108000_3113.jpg",
+      "breed_folder": "n02108000-EntleBucher",
+      "breed_name": "Entlebucher",
+      "pile": "train",
+      "label": 90
+    },
+    "photo_b": {
+      "key": "n02108000-EntleBucher/n02108000_3497.jpg",
+      "url": "/archive_images/n02108000-EntleBucher/n02108000_3497.jpg",
+      "breed_folder": "n02108000-EntleBucher",
+      "breed_name": "Entlebucher",
+      "pile": "test",
+      "label": 90
+    }
+  },
+  {
+    "pair_id": 1487,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'val' split",
+    "dhash_distance": 5,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "val-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02108422-bull_mastiff/n02108422_1166.jpg",
+      "url": "/archive_images/n02108422-bull_mastiff/n02108422_1166.jpg",
+      "breed_folder": "n02108422-bull_mastiff",
+      "breed_name": "Bull Mastiff",
+      "pile": "val",
+      "label": 92
+    },
+    "photo_b": {
+      "key": "n02108422-bull_mastiff/n02108422_647.jpg",
+      "url": "/archive_images/n02108422-bull_mastiff/n02108422_647.jpg",
+      "breed_folder": "n02108422-bull_mastiff",
+      "breed_name": "Bull Mastiff",
+      "pile": "val",
+      "label": 92
+    }
+  },
+  {
+    "pair_id": 1495,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02108551-Tibetan_mastiff/n02108551_4421.jpg",
+      "url": "/archive_images/n02108551-Tibetan_mastiff/n02108551_4421.jpg",
+      "breed_folder": "n02108551-Tibetan_mastiff",
+      "breed_name": "Tibetan Mastiff",
+      "pile": "test",
+      "label": 93
+    },
+    "photo_b": {
+      "key": "n02108551-Tibetan_mastiff/n02108551_728.jpg",
+      "url": "/archive_images/n02108551-Tibetan_mastiff/n02108551_728.jpg",
+      "breed_folder": "n02108551-Tibetan_mastiff",
+      "breed_name": "Tibetan Mastiff",
+      "pile": "train",
+      "label": 93
+    }
+  },
+  {
+    "pair_id": 1507,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02109525-Saint_Bernard/n02109525_1314.jpg",
+      "url": "/archive_images/n02109525-Saint_Bernard/n02109525_1314.jpg",
+      "breed_folder": "n02109525-Saint_Bernard",
+      "breed_name": "Saint Bernard",
+      "pile": "train",
+      "label": 96
+    },
+    "photo_b": {
+      "key": "n02109525-Saint_Bernard/n02109525_7982.jpg",
+      "url": "/archive_images/n02109525-Saint_Bernard/n02109525_7982.jpg",
+      "breed_folder": "n02109525-Saint_Bernard",
+      "breed_name": "Saint Bernard",
+      "pile": "train",
+      "label": 96
+    }
+  },
+  {
+    "pair_id": 1508,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Eskimo Dog' vs 'Siberian Husky'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02109961-Eskimo_dog/n02109961_2317.jpg",
+      "url": "/archive_images/n02109961-Eskimo_dog/n02109961_2317.jpg",
+      "breed_folder": "n02109961-Eskimo_dog",
+      "breed_name": "Eskimo Dog",
+      "pile": "test",
+      "label": 97
+    },
+    "photo_b": {
+      "key": "n02110185-Siberian_husky/n02110185_1614.jpg",
+      "url": "/archive_images/n02110185-Siberian_husky/n02110185_1614.jpg",
+      "breed_folder": "n02110185-Siberian_husky",
+      "breed_name": "Siberian Husky",
+      "pile": "train",
+      "label": 99
+    }
+  },
+  {
+    "pair_id": 1509,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Eskimo Dog' vs 'Siberian Husky'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02109961-Eskimo_dog/n02109961_5924.jpg",
+      "url": "/archive_images/n02109961-Eskimo_dog/n02109961_5924.jpg",
+      "breed_folder": "n02109961-Eskimo_dog",
+      "breed_name": "Eskimo Dog",
+      "pile": "test",
+      "label": 97
+    },
+    "photo_b": {
+      "key": "n02110185-Siberian_husky/n02110185_4115.jpg",
+      "url": "/archive_images/n02110185-Siberian_husky/n02110185_4115.jpg",
+      "breed_folder": "n02110185-Siberian_husky",
+      "breed_name": "Siberian Husky",
+      "pile": "train",
+      "label": 99
+    }
+  },
+  {
+    "pair_id": 1515,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 4,
+    "phash_distance": 10,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02110627-affenpinscher/n02110627_11783.jpg",
+      "url": "/archive_images/n02110627-affenpinscher/n02110627_11783.jpg",
+      "breed_folder": "n02110627-affenpinscher",
+      "breed_name": "Affenpinscher",
+      "pile": "val",
+      "label": 100
+    },
+    "photo_b": {
+      "key": "n02110627-affenpinscher/n02110627_12025.jpg",
+      "url": "/archive_images/n02110627-affenpinscher/n02110627_12025.jpg",
+      "breed_folder": "n02110627-affenpinscher",
+      "breed_name": "Affenpinscher",
+      "pile": "train",
+      "label": 100
+    }
+  },
+  {
+    "pair_id": 1518,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02110627-affenpinscher/n02110627_12272.jpg",
+      "url": "/archive_images/n02110627-affenpinscher/n02110627_12272.jpg",
+      "breed_folder": "n02110627-affenpinscher",
+      "breed_name": "Affenpinscher",
+      "pile": "train",
+      "label": 100
+    },
+    "photo_b": {
+      "key": "n02110627-affenpinscher/n02110627_8621.jpg",
+      "url": "/archive_images/n02110627-affenpinscher/n02110627_8621.jpg",
+      "breed_folder": "n02110627-affenpinscher",
+      "breed_name": "Affenpinscher",
+      "pile": "train",
+      "label": 100
+    }
+  },
+  {
+    "pair_id": 1519,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'test'",
+    "dhash_distance": 4,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02110627-affenpinscher/n02110627_12431.jpg",
+      "url": "/archive_images/n02110627-affenpinscher/n02110627_12431.jpg",
+      "breed_folder": "n02110627-affenpinscher",
+      "breed_name": "Affenpinscher",
+      "pile": "val",
+      "label": 100
+    },
+    "photo_b": {
+      "key": "n02110627-affenpinscher/n02110627_4433.jpg",
+      "url": "/archive_images/n02110627-affenpinscher/n02110627_4433.jpg",
+      "breed_folder": "n02110627-affenpinscher",
+      "breed_name": "Affenpinscher",
+      "pile": "test",
+      "label": 100
+    }
+  },
+  {
+    "pair_id": 1536,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 2,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02111129-Leonberg/n02111129_1115.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_1115.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "val",
+      "label": 103
+    },
+    "photo_b": {
+      "key": "n02111129-Leonberg/n02111129_4423.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_4423.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    }
+  },
+  {
+    "pair_id": 1537,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'val' split",
+    "dhash_distance": 3,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "val-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02111129-Leonberg/n02111129_1178.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_1178.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "val",
+      "label": 103
+    },
+    "photo_b": {
+      "key": "n02111129-Leonberg/n02111129_593.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_593.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "val",
+      "label": 103
+    }
+  },
+  {
+    "pair_id": 1543,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 3,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02111129-Leonberg/n02111129_1832.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_1832.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    },
+    "photo_b": {
+      "key": "n02111129-Leonberg/n02111129_253.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_253.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    }
+  },
+  {
+    "pair_id": 1545,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 4,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02111129-Leonberg/n02111129_1940.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_1940.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    },
+    "photo_b": {
+      "key": "n02111129-Leonberg/n02111129_3884.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_3884.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    }
+  },
+  {
+    "pair_id": 1548,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 4,
+    "phash_distance": 6,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02111129-Leonberg/n02111129_2330.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_2330.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    },
+    "photo_b": {
+      "key": "n02111129-Leonberg/n02111129_4903.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_4903.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    }
+  },
+  {
+    "pair_id": 1549,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 3,
+    "phash_distance": 0,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02111129-Leonberg/n02111129_3388.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_3388.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "val",
+      "label": 103
+    },
+    "photo_b": {
+      "key": "n02111129-Leonberg/n02111129_4792.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_4792.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    }
+  },
+  {
+    "pair_id": 1550,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 3,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02111129-Leonberg/n02111129_4017.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_4017.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    },
+    "photo_b": {
+      "key": "n02111129-Leonberg/n02111129_571.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_571.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    }
+  },
+  {
+    "pair_id": 1558,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 4,
+    "phash_distance": 4,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02111129-Leonberg/n02111129_571.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_571.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "train",
+      "label": 103
+    },
+    "photo_b": {
+      "key": "n02111129-Leonberg/n02111129_976.jpg",
+      "url": "/archive_images/n02111129-Leonberg/n02111129_976.jpg",
+      "breed_folder": "n02111129-Leonberg",
+      "breed_name": "Leonberg",
+      "pile": "val",
+      "label": 103
+    }
+  },
+  {
+    "pair_id": 1600,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02112706-Brabancon_griffon/n02112706_1202.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_1202.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "train",
+      "label": 110
+    },
+    "photo_b": {
+      "key": "n02112706-Brabancon_griffon/n02112706_2161.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_2161.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "test",
+      "label": 110
+    }
+  },
+  {
+    "pair_id": 1601,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'val' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "val-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02112706-Brabancon_griffon/n02112706_1379.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_1379.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "val",
+      "label": 110
+    },
+    "photo_b": {
+      "key": "n02112706-Brabancon_griffon/n02112706_2191.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_2191.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "val",
+      "label": 110
+    }
+  },
+  {
+    "pair_id": 1602,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02112706-Brabancon_griffon/n02112706_1568.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_1568.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "train",
+      "label": 110
+    },
+    "photo_b": {
+      "key": "n02112706-Brabancon_griffon/n02112706_539.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_539.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "train",
+      "label": 110
+    }
+  },
+  {
+    "pair_id": 1603,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02112706-Brabancon_griffon/n02112706_1833.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_1833.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "train",
+      "label": 110
+    },
+    "photo_b": {
+      "key": "n02112706-Brabancon_griffon/n02112706_2074.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_2074.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "train",
+      "label": 110
+    }
+  },
+  {
+    "pair_id": 1604,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02112706-Brabancon_griffon/n02112706_1882.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_1882.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "train",
+      "label": 110
+    },
+    "photo_b": {
+      "key": "n02112706-Brabancon_griffon/n02112706_2070.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_2070.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "train",
+      "label": 110
+    }
+  },
+  {
+    "pair_id": 1605,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02112706-Brabancon_griffon/n02112706_2550.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_2550.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "train",
+      "label": 110
+    },
+    "photo_b": {
+      "key": "n02112706-Brabancon_griffon/n02112706_420.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_420.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "train",
+      "label": 110
+    }
+  },
+  {
+    "pair_id": 1606,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02112706-Brabancon_griffon/n02112706_62.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_62.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "train",
+      "label": 110
+    },
+    "photo_b": {
+      "key": "n02112706-Brabancon_griffon/n02112706_866.jpg",
+      "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_866.jpg",
+      "breed_folder": "n02112706-Brabancon_griffon",
+      "breed_name": "Brabancon Griffon",
+      "pile": "test",
+      "label": 110
+    }
+  },
+  {
+    "pair_id": 1608,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'test'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113186-Cardigan/n02113186_1030.jpg",
+      "url": "/archive_images/n02113186-Cardigan/n02113186_1030.jpg",
+      "breed_folder": "n02113186-Cardigan",
+      "breed_name": "Cardigan",
+      "pile": "train",
+      "label": 112
+    },
+    "photo_b": {
+      "key": "n02113186-Cardigan/n02113186_11400.jpg",
+      "url": "/archive_images/n02113186-Cardigan/n02113186_11400.jpg",
+      "breed_folder": "n02113186-Cardigan",
+      "breed_name": "Cardigan",
+      "pile": "test",
+      "label": 112
+    }
+  },
+  {
+    "pair_id": 1614,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Toy Poodle' vs 'Miniature Poodle'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113624-toy_poodle/n02113624_1804.jpg",
+      "url": "/archive_images/n02113624-toy_poodle/n02113624_1804.jpg",
+      "breed_folder": "n02113624-toy_poodle",
+      "breed_name": "Toy Poodle",
+      "pile": "train",
+      "label": 113
+    },
+    "photo_b": {
+      "key": "n02113712-miniature_poodle/n02113712_1252.jpg",
+      "url": "/archive_images/n02113712-miniature_poodle/n02113712_1252.jpg",
+      "breed_folder": "n02113712-miniature_poodle",
+      "breed_name": "Miniature Poodle",
+      "pile": "train",
+      "label": 114
+    }
+  },
+  {
+    "pair_id": 1615,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Toy Poodle' vs 'Miniature Poodle'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113624-toy_poodle/n02113624_2244.jpg",
+      "url": "/archive_images/n02113624-toy_poodle/n02113624_2244.jpg",
+      "breed_folder": "n02113624-toy_poodle",
+      "breed_name": "Toy Poodle",
+      "pile": "test",
+      "label": 113
+    },
+    "photo_b": {
+      "key": "n02113712-miniature_poodle/n02113712_1546.jpg",
+      "url": "/archive_images/n02113712-miniature_poodle/n02113712_1546.jpg",
+      "breed_folder": "n02113712-miniature_poodle",
+      "breed_name": "Miniature Poodle",
+      "pile": "train",
+      "label": 114
+    }
+  },
+  {
+    "pair_id": 1616,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Toy Poodle' vs 'Miniature Poodle'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113624-toy_poodle/n02113624_2258.jpg",
+      "url": "/archive_images/n02113624-toy_poodle/n02113624_2258.jpg",
+      "breed_folder": "n02113624-toy_poodle",
+      "breed_name": "Toy Poodle",
+      "pile": "val",
+      "label": 113
+    },
+    "photo_b": {
+      "key": "n02113712-miniature_poodle/n02113712_1558.jpg",
+      "url": "/archive_images/n02113712-miniature_poodle/n02113712_1558.jpg",
+      "breed_folder": "n02113712-miniature_poodle",
+      "breed_name": "Miniature Poodle",
+      "pile": "train",
+      "label": 114
+    }
+  },
+  {
+    "pair_id": 1620,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Miniature Poodle' vs 'Standard Poodle'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "val-val",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113712-miniature_poodle/n02113712_230.jpg",
+      "url": "/archive_images/n02113712-miniature_poodle/n02113712_230.jpg",
+      "breed_folder": "n02113712-miniature_poodle",
+      "breed_name": "Miniature Poodle",
+      "pile": "val",
+      "label": 114
+    },
+    "photo_b": {
+      "key": "n02113799-standard_poodle/n02113799_254.jpg",
+      "url": "/archive_images/n02113799-standard_poodle/n02113799_254.jpg",
+      "breed_folder": "n02113799-standard_poodle",
+      "breed_name": "Standard Poodle",
+      "pile": "val",
+      "label": 115
+    }
+  },
+  {
+    "pair_id": 1622,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113978-Mexican_hairless/n02113978_1069.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_1069.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    },
+    "photo_b": {
+      "key": "n02113978-Mexican_hairless/n02113978_3474.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_3474.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    }
+  },
+  {
+    "pair_id": 1624,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 1,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113978-Mexican_hairless/n02113978_131.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_131.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    },
+    "photo_b": {
+      "key": "n02113978-Mexican_hairless/n02113978_3419.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_3419.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    }
+  },
+  {
+    "pair_id": 1625,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113978-Mexican_hairless/n02113978_1323.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_1323.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "test",
+      "label": 116
+    },
+    "photo_b": {
+      "key": "n02113978-Mexican_hairless/n02113978_737.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_737.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    }
+  },
+  {
+    "pair_id": 1628,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'train' and 'val'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113978-Mexican_hairless/n02113978_1632.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_1632.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    },
+    "photo_b": {
+      "key": "n02113978-Mexican_hairless/n02113978_2572.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_2572.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "val",
+      "label": 116
+    }
+  },
+  {
+    "pair_id": 1630,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 2,
+    "phash_distance": 0,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113978-Mexican_hairless/n02113978_1956.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_1956.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    },
+    "photo_b": {
+      "key": "n02113978-Mexican_hairless/n02113978_2167.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_2167.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    }
+  },
+  {
+    "pair_id": 1631,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 1,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113978-Mexican_hairless/n02113978_1956.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_1956.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    },
+    "photo_b": {
+      "key": "n02113978-Mexican_hairless/n02113978_3134.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_3134.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    }
+  },
+  {
+    "pair_id": 1633,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113978-Mexican_hairless/n02113978_2141.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_2141.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "val",
+      "label": 116
+    },
+    "photo_b": {
+      "key": "n02113978-Mexican_hairless/n02113978_3832.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_3832.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    }
+  },
+  {
+    "pair_id": 1634,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 1,
+    "phash_distance": 2,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113978-Mexican_hairless/n02113978_2167.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_2167.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    },
+    "photo_b": {
+      "key": "n02113978-Mexican_hairless/n02113978_3134.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_3134.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    }
+  },
+  {
+    "pair_id": 1635,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113978-Mexican_hairless/n02113978_3178.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_3178.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    },
+    "photo_b": {
+      "key": "n02113978-Mexican_hairless/n02113978_530.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_530.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    }
+  },
+  {
+    "pair_id": 1637,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 2,
+    "phash_distance": 8,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02113978-Mexican_hairless/n02113978_3921.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_3921.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    },
+    "photo_b": {
+      "key": "n02113978-Mexican_hairless/n02113978_937.jpg",
+      "url": "/archive_images/n02113978-Mexican_hairless/n02113978_937.jpg",
+      "breed_folder": "n02113978-Mexican_hairless",
+      "breed_name": "Mexican Hairless",
+      "pile": "train",
+      "label": 116
+    }
+  },
+  {
+    "pair_id": 1638,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'val' and 'train'",
+    "dhash_distance": 4,
+    "phash_distance": 10,
+    "exact_copy": false,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "train-val",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02115641-dingo/n02115641_13565.jpg",
+      "url": "/archive_images/n02115641-dingo/n02115641_13565.jpg",
+      "breed_folder": "n02115641-dingo",
+      "breed_name": "Dingo",
+      "pile": "val",
+      "label": 117
+    },
+    "photo_b": {
+      "key": "n02115641-dingo/n02115641_6577.jpg",
+      "url": "/archive_images/n02115641-dingo/n02115641_6577.jpg",
+      "breed_folder": "n02115641-dingo",
+      "breed_name": "Dingo",
+      "pile": "train",
+      "label": 117
+    }
+  },
+  {
+    "pair_id": 1639,
+    "category": "label_conflict",
+    "reason": "Same image filed under 2 different breeds: 'Dingo' vs 'Dhole'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": false,
+    "crosses_piles": false,
+    "pile_pair": "test-test",
+    "default_action": "remove_both",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02115641-dingo/n02115641_2440.jpg",
+      "url": "/archive_images/n02115641-dingo/n02115641_2440.jpg",
+      "breed_folder": "n02115641-dingo",
+      "breed_name": "Dingo",
+      "pile": "test",
+      "label": 117
+    },
+    "photo_b": {
+      "key": "n02115913-dhole/n02115913_739.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_739.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "test",
+      "label": 118
+    }
+  },
+  {
+    "pair_id": 1640,
+    "category": "cross_split_leak",
+    "reason": "Duplicate dog photo split across 'test' and 'train'",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": true,
+    "pile_pair": "test-train",
+    "default_action": "remove_a",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02115913-dhole/n02115913_1142.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_1142.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "test",
+      "label": 118
+    },
+    "photo_b": {
+      "key": "n02115913-dhole/n02115913_2029.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_2029.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "train",
+      "label": 118
+    }
+  },
+  {
+    "pair_id": 1641,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02115913-dhole/n02115913_1552.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_1552.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "train",
+      "label": 118
+    },
+    "photo_b": {
+      "key": "n02115913-dhole/n02115913_3270.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_3270.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "train",
+      "label": 118
+    }
+  },
+  {
+    "pair_id": 1643,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02115913-dhole/n02115913_262.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_262.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "train",
+      "label": 118
+    },
+    "photo_b": {
+      "key": "n02115913-dhole/n02115913_4032.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_4032.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "train",
+      "label": 118
+    }
+  },
+  {
+    "pair_id": 1644,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02115913-dhole/n02115913_4117.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_4117.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "train",
+      "label": 118
+    },
+    "photo_b": {
+      "key": "n02115913-dhole/n02115913_564.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_564.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "train",
+      "label": 118
+    }
+  },
+  {
+    "pair_id": 1645,
+    "category": "same_split_duplicate",
+    "reason": "Duplicate image within the same 'train' split",
+    "dhash_distance": 0,
+    "phash_distance": 0,
+    "exact_copy": true,
+    "confirmed_copy": true,
+    "same_breed": true,
+    "crosses_piles": false,
+    "pile_pair": "train-train",
+    "default_action": "remove_b",
+    "status": "pending",
+    "photo_a": {
+      "key": "n02115913-dhole/n02115913_4119.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_4119.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "train",
+      "label": 118
+    },
+    "photo_b": {
+      "key": "n02115913-dhole/n02115913_750.jpg",
+      "url": "/archive_images/n02115913-dhole/n02115913_750.jpg",
+      "breed_folder": "n02115913-dhole",
+      "breed_name": "Dhole",
+      "pile": "train",
+      "label": 118
+    }
+  }
+]
