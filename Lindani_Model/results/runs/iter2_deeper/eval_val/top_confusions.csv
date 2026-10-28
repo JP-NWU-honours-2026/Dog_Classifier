@@ -1,0 +1,21 @@
+true_breed,predicted_breed,times,share_of_breed
+Silky Terrier,Yorkshire Terrier,8,0.296
+Siberian Husky,Eskimo Dog,8,0.286
+Shih-Tzu,Lhasa,7,0.219
+Beagle,Basset,6,0.207
+Greater Swiss Mountain Dog,Appenzeller,6,0.24
+Malamute,Siberian Husky,6,0.231
+Chow,Pomeranian,6,0.207
+Toy Poodle,Miniature Poodle,6,0.273
+Scottish Deerhound,Irish Wolfhound,5,0.147
+Irish Terrier,Norfolk Terrier,5,0.2
+Yorkshire Terrier,Silky Terrier,5,0.208
+Miniature Schnauzer,Standard Schnauzer,5,0.217
+Collie,Border Collie,5,0.227
+Doberman,Rottweiler,5,0.227
+Eskimo Dog,Malamute,5,0.227
+Siberian Husky,Malamute,5,0.179
+Miniature Poodle,Toy Poodle,5,0.217
+Shih-Tzu,Tibetan Terrier,4,0.125
+Papillon,Japanese Spaniel,4,0.138
+Rhodesian Ridgeback,Redbone,4,0.16
