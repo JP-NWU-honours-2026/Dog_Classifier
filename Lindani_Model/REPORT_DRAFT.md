@@ -113,12 +113,22 @@ foxhound, and miniature with standard schnauzer. A model is therefore scored aga
 distinctions the dataset itself does not apply consistently, and perfect accuracy on this
 dataset is not attainable.
 
-Second, **[PENDING: sample audit]** a random sample of 100 photographs, drawn with seed 42,
-was inspected by eye against its label and marked agree, disagree or unsure. Report the
-observed disagreement rate excluding unsure, the rate across the whole sample treating
-every unsure as correct, and the 95 per cent Wilson interval, which `label_audit.py`
-computes. The auditor is not a breed expert, which is why "unsure" is a permitted verdict
-and is reported rather than hidden.
+Second, a random sample was drawn with seed 42 and inspected by eye against its label, each
+photograph marked agree, disagree or unsure. **20 of the planned 100 photographs have been
+judged so far: 19 agree, 1 disagree, 0 unsure.** That is an observed disagreement rate of
+**5.0 per cent, with a 95 per cent Wilson interval of 0.9 to 23.6 per cent.**
+
+The interval is very wide because the sample is small, and the honest reading is that the
+audit so far is consistent with anything from a very low error rate to roughly one label in
+four being wrong. It should be reported as a partial audit with its sample size stated,
+not as a precise figure. **[PENDING: complete the remaining 80 to narrow the interval.]**
+
+The disagreement found was photograph 11, labelled collie, from the training partition.
+
+Two points of method. The auditor is not a breed expert, which is why "unsure" is a
+permitted verdict and is reported rather than hidden. And photographs with no verdict are
+excluded from the denominator rather than counted as correct, since an unexamined
+photograph is not evidence of a correct label.
 
 ### 1.7 The split
 
@@ -455,7 +465,7 @@ dataset-internal duplication is **not** the mechanism that inflates published ac
 Stanford Dogs. The mechanism of concern is the overlap between the test photographs and the
 ImageNet pretraining corpus, which affects the two pretrained models and not this one.
 
-### 4.4 Comparison with the pretrained models **[PENDING]**
+### 4.5 Comparison with the pretrained models [PENDING]
 
 Insert the three-model table once the other members' figures are available: accuracy, macro
 F1, parameter count, training time and inference cost.
