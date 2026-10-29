@@ -1,0 +1,32 @@
+{
+  "model": "baseline_cnn",
+  "full": {
+    "photographs": 3200,
+    "breeds": 120,
+    "accuracy": 0.5384375,
+    "accuracy_interval_low": 0.5211288587367511,
+    "accuracy_interval_high": 0.5556539634851716,
+    "top5_accuracy": 0.8478125,
+    "macro_precision": 0.5403316666666667,
+    "macro_recall": 0.5340741666666666,
+    "macro_f1": 0.5320166666666667,
+    "weighted_f1": 0.5361292500000001,
+    "errors": 1477,
+    "confident_errors": 114
+  },
+  "clean": {
+    "photographs": 3166,
+    "breeds": 120,
+    "accuracy": 0.5363234365129501,
+    "accuracy_interval_low": 0.5189190185488365,
+    "accuracy_interval_high": 0.5536398121510951,
+    "top5_accuracy": 0.8464939987365762,
+    "macro_precision": 0.5381741666666666,
+    "macro_recall": 0.5320466666666667,
+    "macro_f1": 0.5298458333333333,
+    "weighted_f1": 0.5338836070751741,
+    "errors": 1468,
+    "confident_errors": 111
+  },
+  "meta": {}
+}
