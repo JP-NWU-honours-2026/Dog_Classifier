@@ -106,11 +106,11 @@ SIMPLIFIED_MODELS_CATALOG = [
         "parameters": "27.6M",
         "classes_count": 114,
         "split_manifest": "split_manifest_simplified.json",
-        "val_accuracy": "Pending Training",
-        "test_accuracy": "Pending Training",
-        "description": "Sulaiman's Swin Transformer Tiny architecture on 114 breeds (weights not yet trained).",
-        "checkpoint_path": PROJECT_ROOT / "Sulaiman_Model" / "results" / "runs" / "swin_t_simplified" / "best_model.pth",
-        "badge": "Swin-T ? Not Yet Trained",
+        "val_accuracy": "90.9%",
+        "test_accuracy": "89.9%",
+        "description": "Sulaiman's Swin Transformer Tiny fine-tuned on 114 breeds (89.9% test accuracy).",
+        "checkpoint_path": PROJECT_ROOT / "Sulaiman_Model" / "results" / "runs" / "simplified_transfer" / "best_model.pth",
+        "badge": "Swin-T ? 114 Breeds",
     },
 ]
 
