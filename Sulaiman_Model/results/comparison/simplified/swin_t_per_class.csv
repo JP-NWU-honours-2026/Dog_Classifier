@@ -1,0 +1,115 @@
+breed,support,precision,recall,f1
+Afghan Hound,37,1.0,1.0,1.0
+African Hunting Dog,26,1.0,1.0,1.0
+Blenheim Spaniel,29,1.0,1.0,1.0
+Chow,30,1.0,1.0,1.0
+Gordon Setter,24,1.0,1.0,1.0
+Great Dane,24,1.0,1.0,1.0
+Irish Setter,24,1.0,1.0,1.0
+Mexican Hairless,23,1.0,1.0,1.0
+Pug,30,1.0,1.0,1.0
+Rottweiler,24,1.0,1.0,1.0
+Saint Bernard,27,1.0,1.0,1.0
+Samoyed,34,0.9714,1.0,0.9855
+Bedlington Terrier,26,0.963,1.0,0.9811
+Chesapeake Bay Retriever,26,1.0,0.9615,0.9804
+Keeshond,25,0.9615,1.0,0.9804
+Old English Sheepdog,26,1.0,0.9615,0.9804
+German Short-Haired Pointer,24,0.96,1.0,0.9796
+Komondor,24,0.96,1.0,0.9796
+Clumber,22,0.9565,1.0,0.9778
+Dhole,21,1.0,0.9524,0.9756
+Pomeranian,34,0.9706,0.9706,0.9706
+Bernese Mountain Dog,32,0.9688,0.9688,0.9688
+Japanese Spaniel,29,0.9355,1.0,0.9667
+Norwegian Elkhound,30,0.9667,0.9667,0.9667
+Papillon,30,0.9667,0.9667,0.9667
+Dandie Dinmont,28,1.0,0.9286,0.963
+Weimaraner,24,0.9231,1.0,0.96
+French Bulldog,25,1.0,0.92,0.9583
+Poodle,73,0.9855,0.9315,0.9577
+Borzoi,24,1.0,0.9167,0.9565
+Leonberg,32,0.9394,0.9688,0.9538
+Saluki,30,0.9091,1.0,0.9524
+Sussex Spaniel,21,0.9524,0.9524,0.9524
+Schnauzer,71,0.9437,0.9437,0.9437
+Flat-Coated Retriever,24,0.9565,0.9167,0.9362
+Malinois,23,0.9167,0.9565,0.9362
+Bull Mastiff,24,1.0,0.875,0.9333
+Groenendael,22,0.913,0.9545,0.9333
+Schipperke,23,0.9545,0.913,0.9333
+Bluetick,27,0.871,1.0,0.931
+Italian Greyhound,28,0.9,0.9643,0.931
+Kerry Blue Terrier,28,0.9,0.9643,0.931
+Pembroke,28,0.9,0.9643,0.931
+Sealyham Terrier,28,0.9286,0.9286,0.9286
+Basenji,32,0.8649,1.0,0.9275
+Border Terrier,27,0.9259,0.9259,0.9259
+Curly-Coated Retriever,24,0.8571,1.0,0.9231
+Briard,24,0.8846,0.9583,0.92
+Dingo,23,0.8519,1.0,0.92
+Boston Bull,28,0.8485,1.0,0.918
+German Shepherd,24,0.9167,0.9167,0.9167
+Kelpie,24,0.9167,0.9167,0.9167
+Staffordshire Terrier,49,0.9362,0.898,0.9167
+Newfoundland,30,0.931,0.9,0.9153
+Welsh Springer Spaniel,23,0.913,0.913,0.913
+Ibizan Hound,29,0.9286,0.8966,0.9123
+Lakeland Terrier,30,0.963,0.8667,0.9123
+Basset,27,0.8929,0.9259,0.9091
+Brabancon Griffon,23,0.9524,0.8696,0.9091
+Irish Water Spaniel,23,0.9524,0.8696,0.9091
+Otterhound,23,0.9524,0.8696,0.9091
+Tibetan Mastiff,23,0.9524,0.8696,0.9091
+Norfolk Terrier,27,0.9231,0.8889,0.9057
+West Highland White Terrier,26,0.8889,0.9231,0.9057
+Great Pyrenees,33,0.8421,0.9697,0.9014
+Boxer,24,0.88,0.9167,0.898
+English Setter,25,0.9167,0.88,0.898
+Irish Terrier,25,0.9167,0.88,0.898
+Affenpinscher,23,0.875,0.913,0.8936
+Black-And-Tan Coonhound,25,0.9545,0.84,0.8936
+English Springer,25,0.8065,1.0,0.8929
+Bouvier Des Flandres,23,0.9091,0.8696,0.8889
+Cocker Spaniel,25,1.0,0.8,0.8889
+Miniature Pinscher,29,0.8235,0.9655,0.8889
+Pekinese,23,0.9091,0.8696,0.8889
+Scottish Deerhound,35,0.8649,0.9143,0.8889
+Toy Terrier,27,0.8889,0.8889,0.8889
+Bloodhound,29,0.8438,0.931,0.8852
+Chihuahua,24,1.0,0.7917,0.8837
+Maltese Dog,39,0.8947,0.8718,0.8831
+Norwich Terrier,29,0.8929,0.8621,0.8772
+Cairn,31,0.8485,0.9032,0.875
+Foxhound,48,0.9091,0.8333,0.8696
+Brittany Spaniel,24,0.95,0.7917,0.8636
+Wire-Haired Fox Terrier,24,0.95,0.7917,0.8636
+Soft-Coated Wheaten Terrier,24,0.8148,0.9167,0.8627
+Airedale,31,0.8235,0.9032,0.8615
+Labrador Retriever,27,0.8276,0.8889,0.8571
+Cardigan,23,1.0,0.7391,0.85
+Malamute,28,0.8065,0.8929,0.8475
+Whippet,29,0.8571,0.8276,0.8421
+Greater Swiss Mountain Dog,26,0.875,0.8077,0.84
+Shetland Sheepdog,25,0.7667,0.92,0.8364
+Appenzeller,24,1.0,0.7083,0.8293
+Kuvasz,23,0.9444,0.7391,0.8293
+Australian Terrier,30,0.8571,0.8,0.8276
+Scotch Terrier,24,0.8636,0.7917,0.8261
+Beagle,30,0.8065,0.8333,0.8197
+Golden Retriever,23,0.8571,0.7826,0.8182
+Vizsla,24,0.7333,0.9167,0.8148
+Yorkshire Terrier,26,0.7273,0.9231,0.8136
+Irish Wolfhound,34,0.8667,0.7647,0.8125
+Entlebucher,30,0.7179,0.9333,0.8116
+Doberman,23,0.7917,0.8261,0.8085
+Redbone,22,0.8421,0.7273,0.7805
+Silky Terrier,28,0.9048,0.6786,0.7755
+Shih-Tzu,33,0.7297,0.8182,0.7714
+Tibetan Terrier,31,0.7931,0.7419,0.7667
+Border Collie,23,0.6562,0.913,0.7636
+Rhodesian Ridgeback,27,0.7241,0.7778,0.75
+Siberian Husky,30,0.6216,0.7667,0.6866
+Lhasa,29,0.625,0.5172,0.566
+Collie,23,0.7273,0.3478,0.4706
+Eskimo Dog,21,0.6364,0.3333,0.4375

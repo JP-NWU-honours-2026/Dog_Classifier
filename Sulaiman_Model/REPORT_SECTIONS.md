@@ -266,6 +266,31 @@ trained from scratch, is the only score in the project free of this effect.
   network, so part of the gap may come from capacity rather than attention
   alone. Training times are not directly comparable because the GPUs
   differ.
+- **Frozen features, before any fine-tuning.** Phase 1 trains only a new
+  linear head on top of a frozen backbone, so it measures how well each
+  model's ImageNet features already separate dog breeds. Here the two models
+  differ most (`results/comparison/validation_curves.png`):
+
+  | Validation accuracy | Swin-T | EfficientNetV2-S | Gap |
+  |---|---|---|---|
+  | Epoch 1 (head only) | 87.93 % | 75.57 % | 12.4 |
+  | Epoch 2 (head only) | 89.02 % | 78.28 % | 10.7 |
+  | Best epoch (after fine-tuning) | 89.69 % | 85.06 % | 4.6 |
+
+  *(Original split; the simplified split shows the same pattern: 89.73 %
+  against 76.85 % after epoch 1.)*
+
+  Swin-T reaches 88 % validation accuracy with its backbone untouched, and
+  fine-tuning stage 4 adds less than one more point. EfficientNetV2-S needs
+  fine-tuning to get most of the way: its first fine-tuning epoch alone adds
+  6 points (78.3 % to 84.3 %), but it still finishes 4.6 points behind.
+  Swin-T's pretrained features are therefore already much better suited to
+  telling dog breeds apart, and most of the final gap between the models
+  comes from this starting point. This is the cleanest architecture
+  comparison in the project, because in phase 1 both models train only a
+  head of similar size (92 k and 154 k weights) with the same recipe. The
+  ImageNet-overlap caveat applies to both models equally, so it does not
+  explain the difference.
 - **Transfer learning.** Both pretrained models are more than 29 points
   ahead of the from-scratch CNN, with the ImageNet-overlap caveat above.
 - **Same breeds are hard for both.** Eskimo Dog and Collie are the two
@@ -366,6 +391,11 @@ about 5 points better; the remaining errors are look-alike breeds."
 - *Why freeze the backbone first?* The new head starts random, so its early
   gradients are large and noisy. Training it alone first stops that noise
   from damaging the pretrained weights.
+- *Why is Swin-T so far ahead after the first epoch?* In phase 1 only the
+  new head trains, so the score shows how good the frozen ImageNet features
+  already are. Swin-T's frozen features give 88 % against 76 % for
+  EfficientNetV2-S; fine-tuning narrows the gap to about 5 points but does
+  not close it.
 - *Why only unfreeze stage 4?* Early stages hold general features (edges,
   texture) that transfer as they are; the last stage holds the most
   task-specific features, so that is where adapting to dog breeds helps.

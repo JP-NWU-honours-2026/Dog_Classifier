@@ -1,0 +1,21 @@
+true_breed,predicted_breed,times
+Eskimo Dog,Siberian Husky,12
+Lhasa,Shih-Tzu,8
+Collie,Border Collie,8
+Collie,Shetland Sheepdog,7
+Appenzeller,Entlebucher,6
+Redbone,Rhodesian Ridgeback,5
+Irish Wolfhound,Scottish Deerhound,5
+Silky Terrier,Yorkshire Terrier,5
+Greater Swiss Mountain Dog,Entlebucher,5
+Shih-Tzu,Lhasa,4
+Foxhound,Beagle,4
+Kuvasz,Great Pyrenees,4
+Rhodesian Ridgeback,Bloodhound,3
+Beagle,Foxhound,3
+Black-And-Tan Coonhound,Doberman,3
+Scottish Deerhound,Irish Wolfhound,3
+Australian Terrier,Yorkshire Terrier,3
+Silky Terrier,Australian Terrier,3
+Lhasa,Tibetan Terrier,3
+Golden Retriever,Labrador Retriever,3

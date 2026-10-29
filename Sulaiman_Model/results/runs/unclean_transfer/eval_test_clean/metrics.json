@@ -9,7 +9,7 @@
   "macro_f1_pct": 87.64,
   "test_samples": 3164,
   "total_classes": 120,
-  "latency_ms_per_image": 0.41,
+  "latency_ms_per_image": 0.51,
   "trainable_parameters": 27611634,
   "training_time_minutes": 9.13,
   "gpu_used": "NVIDIA GeForce RTX 4060 Laptop GPU",

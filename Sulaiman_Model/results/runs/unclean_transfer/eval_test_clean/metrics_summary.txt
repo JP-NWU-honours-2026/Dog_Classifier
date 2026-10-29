@@ -14,7 +14,7 @@ CORE TEST METRICS:
   * Macro-Averaged F1:     0.8764 (87.64%)
   * Macro Precision:       88.46%
   * Macro Recall:          87.82%
-  * Inference Latency:     0.41 ms / image
+  * Inference Latency:     0.51 ms / image
 
 Artifacts Written to: C:\Github\Dog_Classifier\Sulaiman_Model\results\runs\unclean_transfer\eval_test_clean
   - metrics.json
