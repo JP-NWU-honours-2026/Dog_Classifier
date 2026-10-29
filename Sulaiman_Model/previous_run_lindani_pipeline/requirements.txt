@@ -1,0 +1,11 @@
+# Versions used for the Swin-T run (Python 3.14, Windows 11, RTX 4060 Laptop GPU).
+# The CUDA build of PyTorch comes from PyTorch's own index:
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+numpy==2.5.2
+matplotlib==3.11.2
+pillow==12.3.0
+# Only for running the notebook:
+ipykernel
+nbconvert

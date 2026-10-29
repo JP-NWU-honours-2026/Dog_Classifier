@@ -1,0 +1,17 @@
+{
+  "run_name": "simplified_transfer",
+  "model_name": "Transfer-Swin-T",
+  "top1_accuracy": 89.92,
+  "top5_accuracy": 99.34,
+  "macro_precision": 90.17,
+  "macro_recall": 89.63,
+  "macro_f1": 0.8953,
+  "macro_f1_pct": 89.53,
+  "test_samples": 3164,
+  "total_classes": 114,
+  "latency_ms_per_image": 0.51,
+  "trainable_parameters": 27607020,
+  "training_time_minutes": 9.09,
+  "gpu_used": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "manifest_used": "JP_Model\\split_manifest_simplified.json"
+}

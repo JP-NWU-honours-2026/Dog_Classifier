@@ -1,0 +1,2 @@
+model,weights,parameters,photographs,accuracy,interval,top5,macro_f1,macro_precision,macro_recall,clean_accuracy,clean_macro_f1,training_minutes,gpu
+swin_t,ImageNet-1K pretrained,27607020,3164,89.92,88.82 to 90.92,99.34,0.8953,0.9018,0.8963,,,9.1,NVIDIA GeForce RTX 4060 Laptop GPU

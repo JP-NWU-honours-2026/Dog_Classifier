@@ -1,256 +1,304 @@
 """
-dataset.py  (Sulaiman_Model, Swin Transformer)
+dataset.py - Dataset indexing, leakage-free 70/15/15 splitting, and PyTorch DataLoaders
+for all 120 dog breeds in the Stanford Dogs Dataset (ITRI626).
 
-Step 1: feeds the shared split to the model.
-
-This is Lindani's Lindani_Model/dataset.py with two changes:
-  1. It no longer imports from Lindani's split_check.py. The few constants it
-     needed are defined here, so this folder stands on its own.
-  2. The Kaggle folder guesses are gone, because training runs on a local
-     RTX 4060. The DOG_IMAGES_DIR environment variable still works as an
-     override if the photographs live somewhere else.
-
-What must NOT change, because the three-way comparison depends on it:
-  - the split file (split_manifest.json, seed 42, identical to JP's and Lindani's)
-  - input size 224 x 224 and ImageNet normalisation
-  - training-only augmentation: horizontal flip, rotation up to 15 degrees,
-    mild colour jitter. Validation and test are only resized and normalised.
-
-The leaked-photo list (test photos with a near-copy in training) is read from
-Lindani's results folder, so the whole group uses one list, not three copies.
-
-Self-test, from the repository root (the Dog_Classifier folder):
-
-    python Sulaiman_Model/dataset.py
+Sulaiman_Model copy of JP_Model/dataset.py. One change: JP's split manifests
+store absolute paths from his laptop (C:\\Users\\jpret\\...), so when a path
+does not exist on this machine it is remapped to
+<repo>/archive/images/Images/<breed_folder>/<file name>.
 """
 
-import csv
-import json
 import os
+import sys
+import json
+import random
 from pathlib import Path, PureWindowsPath
+from typing import Tuple, Dict, List, Optional
+from PIL import Image
 
 import torch
-from PIL import Image
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 
-# ---------------------------------------------------------------------------
-# Locations, all worked out relative to this file
-# ---------------------------------------------------------------------------
-SULAIMAN_DIR = Path(__file__).resolve().parent
-REPO_ROOT = SULAIMAN_DIR.parent
-IMAGES_DIR = REPO_ROOT / "archive" / "images" / "Images"
-MANIFEST_PATH = SULAIMAN_DIR / "split_manifest.json"
-LEAKED_PATH = REPO_ROOT / "Lindani_Model" / "results" / "duplicate_check" / "leaked_photos.csv"
-
-# ---------------------------------------------------------------------------
-# Shared settings. Identical for all three models.
-# ---------------------------------------------------------------------------
+# ImageNet normalization statistics
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD = [0.229, 0.224, 0.225]
-INPUT_SIZE = 224
-SEED = 42
-PILES = ("train", "val", "test")
 
 
-def local_key(entry):
+def clean_breed_name(folder_name: str) -> str:
     """
-    Turns one split-file entry into 'breed_folder/file_name'.
-
-    The split file stores full paths from JP's laptop (C:\\Users\\jpret\\...),
-    which don't exist on any other computer. Only the file name at the end is
-    kept, and the photo is then looked up in this machine's images folder.
+    Converts raw folder names (e.g., 'n02085620-Chihuahua' or 'n02099601-golden_retriever')
+    into clean, formatted breed names ('Chihuahua', 'Golden Retriever').
     """
-    file_name = PureWindowsPath(entry["path"]).name
-    return f"{entry['breed_folder']}/{file_name}"
+    # Remove WordNet ID prefix (e.g. n02085620-)
+    parts = folder_name.split("-", 1)
+    name_part = parts[1] if len(parts) > 1 else parts[0]
+    return name_part.replace("_", " ").title()
 
 
-def find_images_dir():
-    """Returns the folder holding the 120 breed folders."""
-    override = os.environ.get("DOG_IMAGES_DIR")
-    for candidate in (override, IMAGES_DIR):
-        if candidate and Path(candidate).is_dir():
-            return Path(candidate)
-    raise FileNotFoundError(
-        f"Could not find the breed folders at {IMAGES_DIR}. Either put the "
-        "dataset there, or set DOG_IMAGES_DIR to the folder that contains "
-        "folders like n02085620-Chihuahua."
-    )
-
-
-def get_transforms():
+def get_transforms(image_size: int = 224):
     """
-    Training augmentation, and the plain preprocessing for validation and test.
-
-    ImageNet normalisation matters more for this model than for Lindani's:
-    Swin-T was pretrained on photos normalised exactly this way, so its
-    weights expect numbers in this range.
+    Returns data transforms for training and validation/test.
+    Training includes realistic augmentations (rotation, flip, color jitter).
+    Validation and test only apply resizing and normalization (Rubric Section 7.2).
     """
-    train = transforms.Compose([
-        transforms.Resize((INPUT_SIZE, INPUT_SIZE)),
+    train_transform = transforms.Compose([
+        transforms.Resize((image_size, image_size)),
         transforms.RandomHorizontalFlip(p=0.5),
         transforms.RandomRotation(degrees=15),
         transforms.ColorJitter(brightness=0.15, contrast=0.15, saturation=0.1),
         transforms.ToTensor(),
         transforms.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD),
     ])
-    val_test = transforms.Compose([
-        transforms.Resize((INPUT_SIZE, INPUT_SIZE)),
+
+    val_test_transform = transforms.Compose([
+        transforms.Resize((image_size, image_size)),
         transforms.ToTensor(),
         transforms.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD),
     ])
-    return train, val_test
+
+    return train_transform, val_test_transform
 
 
-def load_manifest():
+def create_or_load_splits(
+    dataset_root: Path,
+    output_dir: Path,
+    train_ratio: float = 0.70,
+    val_ratio: float = 0.15,
+    test_ratio: float = 0.15,
+    seed: int = 42,
+    validate_images: bool = False,
+) -> Dict[str, any]:
     """
-    Reads the shared split. Returns, for each pile, a list of
-    (breed_folder/file_name, label) pairs, plus the breed names in label order.
-
-    Labels come straight from the split file, so class 7 here is the same
-    breed as class 7 in JP's and Lindani's models.
+    Creates or loads a reproducible 70/15/15 train/val/test split across all 120 breeds.
+    Saves the permanent split manifest to output_dir/split_manifest.json.
     """
-    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    items = {
-        pile: [(local_key(e), e["label"]) for e in manifest["splits"][pile]]
-        for pile in PILES
+    manifest_path = output_dir / "split_manifest.json"
+    if manifest_path.exists():
+        print(f"[dataset] Loading existing 120-breed split manifest from: {manifest_path}")
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    print(f"[dataset] Scanning all breed folders in: {dataset_root}")
+    if not dataset_root.exists():
+        raise FileNotFoundError(f"Dataset root directory not found: {dataset_root}")
+
+    breed_folders = sorted([d.name for d in dataset_root.iterdir() if d.is_dir()])
+    total_breeds = len(breed_folders)
+    print(f"[dataset] Found {total_breeds} breed directories. Creating reproducible splits (seed={seed})...")
+
+    random.seed(seed)
+    splits = {"train": [], "val": [], "test": []}
+    classes_map = {}
+    corrupted_count = 0
+
+    for class_idx, folder_name in enumerate(breed_folders):
+        display_name = clean_breed_name(folder_name)
+        classes_map[class_idx] = {
+            "folder": folder_name,
+            "display_name": display_name,
+        }
+
+        breed_dir = dataset_root / folder_name
+        image_files = sorted([
+            p for p in breed_dir.glob("*")
+            if p.suffix.lower() in [".jpg", ".jpeg", ".png"]
+        ])
+
+        # Optional integrity check
+        if validate_images:
+            valid_files = []
+            for img_p in image_files:
+                try:
+                    with Image.open(img_p) as im:
+                        im.verify()
+                    valid_files.append(img_p)
+                except Exception:
+                    corrupted_count += 1
+            image_files = valid_files
+
+        # Deterministic shuffle
+        shuffled = list(image_files)
+        random.shuffle(shuffled)
+
+        n_total = len(shuffled)
+        train_end = int(n_total * train_ratio)
+        val_end = train_end + int(n_total * val_ratio)
+
+        train_imgs = shuffled[:train_end]
+        val_imgs = shuffled[train_end:val_end]
+        test_imgs = shuffled[val_end:]
+
+        for img_p in train_imgs:
+            splits["train"].append({
+                "path": str(img_p.resolve()),
+                "label": class_idx,
+                "breed_folder": folder_name,
+                "breed_name": display_name,
+            })
+        for img_p in val_imgs:
+            splits["val"].append({
+                "path": str(img_p.resolve()),
+                "label": class_idx,
+                "breed_folder": folder_name,
+                "breed_name": display_name,
+            })
+        for img_p in test_imgs:
+            splits["test"].append({
+                "path": str(img_p.resolve()),
+                "label": class_idx,
+                "breed_folder": folder_name,
+                "breed_name": display_name,
+            })
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    manifest_data = {
+        "metadata": {
+            "total_classes": total_breeds,
+            "seed": seed,
+            "train_ratio": train_ratio,
+            "val_ratio": val_ratio,
+            "test_ratio": test_ratio,
+            "corrupted_images_removed": corrupted_count,
+            "counts": {
+                "train": len(splits["train"]),
+                "val": len(splits["val"]),
+                "test": len(splits["test"]),
+                "total": len(splits["train"]) + len(splits["val"]) + len(splits["test"]),
+            },
+        },
+        "classes": classes_map,
+        "splits": splits,
     }
-    classes = manifest["classes"]
-    names = [classes[str(i)]["display_name"] for i in range(len(classes))]
-    return items, names
 
+    with open(manifest_path, "w", encoding="utf-8") as f:
+        json.dump(manifest_data, f, indent=2)
 
-def leaked_keys(pile="test"):
-    """Photos in one pile with a confirmed copy in training (from Lindani's duplicate check)."""
-    if not LEAKED_PATH.exists():
-        return set()
-    with open(LEAKED_PATH, newline="", encoding="utf-8") as f:
-        return {row["photo"] for row in csv.DictReader(f) if row["pile"] == pile}
+    counts = manifest_data["metadata"]["counts"]
+    print(f"[dataset] 120-Breed split created successfully!")
+    print(f"          Total Images: {counts['total']:,}")
+    print(f"          Train: {counts['train']:,} ({counts['train']/counts['total']*100:.1f}%)")
+    print(f"          Val:   {counts['val']:,} ({counts['val']/counts['total']*100:.1f}%)")
+    print(f"          Test:  {counts['test']:,} ({counts['test']/counts['total']*100:.1f}%)")
+    print(f"          Manifest saved to: {manifest_path}")
+
+    return manifest_data
 
 
 class DogBreedDataset(Dataset):
-    """Hands the model one photo at a time: (image tensor, breed number, short name)."""
-
-    def __init__(self, items, images_dir, transform):
+    """
+    PyTorch Dataset loading images from split manifest entries.
+    Ensures safe RGB conversion.
+    """
+    def __init__(self, items: List[Dict[str, any]], transform=None):
         self.items = items
-        self.images_dir = Path(images_dir)
         self.transform = transform
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self.items)
 
-    def __getitem__(self, index):
-        key, label = self.items[index]
-        # One photo in the dataset has a transparency channel; convert("RGB")
-        # stops a 4-channel image from crashing training.
-        image = Image.open(self.images_dir / key).convert("RGB")
-        return self.transform(image), label, key
+    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, int, str]:
+        item = self.items[idx]
+        img_path = item["path"]
+        label = item["label"]
+
+        image = Image.open(img_path).convert("RGB")
+
+        if self.transform is not None:
+            image = self.transform(image)
+
+        return image, label, img_path
 
 
-def build_loaders(batch_size=32, num_workers=4, exclude_leaked=False, seed=SEED):
+def get_dataloaders(
+    workspace_root: Optional[Path] = None,
+    manifest_path: Optional[Path] = None,
+    batch_size: int = 32,
+    num_workers: int = 0,
+    seed: int = 42,
+    subset_fraction: float = 1.0,
+) -> Tuple[DataLoader, DataLoader, DataLoader, Dict[int, str]]:
     """
-    Returns (loaders, breed_names, summary).
-
-    loaders is a dict with 'train', 'val' and 'test' DataLoaders.
-    exclude_leaked=True drops the leaked test photos, giving the clean test set.
-    summary is a dict that gets written into the run log for the report.
+    High-level factory function returning (train_loader, val_loader, test_loader, class_names).
+    Supports loading custom split manifests (e.g. split_manifest_clean.json or split_manifest.json).
+    Optionally accepts subset_fraction for quick debugging/testing (e.g. 0.05 = 5% of data).
     """
-    images_dir = find_images_dir()
-    items, names = load_manifest()
+    if workspace_root is None:
+        workspace_root = Path(__file__).resolve().parent.parent
+
+    if manifest_path is not None:
+        manifest_p = Path(manifest_path)
+        if not manifest_p.exists():
+            raise FileNotFoundError(f"Specified manifest not found: {manifest_p}")
+        print(f"[dataset] Loading split manifest from: {manifest_p}")
+        with open(manifest_p, "r", encoding="utf-8") as f:
+            manifest = json.load(f)
+    else:
+        dataset_root = workspace_root / "archive" / "images" / "Images"
+        output_dir = workspace_root / "JP_Model"   # the group's shared split, as in JP's original
+
+        manifest = create_or_load_splits(
+            dataset_root=dataset_root,
+            output_dir=output_dir,
+            seed=seed,
+        )
+
+    splits = manifest["splits"]
+
+    # Remap JP's absolute paths to this machine's images folder.
+    images_root = workspace_root / "archive" / "images" / "Images"
+    def localise(items):
+        out = []
+        for item in items:
+            p = Path(item["path"])
+            if not p.exists():
+                item = dict(item, path=str(images_root / item["breed_folder"] / PureWindowsPath(item["path"]).name))
+            out.append(item)
+        return out
+    splits = {k: localise(v) for k, v in splits.items()}
+
+    train_items = splits["train"]
+    val_items = splits["val"]
+    test_items = splits["test"]
+
+    if subset_fraction < 1.0:
+        random.seed(seed)
+        n_train = max(16, int(len(train_items) * subset_fraction))
+        n_val = max(16, int(len(val_items) * subset_fraction))
+        n_test = max(16, int(len(test_items) * subset_fraction))
+        train_items = random.sample(train_items, n_train)
+        val_items = random.sample(val_items, n_val)
+        test_items = random.sample(test_items, n_test)
+        print(f"[dataset] Using {subset_fraction*100:.0f}% subset: Train={len(train_items)}, Val={len(val_items)}, Test={len(test_items)}")
+
     train_tf, val_tf = get_transforms()
 
-    dropped = 0
-    if exclude_leaked:
-        leaked = leaked_keys("test")
-        before = len(items["test"])
-        items["test"] = [p for p in items["test"] if p[0] not in leaked]
-        dropped = before - len(items["test"])
+    train_ds = DogBreedDataset(train_items, transform=train_tf)
+    val_ds = DogBreedDataset(val_items, transform=val_tf)
+    test_ds = DogBreedDataset(test_items, transform=val_tf)
 
-    datasets = {
-        "train": DogBreedDataset(items["train"], images_dir, train_tf),
-        "val": DogBreedDataset(items["val"], images_dir, val_tf),
-        "test": DogBreedDataset(items["test"], images_dir, val_tf),
-    }
-
-    # Seeded generator: batches are shuffled in the same order on every run.
-    generator = torch.Generator()
-    generator.manual_seed(seed)
+    # Pin memory for fast GPU transfers if CUDA is available
     pin_memory = torch.cuda.is_available()
-    # Keeps worker processes alive between epochs. Starting workers is slow on Windows.
-    persistent = num_workers > 0
 
-    loaders = {
-        "train": DataLoader(datasets["train"], batch_size=batch_size, shuffle=True,
-                            num_workers=num_workers, pin_memory=pin_memory,
-                            generator=generator, persistent_workers=persistent),
-        "val": DataLoader(datasets["val"], batch_size=batch_size, shuffle=False,
-                          num_workers=num_workers, pin_memory=pin_memory,
-                          persistent_workers=persistent),
-        "test": DataLoader(datasets["test"], batch_size=batch_size, shuffle=False,
-                           num_workers=num_workers, pin_memory=pin_memory,
-                           persistent_workers=persistent),
-    }
+    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=num_workers, pin_memory=pin_memory)
+    val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=pin_memory)
+    test_loader = DataLoader(test_ds, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=pin_memory)
 
-    summary = {
-        "images_dir": str(images_dir),
-        "split_file": str(MANIFEST_PATH),
-        "classes": len(names),
-        "train_photographs": len(datasets["train"]),
-        "val_photographs": len(datasets["val"]),
-        "test_photographs": len(datasets["test"]),
-        "leaked_test_photographs_excluded": dropped,
-        "batch_size": batch_size,
-        "input_size": INPUT_SIZE,
-        "seed": seed,
-    }
-    return loaders, names, summary
+    raw_classes = manifest["classes"]
+    class_names = {int(k): v["display_name"] for k, v in raw_classes.items()}
 
-
-def main():
-    print("SELF-TEST\n")
-    print(f"  torch                              {torch.__version__}")
-    print(f"  cuda available                     {torch.cuda.is_available()}")
-    if torch.cuda.is_available():
-        props = torch.cuda.get_device_properties(0)
-        print(f"  gpu                                {props.name}, "
-              f"{props.total_memory / 1024**3:.1f} GB")
-    print()
-
-    loaders, names, summary = build_loaders(batch_size=8, num_workers=0)
-    for key, value in summary.items():
-        print(f"  {key:<34} {value}")
-
-    # Every photo listed in the split must exist on this machine.
-    images_dir = Path(summary["images_dir"])
-    items, _ = load_manifest()
-    missing = [k for p in PILES for k, _ in items[p] if not (images_dir / k).is_file()]
-    print(f"\n  photos missing on this machine     {len(missing)}")
-    assert not missing, f"missing photos, first one: {missing[0]}"
-
-    print(f"  first three breeds                 {names[:3]}")
-    print(f"  last breed                         {names[-1]}")
-
-    images, labels, keys = next(iter(loaders["train"]))
-    print("\n  one training batch")
-    print(f"    images                           {tuple(images.shape)}")
-    print(f"    labels                           {labels.tolist()}")
-    print(f"    first photograph                 {keys[0]}")
-    print(f"    pixel values                     {images.min():.2f} to {images.max():.2f}")
-
-    # The label must match the breed folder the photo came from.
-    folder = keys[0].split("/")[0]
-    claimed = names[int(labels[0])]
-    print(f"\n  label check                        folder {folder} -> {claimed}")
-    assert folder.split("-", 1)[1].replace("_", " ").title() == claimed, \
-        "the label does not match the breed folder"
-
-    clean = build_loaders(batch_size=8, num_workers=0, exclude_leaked=True)[2]
-    print(f"\n  full test set                      {summary['test_photographs']}")
-    print(f"  clean test set                     {clean['test_photographs']} "
-          f"({clean['leaked_test_photographs_excluded']} leaked photos excluded)")
-
-    print("\nSelf-test passed.")
+    return train_loader, val_loader, test_loader, class_names
 
 
 if __name__ == "__main__":
-    main()
+    current_dir = Path(__file__).resolve().parent
+    workspace_root = current_dir.parent
+    train_loader, val_loader, test_loader, class_names = get_dataloaders(
+        workspace_root=workspace_root,
+        batch_size=16,
+    )
+    print(f"\nVerification:")
+    print(f"Total Classes: {len(class_names)}")
+    print(f"First 5 Classes: {[(k, class_names[k]) for k in sorted(class_names.keys())[:5]]}")
+    images, labels, paths = next(iter(train_loader))
+    print(f"Sample Batch: images={images.shape}, labels={labels.shape}")

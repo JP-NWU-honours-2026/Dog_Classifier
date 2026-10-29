@@ -1,0 +1,37 @@
+{
+  "model": "baseline_cnn",
+  "full": {
+    "photographs": 3200,
+    "breeds": 120,
+    "accuracy": 0.5384375,
+    "accuracy_interval_low": 0.5211288587367511,
+    "accuracy_interval_high": 0.5556539634851716,
+    "top5_accuracy": 0.8478125,
+    "macro_precision": 0.5403316666666667,
+    "macro_recall": 0.5340741666666666,
+    "macro_f1": 0.5320166666666667,
+    "weighted_f1": 0.53612925,
+    "errors": 1477,
+    "confident_errors": 114
+  },
+  "clean": {
+    "photographs": 3164,
+    "breeds": 120,
+    "accuracy": 0.5372945638432364,
+    "accuracy_interval_low": 0.5198859544134012,
+    "accuracy_interval_high": 0.5546127200152696,
+    "top5_accuracy": 0.8476611883691529,
+    "macro_precision": 0.5395858333333333,
+    "macro_recall": 0.5333116666666666,
+    "macro_f1": 0.5311641666666667,
+    "weighted_f1": 0.5348512326169406,
+    "errors": 1464,
+    "confident_errors": 111
+  },
+  "meta": {
+    "parameters": 4581784,
+    "minutes": 64.4,
+    "gpu": "Tesla T4",
+    "weights": "none (from scratch)"
+  }
+}

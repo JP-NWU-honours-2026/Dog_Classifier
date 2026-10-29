@@ -1,0 +1,37 @@
+{
+  "model": "swin_t",
+  "full": {
+    "photographs": 3200,
+    "breeds": 120,
+    "accuracy": 0.8803125,
+    "accuracy_interval_low": 0.8686073112161016,
+    "accuracy_interval_high": 0.891105653369913,
+    "top5_accuracy": 0.993125,
+    "macro_precision": 0.8828058333333334,
+    "macro_recall": 0.8768916666666667,
+    "macro_f1": 0.8746558333333334,
+    "weighted_f1": 0.87662671875,
+    "errors": 383,
+    "confident_errors": 6
+  },
+  "clean": {
+    "photographs": 3164,
+    "breeds": 120,
+    "accuracy": 0.8821112515802781,
+    "accuracy_interval_low": 0.8704085093060587,
+    "accuracy_interval_high": 0.8928872312385443,
+    "top5_accuracy": 0.993046776232617,
+    "macro_precision": 0.8846425,
+    "macro_recall": 0.8782125000000001,
+    "macro_f1": 0.8764383333333333,
+    "weighted_f1": 0.8785833122629583,
+    "errors": 373,
+    "confident_errors": 6
+  },
+  "meta": {
+    "parameters": 27611634,
+    "minutes": 9.1,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "weights": "ImageNet-1K pretrained"
+  }
+}

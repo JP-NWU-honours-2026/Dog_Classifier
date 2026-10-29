@@ -1,0 +1,24 @@
+{
+  "model": "swin_t",
+  "full": {
+    "photographs": 3164,
+    "breeds": 114,
+    "accuracy": 0.8991782553729456,
+    "accuracy_interval_low": 0.8881978659363445,
+    "accuracy_interval_high": 0.9091904883298536,
+    "top5_accuracy": 0.9933628318584071,
+    "macro_precision": 0.9017535087719297,
+    "macro_recall": 0.8962798245614035,
+    "macro_f1": 0.8952964912280702,
+    "weighted_f1": 0.8976481352718079,
+    "errors": 319,
+    "confident_errors": 6
+  },
+  "clean": null,
+  "meta": {
+    "parameters": 27607020,
+    "minutes": 9.1,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "weights": "ImageNet-1K pretrained"
+  }
+}
