@@ -1,0 +1,25 @@
+======================================================================
+ITRI626 EVALUATION SUMMARY - RUN: unclean_transfer
+======================================================================
+Architecture:           Transfer-Swin-T
+Manifest Evaluated:     JP_Model\split_manifest.json
+Total Test Samples:     3200 (120 classes)
+Trainable Parameters:   27,611,634
+Hardware Used:          NVIDIA GeForce RTX 4060 Laptop GPU
+Training Time:          9.13 minutes
+
+CORE TEST METRICS:
+  * Top-1 Test Accuracy:   88.03%
+  * Top-5 Test Accuracy:   99.31%
+  * Macro-Averaged F1:     0.8747 (87.47%)
+  * Macro Precision:       88.28%
+  * Macro Recall:          87.69%
+  * Inference Latency:     0.43 ms / image
+
+Artifacts Written to: C:\Github\Dog_Classifier\Sulaiman_Model\results\runs\unclean_transfer\eval_test
+  - metrics.json
+  - confusion_matrix.png
+  - confusion_matrix.csv
+  - per_class_metrics.csv
+  - sample_predictions.png
+======================================================================

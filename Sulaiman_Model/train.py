@@ -530,7 +530,7 @@ if __name__ == "__main__":
     parser.add_argument("--unfreeze_stage", type=int, default=6, help="Backbone stage to unfreeze from (default 6: upper stages 6 & 7).")
     parser.add_argument("--seed", type=int, default=42, help="Random seed for reproducibility.")
     parser.add_argument("--subset_fraction", type=float, default=1.0, help="Fraction of data to train on.")
-    parser.add_argument("--quick_test", action="store_true", help="Run 1 head epoch + 1 fine-tuning epoch on 5% data subset.")
+    parser.add_argument("--quick_test", action="store_true", help="Run 1 head epoch + 1 fine-tuning epoch on 5%% data subset.")
     parser.add_argument("--resume", type=str, default=None, help="Path to checkpoint to resume training from.")
     parser.add_argument("--phase2_only", action="store_true", help="Skip Phase 1 head warmup and go directly into Phase 2.")
 

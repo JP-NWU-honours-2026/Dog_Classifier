@@ -1,66 +1,102 @@
 # Sulaiman_Model: Swin Transformer (Swin-T)
 
 Model family 3 of 3 in the ITRI626 dog breed project: **Swin-T, pretrained on
-ImageNet-1K and fine-tuned** on all 120 breeds of Stanford Dogs. The other two
-are Lindani's CNN trained from scratch and JP's EfficientNetV2-S.
+ImageNet-1K, fine-tuned with JP's two-phase transfer learning pipeline**. The
+other two models are Lindani's CNN trained from scratch and JP's
+EfficientNetV2-S.
 
-## Result
+The code here is JP's pipeline (`JP_Model/`) with Swin-T swapped in for
+EfficientNetV2-S, so both pretrained models are trained, logged and evaluated
+by the same code on the same split files.
 
-| | Validation (3,025) | Test (3,200) | Clean test (3,166) |
-|---|---|---|---|
-| Accuracy | 86.61 % | **85.38 %** | 85.50 % |
-| Top-5 accuracy | 98.88 % | 98.56 % | |
-| Macro F1 | 0.8644 | **0.8490** | 0.8500 |
+## Results
 
-Clean test = the test set without the 34 photos that have a near-copy in
-training (found by `Lindani_Model/duplicate_check.py`).
+| Run | Split file | Classes | Test photos | Top-1 | Top-5 | Macro F1 | Train time |
+|---|---|---|---|---|---|---|---|
+| `unclean_transfer` | `JP_Model/split_manifest.json` | 120 | 3,200 | **88.03 %** | 99.31 % | **0.8747** | 9.1 min |
+| `unclean_transfer` (clean test) | `JP_Model/split_manifest_clean.json` | 120 | 3,164 | 88.21 % | 99.30 % | 0.8764 | |
+| `simplified_transfer` | `JP_Model/split_manifest_simplified.json` | 114 | 3,164 | **89.92 %** | 99.34 % | **0.8953** | 9.1 min |
+
+For comparison, with the same pipeline and split files, JP's EfficientNetV2-S
+scores 83.12 % / 0.8254 (unclean) and 84.54 % / 0.8402 (simplified).
+
+- **Unclean:** the dataset as downloaded.
+- **Clean test:** the unclean model scored on the cleaned test set (36
+  duplicate, leaked or double-labelled photos removed).
+- **Simplified:** trained and tested on JP's cleaned split with four
+  look-alike groups merged (Staffordshire Terrier, Foxhound, Poodle,
+  Schnauzer).
 
 ## Files
 
-| File | Step | What it does |
-|---|---|---|
-| `dataset.py` | 1 | Reads the shared split, preprocessing, training-only augmentation, data loaders |
-| `model.py` | 2 | Swin-T with ImageNet weights and a new Dropout(0.3) + Linear(768 to 120) head |
-| `train.py` | 3 | Fine-tunes the model, logs every setting, keeps the best epoch |
-| `evaluate.py` | 5 | Scores validation, then the test set once; writes metrics, tables and figures |
-| `swin_notebook.ipynb` | 6 | Runs the checks and shows every result with outputs visible |
-| `split_manifest.json` | | The shared 70/15/15 split, seed 42, identical to the other two models |
-| `requirements.txt` | | Library versions used |
-| `results/runs/swin_t/` | 4 | Training log (`metrics.csv`, `run_config.json`) and `eval_val/`, `eval_test/` |
+| File | What it does |
+|---|---|
+| `dataset.py` | JP's data loader. Only change: JP's split files contain paths from his laptop, so missing paths are redirected to `archive/images/Images/<breed>/<file>` |
+| `model.py` | JP's model file with Swin-T: `get_model`, `freeze_backbone`, `unfreeze_backbone`, `get_parameter_summary` |
+| `train.py` | JP's two-phase trainer, model labels changed only |
+| `evaluate.py` | JP's evaluator, printed labels changed only |
+| `swin_notebook.ipynb` | Shows every setting, training curve, test metric, confusion matrix, per-breed table and comparison, outputs visible |
+| `REPORT_SECTIONS.md` | Draft Swin-T text for the group report |
+| `swin_architecture.png` | Architecture diagram for the report |
+| `split_manifest.json` | Copy of the shared original split (identical to `JP_Model/split_manifest.json`) |
+| `requirements.txt` | Library versions |
+| `results/runs/<run>/` | `run_config.json`, `metrics.csv`, `history.json`, `training_curves.png`, `best_model.pth`, `eval_test/` |
+| `previous_run_lindani_pipeline/` | The earlier 85.4 % run with its own code and docs, kept for reference (see its `ABOUT.md`) |
 
-`best_model.pth` (110 MB) is not in git. Rerun training to recreate it.
+Each `eval_test/` folder holds `metrics.json`, `metrics_summary.txt`,
+`per_class_metrics.csv`, `confusion_matrix.csv`, `confusion_matrix.png` and
+`sample_predictions.png`, in exactly JP's format.
 
-## Settings
+`best_model.pth` (about 110 MB) is not in git (`*.pth` is ignored). Rerun
+training to recreate it.
+
+## Training recipe (identical to JP's)
 
 | Setting | Value |
 |---|---|
-| Model | `torchvision.models.swin_t`, weights `Swin_T_Weights.IMAGENET1K_V1`, 27,611,634 parameters, nothing frozen |
-| Input | 224 x 224, ImageNet normalisation |
-| Augmentation (training only) | horizontal flip, rotation up to 15 degrees, mild colour jitter |
-| Optimiser | AdamW, learning rate 1e-4, weight decay 0.05 |
-| Schedule | 1 epoch linear warm-up, then cosine decay to 0, per batch |
-| Batch size | 32, no gradient accumulation |
-| Epochs | up to 15, early stopping on validation macro F1 with patience 4 (cap reached, best epoch 15) |
-| Loss | cross entropy, no label smoothing |
-| Other | dropout 0.3, gradient clipping 1.0, mixed precision, seed 42 |
-| Hardware | NVIDIA GeForce RTX 4060 Laptop GPU (8 GB), 19 minutes, about 71 s per epoch |
+| Model | `torchvision.models.swin_t`, weights `Swin_T_Weights.IMAGENET1K_V1`, new head Dropout(0.3) + Linear(768 → classes), 27.6 M parameters |
+| Phase 1 | 2 epochs, only the head trains (92 k parameters), AdamW lr 3e-4, cosine to 3e-5 |
+| Phase 2 | 3 epochs, `features[6:]` (last patch merging + stage 4) + final norm + head train (15.5 M parameters), AdamW lr 1e-5, cosine to 1e-7 |
+| Loss | cross entropy, label smoothing 0.1 |
+| Weight decay | 0.01 |
+| Batch / input | 32 / 224 × 224, ImageNet normalisation |
+| Augmentation (train only) | horizontal flip, rotation up to 15°, colour jitter (brightness 0.15, contrast 0.15, saturation 0.1) |
+| Best epoch | highest validation accuracy, no early stopping |
+| Other | mixed precision, seed 42 |
+| Hardware | NVIDIA GeForce RTX 4060 Laptop GPU (8 GB), PyTorch 2.11.0+cu128, CUDA 12.8, Python 3.14 |
 
 ## Reproduce
 
 From the repository root (`Dog_Classifier`), with the Stanford Dogs photos in
-`archive/images/Images` (or point `DOG_IMAGES_DIR` at them):
+`archive/images/Images`:
 
 ```powershell
 pip install -r Sulaiman_Model/requirements.txt
 
-python Sulaiman_Model/dataset.py              # self-test of the split and data
-python Sulaiman_Model/model.py                # self-test of the model, downloads weights once
-python Sulaiman_Model/train.py                # trains, about 20 minutes on an RTX 4060
-python Sulaiman_Model/evaluate.py             # scores validation
-python Sulaiman_Model/evaluate.py --final     # scores the test set, once
+python Sulaiman_Model/train.py --run-name unclean_transfer    --manifest JP_Model/split_manifest.json
+python Sulaiman_Model/train.py --run-name simplified_transfer --manifest JP_Model/split_manifest_simplified.json
+
+python Sulaiman_Model/evaluate.py --run unclean_transfer    --manifest JP_Model/split_manifest.json
+python Sulaiman_Model/evaluate.py --run unclean_transfer    --manifest JP_Model/split_manifest_clean.json --eval-name eval_test_clean
+python Sulaiman_Model/evaluate.py --run simplified_transfer --manifest JP_Model/split_manifest_simplified.json
 
 jupyter nbconvert --to notebook --execute --inplace Sulaiman_Model/swin_notebook.ipynb
 ```
 
-GPU results are repeatable to within small differences, not bit for bit
-(`train.py --deterministic` forces the slower fully repeatable mode).
+Each training run takes about 9 minutes on an RTX 4060 Laptop GPU. The
+first run downloads the Swin-T weights (about 110 MB) once. Add
+`--quick_test` to a training command for a 5 % data smoke test.
+
+GPU training is repeatable to within small differences, not bit for bit.
+
+## Notes
+
+- **ImageNet overlap.** Stanford Dogs was built from ImageNet, and Swin-T was
+  pretrained on ImageNet-1K, so the backbone has very likely seen many of the
+  test photos. Scores of all pretrained models are optimistic for that
+  reason.
+- **Latency** in `metrics.json` is measured JP's way (no GPU synchronisation),
+  so it understates real per-image time. It is comparable with JP's numbers,
+  not an absolute figure.
+- The plot titles in `training_curves.png` and `confusion_matrix.png` say
+  "120" even for the 114-class run; that text is hard-coded in JP's scripts.
