@@ -41,7 +41,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02085782-Japanese_spaniel/n02085782_2459.jpg",
       "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_2459.jpg",
@@ -71,7 +71,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02085782-Japanese_spaniel/n02085782_2655.jpg",
       "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_2655.jpg",
@@ -101,7 +101,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02085782-Japanese_spaniel/n02085782_313.jpg",
       "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_313.jpg",
@@ -131,7 +131,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02085782-Japanese_spaniel/n02085782_381.jpg",
       "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_381.jpg",
@@ -161,7 +161,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02085782-Japanese_spaniel/n02085782_50.jpg",
       "url": "/archive_images/n02085782-Japanese_spaniel/n02085782_50.jpg",
@@ -191,7 +191,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02086240-Shih-Tzu/n02086240_3921.jpg",
       "url": "/archive_images/n02086240-Shih-Tzu/n02086240_3921.jpg",
@@ -221,7 +221,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02086646-Blenheim_spaniel/n02086646_1445.jpg",
       "url": "/archive_images/n02086646-Blenheim_spaniel/n02086646_1445.jpg",
@@ -251,7 +251,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02087046-toy_terrier/n02087046_2419.jpg",
       "url": "/archive_images/n02087046-toy_terrier/n02087046_2419.jpg",
@@ -281,7 +281,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02088094-Afghan_hound/n02088094_1270.jpg",
       "url": "/archive_images/n02088094-Afghan_hound/n02088094_1270.jpg",
@@ -311,7 +311,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02088466-bloodhound/n02088466_7015.jpg",
       "url": "/archive_images/n02088466-bloodhound/n02088466_7015.jpg",
@@ -341,7 +341,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02088466-bloodhound/n02088466_7462.jpg",
       "url": "/archive_images/n02088466-bloodhound/n02088466_7462.jpg",
@@ -371,7 +371,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02088466-bloodhound/n02088466_9023.jpg",
       "url": "/archive_images/n02088466-bloodhound/n02088466_9023.jpg",
@@ -401,7 +401,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02088632-bluetick/n02088632_4334.jpg",
       "url": "/archive_images/n02088632-bluetick/n02088632_4334.jpg",
@@ -431,7 +431,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02088632-bluetick/n02088632_4360.jpg",
       "url": "/archive_images/n02088632-bluetick/n02088632_4360.jpg",
@@ -461,7 +461,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02088632-bluetick/n02088632_819.jpg",
       "url": "/archive_images/n02088632-bluetick/n02088632_819.jpg",
@@ -491,7 +491,7 @@
     "crosses_piles": false,
     "pile_pair": "val-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02089078-black-and-tan_coonhound/n02089078_19.jpg",
       "url": "/archive_images/n02089078-black-and-tan_coonhound/n02089078_19.jpg",
@@ -521,7 +521,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02089078-black-and-tan_coonhound/n02089078_19.jpg",
       "url": "/archive_images/n02089078-black-and-tan_coonhound/n02089078_19.jpg",
@@ -551,7 +551,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02089078-black-and-tan_coonhound/n02089078_2417.jpg",
       "url": "/archive_images/n02089078-black-and-tan_coonhound/n02089078_2417.jpg",
@@ -581,7 +581,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02089867-Walker_hound/n02089867_1882.jpg",
       "url": "/archive_images/n02089867-Walker_hound/n02089867_1882.jpg",
@@ -611,7 +611,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02089867-Walker_hound/n02089867_2382.jpg",
       "url": "/archive_images/n02089867-Walker_hound/n02089867_2382.jpg",
@@ -641,7 +641,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02089867-Walker_hound/n02089867_2653.jpg",
       "url": "/archive_images/n02089867-Walker_hound/n02089867_2653.jpg",
@@ -671,7 +671,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02089867-Walker_hound/n02089867_2880.jpg",
       "url": "/archive_images/n02089867-Walker_hound/n02089867_2880.jpg",
@@ -701,7 +701,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02089867-Walker_hound/n02089867_3108.jpg",
       "url": "/archive_images/n02089867-Walker_hound/n02089867_3108.jpg",
@@ -731,7 +731,7 @@
     "crosses_piles": false,
     "pile_pair": "test-test",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02089867-Walker_hound/n02089867_3608.jpg",
       "url": "/archive_images/n02089867-Walker_hound/n02089867_3608.jpg",
@@ -761,7 +761,7 @@
     "crosses_piles": false,
     "pile_pair": "val-val",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02089867-Walker_hound/n02089867_3840.jpg",
       "url": "/archive_images/n02089867-Walker_hound/n02089867_3840.jpg",
@@ -791,7 +791,7 @@
     "crosses_piles": false,
     "pile_pair": "val-val",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02089867-Walker_hound/n02089867_4001.jpg",
       "url": "/archive_images/n02089867-Walker_hound/n02089867_4001.jpg",
@@ -821,7 +821,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02089973-English_foxhound/n02089973_2045.jpg",
       "url": "/archive_images/n02089973-English_foxhound/n02089973_2045.jpg",
@@ -851,7 +851,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02090379-redbone/n02090379_4667.jpg",
       "url": "/archive_images/n02090379-redbone/n02090379_4667.jpg",
@@ -881,7 +881,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_both",
     "photo_a": {
       "key": "n02091134-whippet/n02091134_16337.jpg",
       "url": "/archive_images/n02091134-whippet/n02091134_16337.jpg",
@@ -911,7 +911,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_both",
     "photo_a": {
       "key": "n02091134-whippet/n02091134_16337.jpg",
       "url": "/archive_images/n02091134-whippet/n02091134_16337.jpg",
@@ -941,7 +941,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02091635-otterhound/n02091635_4698.jpg",
       "url": "/archive_images/n02091635-otterhound/n02091635_4698.jpg",
@@ -971,7 +971,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02091831-Saluki/n02091831_13767.jpg",
       "url": "/archive_images/n02091831-Saluki/n02091831_13767.jpg",
@@ -1001,7 +1001,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02092002-Scottish_deerhound/n02092002_1767.jpg",
       "url": "/archive_images/n02092002-Scottish_deerhound/n02092002_1767.jpg",
@@ -1031,7 +1031,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02092002-Scottish_deerhound/n02092002_2448.jpg",
       "url": "/archive_images/n02092002-Scottish_deerhound/n02092002_2448.jpg",
@@ -1061,7 +1061,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02092002-Scottish_deerhound/n02092002_5504.jpg",
       "url": "/archive_images/n02092002-Scottish_deerhound/n02092002_5504.jpg",
@@ -1091,7 +1091,7 @@
     "crosses_piles": true,
     "pile_pair": "test-val",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02093256-Staffordshire_bullterrier/n02093256_4090.jpg",
       "url": "/archive_images/n02093256-Staffordshire_bullterrier/n02093256_4090.jpg",
@@ -1121,7 +1121,7 @@
     "crosses_piles": true,
     "pile_pair": "test-val",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02093256-Staffordshire_bullterrier/n02093256_5988.jpg",
       "url": "/archive_images/n02093256-Staffordshire_bullterrier/n02093256_5988.jpg",
@@ -1151,7 +1151,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02093256-Staffordshire_bullterrier/n02093256_6177.jpg",
       "url": "/archive_images/n02093256-Staffordshire_bullterrier/n02093256_6177.jpg",
@@ -1181,7 +1181,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02093647-Bedlington_terrier/n02093647_1766.jpg",
       "url": "/archive_images/n02093647-Bedlington_terrier/n02093647_1766.jpg",
@@ -1211,7 +1211,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02093647-Bedlington_terrier/n02093647_2585.jpg",
       "url": "/archive_images/n02093647-Bedlington_terrier/n02093647_2585.jpg",
@@ -1241,7 +1241,7 @@
     "crosses_piles": true,
     "pile_pair": "test-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02093647-Bedlington_terrier/n02093647_2626.jpg",
       "url": "/archive_images/n02093647-Bedlington_terrier/n02093647_2626.jpg",
@@ -1271,7 +1271,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02093859-Kerry_blue_terrier/n02093859_1697.jpg",
       "url": "/archive_images/n02093859-Kerry_blue_terrier/n02093859_1697.jpg",
@@ -1301,7 +1301,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02093859-Kerry_blue_terrier/n02093859_2579.jpg",
       "url": "/archive_images/n02093859-Kerry_blue_terrier/n02093859_2579.jpg",
@@ -1331,7 +1331,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02093859-Kerry_blue_terrier/n02093859_3209.jpg",
       "url": "/archive_images/n02093859-Kerry_blue_terrier/n02093859_3209.jpg",
@@ -1361,7 +1361,7 @@
     "crosses_piles": false,
     "pile_pair": "test-test",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02093991-Irish_terrier/n02093991_114.jpg",
       "url": "/archive_images/n02093991-Irish_terrier/n02093991_114.jpg",
@@ -1391,7 +1391,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02093991-Irish_terrier/n02093991_2923.jpg",
       "url": "/archive_images/n02093991-Irish_terrier/n02093991_2923.jpg",
@@ -1421,7 +1421,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02094114-Norfolk_terrier/n02094114_1020.jpg",
       "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_1020.jpg",
@@ -1451,7 +1451,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02094114-Norfolk_terrier/n02094114_1020.jpg",
       "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_1020.jpg",
@@ -1481,7 +1481,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02094114-Norfolk_terrier/n02094114_1676.jpg",
       "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_1676.jpg",
@@ -1511,7 +1511,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02094114-Norfolk_terrier/n02094114_1676.jpg",
       "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_1676.jpg",
@@ -1541,7 +1541,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02094114-Norfolk_terrier/n02094114_1696.jpg",
       "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_1696.jpg",
@@ -1571,7 +1571,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02094114-Norfolk_terrier/n02094114_745.jpg",
       "url": "/archive_images/n02094114-Norfolk_terrier/n02094114_745.jpg",
@@ -1601,7 +1601,7 @@
     "crosses_piles": false,
     "pile_pair": "val-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02095314-wire-haired_fox_terrier/n02095314_1820.jpg",
       "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_1820.jpg",
@@ -1631,7 +1631,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02095314-wire-haired_fox_terrier/n02095314_2038.jpg",
       "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_2038.jpg",
@@ -1661,7 +1661,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02095314-wire-haired_fox_terrier/n02095314_2754.jpg",
       "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_2754.jpg",
@@ -1691,7 +1691,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02095314-wire-haired_fox_terrier/n02095314_2964.jpg",
       "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_2964.jpg",
@@ -1721,7 +1721,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02095314-wire-haired_fox_terrier/n02095314_3166.jpg",
       "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_3166.jpg",
@@ -1751,7 +1751,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02095314-wire-haired_fox_terrier/n02095314_3189.jpg",
       "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_3189.jpg",
@@ -1781,7 +1781,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02095314-wire-haired_fox_terrier/n02095314_3509.jpg",
       "url": "/archive_images/n02095314-wire-haired_fox_terrier/n02095314_3509.jpg",
@@ -1811,7 +1811,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02095570-Lakeland_terrier/n02095570_1482.jpg",
       "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_1482.jpg",
@@ -1841,7 +1841,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02095570-Lakeland_terrier/n02095570_1575.jpg",
       "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_1575.jpg",
@@ -1871,7 +1871,7 @@
     "crosses_piles": false,
     "pile_pair": "test-test",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02095570-Lakeland_terrier/n02095570_2418.jpg",
       "url": "/archive_images/n02095570-Lakeland_terrier/n02095570_2418.jpg",
@@ -1901,7 +1901,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02095889-Sealyham_terrier/n02095889_1019.jpg",
       "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_1019.jpg",
@@ -1931,7 +1931,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02095889-Sealyham_terrier/n02095889_2031.jpg",
       "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_2031.jpg",
@@ -1961,7 +1961,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02095889-Sealyham_terrier/n02095889_2134.jpg",
       "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_2134.jpg",
@@ -1991,7 +1991,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02095889-Sealyham_terrier/n02095889_2162.jpg",
       "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_2162.jpg",
@@ -2021,7 +2021,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02095889-Sealyham_terrier/n02095889_3354.jpg",
       "url": "/archive_images/n02095889-Sealyham_terrier/n02095889_3354.jpg",
@@ -2051,7 +2051,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02096437-Dandie_Dinmont/n02096437_2580.jpg",
       "url": "/archive_images/n02096437-Dandie_Dinmont/n02096437_2580.jpg",
@@ -2081,7 +2081,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02097047-miniature_schnauzer/n02097047_2426.jpg",
       "url": "/archive_images/n02097047-miniature_schnauzer/n02097047_2426.jpg",
@@ -2111,7 +2111,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02097047-miniature_schnauzer/n02097047_951.jpg",
       "url": "/archive_images/n02097047-miniature_schnauzer/n02097047_951.jpg",
@@ -2141,7 +2141,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02097130-giant_schnauzer/n02097130_4193.jpg",
       "url": "/archive_images/n02097130-giant_schnauzer/n02097130_4193.jpg",
@@ -2171,7 +2171,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02097130-giant_schnauzer/n02097130_857.jpg",
       "url": "/archive_images/n02097130-giant_schnauzer/n02097130_857.jpg",
@@ -2201,7 +2201,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02097209-standard_schnauzer/n02097209_2992.jpg",
       "url": "/archive_images/n02097209-standard_schnauzer/n02097209_2992.jpg",
@@ -2231,7 +2231,7 @@
     "crosses_piles": false,
     "pile_pair": "test-test",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02097298-Scotch_terrier/n02097298_2083.jpg",
       "url": "/archive_images/n02097298-Scotch_terrier/n02097298_2083.jpg",
@@ -2261,7 +2261,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02097474-Tibetan_terrier/n02097474_2113.jpg",
       "url": "/archive_images/n02097474-Tibetan_terrier/n02097474_2113.jpg",
@@ -2291,7 +2291,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02097474-Tibetan_terrier/n02097474_4907.jpg",
       "url": "/archive_images/n02097474-Tibetan_terrier/n02097474_4907.jpg",
@@ -2321,7 +2321,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02097474-Tibetan_terrier/n02097474_494.jpg",
       "url": "/archive_images/n02097474-Tibetan_terrier/n02097474_494.jpg",
@@ -2351,7 +2351,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02097658-silky_terrier/n02097658_4201.jpg",
       "url": "/archive_images/n02097658-silky_terrier/n02097658_4201.jpg",
@@ -2381,7 +2381,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02098105-soft-coated_wheaten_terrier/n02098105_1090.jpg",
       "url": "/archive_images/n02098105-soft-coated_wheaten_terrier/n02098105_1090.jpg",
@@ -2411,7 +2411,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02099429-curly-coated_retriever/n02099429_2263.jpg",
       "url": "/archive_images/n02099429-curly-coated_retriever/n02099429_2263.jpg",
@@ -2441,7 +2441,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02099712-Labrador_retriever/n02099712_5689.jpg",
       "url": "/archive_images/n02099712-Labrador_retriever/n02099712_5689.jpg",
@@ -2471,7 +2471,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02100735-English_setter/n02100735_2684.jpg",
       "url": "/archive_images/n02100735-English_setter/n02100735_2684.jpg",
@@ -2501,7 +2501,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02101556-clumber/n02101556_4965.jpg",
       "url": "/archive_images/n02101556-clumber/n02101556_4965.jpg",
@@ -2531,7 +2531,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02101556-clumber/n02101556_5512.jpg",
       "url": "/archive_images/n02101556-clumber/n02101556_5512.jpg",
@@ -2561,7 +2561,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02102177-Welsh_springer_spaniel/n02102177_1999.jpg",
       "url": "/archive_images/n02102177-Welsh_springer_spaniel/n02102177_1999.jpg",
@@ -2591,7 +2591,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02102480-Sussex_spaniel/n02102480_101.jpg",
       "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_101.jpg",
@@ -2621,7 +2621,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02102480-Sussex_spaniel/n02102480_2041.jpg",
       "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_2041.jpg",
@@ -2651,7 +2651,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02102480-Sussex_spaniel/n02102480_4322.jpg",
       "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_4322.jpg",
@@ -2681,7 +2681,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02102480-Sussex_spaniel/n02102480_4373.jpg",
       "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_4373.jpg",
@@ -2711,7 +2711,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02102480-Sussex_spaniel/n02102480_5031.jpg",
       "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_5031.jpg",
@@ -2741,7 +2741,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02102480-Sussex_spaniel/n02102480_5031.jpg",
       "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_5031.jpg",
@@ -2771,7 +2771,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02102480-Sussex_spaniel/n02102480_5158.jpg",
       "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_5158.jpg",
@@ -2801,7 +2801,7 @@
     "crosses_piles": true,
     "pile_pair": "test-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02102480-Sussex_spaniel/n02102480_5734.jpg",
       "url": "/archive_images/n02102480-Sussex_spaniel/n02102480_5734.jpg",
@@ -2831,7 +2831,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02102973-Irish_water_spaniel/n02102973_1615.jpg",
       "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_1615.jpg",
@@ -2861,7 +2861,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02102973-Irish_water_spaniel/n02102973_1723.jpg",
       "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_1723.jpg",
@@ -2891,7 +2891,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02102973-Irish_water_spaniel/n02102973_2442.jpg",
       "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_2442.jpg",
@@ -2921,7 +2921,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02102973-Irish_water_spaniel/n02102973_2645.jpg",
       "url": "/archive_images/n02102973-Irish_water_spaniel/n02102973_2645.jpg",
@@ -2951,7 +2951,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02104029-kuvasz/n02104029_2417.jpg",
       "url": "/archive_images/n02104029-kuvasz/n02104029_2417.jpg",
@@ -2981,7 +2981,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02104029-kuvasz/n02104029_3526.jpg",
       "url": "/archive_images/n02104029-kuvasz/n02104029_3526.jpg",
@@ -3011,7 +3011,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02104365-schipperke/n02104365_4190.jpg",
       "url": "/archive_images/n02104365-schipperke/n02104365_4190.jpg",
@@ -3041,7 +3041,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02104365-schipperke/n02104365_5740.jpg",
       "url": "/archive_images/n02104365-schipperke/n02104365_5740.jpg",
@@ -3071,7 +3071,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02104365-schipperke/n02104365_9552.jpg",
       "url": "/archive_images/n02104365-schipperke/n02104365_9552.jpg",
@@ -3101,7 +3101,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02105056-groenendael/n02105056_3499.jpg",
       "url": "/archive_images/n02105056-groenendael/n02105056_3499.jpg",
@@ -3131,7 +3131,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02105056-groenendael/n02105056_5700.jpg",
       "url": "/archive_images/n02105056-groenendael/n02105056_5700.jpg",
@@ -3161,7 +3161,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02105162-malinois/n02105162_2079.jpg",
       "url": "/archive_images/n02105162-malinois/n02105162_2079.jpg",
@@ -3191,7 +3191,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02105251-briard/n02105251_224.jpg",
       "url": "/archive_images/n02105251-briard/n02105251_224.jpg",
@@ -3221,7 +3221,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_both",
     "photo_a": {
       "key": "n02105251-briard/n02105251_4659.jpg",
       "url": "/archive_images/n02105251-briard/n02105251_4659.jpg",
@@ -3251,7 +3251,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02105251-briard/n02105251_4893.jpg",
       "url": "/archive_images/n02105251-briard/n02105251_4893.jpg",
@@ -3281,7 +3281,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02106030-collie/n02106030_10021.jpg",
       "url": "/archive_images/n02106030-collie/n02106030_10021.jpg",
@@ -3311,7 +3311,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02106030-collie/n02106030_14811.jpg",
       "url": "/archive_images/n02106030-collie/n02106030_14811.jpg",
@@ -3341,7 +3341,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02106030-collie/n02106030_15829.jpg",
       "url": "/archive_images/n02106030-collie/n02106030_15829.jpg",
@@ -3371,7 +3371,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02106030-collie/n02106030_16338.jpg",
       "url": "/archive_images/n02106030-collie/n02106030_16338.jpg",
@@ -3401,7 +3401,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02106030-collie/n02106030_2522.jpg",
       "url": "/archive_images/n02106030-collie/n02106030_2522.jpg",
@@ -3431,7 +3431,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02106030-collie/n02106030_873.jpg",
       "url": "/archive_images/n02106030-collie/n02106030_873.jpg",
@@ -3461,7 +3461,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02106382-Bouvier_des_Flandres/n02106382_1454.jpg",
       "url": "/archive_images/n02106382-Bouvier_des_Flandres/n02106382_1454.jpg",
@@ -3491,7 +3491,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02106382-Bouvier_des_Flandres/n02106382_29.jpg",
       "url": "/archive_images/n02106382-Bouvier_des_Flandres/n02106382_29.jpg",
@@ -3521,7 +3521,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "rejected_keep_both",
     "photo_a": {
       "key": "n02106550-Rottweiler/n02106550_11693.jpg",
       "url": "/archive_images/n02106550-Rottweiler/n02106550_11693.jpg",
@@ -3551,7 +3551,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_1180.jpg",
       "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_1180.jpg",
@@ -3581,7 +3581,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_2100.jpg",
       "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_2100.jpg",
@@ -3611,7 +3611,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_2325.jpg",
       "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_2325.jpg",
@@ -3641,7 +3641,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_261.jpg",
       "url": "/archive_images/n02107574-Greater_Swiss_Mountain_dog/n02107574_261.jpg",
@@ -3671,7 +3671,7 @@
     "crosses_piles": false,
     "pile_pair": "test-test",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02107683-Bernese_mountain_dog/n02107683_2881.jpg",
       "url": "/archive_images/n02107683-Bernese_mountain_dog/n02107683_2881.jpg",
@@ -3701,7 +3701,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02107683-Bernese_mountain_dog/n02107683_5397.jpg",
       "url": "/archive_images/n02107683-Bernese_mountain_dog/n02107683_5397.jpg",
@@ -3731,7 +3731,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02107683-Bernese_mountain_dog/n02107683_71.jpg",
       "url": "/archive_images/n02107683-Bernese_mountain_dog/n02107683_71.jpg",
@@ -3761,7 +3761,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02107908-Appenzeller/n02107908_2608.jpg",
       "url": "/archive_images/n02107908-Appenzeller/n02107908_2608.jpg",
@@ -3791,7 +3791,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02108000-EntleBucher/n02108000_2891.jpg",
       "url": "/archive_images/n02108000-EntleBucher/n02108000_2891.jpg",
@@ -3821,7 +3821,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02108000-EntleBucher/n02108000_3113.jpg",
       "url": "/archive_images/n02108000-EntleBucher/n02108000_3113.jpg",
@@ -3851,7 +3851,7 @@
     "crosses_piles": false,
     "pile_pair": "val-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02108422-bull_mastiff/n02108422_1166.jpg",
       "url": "/archive_images/n02108422-bull_mastiff/n02108422_1166.jpg",
@@ -3881,7 +3881,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02108551-Tibetan_mastiff/n02108551_4421.jpg",
       "url": "/archive_images/n02108551-Tibetan_mastiff/n02108551_4421.jpg",
@@ -3911,7 +3911,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02109525-Saint_Bernard/n02109525_1314.jpg",
       "url": "/archive_images/n02109525-Saint_Bernard/n02109525_1314.jpg",
@@ -3941,7 +3941,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02109961-Eskimo_dog/n02109961_2317.jpg",
       "url": "/archive_images/n02109961-Eskimo_dog/n02109961_2317.jpg",
@@ -3971,7 +3971,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02109961-Eskimo_dog/n02109961_5924.jpg",
       "url": "/archive_images/n02109961-Eskimo_dog/n02109961_5924.jpg",
@@ -4001,7 +4001,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02110627-affenpinscher/n02110627_11783.jpg",
       "url": "/archive_images/n02110627-affenpinscher/n02110627_11783.jpg",
@@ -4031,7 +4031,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02110627-affenpinscher/n02110627_12272.jpg",
       "url": "/archive_images/n02110627-affenpinscher/n02110627_12272.jpg",
@@ -4061,7 +4061,7 @@
     "crosses_piles": true,
     "pile_pair": "test-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02110627-affenpinscher/n02110627_12431.jpg",
       "url": "/archive_images/n02110627-affenpinscher/n02110627_12431.jpg",
@@ -4091,7 +4091,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02111129-Leonberg/n02111129_1115.jpg",
       "url": "/archive_images/n02111129-Leonberg/n02111129_1115.jpg",
@@ -4121,7 +4121,7 @@
     "crosses_piles": false,
     "pile_pair": "val-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02111129-Leonberg/n02111129_1178.jpg",
       "url": "/archive_images/n02111129-Leonberg/n02111129_1178.jpg",
@@ -4151,7 +4151,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02111129-Leonberg/n02111129_1832.jpg",
       "url": "/archive_images/n02111129-Leonberg/n02111129_1832.jpg",
@@ -4181,7 +4181,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02111129-Leonberg/n02111129_1940.jpg",
       "url": "/archive_images/n02111129-Leonberg/n02111129_1940.jpg",
@@ -4211,7 +4211,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02111129-Leonberg/n02111129_2330.jpg",
       "url": "/archive_images/n02111129-Leonberg/n02111129_2330.jpg",
@@ -4241,7 +4241,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02111129-Leonberg/n02111129_3388.jpg",
       "url": "/archive_images/n02111129-Leonberg/n02111129_3388.jpg",
@@ -4271,7 +4271,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02111129-Leonberg/n02111129_4017.jpg",
       "url": "/archive_images/n02111129-Leonberg/n02111129_4017.jpg",
@@ -4301,7 +4301,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02111129-Leonberg/n02111129_571.jpg",
       "url": "/archive_images/n02111129-Leonberg/n02111129_571.jpg",
@@ -4331,7 +4331,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02112706-Brabancon_griffon/n02112706_1202.jpg",
       "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_1202.jpg",
@@ -4361,7 +4361,7 @@
     "crosses_piles": false,
     "pile_pair": "val-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02112706-Brabancon_griffon/n02112706_1379.jpg",
       "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_1379.jpg",
@@ -4391,7 +4391,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02112706-Brabancon_griffon/n02112706_1568.jpg",
       "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_1568.jpg",
@@ -4421,7 +4421,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02112706-Brabancon_griffon/n02112706_1833.jpg",
       "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_1833.jpg",
@@ -4451,7 +4451,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02112706-Brabancon_griffon/n02112706_1882.jpg",
       "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_1882.jpg",
@@ -4481,7 +4481,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02112706-Brabancon_griffon/n02112706_2550.jpg",
       "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_2550.jpg",
@@ -4511,7 +4511,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02112706-Brabancon_griffon/n02112706_62.jpg",
       "url": "/archive_images/n02112706-Brabancon_griffon/n02112706_62.jpg",
@@ -4541,7 +4541,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02113186-Cardigan/n02113186_1030.jpg",
       "url": "/archive_images/n02113186-Cardigan/n02113186_1030.jpg",
@@ -4571,7 +4571,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_both",
     "photo_a": {
       "key": "n02113624-toy_poodle/n02113624_1804.jpg",
       "url": "/archive_images/n02113624-toy_poodle/n02113624_1804.jpg",
@@ -4601,7 +4601,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02113624-toy_poodle/n02113624_2244.jpg",
       "url": "/archive_images/n02113624-toy_poodle/n02113624_2244.jpg",
@@ -4631,7 +4631,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113624-toy_poodle/n02113624_2258.jpg",
       "url": "/archive_images/n02113624-toy_poodle/n02113624_2258.jpg",
@@ -4661,7 +4661,7 @@
     "crosses_piles": false,
     "pile_pair": "val-val",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113712-miniature_poodle/n02113712_230.jpg",
       "url": "/archive_images/n02113712-miniature_poodle/n02113712_230.jpg",
@@ -4691,7 +4691,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113978-Mexican_hairless/n02113978_1069.jpg",
       "url": "/archive_images/n02113978-Mexican_hairless/n02113978_1069.jpg",
@@ -4721,7 +4721,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113978-Mexican_hairless/n02113978_131.jpg",
       "url": "/archive_images/n02113978-Mexican_hairless/n02113978_131.jpg",
@@ -4751,7 +4751,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113978-Mexican_hairless/n02113978_1323.jpg",
       "url": "/archive_images/n02113978-Mexican_hairless/n02113978_1323.jpg",
@@ -4781,7 +4781,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_b",
     "photo_a": {
       "key": "n02113978-Mexican_hairless/n02113978_1632.jpg",
       "url": "/archive_images/n02113978-Mexican_hairless/n02113978_1632.jpg",
@@ -4811,7 +4811,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113978-Mexican_hairless/n02113978_1956.jpg",
       "url": "/archive_images/n02113978-Mexican_hairless/n02113978_1956.jpg",
@@ -4841,7 +4841,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113978-Mexican_hairless/n02113978_1956.jpg",
       "url": "/archive_images/n02113978-Mexican_hairless/n02113978_1956.jpg",
@@ -4871,7 +4871,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113978-Mexican_hairless/n02113978_2141.jpg",
       "url": "/archive_images/n02113978-Mexican_hairless/n02113978_2141.jpg",
@@ -4901,7 +4901,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113978-Mexican_hairless/n02113978_2167.jpg",
       "url": "/archive_images/n02113978-Mexican_hairless/n02113978_2167.jpg",
@@ -4931,7 +4931,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113978-Mexican_hairless/n02113978_3178.jpg",
       "url": "/archive_images/n02113978-Mexican_hairless/n02113978_3178.jpg",
@@ -4961,7 +4961,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02113978-Mexican_hairless/n02113978_3921.jpg",
       "url": "/archive_images/n02113978-Mexican_hairless/n02113978_3921.jpg",
@@ -4991,7 +4991,7 @@
     "crosses_piles": true,
     "pile_pair": "train-val",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02115641-dingo/n02115641_13565.jpg",
       "url": "/archive_images/n02115641-dingo/n02115641_13565.jpg",
@@ -5021,7 +5021,7 @@
     "crosses_piles": false,
     "pile_pair": "test-test",
     "default_action": "remove_both",
-    "status": "pending",
+    "status": "approved_remove_both",
     "photo_a": {
       "key": "n02115641-dingo/n02115641_2440.jpg",
       "url": "/archive_images/n02115641-dingo/n02115641_2440.jpg",
@@ -5051,7 +5051,7 @@
     "crosses_piles": true,
     "pile_pair": "test-train",
     "default_action": "remove_a",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02115913-dhole/n02115913_1142.jpg",
       "url": "/archive_images/n02115913-dhole/n02115913_1142.jpg",
@@ -5081,7 +5081,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02115913-dhole/n02115913_1552.jpg",
       "url": "/archive_images/n02115913-dhole/n02115913_1552.jpg",
@@ -5111,7 +5111,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02115913-dhole/n02115913_262.jpg",
       "url": "/archive_images/n02115913-dhole/n02115913_262.jpg",
@@ -5141,7 +5141,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02115913-dhole/n02115913_4117.jpg",
       "url": "/archive_images/n02115913-dhole/n02115913_4117.jpg",
@@ -5171,7 +5171,7 @@
     "crosses_piles": false,
     "pile_pair": "train-train",
     "default_action": "remove_b",
-    "status": "pending",
+    "status": "approved_remove_a",
     "photo_a": {
       "key": "n02115913-dhole/n02115913_4119.jpg",
       "url": "/archive_images/n02115913-dhole/n02115913_4119.jpg",

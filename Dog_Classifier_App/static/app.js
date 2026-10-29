@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabClassifier = document.getElementById('tabClassifier');
   const tabGallery = document.getElementById('tabGallery');
   const tabAudit = document.getElementById('tabAudit');
+  const tabMerger = document.getElementById('tabMerger');
   const viewClassifier = document.getElementById('viewClassifier');
   const viewGallery = document.getElementById('viewGallery');
   const viewAudit = document.getElementById('viewAudit');
+  const viewMerger = document.getElementById('viewMerger');
 
   // Classifier Elements
   const dropzone = document.getElementById('dropzone');
@@ -79,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Navigation / Mode Switcher
   // =========================================================================
   function switchMode(mode) {
-    [tabClassifier, tabGallery, tabAudit].forEach(t => t && t.classList.remove('active'));
-    [viewClassifier, viewGallery, viewAudit].forEach(v => v && v.classList.add('hidden'));
+    [tabClassifier, tabGallery, tabAudit, tabMerger].forEach(t => t && t.classList.remove('active'));
+    [viewClassifier, viewGallery, viewAudit, viewMerger].forEach(v => v && v.classList.add('hidden'));
 
     if (mode === 'classifier') {
       tabClassifier.classList.add('active');
@@ -97,12 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
       tabAudit.classList.add('active');
       viewAudit.classList.remove('hidden');
       loadAuditCandidates();
+    } else if (mode === 'merger') {
+      tabMerger.classList.add('active');
+      viewMerger.classList.remove('hidden');
+      initMergerStudio();
     }
   }
 
   tabClassifier.addEventListener('click', () => switchMode('classifier'));
   tabGallery.addEventListener('click', () => switchMode('gallery'));
   if (tabAudit) tabAudit.addEventListener('click', () => switchMode('audit'));
+  if (tabMerger) tabMerger.addEventListener('click', () => switchMode('merger'));
 
   // =========================================================================
   // 2. Initialize Telemetry & Breeds List
@@ -976,5 +983,499 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
     .catch(() => {});
+
+  // =========================================================================
+  // 6. BREED SIMPLIFICATION & MERGER STUDIO LOGIC
+  // =========================================================================
+  let mergerStudioInitialized = false;
+  let mergerSuggestedClusters = [];
+  let activeClusterIds = new Set();
+  let clusterNameOverrides = {};
+  let customMergeGroups = [];
+  let currentMergerCategory = 'all';
+  let lastPreviewResult = null;
+  let allMergerBreedsList = [];
+
+  const mergerSourceSelect = document.getElementById('mergerSourceSelect');
+  const btnGenerateSimplifiedManifest = document.getElementById('btnGenerateSimplifiedManifest');
+  const mergerClustersList = document.getElementById('mergerClustersList');
+  const mergerCategoryPills = document.getElementById('mergerCategoryPills');
+  const btnSelectAllSuggested = document.getElementById('btnSelectAllSuggested');
+  const btnDeselectAllSuggested = document.getElementById('btnDeselectAllSuggested');
+  const customBreedSelectorBox = document.getElementById('customBreedSelectorBox');
+  const customTargetNameInput = document.getElementById('customTargetNameInput');
+  const customBreedSearchInput = document.getElementById('customBreedSearchInput');
+  const btnAddCustomGroup = document.getElementById('btnAddCustomGroup');
+  const resultingClassesDeck = document.getElementById('resultingClassesDeck');
+  const resultingSearchInput = document.getElementById('resultingSearchInput');
+  const mergerAlert = document.getElementById('mergerAlert');
+  const mergerAlertText = document.getElementById('mergerAlertText');
+  const mergerReductionBadge = document.getElementById('mergerReductionBadge');
+
+  const statMergerOrigClasses = document.getElementById('statMergerOrigClasses');
+  const statMergerActiveGroups = document.getElementById('statMergerActiveGroups');
+  const statMergerResultingClasses = document.getElementById('statMergerResultingClasses');
+  const statMergerReduction = document.getElementById('statMergerReduction');
+  const resultingClassesCountBadge = document.getElementById('resultingClassesCountBadge');
+
+  async function initMergerStudio() {
+    if (!mergerStudioInitialized) {
+      mergerStudioInitialized = true;
+      setupMergerEventListeners();
+      await loadMergerData();
+    } else {
+      updateMergerPreview();
+    }
+  }
+
+  function setupMergerEventListeners() {
+    // Manifest selector change
+    if (mergerSourceSelect) {
+      mergerSourceSelect.addEventListener('change', () => {
+        updateMergerPreview();
+      });
+    }
+
+    // Category filter pills
+    if (mergerCategoryPills) {
+      mergerCategoryPills.addEventListener('click', (e) => {
+        const pill = e.target.closest('.filter-pill');
+        if (!pill) return;
+        mergerCategoryPills.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentMergerCategory = pill.dataset.cat || 'all';
+        renderSuggestedClusters();
+      });
+    }
+
+    // Select all / Deselect all
+    if (btnSelectAllSuggested) {
+      btnSelectAllSuggested.addEventListener('click', () => {
+        mergerSuggestedClusters.forEach(c => activeClusterIds.add(c.id));
+        renderSuggestedClusters();
+        updateMergerPreview();
+      });
+    }
+
+    if (btnDeselectAllSuggested) {
+      btnDeselectAllSuggested.addEventListener('click', () => {
+        activeClusterIds.clear();
+        renderSuggestedClusters();
+        updateMergerPreview();
+      });
+    }
+
+    // Custom breed search
+    if (customBreedSearchInput) {
+      customBreedSearchInput.addEventListener('input', (e) => {
+        filterCustomBreedCheckboxes(e.target.value);
+      });
+    }
+
+    // Add custom group button
+    if (btnAddCustomGroup) {
+      btnAddCustomGroup.addEventListener('click', () => {
+        addCustomMergeGroup();
+      });
+    }
+
+    // Resulting search filter
+    if (resultingSearchInput) {
+      resultingSearchInput.addEventListener('input', () => {
+        if (lastPreviewResult && lastPreviewResult.classes) {
+          renderResultingClasses(lastPreviewResult.classes);
+        }
+      });
+    }
+
+    // Generate Simplified Manifest Button
+    if (btnGenerateSimplifiedManifest) {
+      btnGenerateSimplifiedManifest.addEventListener('click', generateSimplifiedManifest);
+    }
+  }
+
+  async function loadMergerData() {
+    try {
+      // 1. Fetch available source manifests
+      const manifestRes = await fetch('/api/merger/source_manifests');
+      if (manifestRes.ok) {
+        const data = await manifestRes.json();
+        if (mergerSourceSelect && data.manifests) {
+          mergerSourceSelect.innerHTML = '';
+          data.manifests.forEach(m => {
+            const opt = document.createElement('option');
+            opt.value = m.id;
+            opt.textContent = `${m.id} (${m.total_classes} classes, ${m.counts.total || 0} photos)`;
+            if (m.is_recommended) opt.selected = true;
+            mergerSourceSelect.appendChild(opt);
+          });
+        }
+      }
+
+      // 2. Fetch all 120 breeds for custom selector
+      const breedsRes = await fetch('/api/breeds');
+      if (breedsRes.ok) {
+        allMergerBreedsList = await breedsRes.json();
+        renderCustomBreedCheckboxes();
+      }
+
+      // 3. Fetch suggested clusters
+      const clustersRes = await fetch('/api/merger/suggested_clusters');
+      if (clustersRes.ok) {
+        mergerSuggestedClusters = await clustersRes.json();
+        // Enable high-confidence clusters by default (Staffordshire, Foxhound, Poodle, Schnauzer, Corgi)
+        const defaultEnabledIds = ['staffordshire', 'foxhound', 'poodle', 'schnauzer', 'welsh_corgi'];
+        defaultEnabledIds.forEach(id => activeClusterIds.add(id));
+        renderSuggestedClusters();
+      }
+
+      await updateMergerPreview();
+    } catch (err) {
+      console.error('Error loading merger data:', err);
+    }
+  }
+
+  function renderSuggestedClusters() {
+    if (!mergerClustersList) return;
+    mergerClustersList.innerHTML = '';
+
+    const filtered = mergerSuggestedClusters.filter(c => {
+      if (currentMergerCategory === 'all') return true;
+      return (c.category || '').toLowerCase().includes(currentMergerCategory.toLowerCase());
+    });
+
+    if (filtered.length === 0) {
+      mergerClustersList.innerHTML = `
+        <div class="gallery-empty-state">
+          <p>No clusters found in category "${currentMergerCategory}".</p>
+        </div>
+      `;
+      return;
+    }
+
+    filtered.forEach(c => {
+      const isActive = activeClusterIds.has(c.id);
+      const currentName = clusterNameOverrides[c.id] || c.default_name;
+
+      const card = document.createElement('div');
+      card.className = `cluster-card ${isActive ? 'active-merged' : ''}`;
+      card.dataset.id = c.id;
+
+      card.innerHTML = `
+        <div class="cluster-card-header">
+          <div class="cluster-title-wrap">
+            <label class="cluster-switch" title="Toggle to merge or keep separate">
+              <input type="checkbox" class="cluster-toggle-checkbox" data-id="${c.id}" ${isActive ? 'checked' : ''}>
+              <span class="switch-slider"></span>
+            </label>
+            <div class="cluster-name-edit-wrap">
+              <input type="text" class="cluster-name-input" data-id="${c.id}" value="${escapeHtml(currentName)}" title="Click to rename unified class">
+              <span title="Editable target name" style="color:var(--text-dim);font-size:0.75rem;">✏️</span>
+            </div>
+          </div>
+          <div class="cluster-meta-badges">
+            <span class="cluster-cat-badge">${escapeHtml(c.category || 'Group')}</span>
+            <span class="badge badge-course" style="font-size:0.72rem;padding:2px 8px;">${c.total_images} photos</span>
+          </div>
+        </div>
+        <div class="cluster-breeds-chips">
+          ${c.breeds.map(b => `
+            <div class="breed-chip">
+              ${b.thumbnail ? `<img src="${b.thumbnail}" alt="${escapeHtml(b.name)}" class="breed-chip-thumb" onerror="this.style.display='none'">` : ''}
+              <span class="breed-chip-name">${escapeHtml(b.name)}</span>
+              <span class="breed-chip-count">${b.image_count}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      // Toggle listener
+      const toggle = card.querySelector('.cluster-toggle-checkbox');
+      toggle.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          activeClusterIds.add(c.id);
+          card.classList.add('active-merged');
+        } else {
+          activeClusterIds.delete(c.id);
+          card.classList.remove('active-merged');
+        }
+        updateMergerPreview();
+      });
+
+      // Name edit listener
+      const nameInput = card.querySelector('.cluster-name-input');
+      nameInput.addEventListener('input', (e) => {
+        clusterNameOverrides[c.id] = e.target.value.trim() || c.default_name;
+      });
+      nameInput.addEventListener('change', () => {
+        updateMergerPreview();
+      });
+
+      mergerClustersList.appendChild(card);
+    });
+  }
+
+  function renderCustomBreedCheckboxes() {
+    if (!customBreedSelectorBox) return;
+    customBreedSelectorBox.innerHTML = '';
+
+    allMergerBreedsList.forEach(b => {
+      const label = document.createElement('label');
+      label.className = 'custom-breed-checkbox-label';
+      label.dataset.name = b.name.toLowerCase();
+      label.innerHTML = `
+        <input type="checkbox" value="${escapeHtml(b.name)}" class="custom-breed-chk">
+        <span>${escapeHtml(b.name)}</span>
+      `;
+      customBreedSelectorBox.appendChild(label);
+    });
+  }
+
+  function filterCustomBreedCheckboxes(query) {
+    if (!customBreedSelectorBox) return;
+    const q = (query || '').toLowerCase().trim();
+    const labels = customBreedSelectorBox.querySelectorAll('.custom-breed-checkbox-label');
+    labels.forEach(lbl => {
+      if (!q || lbl.dataset.name.includes(q)) {
+        lbl.style.display = 'flex';
+      } else {
+        lbl.style.display = 'none';
+      }
+    });
+  }
+
+  function addCustomMergeGroup() {
+    const targetName = (customTargetNameInput ? customTargetNameInput.value : '').trim();
+    if (!targetName) {
+      alert('Please enter a target class name for your custom group.');
+      if (customTargetNameInput) customTargetNameInput.focus();
+      return;
+    }
+
+    const checked = Array.from(customBreedSelectorBox.querySelectorAll('.custom-breed-chk:checked')).map(cb => cb.value);
+    if (checked.length < 2) {
+      alert('Please check at least 2 breeds to merge into this custom group.');
+      return;
+    }
+
+    const groupId = 'custom_' + Date.now();
+    customMergeGroups.push({
+      id: groupId,
+      target_name: targetName,
+      breeds: checked
+    });
+
+    // Reset inputs
+    if (customTargetNameInput) customTargetNameInput.value = '';
+    customBreedSelectorBox.querySelectorAll('.custom-breed-chk:checked').forEach(cb => cb.checked = false);
+
+    renderCustomGroupsList();
+    updateMergerPreview();
+  }
+
+  function renderCustomGroupsList() {
+    // Remove existing custom cards from clusters list
+    const existing = mergerClustersList.querySelectorAll('.custom-added-cluster-card');
+    existing.forEach(e => e.remove());
+
+    customMergeGroups.forEach((g, idx) => {
+      const card = document.createElement('div');
+      card.className = 'cluster-card active-merged custom-added-cluster-card';
+      card.innerHTML = `
+        <div class="cluster-card-header">
+          <div class="cluster-title-wrap">
+            <span style="font-size:1.1rem;">✨</span>
+            <span style="font-weight:700;color:#fff;">${escapeHtml(g.target_name)}</span>
+            <span class="badge" style="background:rgba(99,102,241,0.2);color:#a5b4fc;font-size:0.72rem;">Custom Group</span>
+          </div>
+          <button type="button" class="btn-link-action" style="color:#f87171;" data-idx="${idx}">Remove</button>
+        </div>
+        <div class="cluster-breeds-chips">
+          ${g.breeds.map(b => `<div class="breed-chip"><span class="breed-chip-name">${escapeHtml(b)}</span></div>`).join('')}
+        </div>
+      `;
+
+      card.querySelector('button').addEventListener('click', () => {
+        customMergeGroups.splice(idx, 1);
+        renderCustomGroupsList();
+        updateMergerPreview();
+      });
+
+      mergerClustersList.prepend(card);
+    });
+  }
+
+  function getActiveMergePayload() {
+    const groups = [];
+
+    // 1. Suggested clusters that are checked
+    mergerSuggestedClusters.forEach(c => {
+      if (activeClusterIds.has(c.id)) {
+        groups.push({
+          id: c.id,
+          target_name: clusterNameOverrides[c.id] || c.default_name,
+          breeds: c.breeds.map(b => b.name)
+        });
+      }
+    });
+
+    // 2. Custom user groups
+    customMergeGroups.forEach(g => {
+      groups.push({
+        id: g.id,
+        target_name: g.target_name,
+        breeds: g.breeds
+      });
+    });
+
+    const sourceManifest = mergerSourceSelect ? mergerSourceSelect.value : 'split_manifest_clean.json';
+    return {
+      source_manifest: sourceManifest,
+      groups: groups
+    };
+  }
+
+  async function updateMergerPreview() {
+    const payload = getActiveMergePayload();
+
+    try {
+      const res = await fetch('/api/merger/preview', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) throw new Error('Preview computation failed');
+      const data = await res.json();
+      lastPreviewResult = data;
+
+      // Update KPI metrics
+      if (statMergerOrigClasses) statMergerOrigClasses.textContent = data.original_classes_count;
+      if (statMergerActiveGroups) statMergerActiveGroups.textContent = data.active_merged_groups_count;
+      if (statMergerResultingClasses) statMergerResultingClasses.textContent = data.resulting_classes_count;
+      if (statMergerReduction) {
+        statMergerReduction.textContent = `${data.reduction_percentage}% (-${data.classes_reduced})`;
+      }
+      if (resultingClassesCountBadge) {
+        resultingClassesCountBadge.textContent = `${data.resulting_classes_count} classes`;
+      }
+
+      // Update nav tab badge
+      if (mergerReductionBadge) {
+        if (data.classes_reduced > 0) {
+          mergerReductionBadge.textContent = `-${data.classes_reduced}`;
+          mergerReductionBadge.style.display = 'inline-block';
+        } else {
+          mergerReductionBadge.style.display = 'none';
+        }
+      }
+
+      renderResultingClasses(data.classes);
+    } catch (err) {
+      console.error('Error fetching merger preview:', err);
+    }
+  }
+
+  function renderResultingClasses(classes) {
+    if (!resultingClassesDeck) return;
+    resultingClassesDeck.innerHTML = '';
+
+    const query = (resultingSearchInput ? resultingSearchInput.value : '').toLowerCase().trim();
+    const filtered = classes.filter(c => {
+      if (!query) return true;
+      if (c.display_name.toLowerCase().includes(query)) return true;
+      return (c.constituent_breeds || []).some(b => b.toLowerCase().includes(query));
+    });
+
+    if (filtered.length === 0) {
+      resultingClassesDeck.innerHTML = `
+        <div class="gallery-empty-state">
+          <p>No classes match "${escapeHtml(query)}".</p>
+        </div>
+      `;
+      return;
+    }
+
+    filtered.forEach(cls => {
+      const row = document.createElement('div');
+      row.className = `resulting-class-item ${cls.is_merged ? 'is-merged-row' : ''}`;
+
+      const constituentText = cls.is_merged 
+        ? cls.constituent_breeds.join(', ')
+        : (cls.folders[0] || '');
+
+      row.innerHTML = `
+        <div class="resulting-left-info">
+          <span class="class-id-badge">#${cls.new_label}</span>
+          <div class="resulting-class-title-wrap">
+            <span class="resulting-class-name">${escapeHtml(cls.display_name)}</span>
+            <span class="resulting-sub-info">${escapeHtml(constituentText)}</span>
+          </div>
+        </div>
+        <div class="resulting-right-info">
+          <span class="class-type-pill ${cls.is_merged ? 'pill-merged' : 'pill-original'}">
+            ${cls.is_merged ? `Merged (${cls.constituent_breeds.length})` : 'Single'}
+          </span>
+          <span class="class-split-counts" title="Train / Val / Test / Total">
+            ${cls.split_counts.train} / ${cls.split_counts.val} / ${cls.split_counts.test} (${cls.split_counts.total})
+          </span>
+        </div>
+      `;
+
+      resultingClassesDeck.appendChild(row);
+    });
+  }
+
+  async function generateSimplifiedManifest() {
+    if (!btnGenerateSimplifiedManifest) return;
+    const payload = getActiveMergePayload();
+
+    btnGenerateSimplifiedManifest.disabled = true;
+    btnGenerateSimplifiedManifest.innerHTML = '<span class="btn-spinner" style="width:14px;height:14px;"></span> Generating...';
+
+    try {
+      const res = await fetch('/api/merger/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.detail || 'Failed to generate simplified manifest');
+      }
+
+      const data = await res.json();
+      const s = data.summary;
+
+      if (mergerAlert) {
+        mergerAlert.classList.remove('hidden');
+        if (mergerAlertText) {
+          mergerAlertText.textContent = 
+            `split_manifest_simplified.json created with ${s.resulting_classes} classes (${s.classes_reduced} classes simplified, ${s.reduction_percentage}% reduction). Total photos preserved: ${s.split_counts.total}.`;
+        }
+      }
+
+      alert(`Success! Generated split_manifest_simplified.json in JP_Model with ${s.resulting_classes} unified classes!`);
+    } catch (err) {
+      alert('Generation Error: ' + err.message);
+    } finally {
+      btnGenerateSimplifiedManifest.disabled = false;
+      btnGenerateSimplifiedManifest.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        <span>Generate Simplified Manifest</span>
+      `;
+    }
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.toString()
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
 });
 

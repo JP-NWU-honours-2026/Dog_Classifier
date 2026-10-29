@@ -5,5 +5,1188 @@
     "pile": "val",
     "pair_id": 44,
     "reason": "Same image filed under 2 different breeds: 'Japanese Spaniel' vs 'Blenheim Spaniel'"
+  },
+  {
+    "key": "n02085782-Japanese_spaniel/n02085782_2459.jpg",
+    "breed": "Japanese Spaniel",
+    "pile": "train",
+    "pair_id": 49,
+    "reason": "Same image filed under 2 different breeds: 'Japanese Spaniel' vs 'Tibetan Terrier'"
+  },
+  {
+    "key": "n02085782-Japanese_spaniel/n02085782_2796.jpg",
+    "breed": "Japanese Spaniel",
+    "pile": "train",
+    "pair_id": 50,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02085782-Japanese_spaniel/n02085782_313.jpg",
+    "breed": "Japanese Spaniel",
+    "pile": "train",
+    "pair_id": 51,
+    "reason": "Same image filed under 2 different breeds: 'Japanese Spaniel' vs 'Blenheim Spaniel'"
+  },
+  {
+    "key": "n02085782-Japanese_spaniel/n02085782_381.jpg",
+    "breed": "Japanese Spaniel",
+    "pile": "train",
+    "pair_id": 52,
+    "reason": "Same image filed under 2 different breeds: 'Japanese Spaniel' vs 'English Springer'"
+  },
+  {
+    "key": "n02085782-Japanese_spaniel/n02085782_50.jpg",
+    "breed": "Japanese Spaniel",
+    "pile": "train",
+    "pair_id": 54,
+    "reason": "Same image filed under 2 different breeds: 'Japanese Spaniel' vs 'Papillon'"
+  },
+  {
+    "key": "n02086240-Shih-Tzu/n02086240_3921.jpg",
+    "breed": "Shih-Tzu",
+    "pile": "train",
+    "pair_id": 331,
+    "reason": "Same image filed under 2 different breeds: 'Shih-Tzu' vs 'Tibetan Terrier'"
+  },
+  {
+    "key": "n02086646-Blenheim_spaniel/n02086646_422.jpg",
+    "breed": "Blenheim Spaniel",
+    "pile": "train",
+    "pair_id": 345,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02087046-toy_terrier/n02087046_2419.jpg",
+    "breed": "Toy Terrier",
+    "pile": "val",
+    "pair_id": 364,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02088094-Afghan_hound/n02088094_1270.jpg",
+    "breed": "Afghan Hound",
+    "pile": "train",
+    "pair_id": 391,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02088466-bloodhound/n02088466_7015.jpg",
+    "breed": "Bloodhound",
+    "pile": "train",
+    "pair_id": 453,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02088466-bloodhound/n02088466_7462.jpg",
+    "breed": "Bloodhound",
+    "pile": "val",
+    "pair_id": 460,
+    "reason": "Same image filed under 2 different breeds: 'Bloodhound' vs 'Redbone'"
+  },
+  {
+    "key": "n02088466-bloodhound/n02088466_9356.jpg",
+    "breed": "Bloodhound",
+    "pile": "val",
+    "pair_id": 464,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02088632-bluetick/n02088632_4334.jpg",
+    "breed": "Bluetick",
+    "pile": "train",
+    "pair_id": 475,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02088632-bluetick/n02088632_4360.jpg",
+    "breed": "Bluetick",
+    "pile": "train",
+    "pair_id": 476,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02088632-bluetick/n02088632_819.jpg",
+    "breed": "Bluetick",
+    "pile": "train",
+    "pair_id": 478,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02089078-black-and-tan_coonhound/n02089078_19.jpg",
+    "breed": "Black-And-Tan Coonhound",
+    "pile": "val",
+    "pair_id": 482,
+    "reason": "Duplicate image within the same 'val' split"
+  },
+  {
+    "key": "n02089078-black-and-tan_coonhound/n02089078_3078.jpg",
+    "breed": "Black-And-Tan Coonhound",
+    "pile": "train",
+    "pair_id": 484,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02089867-Walker_hound/n02089867_1882.jpg",
+    "breed": "Walker Hound",
+    "pile": "train",
+    "pair_id": 490,
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'"
+  },
+  {
+    "key": "n02089867-Walker_hound/n02089867_2382.jpg",
+    "breed": "Walker Hound",
+    "pile": "train",
+    "pair_id": 491,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02089973-English_foxhound/n02089973_2905.jpg",
+    "breed": "English Foxhound",
+    "pile": "train",
+    "pair_id": 492,
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'"
+  },
+  {
+    "key": "n02089973-English_foxhound/n02089973_3160.jpg",
+    "breed": "English Foxhound",
+    "pile": "train",
+    "pair_id": 493,
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'"
+  },
+  {
+    "key": "n02089867-Walker_hound/n02089867_3177.jpg",
+    "breed": "Walker Hound",
+    "pile": "train",
+    "pair_id": 494,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02089973-English_foxhound/n02089973_1076.jpg",
+    "breed": "English Foxhound",
+    "pile": "test",
+    "pair_id": 496,
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'"
+  },
+  {
+    "key": "n02089867-Walker_hound/n02089867_3840.jpg",
+    "breed": "Walker Hound",
+    "pile": "val",
+    "pair_id": 497,
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'"
+  },
+  {
+    "key": "n02089973-English_foxhound/n02089973_1957.jpg",
+    "breed": "English Foxhound",
+    "pile": "val",
+    "pair_id": 498,
+    "reason": "Same image filed under 2 different breeds: 'Walker Hound' vs 'English Foxhound'"
+  },
+  {
+    "key": "n02089973-English_foxhound/n02089973_2608.jpg",
+    "breed": "English Foxhound",
+    "pile": "train",
+    "pair_id": 508,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02090379-redbone/n02090379_4667.jpg",
+    "breed": "Redbone",
+    "pile": "test",
+    "pair_id": 527,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02091134-whippet/n02091134_16337.jpg",
+    "breed": "Whippet",
+    "pile": "train",
+    "pair_id": 558,
+    "reason": "Same image filed under 2 different breeds: 'Whippet' vs 'Briard'"
+  },
+  {
+    "key": "n02105251-briard/n02105251_4659.jpg",
+    "breed": "Briard",
+    "pile": "train",
+    "pair_id": 1383,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02105251-briard/n02105251_7647.jpg",
+    "breed": "Briard",
+    "pile": "train",
+    "pair_id": 1383,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02091635-otterhound/n02091635_873.jpg",
+    "breed": "Otterhound",
+    "pile": "test",
+    "pair_id": 615,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02091831-Saluki/n02091831_6323.jpg",
+    "breed": "Saluki",
+    "pile": "train",
+    "pair_id": 626,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02092002-Scottish_deerhound/n02092002_4745.jpg",
+    "breed": "Scottish Deerhound",
+    "pile": "train",
+    "pair_id": 637,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02092002-Scottish_deerhound/n02092002_2448.jpg",
+    "breed": "Scottish Deerhound",
+    "pile": "test",
+    "pair_id": 642,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02092002-Scottish_deerhound/n02092002_5504.jpg",
+    "breed": "Scottish Deerhound",
+    "pile": "train",
+    "pair_id": 645,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02093256-Staffordshire_bullterrier/n02093256_4090.jpg",
+    "breed": "Staffordshire Bullterrier",
+    "pile": "test",
+    "pair_id": 703,
+    "reason": "Same image filed under 2 different breeds: 'Staffordshire Bullterrier' vs 'American Staffordshire Terrier'"
+  },
+  {
+    "key": "n02093256-Staffordshire_bullterrier/n02093256_5988.jpg",
+    "breed": "Staffordshire Bullterrier",
+    "pile": "val",
+    "pair_id": 706,
+    "reason": "Same image filed under 2 different breeds: 'Staffordshire Bullterrier' vs 'American Staffordshire Terrier'"
+  },
+  {
+    "key": "n02093428-American_Staffordshire_terrier/n02093428_8454.jpg",
+    "breed": "American Staffordshire Terrier",
+    "pile": "train",
+    "pair_id": 707,
+    "reason": "Same image filed under 2 different breeds: 'Staffordshire Bullterrier' vs 'American Staffordshire Terrier'"
+  },
+  {
+    "key": "n02093647-Bedlington_terrier/n02093647_1766.jpg",
+    "breed": "Bedlington Terrier",
+    "pile": "train",
+    "pair_id": 749,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02093647-Bedlington_terrier/n02093647_518.jpg",
+    "breed": "Bedlington Terrier",
+    "pile": "test",
+    "pair_id": 761,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02093647-Bedlington_terrier/n02093647_2687.jpg",
+    "breed": "Bedlington Terrier",
+    "pile": "test",
+    "pair_id": 762,
+    "reason": "Duplicate dog photo split across 'val' and 'test'"
+  },
+  {
+    "key": "n02093859-Kerry_blue_terrier/n02093859_1697.jpg",
+    "breed": "Kerry Blue Terrier",
+    "pile": "train",
+    "pair_id": 793,
+    "reason": "Same image filed under 2 different breeds: 'Kerry Blue Terrier' vs 'Wire-Haired Fox Terrier'"
+  },
+  {
+    "key": "n02093859-Kerry_blue_terrier/n02093859_2579.jpg",
+    "breed": "Kerry Blue Terrier",
+    "pile": "train",
+    "pair_id": 799,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02093859-Kerry_blue_terrier/n02093859_3209.jpg",
+    "breed": "Kerry Blue Terrier",
+    "pile": "val",
+    "pair_id": 800,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02095314-wire-haired_fox_terrier/n02095314_80.jpg",
+    "breed": "Wire-Haired Fox Terrier",
+    "pile": "test",
+    "pair_id": 814,
+    "reason": "Same image filed under 2 different breeds: 'Irish Terrier' vs 'Wire-Haired Fox Terrier'"
+  },
+  {
+    "key": "n02093991-Irish_terrier/n02093991_2923.jpg",
+    "breed": "Irish Terrier",
+    "pile": "test",
+    "pair_id": 816,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02094114-Norfolk_terrier/n02094114_1020.jpg",
+    "breed": "Norfolk Terrier",
+    "pile": "train",
+    "pair_id": 821,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02094258-Norwich_terrier/n02094258_880.jpg",
+    "breed": "Norwich Terrier",
+    "pile": "train",
+    "pair_id": 853,
+    "reason": "Same image filed under 2 different breeds: 'Norfolk Terrier' vs 'Norwich Terrier'"
+  },
+  {
+    "key": "n02094114-Norfolk_terrier/n02094114_3172.jpg",
+    "breed": "Norfolk Terrier",
+    "pile": "train",
+    "pair_id": 828,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02094114-Norfolk_terrier/n02094114_754.jpg",
+    "breed": "Norfolk Terrier",
+    "pile": "train",
+    "pair_id": 829,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02094258-Norwich_terrier/n02094258_1408.jpg",
+    "breed": "Norwich Terrier",
+    "pile": "train",
+    "pair_id": 830,
+    "reason": "Same image filed under 2 different breeds: 'Norfolk Terrier' vs 'Norwich Terrier'"
+  },
+  {
+    "key": "n02095314-wire-haired_fox_terrier/n02095314_1894.jpg",
+    "breed": "Wire-Haired Fox Terrier",
+    "pile": "val",
+    "pair_id": 890,
+    "reason": "Duplicate image within the same 'val' split"
+  },
+  {
+    "key": "n02095314-wire-haired_fox_terrier/n02095314_2038.jpg",
+    "breed": "Wire-Haired Fox Terrier",
+    "pile": "train",
+    "pair_id": 895,
+    "reason": "Same image filed under 2 different breeds: 'Wire-Haired Fox Terrier' vs 'Lakeland Terrier'"
+  },
+  {
+    "key": "n02095314-wire-haired_fox_terrier/n02095314_2754.jpg",
+    "breed": "Wire-Haired Fox Terrier",
+    "pile": "train",
+    "pair_id": 898,
+    "reason": "Same image filed under 2 different breeds: 'Wire-Haired Fox Terrier' vs 'Lakeland Terrier'"
+  },
+  {
+    "key": "n02095314-wire-haired_fox_terrier/n02095314_2964.jpg",
+    "breed": "Wire-Haired Fox Terrier",
+    "pile": "train",
+    "pair_id": 899,
+    "reason": "Same image filed under 2 different breeds: 'Wire-Haired Fox Terrier' vs 'Lakeland Terrier'"
+  },
+  {
+    "key": "n02095314-wire-haired_fox_terrier/n02095314_3166.jpg",
+    "breed": "Wire-Haired Fox Terrier",
+    "pile": "train",
+    "pair_id": 900,
+    "reason": "Same image filed under 2 different breeds: 'Wire-Haired Fox Terrier' vs 'Sealyham Terrier'"
+  },
+  {
+    "key": "n02095314-wire-haired_fox_terrier/n02095314_3227.jpg",
+    "breed": "Wire-Haired Fox Terrier",
+    "pile": "val",
+    "pair_id": 901,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02095570-Lakeland_terrier/n02095570_6443.jpg",
+    "breed": "Lakeland Terrier",
+    "pile": "train",
+    "pair_id": 903,
+    "reason": "Same image filed under 2 different breeds: 'Wire-Haired Fox Terrier' vs 'Lakeland Terrier'"
+  },
+  {
+    "key": "n02095570-Lakeland_terrier/n02095570_845.jpg",
+    "breed": "Lakeland Terrier",
+    "pile": "val",
+    "pair_id": 913,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02095570-Lakeland_terrier/n02095570_1575.jpg",
+    "breed": "Lakeland Terrier",
+    "pile": "train",
+    "pair_id": 915,
+    "reason": "Same image filed under 2 different breeds: 'Lakeland Terrier' vs 'Sealyham Terrier'"
+  },
+  {
+    "key": "n02095570-Lakeland_terrier/n02095570_3711.jpg",
+    "breed": "Lakeland Terrier",
+    "pile": "test",
+    "pair_id": 920,
+    "reason": "Duplicate image within the same 'test' split"
+  },
+  {
+    "key": "n02095889-Sealyham_terrier/n02095889_47.jpg",
+    "breed": "Sealyham Terrier",
+    "pile": "test",
+    "pair_id": 942,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02095889-Sealyham_terrier/n02095889_2031.jpg",
+    "breed": "Sealyham Terrier",
+    "pile": "test",
+    "pair_id": 949,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02095889-Sealyham_terrier/n02095889_2471.jpg",
+    "breed": "Sealyham Terrier",
+    "pile": "test",
+    "pair_id": 950,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02095889-Sealyham_terrier/n02095889_2162.jpg",
+    "breed": "Sealyham Terrier",
+    "pile": "val",
+    "pair_id": 951,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02095889-Sealyham_terrier/n02095889_6458.jpg",
+    "breed": "Sealyham Terrier",
+    "pile": "train",
+    "pair_id": 954,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02096437-Dandie_Dinmont/n02096437_3112.jpg",
+    "breed": "Dandie Dinmont",
+    "pile": "val",
+    "pair_id": 1010,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02097047-miniature_schnauzer/n02097047_2426.jpg",
+    "breed": "Miniature Schnauzer",
+    "pile": "train",
+    "pair_id": 1024,
+    "reason": "Same image filed under 2 different breeds: 'Miniature Schnauzer' vs 'Standard Schnauzer'"
+  },
+  {
+    "key": "n02097209-standard_schnauzer/n02097209_583.jpg",
+    "breed": "Standard Schnauzer",
+    "pile": "train",
+    "pair_id": 1027,
+    "reason": "Same image filed under 2 different breeds: 'Miniature Schnauzer' vs 'Standard Schnauzer'"
+  },
+  {
+    "key": "n02097130-giant_schnauzer/n02097130_5576.jpg",
+    "breed": "Giant Schnauzer",
+    "pile": "train",
+    "pair_id": 1033,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02097130-giant_schnauzer/n02097130_857.jpg",
+    "breed": "Giant Schnauzer",
+    "pile": "test",
+    "pair_id": 1036,
+    "reason": "Same image filed under 2 different breeds: 'Giant Schnauzer' vs 'Standard Schnauzer'"
+  },
+  {
+    "key": "n02097209-standard_schnauzer/n02097209_2992.jpg",
+    "breed": "Standard Schnauzer",
+    "pile": "test",
+    "pair_id": 1040,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02097298-Scotch_terrier/n02097298_2083.jpg",
+    "breed": "Scotch Terrier",
+    "pile": "test",
+    "pair_id": 1045,
+    "reason": "Same image filed under 2 different breeds: 'Scotch Terrier' vs 'West Highland White Terrier'"
+  },
+  {
+    "key": "n02097474-Tibetan_terrier/n02097474_2113.jpg",
+    "breed": "Tibetan Terrier",
+    "pile": "train",
+    "pair_id": 1064,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02097474-Tibetan_terrier/n02097474_4907.jpg",
+    "breed": "Tibetan Terrier",
+    "pile": "train",
+    "pair_id": 1065,
+    "reason": "Same image filed under 2 different breeds: 'Tibetan Terrier' vs 'Soft-Coated Wheaten Terrier'"
+  },
+  {
+    "key": "n02097474-Tibetan_terrier/n02097474_494.jpg",
+    "breed": "Tibetan Terrier",
+    "pile": "test",
+    "pair_id": 1066,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02097658-silky_terrier/n02097658_4201.jpg",
+    "breed": "Silky Terrier",
+    "pile": "train",
+    "pair_id": 1081,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02098105-soft-coated_wheaten_terrier/n02098105_2945.jpg",
+    "breed": "Soft-Coated Wheaten Terrier",
+    "pile": "val",
+    "pair_id": 1083,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02099429-curly-coated_retriever/n02099429_3513.jpg",
+    "breed": "Curly-Coated Retriever",
+    "pile": "train",
+    "pair_id": 1145,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02099712-Labrador_retriever/n02099712_6619.jpg",
+    "breed": "Labrador Retriever",
+    "pile": "val",
+    "pair_id": 1179,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02100735-English_setter/n02100735_5988.jpg",
+    "breed": "English Setter",
+    "pile": "train",
+    "pair_id": 1222,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02101556-clumber/n02101556_4994.jpg",
+    "breed": "Clumber",
+    "pile": "test",
+    "pair_id": 1255,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02101556-clumber/n02101556_5903.jpg",
+    "breed": "Clumber",
+    "pile": "train",
+    "pair_id": 1256,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02102177-Welsh_springer_spaniel/n02102177_2388.jpg",
+    "breed": "Welsh Springer Spaniel",
+    "pile": "val",
+    "pair_id": 1263,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02102480-Sussex_spaniel/n02102480_101.jpg",
+    "breed": "Sussex Spaniel",
+    "pile": "test",
+    "pair_id": 1287,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02102480-Sussex_spaniel/n02102480_2041.jpg",
+    "breed": "Sussex Spaniel",
+    "pile": "train",
+    "pair_id": 1289,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02102480-Sussex_spaniel/n02102480_6593.jpg",
+    "breed": "Sussex Spaniel",
+    "pile": "train",
+    "pair_id": 1292,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02102480-Sussex_spaniel/n02102480_5651.jpg",
+    "breed": "Sussex Spaniel",
+    "pile": "test",
+    "pair_id": 1294,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02102480-Sussex_spaniel/n02102480_5734.jpg",
+    "breed": "Sussex Spaniel",
+    "pile": "test",
+    "pair_id": 1299,
+    "reason": "Duplicate dog photo split across 'test' and 'val'"
+  },
+  {
+    "key": "n02102480-Sussex_spaniel/n02102480_8240.jpg",
+    "breed": "Sussex Spaniel",
+    "pile": "val",
+    "pair_id": 1297,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02102480-Sussex_spaniel/n02102480_5158.jpg",
+    "breed": "Sussex Spaniel",
+    "pile": "val",
+    "pair_id": 1298,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02102973-Irish_water_spaniel/n02102973_1615.jpg",
+    "breed": "Irish Water Spaniel",
+    "pile": "train",
+    "pair_id": 1308,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02102973-Irish_water_spaniel/n02102973_1723.jpg",
+    "breed": "Irish Water Spaniel",
+    "pile": "train",
+    "pair_id": 1309,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02102973-Irish_water_spaniel/n02102973_2442.jpg",
+    "breed": "Irish Water Spaniel",
+    "pile": "val",
+    "pair_id": 1311,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02102973-Irish_water_spaniel/n02102973_2645.jpg",
+    "breed": "Irish Water Spaniel",
+    "pile": "val",
+    "pair_id": 1312,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02104029-kuvasz/n02104029_2417.jpg",
+    "breed": "Kuvasz",
+    "pile": "train",
+    "pair_id": 1327,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02104029-kuvasz/n02104029_3526.jpg",
+    "breed": "Kuvasz",
+    "pile": "train",
+    "pair_id": 1333,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02104365-schipperke/n02104365_4190.jpg",
+    "breed": "Schipperke",
+    "pile": "train",
+    "pair_id": 1339,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02104365-schipperke/n02104365_5740.jpg",
+    "breed": "Schipperke",
+    "pile": "train",
+    "pair_id": 1340,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02104365-schipperke/n02104365_9552.jpg",
+    "breed": "Schipperke",
+    "pile": "test",
+    "pair_id": 1353,
+    "reason": "Same image filed under 2 different breeds: 'Schipperke' vs 'Groenendael'"
+  },
+  {
+    "key": "n02105056-groenendael/n02105056_961.jpg",
+    "breed": "Groenendael",
+    "pile": "test",
+    "pair_id": 1358,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02105056-groenendael/n02105056_5700.jpg",
+    "breed": "Groenendael",
+    "pile": "train",
+    "pair_id": 1360,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02105162-malinois/n02105162_2079.jpg",
+    "breed": "Malinois",
+    "pile": "val",
+    "pair_id": 1374,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02105251-briard/n02105251_224.jpg",
+    "breed": "Briard",
+    "pile": "train",
+    "pair_id": 1379,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02105251-briard/n02105251_4893.jpg",
+    "breed": "Briard",
+    "pile": "train",
+    "pair_id": 1384,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02106030-collie/n02106030_10021.jpg",
+    "breed": "Collie",
+    "pile": "train",
+    "pair_id": 1417,
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'"
+  },
+  {
+    "key": "n02106030-collie/n02106030_14811.jpg",
+    "breed": "Collie",
+    "pile": "train",
+    "pair_id": 1418,
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'"
+  },
+  {
+    "key": "n02106030-collie/n02106030_15829.jpg",
+    "breed": "Collie",
+    "pile": "train",
+    "pair_id": 1420,
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'"
+  },
+  {
+    "key": "n02106030-collie/n02106030_16338.jpg",
+    "breed": "Collie",
+    "pile": "val",
+    "pair_id": 1421,
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'"
+  },
+  {
+    "key": "n02106030-collie/n02106030_2522.jpg",
+    "breed": "Collie",
+    "pile": "test",
+    "pair_id": 1423,
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'"
+  },
+  {
+    "key": "n02106030-collie/n02106030_873.jpg",
+    "breed": "Collie",
+    "pile": "train",
+    "pair_id": 1424,
+    "reason": "Same image filed under 2 different breeds: 'Collie' vs 'Border Collie'"
+  },
+  {
+    "key": "n02106382-Bouvier_des_Flandres/n02106382_1454.jpg",
+    "breed": "Bouvier Des Flandres",
+    "pile": "train",
+    "pair_id": 1427,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02106382-Bouvier_des_Flandres/n02106382_29.jpg",
+    "breed": "Bouvier Des Flandres",
+    "pile": "train",
+    "pair_id": 1428,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_1706.jpg",
+    "breed": "Greater Swiss Mountain Dog",
+    "pile": "train",
+    "pair_id": 1464,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_870.jpg",
+    "breed": "Greater Swiss Mountain Dog",
+    "pile": "train",
+    "pair_id": 1467,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_988.jpg",
+    "breed": "Greater Swiss Mountain Dog",
+    "pile": "train",
+    "pair_id": 1468,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02107574-Greater_Swiss_Mountain_dog/n02107574_261.jpg",
+    "breed": "Greater Swiss Mountain Dog",
+    "pile": "train",
+    "pair_id": 1469,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02107683-Bernese_mountain_dog/n02107683_570.jpg",
+    "breed": "Bernese Mountain Dog",
+    "pile": "test",
+    "pair_id": 1472,
+    "reason": "Duplicate image within the same 'test' split"
+  },
+  {
+    "key": "n02107683-Bernese_mountain_dog/n02107683_5397.jpg",
+    "breed": "Bernese Mountain Dog",
+    "pile": "train",
+    "pair_id": 1475,
+    "reason": "Same image filed under 2 different breeds: 'Bernese Mountain Dog' vs 'Appenzeller'"
+  },
+  {
+    "key": "n02107683-Bernese_mountain_dog/n02107683_71.jpg",
+    "breed": "Bernese Mountain Dog",
+    "pile": "test",
+    "pair_id": 1478,
+    "reason": "Same image filed under 2 different breeds: 'Bernese Mountain Dog' vs 'Appenzeller'"
+  },
+  {
+    "key": "n02107908-Appenzeller/n02107908_2608.jpg",
+    "breed": "Appenzeller",
+    "pile": "train",
+    "pair_id": 1479,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02108000-EntleBucher/n02108000_2891.jpg",
+    "breed": "Entlebucher",
+    "pile": "val",
+    "pair_id": 1481,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02108000-EntleBucher/n02108000_3497.jpg",
+    "breed": "Entlebucher",
+    "pile": "test",
+    "pair_id": 1482,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02108422-bull_mastiff/n02108422_647.jpg",
+    "breed": "Bull Mastiff",
+    "pile": "val",
+    "pair_id": 1487,
+    "reason": "Duplicate image within the same 'val' split"
+  },
+  {
+    "key": "n02108551-Tibetan_mastiff/n02108551_4421.jpg",
+    "breed": "Tibetan Mastiff",
+    "pile": "test",
+    "pair_id": 1495,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02109525-Saint_Bernard/n02109525_1314.jpg",
+    "breed": "Saint Bernard",
+    "pile": "train",
+    "pair_id": 1507,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02109961-Eskimo_dog/n02109961_2317.jpg",
+    "breed": "Eskimo Dog",
+    "pile": "test",
+    "pair_id": 1508,
+    "reason": "Same image filed under 2 different breeds: 'Eskimo Dog' vs 'Siberian Husky'"
+  },
+  {
+    "key": "n02109961-Eskimo_dog/n02109961_5924.jpg",
+    "breed": "Eskimo Dog",
+    "pile": "test",
+    "pair_id": 1509,
+    "reason": "Same image filed under 2 different breeds: 'Eskimo Dog' vs 'Siberian Husky'"
+  },
+  {
+    "key": "n02110627-affenpinscher/n02110627_11783.jpg",
+    "breed": "Affenpinscher",
+    "pile": "val",
+    "pair_id": 1515,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02110627-affenpinscher/n02110627_8621.jpg",
+    "breed": "Affenpinscher",
+    "pile": "train",
+    "pair_id": 1518,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02110627-affenpinscher/n02110627_12431.jpg",
+    "breed": "Affenpinscher",
+    "pile": "val",
+    "pair_id": 1519,
+    "reason": "Duplicate dog photo split across 'val' and 'test'"
+  },
+  {
+    "key": "n02111129-Leonberg/n02111129_1115.jpg",
+    "breed": "Leonberg",
+    "pile": "val",
+    "pair_id": 1536,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02111129-Leonberg/n02111129_1178.jpg",
+    "breed": "Leonberg",
+    "pile": "val",
+    "pair_id": 1537,
+    "reason": "Duplicate image within the same 'val' split"
+  },
+  {
+    "key": "n02111129-Leonberg/n02111129_1832.jpg",
+    "breed": "Leonberg",
+    "pile": "train",
+    "pair_id": 1543,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02111129-Leonberg/n02111129_3884.jpg",
+    "breed": "Leonberg",
+    "pile": "train",
+    "pair_id": 1545,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02111129-Leonberg/n02111129_2330.jpg",
+    "breed": "Leonberg",
+    "pile": "train",
+    "pair_id": 1548,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02111129-Leonberg/n02111129_4792.jpg",
+    "breed": "Leonberg",
+    "pile": "train",
+    "pair_id": 1549,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02111129-Leonberg/n02111129_4017.jpg",
+    "breed": "Leonberg",
+    "pile": "train",
+    "pair_id": 1550,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02111129-Leonberg/n02111129_976.jpg",
+    "breed": "Leonberg",
+    "pile": "val",
+    "pair_id": 1558,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02112706-Brabancon_griffon/n02112706_2161.jpg",
+    "breed": "Brabancon Griffon",
+    "pile": "test",
+    "pair_id": 1600,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02112706-Brabancon_griffon/n02112706_2191.jpg",
+    "breed": "Brabancon Griffon",
+    "pile": "val",
+    "pair_id": 1601,
+    "reason": "Duplicate image within the same 'val' split"
+  },
+  {
+    "key": "n02112706-Brabancon_griffon/n02112706_539.jpg",
+    "breed": "Brabancon Griffon",
+    "pile": "train",
+    "pair_id": 1602,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02112706-Brabancon_griffon/n02112706_1833.jpg",
+    "breed": "Brabancon Griffon",
+    "pile": "train",
+    "pair_id": 1603,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02112706-Brabancon_griffon/n02112706_1882.jpg",
+    "breed": "Brabancon Griffon",
+    "pile": "train",
+    "pair_id": 1604,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02112706-Brabancon_griffon/n02112706_2550.jpg",
+    "breed": "Brabancon Griffon",
+    "pile": "train",
+    "pair_id": 1605,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02112706-Brabancon_griffon/n02112706_62.jpg",
+    "breed": "Brabancon Griffon",
+    "pile": "train",
+    "pair_id": 1606,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02113186-Cardigan/n02113186_11400.jpg",
+    "breed": "Cardigan",
+    "pile": "test",
+    "pair_id": 1608,
+    "reason": "Duplicate dog photo split across 'train' and 'test'"
+  },
+  {
+    "key": "n02113624-toy_poodle/n02113624_1804.jpg",
+    "breed": "Toy Poodle",
+    "pile": "train",
+    "pair_id": 1614,
+    "reason": "Same image filed under 2 different breeds: 'Toy Poodle' vs 'Miniature Poodle'"
+  },
+  {
+    "key": "n02113712-miniature_poodle/n02113712_1252.jpg",
+    "breed": "Miniature Poodle",
+    "pile": "train",
+    "pair_id": 1614,
+    "reason": "Same image filed under 2 different breeds: 'Toy Poodle' vs 'Miniature Poodle'"
+  },
+  {
+    "key": "n02113712-miniature_poodle/n02113712_1546.jpg",
+    "breed": "Miniature Poodle",
+    "pile": "train",
+    "pair_id": 1615,
+    "reason": "Same image filed under 2 different breeds: 'Toy Poodle' vs 'Miniature Poodle'"
+  },
+  {
+    "key": "n02113624-toy_poodle/n02113624_2258.jpg",
+    "breed": "Toy Poodle",
+    "pile": "val",
+    "pair_id": 1616,
+    "reason": "Same image filed under 2 different breeds: 'Toy Poodle' vs 'Miniature Poodle'"
+  },
+  {
+    "key": "n02113712-miniature_poodle/n02113712_230.jpg",
+    "breed": "Miniature Poodle",
+    "pile": "val",
+    "pair_id": 1620,
+    "reason": "Same image filed under 2 different breeds: 'Miniature Poodle' vs 'Standard Poodle'"
+  },
+  {
+    "key": "n02113978-Mexican_hairless/n02113978_1069.jpg",
+    "breed": "Mexican Hairless",
+    "pile": "train",
+    "pair_id": 1622,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02113978-Mexican_hairless/n02113978_131.jpg",
+    "breed": "Mexican Hairless",
+    "pile": "train",
+    "pair_id": 1624,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02113978-Mexican_hairless/n02113978_1323.jpg",
+    "breed": "Mexican Hairless",
+    "pile": "test",
+    "pair_id": 1625,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02113978-Mexican_hairless/n02113978_2572.jpg",
+    "breed": "Mexican Hairless",
+    "pile": "val",
+    "pair_id": 1628,
+    "reason": "Duplicate dog photo split across 'train' and 'val'"
+  },
+  {
+    "key": "n02113978-Mexican_hairless/n02113978_1956.jpg",
+    "breed": "Mexican Hairless",
+    "pile": "train",
+    "pair_id": 1631,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02113978-Mexican_hairless/n02113978_2141.jpg",
+    "breed": "Mexican Hairless",
+    "pile": "val",
+    "pair_id": 1633,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02113978-Mexican_hairless/n02113978_2167.jpg",
+    "breed": "Mexican Hairless",
+    "pile": "train",
+    "pair_id": 1634,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02113978-Mexican_hairless/n02113978_3178.jpg",
+    "breed": "Mexican Hairless",
+    "pile": "train",
+    "pair_id": 1635,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02113978-Mexican_hairless/n02113978_3921.jpg",
+    "breed": "Mexican Hairless",
+    "pile": "train",
+    "pair_id": 1637,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02115641-dingo/n02115641_13565.jpg",
+    "breed": "Dingo",
+    "pile": "val",
+    "pair_id": 1638,
+    "reason": "Duplicate dog photo split across 'val' and 'train'"
+  },
+  {
+    "key": "n02115641-dingo/n02115641_2440.jpg",
+    "breed": "Dingo",
+    "pile": "test",
+    "pair_id": 1639,
+    "reason": "Same image filed under 2 different breeds: 'Dingo' vs 'Dhole'"
+  },
+  {
+    "key": "n02115913-dhole/n02115913_739.jpg",
+    "breed": "Dhole",
+    "pile": "test",
+    "pair_id": 1639,
+    "reason": "Same image filed under 2 different breeds: 'Dingo' vs 'Dhole'"
+  },
+  {
+    "key": "n02115913-dhole/n02115913_1142.jpg",
+    "breed": "Dhole",
+    "pile": "test",
+    "pair_id": 1640,
+    "reason": "Duplicate dog photo split across 'test' and 'train'"
+  },
+  {
+    "key": "n02115913-dhole/n02115913_1552.jpg",
+    "breed": "Dhole",
+    "pile": "train",
+    "pair_id": 1641,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02115913-dhole/n02115913_262.jpg",
+    "breed": "Dhole",
+    "pile": "train",
+    "pair_id": 1643,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02115913-dhole/n02115913_4117.jpg",
+    "breed": "Dhole",
+    "pile": "train",
+    "pair_id": 1644,
+    "reason": "Duplicate image within the same 'train' split"
+  },
+  {
+    "key": "n02115913-dhole/n02115913_4119.jpg",
+    "breed": "Dhole",
+    "pile": "train",
+    "pair_id": 1645,
+    "reason": "Duplicate image within the same 'train' split"
   }
 ]

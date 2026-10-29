@@ -1,0 +1,17 @@
+{
+  "run_name": "unclean_transfer",
+  "model_name": "Transfer-EfficientNetV2-S",
+  "top1_accuracy": 83.25,
+  "top5_accuracy": 97.72,
+  "macro_precision": 83.41,
+  "macro_recall": 82.96,
+  "macro_f1": 0.8266,
+  "macro_f1_pct": 82.66,
+  "test_samples": 3164,
+  "total_classes": 120,
+  "latency_ms_per_image": 1.21,
+  "trainable_parameters": 20331208,
+  "training_time_minutes": 14.74,
+  "gpu_used": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "manifest_used": "JP_Model\\split_manifest_clean.json"
+}
