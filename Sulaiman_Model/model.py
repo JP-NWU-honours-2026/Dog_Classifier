@@ -1,113 +1,155 @@
 """
-model.py  (Sulaiman_Model, Swin Transformer)
+model.py - Swin-T (Swin Transformer Tiny) for Dog Breed Classification.
 
-Step 2: the model itself. Swin-T (Swin Transformer Tiny), pretrained on
-ImageNet-1K, with its last layer swapped for one that outputs 120 dog breeds.
+Sulaiman_Model copy of JP_Model/model.py with the same functions and the
+same two-phase pattern, using Swin-T instead of EfficientNetV2.
 
-How transfer learning works here, in two parts:
+Swin-T's model.features holds 8 parts:
+  0 patch embedding   1 stage 1   2 patch merging   3 stage 2
+  4 patch merging     5 stage 3   6 patch merging   7 stage 4
+unfreeze_from_stage=6 (JP's default) trains the last merge and stage 4, plus
+the final norm and the head - the equivalent of JP's top EfficientNet stages.
 
-  1. The BACKBONE (everything except the last layer) is kept exactly as
-     torchvision ships it, with weights learned on 1.28 million ImageNet
-     photos. It already knows what fur, ears, eyes and legs look like.
-     It turns a 224 x 224 photo into a summary of 768 numbers.
-
-  2. The HEAD (the last layer) is thrown away and replaced. The original
-     head maps those 768 numbers to ImageNet's 1,000 classes. Ours maps them
-     to our 120 breeds, and starts from random numbers.
-
-During training (step 3) the whole network is fine-tuned: the new head learns
-from scratch and the backbone is nudged gently, using a small learning rate so
-the pretrained knowledge isn't wiped out.
-
-How Swin differs from JP's and Lindani's CNNs, for the report:
-  - The photo is cut into 4 x 4 pixel patches, and each patch becomes a vector.
-  - Self-attention lets each patch compare itself with other patches. To keep
-    this cheap, patches only attend within small windows (7 x 7 patches).
-  - Every second layer, the windows SHIFT by half a window, so information can
-    pass between neighbouring windows. This is the "Shifted Window" in the name.
-  - Patches are merged between stages (56 -> 28 -> 14 -> 7 patches across),
-    building a hierarchy similar to a CNN's, which is what makes Swin practical
-    for normal image sizes.
-
-Self-test, from the repository root:
-
-    python Sulaiman_Model/model.py
-
-Measured parameter counts (from the self-test, 17 October 2026):
-    total            27,611,634   all trainable (full fine-tuning)
-    new head             92,280   (768 x 120 weights + 120 biases)
-    backbone         27,519,354   pretrained on ImageNet-1K
-Compare: Lindani's baseline CNN has 1,631,128, about 17 times fewer.
-
-The first run downloads the pretrained weights (about 110 MB) into PyTorch's
-cache folder. Later runs reuse them.
+Implements standard Transfer Learning patterns:
+1. Feature Extraction (Phase 1): Backbone frozen, only classifier head trains.
+2. Fine-Tuning (Phase 2): Backbone layers unfrozen (full or top stages) with reduced LR.
 """
 
+from typing import Dict, Any, Optional
 import torch
 import torch.nn as nn
-from torchvision.models import Swin_T_Weights, swin_t
-
-NUM_CLASSES = 120
-DROPOUT = 0.3
-WEIGHTS = Swin_T_Weights.IMAGENET1K_V1   # named explicitly so the report can state it
+from torchvision.models import swin_t, Swin_T_Weights
 
 
-def build_model(num_classes=NUM_CLASSES, dropout=DROPOUT, pretrained=True):
+def freeze_backbone(model: nn.Module) -> None:
     """
-    Returns Swin-T with a new 120-breed head.
+    Freezes all parameters in the convolutional backbone (model.features),
+    keeping only the classifier head trainable.
 
-    pretrained=False gives the same architecture with random weights. It is
-    only there for testing without the download, never for the real run.
+    Equivalent to:
+        base_model.trainable = False
+    in TensorFlow / Keras.
     """
-    model = swin_t(weights=WEIGHTS if pretrained else None)
+    for param in model.parameters():
+        param.requires_grad = False
+    for param in model.head.parameters():
+        param.requires_grad = True
 
-    in_features = model.head.in_features            # 768 for Swin-T
+
+def unfreeze_backbone(model: nn.Module, unfreeze_from_stage: int = 0) -> None:
+    """
+    Unfreezes backbone layers for fine-tuning.
+
+    Parameters:
+        unfreeze_from_stage: Starting stage index in model.features (0-7 for Swin-T).
+                             If 0, unfreezes all stages.
+                             If > 0 (e.g. 5 or 6), freezes stages < unfreeze_from_stage
+                             and unfreezes stages >= unfreeze_from_stage.
+
+    Equivalent to:
+        base_model.trainable = True
+        for layer in base_model.layers[:100]:
+            layer.trainable = False
+    in TensorFlow / Keras.
+    """
+    if hasattr(model, "features"):
+        for i, stage in enumerate(model.features):
+            should_train = (i >= unfreeze_from_stage)
+            for param in stage.parameters():
+                param.requires_grad = should_train
+
+    for param in list(model.norm.parameters()) + list(model.head.parameters()):
+        param.requires_grad = True
+
+
+def count_parameters(model: nn.Module) -> int:
+    """Returns total number of trainable parameters in the model."""
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+
+def get_parameter_summary(model: nn.Module, verbose: bool = False) -> Dict[str, Any]:
+    """
+    Returns counts of trainable, frozen, and total parameters,
+    similar to Keras model.summary().
+    """
+    total_params = sum(p.numel() for p in model.parameters())
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    frozen_params = total_params - trainable_params
+    trainable_pct = (trainable_params / total_params * 100.0) if total_params > 0 else 0.0
+
+    summary = {
+        "total_params": total_params,
+        "trainable_params": trainable_params,
+        "frozen_params": frozen_params,
+        "trainable_pct": round(trainable_pct, 2),
+    }
+
+    if verbose:
+        print(f"--------------------------------------------------")
+        print(f" Model Parameter Summary: {getattr(model, 'name', 'Model')}")
+        print(f"--------------------------------------------------")
+        print(f" Total Parameters:     {total_params:,}")
+        print(f" Trainable Parameters: {trainable_params:,} ({trainable_pct:.2f}%)")
+        print(f" Frozen Parameters:    {frozen_params:,} ({100.0 - trainable_pct:.2f}%)")
+        print(f"--------------------------------------------------")
+
+    return summary
+
+
+def get_model(
+    model_name: str = "swin_t",
+    num_classes: int = 120,
+    pretrained: bool = True,
+    dropout: float = 0.3,
+    freeze_initially: bool = False,
+) -> nn.Module:
+    """
+    Constructs Swin-T adapted for the dog breeds.
+
+    Architecture pipeline:
+    1. Pretrained Swin-T backbone (ImageNet-1K, Swin_T_Weights.IMAGENET1K_V1)
+    2. Final LayerNorm + global average pooling (part of torchvision's swin_t)
+    3. Custom classification head: Dropout(p=0.3) -> Linear(768, num_classes)
+    """
+    weights = Swin_T_Weights.IMAGENET1K_V1 if pretrained else None
+    model = swin_t(weights=weights)
+    in_features = model.head.in_features  # 768
     model.head = nn.Sequential(
-        nn.Dropout(p=dropout),                      # randomly blanks 30% of the 768 numbers in training
-        nn.Linear(in_features, num_classes),        # 768 -> 120
+        nn.Dropout(p=dropout),
+        nn.Linear(in_features, num_classes),
     )
+    model.name = "Transfer-Swin-T"
+
+    # Attach convenience methods directly to the model instance
+    model.freeze_backbone = lambda: freeze_backbone(model)
+    model.unfreeze_backbone = lambda unfreeze_from_stage=0: unfreeze_backbone(model, unfreeze_from_stage)
+    model.get_parameter_summary = lambda verbose=False: get_parameter_summary(model, verbose)
+
+    if freeze_initially:
+        model.freeze_backbone()
+
     return model
 
 
-def count_parameters(model, trainable_only=True):
-    """Number of weights in the model. Trainable = the ones training will update."""
-    return sum(p.numel() for p in model.parameters()
-               if p.requires_grad or not trainable_only)
-
-
-def main():
-    print("SELF-TEST\n")
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-
-    model = build_model().to(device)
-    head = model.head[1]
-    total = count_parameters(model, trainable_only=False)
-    trainable = count_parameters(model)
-    head_params = count_parameters(model.head)
-
-    print(f"  model                    Swin-T (swin_t), torchvision")
-    print(f"  pretrained weights       {WEIGHTS}")
-    print(f"  new head                 Dropout({DROPOUT}) -> Linear({head.in_features} -> {head.out_features})")
-    print(f"  total parameters         {total:,}")
-    print(f"  trainable parameters     {trainable:,}")
-    print(f"  of which the new head    {head_params:,}")
-    print(f"  backbone (pretrained)    {total - head_params:,}")
-
-    # Push two fake photos through, to prove the shapes line up end to end.
-    model.eval()
-    dummy = torch.randn(2, 3, 224, 224, device=device)
-    with torch.no_grad():
-        out = model(dummy)
-    print(f"\n  device                   {device}")
-    print(f"  input shape              {tuple(dummy.shape)}   (2 photos, 3 colours, 224 x 224)")
-    print(f"  output shape             {tuple(out.shape)}   (2 photos, one score per breed)")
-    assert out.shape == (2, NUM_CLASSES), "output does not have one score per breed"
-
-    if device == "cuda":
-        print(f"  GPU memory in use        {torch.cuda.memory_allocated() / 1024**2:.0f} MB")
-
-    print("\nSelf-test passed.")
-
-
 if __name__ == "__main__":
-    main()
+    print(">>> Testing Transfer Learning Model Pattern (model.py) <<<\n")
+    model = get_model(num_classes=120, pretrained=True)
+
+    print("1. Initial Model (Default all trainable):")
+    model.get_parameter_summary(verbose=True)
+
+    print("\n2. Freezing Backbone (Phase 1: Feature Extraction):")
+    model.freeze_backbone()
+    model.get_parameter_summary(verbose=True)
+
+    print("\n3. Unfreezing Top Stages (Phase 2: Fine-Tuning features[6:] = last merge + stage 4):")
+    model.unfreeze_backbone(unfreeze_from_stage=6)
+    model.get_parameter_summary(verbose=True)
+
+    print("\n4. Unfreezing All Stages (Phase 2: Full Fine-Tuning):")
+    model.unfreeze_backbone(unfreeze_from_stage=0)
+    model.get_parameter_summary(verbose=True)
+
+    dummy_input = torch.randn(2, 3, 224, 224)
+    out = model(dummy_input)
+    print(f"\nForward pass successful. Output shape: {tuple(out.shape)}")

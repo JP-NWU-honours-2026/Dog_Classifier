@@ -1,445 +1,561 @@
 """
-train.py  (Sulaiman_Model, Swin Transformer)
+train.py - JP's two-phase transfer learning pipeline, applied to Swin-T.
 
-Step 3: fine-tunes the pretrained Swin-T on the shared split.
+This is a copy of JP_Model/train.py with only the model labels changed, so the
+training recipe (2 head epochs at 3e-4 with the backbone frozen, then 3
+fine-tune epochs at 1e-5 with features[6:] unfrozen, AdamW wd 0.01, cosine
+schedules, label smoothing 0.1, batch 32, AMP, seed 42) and the logging
+format (run_config.json, metrics.csv, history.json, training_curves.png) are
+identical across the group. dataset.py, model.py and evaluate.py in this folder are JP's files too,
+with Swin-T in place of EfficientNetV2-S.
 
-Built from Lindani's Lindani_Model/train.py, so both models are trained, logged
-and judged the same way (same epoch loop, same metrics, same early-stopping
-rule on validation macro F1, same run_config.json record). What changes is
-only what has to change for a PRETRAINED TRANSFORMER instead of a CNN trained
-from scratch:
+Runs, from the repository root:
+    python Sulaiman_Model/train.py --run-name unclean_transfer --manifest JP_Model/split_manifest.json
+    python Sulaiman_Model/train.py --run-name simplified_transfer --manifest JP_Model/split_manifest_simplified.json
 
-| Setting        | Lindani (scratch CNN) | Sulaiman (pretrained Swin-T)          |
-|----------------|-----------------------|---------------------------------------|
-| Learning rate  | 1e-3                  | 1e-4  (small, so pretrained knowledge |
-|                |                       |        is adjusted, not wiped out)    |
-| Warm-up        | none                  | 1 epoch, LR rises from ~0 to 1e-4     |
-| Weight decay   | 1e-4                  | 0.05  (standard for Swin)             |
-| Batch size     | 64                    | 32    (fits in the RTX 4060's 8 GB)   |
-| Epochs         | up to 60              | up to 15 (pretrained converges fast)  |
-| Patience       | 5                     | 4                                     |
-| Grad clipping  | none                  | max norm 1.0 (keeps transformer       |
-|                |                       |        updates stable)                |
-
-Held IDENTICAL to the other two models: the split, 224 x 224 input, the
-augmentation, ImageNet normalisation, seed 42, the loss (cross entropy), and
-the metrics.
-
-The test pile is never touched here. Training uses the train pile, progress
-is measured on the validation pile only. The test pile is scored once, at the
-end, by evaluate.py (step 5).
-
-Usage, from the repository root:
-
-    python Sulaiman_Model/train.py --quick     proves everything runs, about a minute
-    python Sulaiman_Model/train.py             the real run
-
-If the GPU runs out of memory, add --batch-size 16.
-
-Writes to Sulaiman_Model/results/runs/<name>/:
-    run_config.json         every setting, library version and the GPU, for the report
-    metrics.csv             one row per epoch, the source of the training curves
-    best_model.pth          weights from the best epoch (ignored by git, too big)
-    val_confusion_best.csv  validation confusion matrix at the best epoch
-
-RESULT OF THE MAIN RUN (17 October 2026), for quick reference
----------------------------------------------------------------
-Command        python Sulaiman_Model/train.py   (all defaults above)
-Saved in       Sulaiman_Model/results/runs/swin_t/
-Hardware       NVIDIA GeForce RTX 4060 Laptop GPU (8 GB), about 71 s per epoch
-Total time     19.0 minutes, 15 of 15 epochs (cap reached, no early stop)
-Best epoch     15 (weights saved in best_model.pth)
-
-VALIDATION set (3,025 photos), best epoch:
-  accuracy     86.61 per cent
-  macro F1     0.8644
-  (Lindani's scratch CNN for comparison: 50.51 per cent, macro F1 0.4969)
-
-Validation macro F1 by epoch:
-  1: 0.757   5: 0.839   10: 0.860   12: 0.863   15: 0.864
-  Flat from epoch 12, so the cap was reached but the model was no longer
-  meaningfully improving. More epochs were judged not worth it.
-
-Things to say in the report:
-  - Epoch 1 already reached 77 per cent: the pretrained backbone already
-    knew what dogs look like, only the final breed decision had to be learned.
-  - Final training accuracy 97.72 per cent against 86.61 per cent validation:
-    mild overfitting. Validation loss was lowest at epoch 4 (0.513) and crept
-    up to 0.533, while accuracy kept rising: the model got more answers right
-    but grew overconfident on the ones it got wrong.
-  - These are VALIDATION scores. The final reported scores come from the
-    test set, scored once by evaluate.py.
+Execution Chain & Logging Architecture:
+  1. Creates results/runs/<run_name>/ folder.
+  2. Writes run_config.json containing hardware, parameters, hyperparameters, and dataset metadata.
+  3. Executes Phase 1 (Classifier Head Warmup, frozen backbone) and Phase 2 (Fine-tuning upper stages).
+  4. Streams real-time epoch metrics into metrics.csv:
+     (epoch, phase, learning_rate, train_loss, train_accuracy, val_loss, val_accuracy, val_top5_accuracy, val_macro_f1, seconds, best_so_far)
+  5. Checkpoints best model weights to best_model.pth based on peak validation accuracy.
+  6. Generates publication-grade training_curves.png annotating Phase 1 and Phase 2.
 """
 
-import argparse
+import os
+import sys
 import csv
 import json
-import math
-import platform
-import random
-import subprocess
-import sys
 import time
+import random
+import argparse
 from datetime import datetime, timezone
+from pathlib import Path
+from typing import Dict, Any, Tuple, Optional
 
 import numpy as np
 import torch
 import torch.nn as nn
+import torch.optim as optim
+import matplotlib.pyplot as plt
+from sklearn.metrics import f1_score
 
-from dataset import INPUT_SIZE, REPO_ROOT, SULAIMAN_DIR, build_loaders
-from model import WEIGHTS, build_model, count_parameters
+# Ensure local imports work cleanly
+SCRIPT_DIR = Path(__file__).resolve().parent
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
 
-RUNS_DIR = SULAIMAN_DIR / "results" / "runs"
-METRIC_FIELDS = [
-    "epoch", "learning_rate", "train_loss", "train_accuracy", "train_macro_f1",
-    "val_loss", "val_accuracy", "val_macro_f1", "seconds", "best_so_far",
-]
+from dataset import get_dataloaders
+from model import get_model, freeze_backbone, unfreeze_backbone, get_parameter_summary
+
+RUNS_DIR = SCRIPT_DIR / "results" / "runs"
 
 
-def set_seed(seed, deterministic=False):
-    """
-    Fixes the random starting point so a run can be repeated.
-
-    Honest limitation for the report: GPU arithmetic is still not bit-for-bit
-    identical between runs, because some CUDA operations add numbers in a
-    non-fixed order. --deterministic forces the slower repeatable versions.
-    """
+def set_seed(seed: int = 42):
+    """Sets random seeds across Python, NumPy, and PyTorch for full reproducibility."""
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    if deterministic:
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
         torch.backends.cudnn.deterministic = True
         torch.backends.cudnn.benchmark = False
-        torch.use_deterministic_algorithms(True, warn_only=True)
-    else:
-        torch.backends.cudnn.benchmark = True
 
 
-def metrics_from_confusion(matrix):
-    """
-    Accuracy and macro-averaged precision, recall and F1 from a confusion matrix
-    (rows = true breed, columns = predicted breed). Copied from Lindani's
-    train.py so both models are scored by identical code.
+def train_one_epoch(model, dataloader, criterion, optimizer, scaler, device, use_amp):
+    """Trains the model for one epoch and returns (avg_loss, accuracy)."""
+    model.train()
+    running_loss = 0.0
+    correct = 0
+    total = 0
 
-    Macro = every breed counts equally, however many photos it has.
-    """
-    matrix = matrix.double()
-    correct = matrix.diag()
-    predicted = matrix.sum(dim=0)
-    actual = matrix.sum(dim=1)
-    zero = torch.zeros_like(correct)
-
-    precision = torch.where(predicted > 0, correct / predicted, zero)
-    recall = torch.where(actual > 0, correct / actual, zero)
-    total = precision + recall
-    f1 = torch.where(total > 0, 2 * precision * recall / total, zero)
-
-    return {
-        "accuracy": (correct.sum() / matrix.sum()).item(),
-        "macro_precision": precision.mean().item(),
-        "macro_recall": recall.mean().item(),
-        "macro_f1": f1.mean().item(),
-    }
-
-
-def warmup_cosine(total_steps, warmup_steps):
-    """
-    Learning-rate shape, as a multiplier of the base rate, updated every batch:
-
-      - warm-up: rises in a straight line from near 0 to 1 over the first epoch.
-        The new head starts random, so its first updates are large and noisy.
-        Starting gently stops that noise from damaging the pretrained backbone.
-      - cosine decay: then falls smoothly from 1 to 0 by the last batch.
-        Big steps early, fine adjustments at the end.
-    """
-    def multiplier(step):
-        if step < warmup_steps:
-            return (step + 1) / warmup_steps
-        progress = (step - warmup_steps) / max(1, total_steps - warmup_steps)
-        return 0.5 * (1 + math.cos(math.pi * min(1.0, progress)))
-    return multiplier
-
-
-def run_epoch(model, loader, criterion, device, num_classes, optimiser=None,
-              scheduler=None, scaler=None, clip=None, limit_batches=None,
-              log_every=50, label=""):
-    """
-    One pass over one pile. Trains when an optimiser is given, only scores otherwise.
-
-    The four training steps per batch: push the photos through the model, measure
-    how wrong it was (the loss), work out which way every weight should move
-    (backward), take that step.
-    """
-    training = optimiser is not None
-    model.train(training)       # also switches dropout on in training, off in scoring
-
-    confusion = torch.zeros(num_classes, num_classes, dtype=torch.long)
-    running_loss, seen, started = 0.0, 0, time.time()
-    batches = len(loader) if limit_batches is None else min(limit_batches, len(loader))
-    use_amp = scaler is not None and scaler.is_enabled()
-
-    for index, (images, labels, _) in enumerate(loader, 1):
-        if limit_batches is not None and index > limit_batches:
-            break
+    for images, labels, _ in dataloader:
         images = images.to(device, non_blocking=True)
         labels = labels.to(device, non_blocking=True)
 
-        with torch.set_grad_enabled(training):
-            # Mixed precision: most maths in 16-bit (faster, less GPU memory),
-            # weights kept in 32-bit.
-            with torch.amp.autocast(device_type=device.type, enabled=use_amp):
-                scores = model(images)
-                loss = criterion(scores, labels)
+        optimizer.zero_grad(set_to_none=True)
 
-        if training:
-            optimiser.zero_grad(set_to_none=True)
+        if use_amp:
+            with torch.amp.autocast(device_type="cuda"):
+                outputs = model(images)
+                loss = criterion(outputs, labels)
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
+        else:
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+            loss.backward()
+            optimizer.step()
+
+        running_loss += loss.item() * images.size(0)
+        _, preds = torch.max(outputs, 1)
+        correct += (preds == labels).sum().item()
+        total += labels.size(0)
+
+    epoch_loss = running_loss / total
+    epoch_acc = (correct / total) * 100.0
+    return epoch_loss, epoch_acc
+
+
+def validate(model, dataloader, criterion, device, use_amp):
+    """Evaluates the model on validation set and returns (loss, top1_acc, top5_acc, macro_f1)."""
+    model.eval()
+    running_loss = 0.0
+    correct_top1 = 0
+    correct_top5 = 0
+    total = 0
+    all_preds = []
+    all_labels = []
+
+    with torch.no_grad():
+        for images, labels, _ in dataloader:
+            images = images.to(device, non_blocking=True)
+            labels = labels.to(device, non_blocking=True)
+
             if use_amp:
-                scaler.scale(loss).backward()
-                if clip:
-                    scaler.unscale_(optimiser)
-                    torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
-                scaler.step(optimiser)
-                scaler.update()
+                with torch.amp.autocast(device_type="cuda"):
+                    outputs = model(images)
+                    loss = criterion(outputs, labels)
             else:
-                loss.backward()
-                if clip:
-                    torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
-                optimiser.step()
-            if scheduler is not None:
-                scheduler.step()
+                outputs = model(images)
+                loss = criterion(outputs, labels)
 
-        running_loss += loss.item() * labels.size(0)
-        seen += labels.size(0)
-        predictions = scores.argmax(dim=1)
-        pairs = labels.detach().cpu() * num_classes + predictions.detach().cpu()
-        confusion += torch.bincount(pairs, minlength=num_classes ** 2).reshape(
-            num_classes, num_classes)
+            running_loss += loss.item() * images.size(0)
 
-        if index % log_every == 0 or index == batches:
-            print(f"    {label} batch {index}/{batches}  "
-                  f"loss {running_loss / seen:.3f}  {time.time() - started:.0f}s", flush=True)
+            # Top-1 and Top-5 calculations
+            _, top5_preds = outputs.topk(5, 1, True, True)
+            correct_top1 += (top5_preds[:, 0] == labels).sum().item()
+            correct_top5 += (top5_preds == labels.view(-1, 1)).sum().item()
+            total += labels.size(0)
 
-    results = metrics_from_confusion(confusion)
-    results["loss"] = running_loss / max(seen, 1)
-    results["seconds"] = time.time() - started
-    return results, confusion
+            all_preds.extend(top5_preds[:, 0].cpu().numpy())
+            all_labels.extend(labels.cpu().numpy())
+
+    epoch_loss = running_loss / total
+    epoch_acc = (correct_top1 / total) * 100.0
+    epoch_top5 = (correct_top5 / total) * 100.0
+    macro_f1 = f1_score(all_labels, all_preds, average="macro", zero_division=0)
+
+    return epoch_loss, epoch_acc, epoch_top5, macro_f1
 
 
-def environment_record():
-    """Hardware and library versions, which the brief requires in the report."""
-    record = {
-        "python": sys.version.split()[0],
-        "torch": torch.__version__,
-        "numpy": np.__version__,
-        "platform": platform.platform(),
-        "processor": platform.processor(),
-        "cuda_available": torch.cuda.is_available(),
-    }
-    try:
-        import torchvision
-        record["torchvision"] = torchvision.__version__
-    except ImportError:
-        record["torchvision"] = "not installed"
-    if torch.cuda.is_available():
-        record["gpu"] = torch.cuda.get_device_name(0)
-        record["gpu_memory_gb"] = round(
-            torch.cuda.get_device_properties(0).total_memory / 1024 ** 3, 1)
-        record["cuda"] = torch.version.cuda
-    try:
-        record["git_commit"] = subprocess.run(
-            ["git", "rev-parse", "--short", "HEAD"], cwd=REPO_ROOT,
-            capture_output=True, text=True, timeout=10).stdout.strip() or "unknown"
-    except Exception:
-        record["git_commit"] = "unknown"
-    return record
+def plot_training_curves(history: dict, save_path: Path):
+    """
+    Plots and saves dual training/validation loss and accuracy curves,
+    annotating the boundary between Phase 1 (Frozen Backbone) and Phase 2 (Fine-Tuning).
+    """
+    epochs = list(range(1, len(history["train_loss"]) + 1))
+    head_epochs = history.get("head_epochs", 0)
+    fine_tune_epochs = history.get("fine_tune_epochs", 0)
+    has_transition = head_epochs > 0 and fine_tune_epochs > 0 and len(epochs) > head_epochs
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5.5), dpi=160)
+    fig.patch.set_facecolor("#fafafa")
+
+    # 1. Loss Curve
+    ax1.set_facecolor("#ffffff")
+    ax1.plot(epochs, history["train_loss"], "o-", color="#2563eb", linewidth=2.2, label="Train Loss")
+    ax1.plot(epochs, history["val_loss"], "s--", color="#dc2626", linewidth=2.2, label="Val Loss")
+    if has_transition:
+        ax1.axvline(x=head_epochs + 0.5, color="#7c3aed", linestyle="--", linewidth=1.8, label="Fine-Tuning Start")
+        y_min, y_max = ax1.get_ylim()
+        ax1.text(head_epochs / 2.0 + 0.5, y_max * 0.95, "Phase 1: Head Only", ha="center", va="top",
+                 fontsize=9, fontweight="bold", color="#1e40af", bbox=dict(boxstyle="round,pad=0.3", fc="#dbeafe", ec="#93c5fd"))
+        ax1.text(head_epochs + 0.5 + fine_tune_epochs / 2.0, y_max * 0.95, "Phase 2: Fine-Tuning", ha="center", va="top",
+                 fontsize=9, fontweight="bold", color="#6b21a8", bbox=dict(boxstyle="round,pad=0.3", fc="#f3e8ff", ec="#d8b4fe"))
+
+    ax1.set_title("120-Breed Training & Validation Loss", fontsize=12, fontweight="bold", pad=12)
+    ax1.set_xlabel("Epoch", fontsize=11)
+    ax1.set_ylabel("Cross Entropy Loss", fontsize=11)
+    ax1.grid(True, linestyle=":", alpha=0.6)
+    ax1.legend(frameon=True, facecolor="#ffffff", edgecolor="#e2e8f0")
+
+    # 2. Accuracy Curve
+    ax2.set_facecolor("#ffffff")
+    ax2.plot(epochs, history["train_acc"], "o-", color="#059669", linewidth=2.2, label="Train Acc")
+    ax2.plot(epochs, history["val_acc"], "s--", color="#d97706", linewidth=2.2, label="Val Acc (Top-1)")
+    if "val_top5" in history and len(history["val_top5"]) == len(epochs):
+        ax2.plot(epochs, history["val_top5"], "^:", color="#7c3aed", linewidth=1.8, label="Val Acc (Top-5)")
+
+    if has_transition:
+        ax2.axvline(x=head_epochs + 0.5, color="#7c3aed", linestyle="--", linewidth=1.8)
+        ax2.text(head_epochs / 2.0 + 0.5, 15, "Phase 1: Head Only", ha="center", va="bottom",
+                 fontsize=9, fontweight="bold", color="#1e40af", bbox=dict(boxstyle="round,pad=0.3", fc="#dbeafe", ec="#93c5fd"))
+        ax2.text(head_epochs + 0.5 + fine_tune_epochs / 2.0, 15, "Phase 2: Fine-Tuning", ha="center", va="bottom",
+                 fontsize=9, fontweight="bold", color="#6b21a8", bbox=dict(boxstyle="round,pad=0.3", fc="#f3e8ff", ec="#d8b4fe"))
+
+    ax2.set_title("120-Breed Training & Validation Accuracy", fontsize=12, fontweight="bold", pad=12)
+    ax2.set_xlabel("Epoch", fontsize=11)
+    ax2.set_ylabel("Accuracy (%)", fontsize=11)
+    ax2.set_ylim(0, 105)
+    ax2.grid(True, linestyle=":", alpha=0.6)
+    ax2.legend(frameon=True, facecolor="#ffffff", edgecolor="#e2e8f0", loc="lower right")
+
+    plt.tight_layout()
+    plt.savefig(save_path, bbox_inches="tight")
+    plt.close()
+    print(f"[train] Training curves saved to: {save_path}")
 
 
-def parse_args():
-    parser = argparse.ArgumentParser(description="Fine-tune pretrained Swin-T on the shared split.")
-    parser.add_argument("--name", default="swin_t", help="folder name for this run")
-    parser.add_argument("--epochs", type=int, default=15)
-    parser.add_argument("--batch-size", type=int, default=32)
-    parser.add_argument("--lr", type=float, default=1e-4)
-    parser.add_argument("--warmup-epochs", type=float, default=1.0)
-    parser.add_argument("--weight-decay", type=float, default=0.05)
-    parser.add_argument("--dropout", type=float, default=0.3)
-    parser.add_argument("--clip", type=float, default=1.0, help="gradient clipping max norm, 0 = off")
-    parser.add_argument("--label-smoothing", type=float, default=0.0,
-                        help="must be identical across all three models (Lindani uses 0.0)")
-    parser.add_argument("--patience", type=int, default=4,
-                        help="epochs without a better validation macro F1 before stopping")
-    parser.add_argument("--num-workers", type=int, default=4)
-    parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--deterministic", action="store_true")
-    parser.add_argument("--no-amp", action="store_true", help="turn off mixed precision")
-    parser.add_argument("--overwrite", action="store_true", help="replace an existing run folder")
-    parser.add_argument("--quick", action="store_true",
-                        help="smoke test: 2 epochs over 8 batches each")
-    return parser.parse_args()
+def run_training(
+    run_name: str = "unclean_transfer",
+    manifest_path: Optional[Path] = None,
+    head_epochs: int = 2,
+    fine_tune_epochs: int = 3,
+    head_lr: float = 0.0003,
+    fine_tune_lr: float = 1e-5,
+    unfreeze_from_stage: int = 6,
+    batch_size: int = 32,
+    seed: int = 42,
+    subset_fraction: float = 1.0,
+    quick_test: bool = False,
+    resume_checkpoint: Optional[str] = None,
+) -> Tuple[Path, dict]:
+    """
+    Executes the two-phase transfer learning pipeline with automatic run directory management,
+    run_config.json logging, real-time metrics.csv streaming, and curves generation.
+    """
+    set_seed(seed)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    use_amp = (device.type == "cuda")
 
+    if quick_test:
+        head_epochs = 0 if resume_checkpoint else 1
+        fine_tune_epochs = 1
+        subset_fraction = 0.05
+        run_name = f"{run_name}_quick"
+        print(f"\n>>> QUICK TEST MODE ACTIVATED on 5% data <<<\n")
 
-def main():
-    args = parse_args()
-    if args.quick:
-        args.epochs, args.name = 2, f"{args.name}_quick"
-
-    output_dir = RUNS_DIR / args.name
-    if output_dir.exists() and not args.overwrite:
-        print(f"{output_dir} already exists. Use --overwrite to replace it, "
-              f"or --name to give this run its own folder.")
-        return
+    output_dir = RUNS_DIR / run_name
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    set_seed(args.seed, args.deterministic)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    limit = 8 if args.quick else None
+    total_epochs = head_epochs + fine_tune_epochs
 
-    loaders, class_names, data_summary = build_loaders(
-        batch_size=args.batch_size, num_workers=args.num_workers, seed=args.seed)
+    print(f"=======================================================")
+    print(f" ITRI626 Sulaiman_Model (Swin-T) - Training Run: {run_name}")
+    print(f" Output Directory: {output_dir}")
+    print(f" Device: {device} | Mixed Precision (AMP): {use_amp}")
+    if device.type == "cuda":
+        print(f" GPU: {torch.cuda.get_device_name(0)}")
+        print(f" VRAM: {torch.cuda.get_device_properties(0).total_memory / (1024**3):.2f} GB")
+    print(f" Manifest: {manifest_path or 'split_manifest.json'}")
+    print(f" Phase 1 (Frozen Backbone):    {head_epochs} epochs @ lr={head_lr}")
+    print(f" Phase 2 (Upper Stages Fine):  {fine_tune_epochs} epochs @ lr={fine_tune_lr} (unfreeze stage >= {unfreeze_from_stage})")
+    print(f" Total Epochs: {total_epochs} | Batch Size: {batch_size}")
+    print(f"=======================================================\n")
+
+    workspace_root = SCRIPT_DIR.parent
+    train_loader, val_loader, test_loader, class_names = get_dataloaders(
+        workspace_root=workspace_root,
+        manifest_path=manifest_path,
+        batch_size=batch_size,
+        seed=seed,
+        subset_fraction=subset_fraction,
+    )
+
     num_classes = len(class_names)
 
-    model = build_model(num_classes=num_classes, dropout=args.dropout).to(device)
-    criterion = nn.CrossEntropyLoss(label_smoothing=args.label_smoothing)
-    optimiser = torch.optim.AdamW(model.parameters(), lr=args.lr,
-                                  weight_decay=args.weight_decay)
+    # 1. Initialize model with base ImageNet weights
+    model = get_model(num_classes=num_classes, pretrained=True)
+    model = model.to(device)
 
-    steps_per_epoch = limit or len(loaders["train"])
-    total_steps = steps_per_epoch * args.epochs
-    warmup_steps = max(1, int(steps_per_epoch * args.warmup_epochs))
-    scheduler = torch.optim.lr_scheduler.LambdaLR(
-        optimiser, warmup_cosine(total_steps, warmup_steps))
-
-    use_amp = device.type == "cuda" and not args.no_amp
-    scaler = torch.amp.GradScaler(device.type, enabled=use_amp)
-
-    # Written before training starts, so even a crashed run documents itself.
-    config = {
-        "run_name": args.name,
+    # 2. Log run_config.json before training begins
+    p_summary = get_parameter_summary(model, verbose=False)
+    run_config = {
+        "run_name": run_name,
         "started": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "model": "Swin-T (Swin Transformer Tiny), torchvision swin_t",
-        "pretrained_weights": str(WEIGHTS),
-        "transfer_learning": "new head Dropout + Linear(768 -> 120); whole network "
-                             "fine-tuned, nothing frozen",
-        "total_parameters": count_parameters(model, trainable_only=False),
-        "trainable_parameters": count_parameters(model),
-        "input_size": INPUT_SIZE,
+        "model": "Swin-T (Pretrained Transfer Learning)",
+        "architecture": "swin_t",
+        "pretrained_weights": "ImageNet-1K (Swin_T_Weights.IMAGENET1K_V1)",
+        "total_parameters": p_summary["total_params"],
+        "trainable_parameters_initial": p_summary["trainable_params"],
+        "manifest_path": str(manifest_path) if manifest_path else "Sulaiman_Model/split_manifest.json",
         "classes": num_classes,
-        "optimiser": "AdamW",
-        "learning_rate": args.lr,
-        "schedule": f"linear warm-up over {args.warmup_epochs} epoch(s), then cosine "
-                    f"decay to 0, updated every batch",
-        "weight_decay": args.weight_decay,
-        "dropout": args.dropout,
-        "gradient_clipping_max_norm": args.clip or None,
-        "loss": "CrossEntropyLoss",
-        "label_smoothing": args.label_smoothing,
-        "epochs_planned": args.epochs,
-        "early_stopping": f"validation macro F1, patience {args.patience}",
-        "mixed_precision": use_amp,
-        "gradient_accumulation": "none",
-        "deterministic_algorithms": args.deterministic,
-        "seed": args.seed,
+        "head_epochs": head_epochs,
+        "fine_tune_epochs": fine_tune_epochs,
+        "total_epochs": total_epochs,
+        "head_lr": head_lr,
+        "fine_tune_lr": fine_tune_lr,
+        "unfreeze_from_stage": unfreeze_from_stage,
+        "batch_size": batch_size,
+        "seed": seed,
         "device": str(device),
-        "augmentation": "training only: horizontal flip, rotation up to 15 degrees, "
-                        "mild colour jitter. Identical to the shared pipeline.",
-        "data": data_summary,
-        "environment": environment_record(),
-        "note": "The test pile is not read by this script. It is scored once by "
-                "evaluate.py after training is finished.",
+        "gpu_name": torch.cuda.get_device_name(0) if device.type == "cuda" else "CPU",
+        "vram_gb": round(torch.cuda.get_device_properties(0).total_memory / (1024**3), 2) if device.type == "cuda" else 0,
+        "cuda_version": torch.version.cuda if torch.cuda.is_available() else "N/A",
+        "pytorch_version": torch.__version__,
     }
-    (output_dir / "run_config.json").write_text(json.dumps(config, indent=2), encoding="utf-8")
+    with open(output_dir / "run_config.json", "w", encoding="utf-8") as f:
+        json.dump(run_config, f, indent=2)
+    print(f"[train] Run config saved to: {output_dir / 'run_config.json'}")
 
-    print(f"Training on {device}"
-          + (f" ({config['environment'].get('gpu')})" if device.type == "cuda" else ""))
-    print(f"{config['trainable_parameters']:,} trainable parameters, "
-          f"{data_summary['train_photographs']:,} training photographs, {num_classes} breeds")
-    if device.type == "cpu":
-        print("No GPU found. This will be very slow; use --quick only.")
-    print()
+    # 3. Setup metrics.csv file
+    metrics_csv_path = output_dir / "metrics.csv"
+    csv_fields = [
+        "epoch", "phase", "learning_rate", "train_loss", "train_accuracy",
+        "val_loss", "val_accuracy", "val_top5_accuracy", "val_macro_f1",
+        "seconds", "best_so_far"
+    ]
+    with open(metrics_csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=csv_fields)
+        writer.writeheader()
 
-    metrics_path = output_dir / "metrics.csv"
-    with open(metrics_path, "w", newline="", encoding="utf-8") as f:
-        csv.DictWriter(f, fieldnames=METRIC_FIELDS).writeheader()
+    best_val_acc = 0.0
+    best_checkpoint_path = output_dir / "best_model.pth"
 
-    best_f1, best_epoch, epochs_without_gain, started = -1.0, 0, 0, time.time()
+    criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
+    scaler = torch.amp.GradScaler("cuda", enabled=use_amp)
 
-    for epoch in range(1, args.epochs + 1):
-        learning_rate = optimiser.param_groups[0]["lr"]
-        print(f"  epoch {epoch}/{args.epochs}  learning rate at start {learning_rate:.2e}")
+    history = {
+        "run_name": run_name,
+        "model_name": model.name,
+        "num_classes": num_classes,
+        "device": str(device),
+        "gpu_name": torch.cuda.get_device_name(0) if device.type == "cuda" else "CPU",
+        "head_epochs": head_epochs,
+        "fine_tune_epochs": fine_tune_epochs,
+        "total_epochs": total_epochs,
+        "head_lr": head_lr,
+        "fine_tune_lr": fine_tune_lr,
+        "unfreeze_from_stage": unfreeze_from_stage,
+        "batch_size": batch_size,
+        "seed": seed,
+        "train_loss": [],
+        "train_acc": [],
+        "val_loss": [],
+        "val_acc": [],
+        "val_top5": [],
+        "val_macro_f1": [],
+        "phase": [],
+    }
 
-        train_results, _ = run_epoch(
-            model, loaders["train"], criterion, device, num_classes,
-            optimiser=optimiser, scheduler=scheduler, scaler=scaler, clip=args.clip,
-            limit_batches=limit, label="train")
-        val_results, val_confusion = run_epoch(
-            model, loaders["val"], criterion, device, num_classes,
-            scaler=scaler, limit_batches=limit, label="val")
+    start_training_time = time.time()
+    current_global_epoch = 0
 
-        improved = val_results["macro_f1"] > best_f1
-        if improved:
-            best_f1, best_epoch, epochs_without_gain = val_results["macro_f1"], epoch, 0
-            torch.save({
-                "model_state_dict": model.state_dict(),
-                "epoch": epoch,
-                "val_macro_f1": best_f1,
-                "val_accuracy": val_results["accuracy"],
-                "class_names": class_names,
-                "config": config,
-            }, output_dir / "best_model.pth")
-            np.savetxt(output_dir / "val_confusion_best.csv",
-                       val_confusion.numpy(), fmt="%d", delimiter=",")
-        else:
-            epochs_without_gain += 1
+    # -------------------------------------------------------------
+    # PHASE 1: Feature Extraction / Head Training (Backbone Frozen)
+    # -------------------------------------------------------------
+    if head_epochs > 0:
+        print("=" * 60)
+        print(" [PHASE 1] Training Classifier Head (Backbone Frozen)")
+        print("=" * 60)
+        freeze_backbone(model)
+        p_summary = get_parameter_summary(model, verbose=True)
 
-        with open(metrics_path, "a", newline="", encoding="utf-8") as f:
-            csv.DictWriter(f, fieldnames=METRIC_FIELDS).writerow({
-                "epoch": epoch,
-                "learning_rate": learning_rate,
-                "train_loss": round(train_results["loss"], 5),
-                "train_accuracy": round(train_results["accuracy"], 5),
-                "train_macro_f1": round(train_results["macro_f1"], 5),
-                "val_loss": round(val_results["loss"], 5),
-                "val_accuracy": round(val_results["accuracy"], 5),
-                "val_macro_f1": round(val_results["macro_f1"], 5),
-                "seconds": round(train_results["seconds"] + val_results["seconds"], 1),
-                "best_so_far": improved,
-            })
+        optimizer = optim.AdamW(
+            [p for p in model.parameters() if p.requires_grad],
+            lr=head_lr,
+            weight_decay=1e-2,
+        )
+        scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=head_epochs, eta_min=head_lr * 0.1)
 
-        print(f"    train loss {train_results['loss']:.3f}  "
-              f"accuracy {100 * train_results['accuracy']:.2f}%")
-        print(f"    val   loss {val_results['loss']:.3f}  "
-              f"accuracy {100 * val_results['accuracy']:.2f}%  "
-              f"macro F1 {val_results['macro_f1']:.4f}"
-              + ("   best so far" if improved else f"   no gain for {epochs_without_gain}"))
-        if epoch == 1 and device.type == "cuda":
-            peak = torch.cuda.max_memory_allocated() / 1024 ** 3
-            print(f"    peak GPU memory {peak:.1f} GB")
-        print()
+        for ep in range(1, head_epochs + 1):
+            current_global_epoch += 1
+            ep_start = time.time()
+            curr_lr = optimizer.param_groups[0]["lr"]
 
-        if epochs_without_gain >= args.patience:
-            print(f"Early stopping: no better validation macro F1 for {args.patience} epochs.")
-            break
+            train_loss, train_acc = train_one_epoch(model, train_loader, criterion, optimizer, scaler, device, use_amp)
+            val_loss, val_acc, val_top5, val_f1 = validate(model, val_loader, criterion, device, use_amp)
+            scheduler.step()
 
-    minutes = (time.time() - started) / 60
-    config.update({
-        "finished": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "epochs_run": epoch,
-        "stopped_early": epoch < args.epochs,
-        "epoch_cap_reached": epoch == args.epochs,
-        "best_epoch": best_epoch,
-        "best_val_macro_f1": round(best_f1, 5),
-        "total_minutes": round(minutes, 1),
-    })
-    (output_dir / "run_config.json").write_text(json.dumps(config, indent=2), encoding="utf-8")
+            ep_elapsed = time.time() - ep_start
+            history["train_loss"].append(train_loss)
+            history["train_acc"].append(train_acc)
+            history["val_loss"].append(val_loss)
+            history["val_acc"].append(val_acc)
+            history["val_top5"].append(val_top5)
+            history["val_macro_f1"].append(val_f1)
+            history["phase"].append("Head (Frozen)")
 
-    print(f"Best epoch {best_epoch}, validation macro F1 {best_f1:.4f}, "
-          f"{minutes:.1f} minutes total.")
-    print(f"Saved to {output_dir}")
-    if config["epoch_cap_reached"]:
-        print("Note: the epoch cap was reached, not early stopping, so the model may "
-              "still have been improving. State this in the report.")
+            is_best = val_acc > best_val_acc
+            if is_best:
+                best_val_acc = val_acc
+                torch.save({
+                    "epoch": current_global_epoch,
+                    "phase": "head",
+                    "model_name": "swin_t",
+                    "model_display_name": model.name,
+                    "num_classes": num_classes,
+                    "state_dict": model.state_dict(),
+                    "val_acc": val_acc,
+                    "val_loss": val_loss,
+                    "val_top5": val_top5,
+                    "val_macro_f1": val_f1,
+                    "class_names": class_names,
+                    "seed": seed,
+                    "run_name": run_name,
+                }, best_checkpoint_path)
+                best_marker = " [* BEST SAVED]"
+            else:
+                best_marker = ""
+
+            # Stream to metrics.csv immediately
+            with open(metrics_csv_path, "a", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, fieldnames=csv_fields)
+                writer.writerow({
+                    "epoch": current_global_epoch,
+                    "phase": "Phase 1 (Head)",
+                    "learning_rate": curr_lr,
+                    "train_loss": round(train_loss, 4),
+                    "train_accuracy": round(train_acc, 2),
+                    "val_loss": round(val_loss, 4),
+                    "val_accuracy": round(val_acc, 2),
+                    "val_top5_accuracy": round(val_top5, 2),
+                    "val_macro_f1": round(val_f1, 4),
+                    "seconds": round(ep_elapsed, 1),
+                    "best_so_far": round(best_val_acc, 2),
+                })
+
+            print(f"[Phase 1 - Head] Epoch [{ep:02d}/{head_epochs:02d}] (Total {current_global_epoch:02d}/{total_epochs:02d}) ({ep_elapsed:.1f}s) "
+                  f"| Train Loss: {train_loss:.4f} | Train Acc: {train_acc:5.1f}% "
+                  f"| Val Acc: {val_acc:5.1f}% | Top-5: {val_top5:5.1f}% | Macro F1: {val_f1:.4f}{best_marker}")
+
+    # -------------------------------------------------------------
+    # PHASE 2: Fine-Tuning Upper Stages (Lower Stages Stay Frozen)
+    # -------------------------------------------------------------
+    if fine_tune_epochs > 0:
+        stage_desc = f"Stages >= {unfreeze_from_stage}" if unfreeze_from_stage > 0 else "All Stages"
+        print("\n" + "=" * 60)
+        print(f" [PHASE 2] Fine-Tuning Upper Stages ({stage_desc}) with Lower LR ({fine_tune_lr})")
+        print("=" * 60)
+        unfreeze_backbone(model, unfreeze_from_stage=unfreeze_from_stage)
+        p_summary = get_parameter_summary(model, verbose=True)
+
+        optimizer = optim.AdamW(
+            [p for p in model.parameters() if p.requires_grad],
+            lr=fine_tune_lr,
+            weight_decay=1e-2,
+        )
+        scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=fine_tune_epochs, eta_min=1e-7)
+
+        for ep in range(1, fine_tune_epochs + 1):
+            current_global_epoch += 1
+            ep_start = time.time()
+            curr_lr = optimizer.param_groups[0]["lr"]
+
+            train_loss, train_acc = train_one_epoch(model, train_loader, criterion, optimizer, scaler, device, use_amp)
+            val_loss, val_acc, val_top5, val_f1 = validate(model, val_loader, criterion, device, use_amp)
+            scheduler.step()
+
+            ep_elapsed = time.time() - ep_start
+            history["train_loss"].append(train_loss)
+            history["train_acc"].append(train_acc)
+            history["val_loss"].append(val_loss)
+            history["val_acc"].append(val_acc)
+            history["val_top5"].append(val_top5)
+            history["val_macro_f1"].append(val_f1)
+            history["phase"].append("Fine-Tune (Upper Stages)")
+
+            is_best = val_acc > best_val_acc
+            if is_best:
+                best_val_acc = val_acc
+                torch.save({
+                    "epoch": current_global_epoch,
+                    "phase": "fine_tune",
+                    "model_name": "swin_t",
+                    "model_display_name": model.name,
+                    "num_classes": num_classes,
+                    "state_dict": model.state_dict(),
+                    "val_acc": val_acc,
+                    "val_loss": val_loss,
+                    "val_top5": val_top5,
+                    "val_macro_f1": val_f1,
+                    "class_names": class_names,
+                    "seed": seed,
+                    "run_name": run_name,
+                }, best_checkpoint_path)
+                best_marker = " [* BEST SAVED]"
+            else:
+                best_marker = ""
+
+            # Stream to metrics.csv immediately
+            with open(metrics_csv_path, "a", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, fieldnames=csv_fields)
+                writer.writerow({
+                    "epoch": current_global_epoch,
+                    "phase": "Phase 2 (Fine-Tune)",
+                    "learning_rate": curr_lr,
+                    "train_loss": round(train_loss, 4),
+                    "train_accuracy": round(train_acc, 2),
+                    "val_loss": round(val_loss, 4),
+                    "val_accuracy": round(val_acc, 2),
+                    "val_top5_accuracy": round(val_top5, 2),
+                    "val_macro_f1": round(val_f1, 4),
+                    "seconds": round(ep_elapsed, 1),
+                    "best_so_far": round(best_val_acc, 2),
+                })
+
+            print(f"[Phase 2 - FineTune] Epoch [{ep:02d}/{fine_tune_epochs:02d}] (Total {current_global_epoch:02d}/{total_epochs:02d}) ({ep_elapsed:.1f}s) "
+                  f"| Train Loss: {train_loss:.4f} | Train Acc: {train_acc:5.1f}% "
+                  f"| Val Acc: {val_acc:5.1f}% | Top-5: {val_top5:5.1f}% | Macro F1: {val_f1:.4f}{best_marker}")
+
+    total_training_time = time.time() - start_training_time
+    history["total_training_time_seconds"] = round(total_training_time, 1)
+    history["best_val_accuracy"] = round(best_val_acc, 2)
+
+    print(f"\n[train] Training complete in {total_training_time/60:.1f} minutes! Best Val Accuracy: {best_val_acc:.2f}%")
+
+    # Save history json
+    history_path = output_dir / "history.json"
+    with open(history_path, "w", encoding="utf-8") as f:
+        json.dump(history, f, indent=2)
+
+    # Plot training curves
+    curves_path = output_dir / "training_curves.png"
+    plot_training_curves(history, curves_path)
+
+    # Also update run_config with final training time and best val acc
+    run_config["finished"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    run_config["duration_seconds"] = round(total_training_time, 1)
+    run_config["duration_minutes"] = round(total_training_time / 60.0, 2)
+    run_config["best_val_accuracy"] = round(best_val_acc, 2)
+    with open(output_dir / "run_config.json", "w", encoding="utf-8") as f:
+        json.dump(run_config, f, indent=2)
+
+    return best_checkpoint_path, history
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Train Swin-T with JP's two-phase transfer learning.")
+    parser.add_argument("--run-name", type=str, default="unclean_transfer", help="Folder name under results/runs/ for this run.")
+    parser.add_argument("--manifest", type=str, default=None, help="Path to split manifest JSON (e.g. split_manifest_clean.json).")
+    parser.add_argument("--head_epochs", type=int, default=2, help="Number of Phase 1 epochs (classifier head warmup).")
+    parser.add_argument("--fine_tune_epochs", type=int, default=3, help="Number of Phase 2 epochs (upper stages fine-tuning).")
+    parser.add_argument("--epochs", type=int, default=None, help="Total epochs shorthand (splits into 2 head + remaining fine-tune).")
+    parser.add_argument("--batch_size", type=int, default=32 if torch.cuda.is_available() else 16, help="Batch size.")
+    parser.add_argument("--head_lr", type=float, default=0.0003, help="Phase 1 learning rate for classifier head.")
+    parser.add_argument("--fine_tune_lr", type=float, default=1e-5, help="Phase 2 learning rate for fine-tuning.")
+    parser.add_argument("--unfreeze_stage", type=int, default=6, help="Backbone stage to unfreeze from (default 6: upper stages 6 & 7).")
+    parser.add_argument("--seed", type=int, default=42, help="Random seed for reproducibility.")
+    parser.add_argument("--subset_fraction", type=float, default=1.0, help="Fraction of data to train on.")
+    parser.add_argument("--quick_test", action="store_true", help="Run 1 head epoch + 1 fine-tuning epoch on 5% data subset.")
+    parser.add_argument("--resume", type=str, default=None, help="Path to checkpoint to resume training from.")
+    parser.add_argument("--phase2_only", action="store_true", help="Skip Phase 1 head warmup and go directly into Phase 2.")
+
+    args = parser.parse_args()
+
+    manifest_p = Path(args.manifest) if args.manifest else None
+
+    head_eps = 0 if args.phase2_only else args.head_epochs
+    fine_tune_eps = args.fine_tune_epochs
+
+    if args.epochs is not None and not args.phase2_only:
+        head_eps = min(2, args.epochs)
+        fine_tune_eps = max(0, args.epochs - head_eps)
+
+    run_training(
+        run_name=args.run_name,
+        manifest_path=manifest_p,
+        head_epochs=head_eps,
+        fine_tune_epochs=fine_tune_eps,
+        head_lr=args.head_lr,
+        fine_tune_lr=args.fine_tune_lr,
+        unfreeze_from_stage=args.unfreeze_stage,
+        batch_size=args.batch_size,
+        seed=args.seed,
+        subset_fraction=args.subset_fraction,
+        quick_test=args.quick_test,
+        resume_checkpoint=args.resume,
+    )
