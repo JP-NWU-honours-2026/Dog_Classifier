@@ -11,7 +11,9 @@ import io
 import sys
 import time
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, List, Optional
+import torch.nn as nn
+from pydantic import BaseModel
 
 from PIL import Image
 import torch
@@ -50,9 +52,11 @@ if DATASET_IMAGES_DIR.exists():
 
 # Global model state
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+CURRENT_MODEL_ID = "jp_efficientnet_simplified"
 MODEL = None
-CLASS_NAMES = {0: "Chihuahua", 1: "Siberian Husky"}
+CLASS_NAMES = {}
 MODEL_METADATA = {}
+MODEL_CACHE = {}
 
 # Preprocessing transform
 INFERENCE_TRANSFORM = transforms.Compose([
@@ -61,55 +65,168 @@ INFERENCE_TRANSFORM = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
 ])
 
+# Catalog of the 3 per-person models on the simplified split (114 breeds)
+SIMPLIFIED_MODELS_CATALOG = [
+    {
+        "id": "jp_efficientnet_simplified",
+        "author": "JP",
+        "model_display_name": "JP: EfficientNetV2-S (Simplified Split)",
+        "short_name": "EfficientNetV2-S",
+        "architecture_family": "EfficientNetV2",
+        "parameters": "20.3M",
+        "classes_count": 114,
+        "split_manifest": "split_manifest_simplified.json",
+        "val_accuracy": "85.8%",
+        "test_accuracy": "84.2%",
+        "description": "JP's EfficientNetV2-S transfer model fine-tuned on the 114-breed simplified split.",
+        "checkpoint_path": PROJECT_ROOT / "JP_Model" / "results" / "runs" / "simplified_transfer" / "best_model.pth",
+        "badge": "EfficientNetV2 ? 114 Breeds",
+    },
+    {
+        "id": "lindani_mobilenet_simplified",
+        "author": "Lindani",
+        "model_display_name": "Lindani: MobileNetV3-Large (Simplified Split)",
+        "short_name": "MobileNetV3-Large",
+        "architecture_family": "MobileNetV3",
+        "parameters": "4.3M",
+        "classes_count": 114,
+        "split_manifest": "split_manifest_simplified.json",
+        "val_accuracy": "70.4%",
+        "test_accuracy": "68.7%",
+        "description": "Lindani's MobileNetV3-Large matching baseline CNN capacity (4.3M params) on 114 breeds.",
+        "checkpoint_path": PROJECT_ROOT / "Lindani_Model" / "mobilenet" / "results" / "runs" / "mobilenet_simplified" / "best_model.pth",
+        "badge": "MobileNetV3 ? 114 Breeds",
+    },
+    {
+        "id": "sulaiman_swin_simplified",
+        "author": "Sulaiman",
+        "model_display_name": "Sulaiman: Swin-T Transformer (Simplified Split)",
+        "short_name": "Swin-T Transformer",
+        "architecture_family": "Vision Transformer (Swin)",
+        "parameters": "27.6M",
+        "classes_count": 114,
+        "split_manifest": "split_manifest_simplified.json",
+        "val_accuracy": "Pending Training",
+        "test_accuracy": "Pending Training",
+        "description": "Sulaiman's Swin Transformer Tiny architecture on 114 breeds (weights not yet trained).",
+        "checkpoint_path": PROJECT_ROOT / "Sulaiman_Model" / "results" / "runs" / "swin_t_simplified" / "best_model.pth",
+        "badge": "Swin-T ? Not Yet Trained",
+    },
+]
 
-def load_classifier():
-    """Loads the trained PyTorch model checkpoint into memory."""
-    global MODEL, CLASS_NAMES, MODEL_METADATA
-    
-    # Check JP_Model first, then local app folder, then Demo_2_breed_model
-    candidates = [
-        PROJECT_ROOT / "JP_Model" / "best_model.pth",
-        APP_DIR / "best_model.pth",
-        DEMO_DIR / "best_model.pth",
-    ]
-    checkpoint_path = None
-    for p in candidates:
-        if p.exists():
-            checkpoint_path = p
-            break
 
-    if checkpoint_path is None:
-        raise FileNotFoundError(f"Trained checkpoint not found in any candidate locations: {candidates}")
+def load_classifier(model_id: Optional[str] = None):
+    """Loads a simplified split model checkpoint into memory by ID."""
+    global MODEL, CLASS_NAMES, MODEL_METADATA, CURRENT_MODEL_ID, MODEL_CACHE
+
+    target_id = model_id or CURRENT_MODEL_ID or "jp_efficientnet_simplified"
+
+    if target_id in MODEL_CACHE:
+        cached = MODEL_CACHE[target_id]
+        MODEL = cached["model"]
+        CLASS_NAMES = cached["classes"]
+        MODEL_METADATA = cached["metadata"]
+        CURRENT_MODEL_ID = target_id
+        return MODEL_METADATA
+
+    catalog_map = {m["id"]: m for m in SIMPLIFIED_MODELS_CATALOG}
+    if target_id not in catalog_map:
+        target_id = "jp_efficientnet_simplified"
+
+    entry = catalog_map[target_id]
+    checkpoint_path = entry["checkpoint_path"]
+
+    if not checkpoint_path.exists():
+        if target_id == "sulaiman_swin_simplified":
+            raise HTTPException(
+                status_code=400,
+                detail="Sulaiman's Swin-T model has not been trained on the simplified split yet."
+            )
+        raise FileNotFoundError(f"Trained checkpoint not found at: {checkpoint_path}")
 
     print(f"[server] Loading model weights from: {checkpoint_path}")
-    checkpoint = torch.load(checkpoint_path, map_location=DEVICE)
+    checkpoint = torch.load(checkpoint_path, map_location=DEVICE, weights_only=False)
 
-    model_name = checkpoint.get("model_name", "efficientnet_v2")
     raw_class_names = checkpoint.get("class_names", {})
     if isinstance(raw_class_names, dict):
-        CLASS_NAMES = {int(k): v for k, v in raw_class_names.items()}
+        class_names = {int(k): v for k, v in raw_class_names.items()}
     elif isinstance(raw_class_names, list):
-        CLASS_NAMES = {i: v for i, v in enumerate(raw_class_names)}
+        class_names = {i: v for i, v in enumerate(raw_class_names)}
     else:
-        CLASS_NAMES = {0: "Chihuahua", 1: "Siberian Husky"}
+        class_names = {i: f"Class {i}" for i in range(entry["classes_count"])}
 
-    MODEL = get_model(model_name=model_name, num_classes=len(CLASS_NAMES), pretrained=False)
+    num_classes = len(class_names)
     state_dict = checkpoint.get("state_dict") or checkpoint.get("model_state_dict")
-    MODEL.load_state_dict(state_dict)
-    MODEL = MODEL.to(DEVICE)
-    MODEL.eval()
+    disp_name = checkpoint.get("model_display_name", "")
 
-    MODEL_METADATA = {
-        "model_name": checkpoint.get("model_display_name", getattr(MODEL, "name", model_name)),
-        "architecture_family": "EfficientNetV2" if "efficientnet" in model_name.lower() else "ResNet",
+    if "mobilenet" in target_id or "mobilenet" in disp_name.lower() or "classifier.3.weight" in state_dict:
+        from torchvision.models import mobilenet_v3_large
+        model = mobilenet_v3_large(weights=None)
+        in_features = model.classifier[3].in_features
+        model.classifier[2] = nn.Dropout(p=0.3, inplace=True)
+        model.classifier[3] = nn.Linear(in_features, num_classes)
+        model.name = "Transfer-MobileNetV3-Large"
+    elif "swin" in target_id:
+        from torchvision.models import swin_t
+        model = swin_t(weights=None)
+        in_features = model.head.in_features
+        model.head = nn.Sequential(
+            nn.Dropout(p=0.3),
+            nn.Linear(in_features, num_classes),
+        )
+        model.name = "Transfer-Swin-T"
+    else:
+        from torchvision.models import efficientnet_v2_s
+        model = efficientnet_v2_s(weights=None)
+        in_features = model.classifier[1].in_features
+        model.classifier = nn.Sequential(
+            nn.Dropout(p=0.3),
+            nn.Linear(in_features, num_classes),
+        )
+        model.name = "Transfer-EfficientNetV2-S"
+
+    cleaned_state_dict = {}
+    for k, v in state_dict.items():
+        new_k = k[6:] if k.startswith("model.") else k
+        cleaned_state_dict[new_k] = v
+
+    model.load_state_dict(cleaned_state_dict)
+    model = model.to(DEVICE)
+    model.eval()
+
+    val_acc_val = checkpoint.get("val_acc")
+    val_acc_str = f"{val_acc_val:.1f}%" if val_acc_val else entry["val_accuracy"]
+
+    metadata = {
+        "model_id": target_id,
+        "author": entry["author"],
+        "model_name": entry["model_display_name"],
+        "model_display_name": getattr(model, "name", entry["model_display_name"]),
+        "architecture_family": entry["architecture_family"],
+        "parameters": entry["parameters"],
         "device": str(DEVICE).upper(),
         "input_resolution": "224 x 224",
-        "total_classes": len(CLASS_NAMES),
-        "classes": list(CLASS_NAMES.values()),
-        "val_accuracy": f"{checkpoint.get('val_acc', 100.0):.1f}%",
+        "total_classes": num_classes,
+        "classes": list(class_names.values()),
+        "val_accuracy": val_acc_str,
+        "test_accuracy": entry["test_accuracy"],
         "checkpoint_source": str(checkpoint_path.name),
+        "description": entry["description"],
+        "badge": entry["badge"],
     }
-    print(f"[server] Model ready: {MODEL_METADATA['model_name']} ({len(CLASS_NAMES)} classes) on {DEVICE}")
+
+    MODEL_CACHE[target_id] = {
+        "model": model,
+        "classes": class_names,
+        "metadata": metadata,
+    }
+
+    MODEL = model
+    CLASS_NAMES = class_names
+    MODEL_METADATA = metadata
+    CURRENT_MODEL_ID = target_id
+    print(f"[server] Model ready: {metadata['model_name']} ({num_classes} classes) on {DEVICE}")
+    return metadata
 
 
 @app.on_event("startup")
@@ -128,6 +245,52 @@ def serve_index():
 def get_info() -> Dict[str, Any]:
     """Returns model metadata and system telemetry."""
     return MODEL_METADATA
+
+
+class SelectModelRequest(BaseModel):
+    model_id: str
+
+
+@app.get("/api/models")
+def get_models():
+    """Lists the 3 per-person models on the simplified split."""
+    return {
+        "active_model_id": CURRENT_MODEL_ID,
+        "models": [
+            {
+                "id": m["id"],
+                "author": m["author"],
+                "name": m["model_display_name"],
+                "short_name": m["short_name"],
+                "architecture": m["architecture_family"],
+                "parameters": m["parameters"],
+                "classes_count": m["classes_count"],
+                "val_accuracy": m["val_accuracy"],
+                "test_accuracy": m["test_accuracy"],
+                "description": m["description"],
+                "badge": m["badge"],
+                "available": m["checkpoint_path"].exists(),
+                "is_active": (m["id"] == CURRENT_MODEL_ID),
+            }
+            for m in SIMPLIFIED_MODELS_CATALOG
+        ],
+    }
+
+
+@app.post("/api/models/select")
+def select_model_endpoint(payload: SelectModelRequest):
+    """Switches the active classification model."""
+    try:
+        meta = load_classifier(payload.model_id)
+        return {
+            "status": "success",
+            "active_model_id": CURRENT_MODEL_ID,
+            "metadata": meta,
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 
 @app.get("/api/samples")
@@ -221,11 +384,15 @@ def get_breed_images(breed_id: str) -> dict:
 
 
 @app.post("/api/predict")
-async def predict_image(file: UploadFile = File(...)):
+async def predict_image(file: UploadFile = File(...), model_id: Optional[str] = None):
     """
     Accepts an uploaded dog image, performs preprocessing,
     and returns top-1 predicted breed and top-5 ranked classifications with percentages.
     """
+    global MODEL, CLASS_NAMES, MODEL_METADATA, CURRENT_MODEL_ID
+    if model_id and model_id != CURRENT_MODEL_ID:
+        load_classifier(model_id)
+
     if MODEL is None:
         raise HTTPException(status_code=503, detail="Model is not loaded yet.")
 
@@ -269,7 +436,10 @@ async def predict_image(file: UploadFile = File(...)):
         "latency_ms": latency_ms,
         "top5": top5,
         "breakdown": top5,
+        "model_id": CURRENT_MODEL_ID,
+        "author": MODEL_METADATA.get("author", "JP"),
         "model_name": MODEL_METADATA.get("model_name", "EfficientNetV2-S"),
+        "architecture": MODEL_METADATA.get("architecture_family", "EfficientNetV2"),
         "total_classes": len(CLASS_NAMES),
     }
 

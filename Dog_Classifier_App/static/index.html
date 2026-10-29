@@ -90,6 +90,51 @@
           <p class="card-desc">Upload any dog photo or test instantly with a preloaded sample.</p>
         </div>
 
+        <!-- Model Selection Dropdown (Simplified Split - 3 Per-Person Models) -->
+        <div class="model-picker-card">
+          <div class="model-picker-header">
+            <label for="modelSelect" class="model-picker-label">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+              <span>Classification Model (Simplified Split)</span>
+            </label>
+            <span class="model-badge-pill" id="modelArchPill">JP ? EfficientNetV2-S</span>
+          </div>
+
+          <div class="model-select-wrapper">
+            <select id="modelSelect" class="model-dropdown">
+              <option value="jp_efficientnet_simplified">JP ? EfficientNetV2-S (Simplified Split ? 114 Breeds)</option>
+              <option value="lindani_mobilenet_simplified">Lindani ? MobileNetV3-Large (Simplified Split ? 114 Breeds)</option>
+              <option value="sulaiman_swin_simplified" disabled>Sulaiman ? Swin-T Transformer (Simplified Split ? Pending Training)</option>
+            </select>
+          </div>
+
+          <div class="model-specs-bar" id="modelSpecsBar">
+            <div class="model-spec-chip">
+              <span class="spec-label">Params:</span>
+              <span class="spec-value" id="specParams">20.3M</span>
+            </div>
+            <div class="model-spec-chip">
+              <span class="spec-label">Val Acc:</span>
+              <span class="spec-value" id="specValAcc">85.8%</span>
+            </div>
+            <div class="model-spec-chip">
+              <span class="spec-label">Test Acc:</span>
+              <span class="spec-value" id="specTestAcc">84.2%</span>
+            </div>
+            <div class="model-spec-chip">
+              <span class="spec-label">Classes:</span>
+              <span class="spec-value" id="specClasses">114 Breeds</span>
+            </div>
+          </div>
+          <p class="model-desc-caption" id="modelDescCaption">
+            JP's EfficientNetV2-S transfer model fine-tuned on the 114-breed simplified split.
+          </p>
+        </div>
+
         <!-- Drag and Drop Dropzone -->
         <div class="dropzone" id="dropzone">
           <input type="file" id="fileInput" accept="image/*" class="file-input">

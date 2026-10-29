@@ -21,6 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnChangeImage = document.getElementById('btnChangeImage');
   const sampleButtons = document.querySelectorAll('.sample-btn');
 
+  // Model Picker Elements (Simplified Split)
+  const modelSelect = document.getElementById('modelSelect');
+  const modelArchPill = document.getElementById('modelArchPill');
+  const specParams = document.getElementById('specParams');
+  const specValAcc = document.getElementById('specValAcc');
+  const specTestAcc = document.getElementById('specTestAcc');
+  const specClasses = document.getElementById('specClasses');
+  const modelDescCaption = document.getElementById('modelDescCaption');
+  let availableModels = [];
+
   const btnClassify = document.getElementById('btnClassify');
   const btnSpinner = document.getElementById('btnSpinner');
   const btnText = btnClassify.querySelector('.btn-text');
@@ -112,23 +122,83 @@ document.addEventListener('DOMContentLoaded', () => {
   if (tabMerger) tabMerger.addEventListener('click', () => switchMode('merger'));
 
   // =========================================================================
-  // 2. Initialize Telemetry & Breeds List
+  // 2. Initialize Models Dropdown, Telemetry & Breeds List
   // =========================================================================
-  fetch('/api/info')
-    .then(r => r.json())
-    .then(data => {
-      if (data.model_name) {
-        document.getElementById('modelBadge').innerHTML = 
-          `<span class="status-dot"></span> Model: ${data.model_name}`;
-        if (telModel) telModel.textContent = data.model_name;
+  function updateModelSpecsUI(modelId) {
+    const m = availableModels.find(item => item.id === modelId);
+    if (!m) return;
+    if (modelArchPill) modelArchPill.textContent = `${m.author} ? ${m.short_name}`;
+    if (specParams) specParams.textContent = m.parameters;
+    if (specValAcc) specValAcc.textContent = m.val_accuracy;
+    if (specTestAcc) specTestAcc.textContent = m.test_accuracy;
+    if (specClasses) specClasses.textContent = `${m.classes_count} Breeds`;
+    if (modelDescCaption) modelDescCaption.textContent = m.description;
+
+    const modelBadge = document.getElementById('modelBadge');
+    if (modelBadge) {
+      modelBadge.innerHTML = `<span class="status-dot"></span> Model: ${m.short_name} (${m.author})`;
+    }
+    if (telModel) telModel.textContent = `${m.author}: ${m.short_name}`;
+    if (telClasses) telClasses.textContent = `${m.classes_count} Breeds`;
+    if (classesBadge) classesBadge.textContent = `${m.classes_count} Breeds Evaluated`;
+  }
+
+  async function loadModelsCatalog() {
+    if (!modelSelect) return;
+    try {
+      const res = await fetch('/api/models');
+      if (!res.ok) return;
+      const data = await res.json();
+      availableModels = data.models || [];
+      modelSelect.innerHTML = '';
+
+      availableModels.forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m.id;
+        opt.textContent = m.name;
+        if (!m.available) {
+          opt.textContent += ' ? (Pending Training)';
+          opt.disabled = true;
+        }
+        if (m.id === data.active_model_id) {
+          opt.selected = true;
+        }
+        modelSelect.appendChild(opt);
+      });
+
+      updateModelSpecsUI(data.active_model_id);
+    } catch (err) {
+      console.error('Failed to load models catalog:', err);
+    }
+  }
+
+  loadModelsCatalog();
+
+  if (modelSelect) {
+    modelSelect.addEventListener('change', async () => {
+      const selectedId = modelSelect.value;
+      try {
+        const res = await fetch('/api/models/select', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ model_id: selectedId }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Failed to switch model');
+
+        updateModelSpecsUI(selectedId);
+
+        // If an image is already uploaded or tested, re-classify with the new model immediately!
+        if (currentFile) {
+          classifyCurrentFile();
+        }
+      } catch (err) {
+        alert(err.message);
+        const prev = availableModels.find(m => m.is_active);
+        if (prev) modelSelect.value = prev.id;
       }
-      if (data.total_classes) {
-        const countStr = `${data.total_classes} Breeds`;
-        if (telClasses) telClasses.textContent = countStr;
-        if (classesBadge) classesBadge.textContent = `${countStr} Evaluated`;
-      }
-    })
-    .catch(() => {});
+    });
+  }
 
   // Fetch 120 Breeds for the Dropdown & Explorer
   fetch('/api/breeds')
@@ -600,7 +670,8 @@ document.addEventListener('DOMContentLoaded', () => {
     formData.append('file', currentFile);
 
     try {
-      const response = await fetch('/api/predict', {
+      const modelParam = modelSelect && modelSelect.value ? `?model_id=${encodeURIComponent(modelSelect.value)}` : '';
+      const response = await fetch(`/api/predict${modelParam}`, {
         method: 'POST',
         body: formData,
       });
