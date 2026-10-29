@@ -113,12 +113,22 @@ foxhound, and miniature with standard schnauzer. A model is therefore scored aga
 distinctions the dataset itself does not apply consistently, and perfect accuracy on this
 dataset is not attainable.
 
-Second, **[PENDING: sample audit]** a random sample of 100 photographs, drawn with seed 42,
-was inspected by eye against its label and marked agree, disagree or unsure. Report the
-observed disagreement rate excluding unsure, the rate across the whole sample treating
-every unsure as correct, and the 95 per cent Wilson interval, which `label_audit.py`
-computes. The auditor is not a breed expert, which is why "unsure" is a permitted verdict
-and is reported rather than hidden.
+Second, a random sample was drawn with seed 42 and inspected by eye against its label, each
+photograph marked agree, disagree or unsure. **20 of the planned 100 photographs have been
+judged so far: 19 agree, 1 disagree, 0 unsure.** That is an observed disagreement rate of
+**5.0 per cent, with a 95 per cent Wilson interval of 0.9 to 23.6 per cent.**
+
+The interval is very wide because the sample is small, and the honest reading is that the
+audit so far is consistent with anything from a very low error rate to roughly one label in
+four being wrong. It should be reported as a partial audit with its sample size stated,
+not as a precise figure. **[PENDING: complete the remaining 80 to narrow the interval.]**
+
+The disagreement found was photograph 11, labelled collie, from the training partition.
+
+Two points of method. The auditor is not a breed expert, which is why "unsure" is a
+permitted verdict and is reported rather than hidden. And photographs with no verdict are
+excluded from the denominator rather than counted as correct, since an unexamined
+photograph is not evidence of a correct label.
 
 ### 1.7 The split
 
@@ -394,14 +404,68 @@ it was only visible because the regularisation hypothesis was tested rather than
 
 Run 2B was selected on validation macro F1.
 
-### 4.3 Test set, scored once **[PENDING]**
+### 4.3 Iteration 3
 
-Report accuracy, precision, recall, F1, macro F1, top-5 accuracy and the 95 per cent
-interval, on the full test partition of 3,200 photographs and on the clean partition of
-3,166 with leaked photographs excluded. The difference between the two is the measured
-effect of the duplicate leakage described in 1.8.
+Two further variants, again one factor each, again validation only.
 
-### 4.4 Comparison with the pretrained models **[PENDING]**
+| Run | Parameters | Val macro F1 | Val accuracy | Train minus validation | Outcome |
+|---|---|---|---|---|---|
+| 3A, deeper and regularised | 4,581,784 | 0.5602 | 56.56 % | 27.2 points | No change |
+| 3B, deeper, 120 epoch schedule | 4,581,784 | 0.5270 | 53.82 % | 23.9 points | Worse |
+
+**3A** is 0.47 points below iteration 2B, inside the measured run-to-run floor, so it is not
+a difference. The overfitting gap fell again, from 33.0 to 27.2 points, with no gain in
+accuracy. Regularisation has now behaved identically on two architectures: it does what it
+claims to the gap, and nothing to the result.
+
+**3B** reached only 0.5270, and the reason is instructive. It stopped at epoch 47 with its
+best epoch at 37, so it never reached the annealed phase of its schedule. Spreading the
+cosine schedule over 120 epochs keeps the learning rate high for far longer, validation
+plateaus while the steps are still large, and early stopping expires before the schedule
+anneals. Part of iteration 2B's advantage therefore came from its cosine schedule
+completing inside its epoch budget, which was not an intended variable.
+
+Iteration 2B was selected as the final model. Iterations 2B and 3A are statistically
+indistinguishable, and the simpler configuration was preferred rather than treating a 0.47
+point difference as a result.
+
+### 4.4 Test set, scored once
+
+The test partition was read once, with iteration 2B's weights from epoch 54.
+
+| Metric | Value |
+|---|---|
+| Accuracy | **53.84 per cent** (95 per cent interval 52.11 to 55.57) |
+| Top-5 accuracy | 84.78 per cent |
+| Macro F1 | 0.5320 |
+| Macro precision | 0.5403 |
+| Macro recall | 0.5341 |
+| Weighted F1 | 0.5361 |
+
+Chance is 0.83 per cent, so the network is approximately 65 times better than chance
+having never seen a photograph outside the training partition.
+
+Test accuracy is 3.1 points below the 56.96 per cent measured on validation. Some of that
+is ordinary sampling variation between two partitions of about 3,000 photographs, and some
+is the selection effect of choosing the best of five runs on validation. The validation
+figure should not be quoted as the result for this reason.
+
+**The leakage measurement from section 1.8:**
+
+| Partition | Photographs | Accuracy |
+|---|---|---|
+| Full test | 3,200 | 53.84 per cent |
+| Clean test, duplicates removed | 3,166 | 53.63 per cent |
+| Difference | | **+0.21 percentage points** |
+
+Removing the 34 test photographs with a confirmed duplicate in training costs 0.21
+percentage points. The duplicate leakage inside the dataset is therefore real but
+negligible for this model, which is itself worth reporting: it establishes that
+dataset-internal duplication is **not** the mechanism that inflates published accuracies on
+Stanford Dogs. The mechanism of concern is the overlap between the test photographs and the
+ImageNet pretraining corpus, which affects the two pretrained models and not this one.
+
+### 4.5 Comparison with the pretrained models [PENDING]
 
 Insert the three-model table once the other members' figures are available: accuracy, macro
 F1, parameter count, training time and inference cost.
@@ -412,8 +476,16 @@ F1, parameter count, training time and inference cost.
 
 ### 5.1 The nature of the failure
 
-Top-5 accuracy of 81.36 per cent against top-1 accuracy of 50.51 per cent shows that the
-correct breed is among the model's five highest scoring classes in four cases out of five.
+On the test set, top-5 accuracy of 84.78 per cent against top-1 accuracy of 53.84 per cent
+shows that the correct breed is among the model's five highest scoring classes in roughly
+six cases out of seven, while being its first choice only about half the time.
+
+Of the 3,200 test photographs, 1,477 are misclassified. Of those errors, only 114 (7.7 per
+cent) are made with 90 per cent confidence or more, so the model is for the most part
+uncertain when it is wrong rather than confidently wrong. The true breed falls outside the
+top five entirely for 487 photographs, 15.2 per cent of the test set, and those are the
+cases where the model has genuinely failed rather than merely hesitated between similar
+breeds.
 The network has therefore learned the general visual structure of dogs; what it fails at is
 the final discrimination between similar breeds. The failure is one of discrimination
 rather than of recognition, which is the expected shape of a fine-grained problem and is
@@ -421,12 +493,38 @@ what the remaining analysis addresses.
 
 ### 5.2 Errors attributable to the dataset rather than the model
 
-Of the twenty most frequent confusions on validation, **six are breed pairs that the
-dataset itself labels inconsistently**, as established in section 1.6: Eskimo dog with
-Siberian husky, papillon with Japanese spaniel, Walker hound with English foxhound in both
-directions, and miniature with standard schnauzer in both directions. For these pairs the
-model is penalised for failing to reproduce a distinction the annotations do not apply
-consistently.
+Of the twenty most frequent confusions on the test set, **seven are breed pairs that the
+dataset itself labels inconsistently**, as established in section 1.6:
+
+| True breed | Predicted | Times |
+|---|---|---|
+| Eskimo dog | Siberian husky | 10 |
+| Siberian husky | Eskimo dog | 10 |
+| Toy poodle | Miniature poodle | 8 |
+| Miniature schnauzer | Standard schnauzer | 7 |
+| Standard schnauzer | Miniature schnauzer | 7 |
+| Miniature poodle | Toy poodle | 6 |
+| Walker hound | English foxhound | 5 |
+
+Each of these pairs appears in the 50 confirmed duplicate pairs that carry two different
+breed labels. The model is therefore penalised for failing to reproduce distinctions the
+annotations themselves do not apply consistently, and five of the seven are symmetric,
+meaning the confusion runs in both directions as would be expected when the boundary is
+genuinely unclear rather than when the model simply prefers one class.
+
+The confusion submatrix of the fifteen weakest breeds
+(`eval_test/fig_confusion_worst.png`) shows these as paired blocks sitting off the
+diagonal. For two breeds the confusion with their twin **exceeds** their own correct
+count: Eskimo dog is classified as Siberian husky 10 times against 5 correct, and toy
+poodle is classified as miniature poodle 8 times against 7 correct. In other words the
+model's most likely answer for an Eskimo dog is "Siberian husky". Given that these two
+breeds appear in the dataset's own contradictory label pairs, this is better described as
+a disagreement about where the class boundary lies than as a failure of recognition.
+
+The same figure shows a second family of errors that is not about labelling at all:
+redbone with Rhodesian ridgeback, and American Staffordshire terrier with boxer and Great
+Dane. These are short-coated, similarly proportioned dogs separated mainly by size and
+head shape, which returns to the scale problem described below.
 
 A second category is structural. The weakest class is standard poodle at F1 0.062, and its
 predictions are distributed across miniature poodle and several other curly or
