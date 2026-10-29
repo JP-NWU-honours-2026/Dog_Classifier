@@ -37,11 +37,17 @@ scores 83.12 % / 0.8254 (unclean) and 84.54 % / 0.8402 (simplified).
 | `evaluate.py` | JP's evaluator, printed labels changed only |
 | `swin_notebook.ipynb` | Shows every setting, training curve, test metric, confusion matrix, per-breed table and comparison, outputs visible |
 | `REPORT_SECTIONS.md` | Draft Swin-T text for the group report |
-| `swin_architecture.png` | Architecture diagram for the report |
-| `split_manifest.json` | Copy of the shared original split (identical to `JP_Model/split_manifest.json`) |
+| `IMPLEMENTATION_GUIDE.md` | How the code is put together, how to run it, problems already met |
+| `swin_architecture.png` | Architecture diagram for the report: what is frozen and what trains in each phase |
+| `make_architecture_figure.py` | Draws `swin_architecture.png` |
 | `requirements.txt` | Library versions |
 | `results/runs/<run>/` | `run_config.json`, `metrics.csv`, `history.json`, `training_curves.png`, `best_model.pth`, `eval_test/` |
-| `previous_run_lindani_pipeline/` | The earlier 85.4 % run with its own code and docs, kept for reference (see its `ABOUT.md`) |
+| `previous_run_lindani_pipeline/` | The earlier 85.4 % run with its own code, split file, guide, diagram and docs, kept for reference (see its `ABOUT.md`) |
+
+The split files are not copied here: all three runs read them from
+`JP_Model/` (`split_manifest.json`, `split_manifest_clean.json`,
+`split_manifest_simplified.json`), which is also the default when no
+`--manifest` is given.
 
 Each `eval_test/` folder holds `metrics.json`, `metrics_summary.txt`,
 `per_class_metrics.csv`, `confusion_matrix.csv`, `confusion_matrix.png` and

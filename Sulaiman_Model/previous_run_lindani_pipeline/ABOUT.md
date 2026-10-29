@@ -20,6 +20,12 @@ Contents:
   earlier) and run them from there.
 - `results/runs/swin_t/`: the 15-epoch run (training log, `eval_val/`,
   `eval_test/`). `swin_t_quick/` is the 2-epoch smoke test.
+- `requirements.txt`: library versions for this run (no scikit-learn; the
+  current one adds it for JP's code).
+- `split_manifest.json`: the split file this run used (identical in content
+  to `JP_Model/split_manifest.json`).
 - `swin_notebook.ipynb`, `README.md`, `REPORT_SECTIONS.md`,
-  `Swin_T_Report_Sections.docx`: the notebook and documents written for
-  this run. Paths inside them refer to the old layout.
+  `Swin_T_Report_Sections.docx`, `IMPLEMENTATION_GUIDE.md`,
+  `swin_architecture.png`: the notebook, documents, original implementation
+  guide and diagram written for this run (the diagram shows the whole network
+  fine-tuned). Paths inside them refer to the old layout.

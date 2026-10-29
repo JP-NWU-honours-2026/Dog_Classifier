@@ -235,7 +235,7 @@ def get_dataloaders(
             manifest = json.load(f)
     else:
         dataset_root = workspace_root / "archive" / "images" / "Images"
-        output_dir = Path(__file__).resolve().parent
+        output_dir = workspace_root / "JP_Model"   # the group's shared split, as in JP's original
 
         manifest = create_or_load_splits(
             dataset_root=dataset_root,

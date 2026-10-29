@@ -271,7 +271,7 @@ def run_training(
         "pretrained_weights": "ImageNet-1K (Swin_T_Weights.IMAGENET1K_V1)",
         "total_parameters": p_summary["total_params"],
         "trainable_parameters_initial": p_summary["trainable_params"],
-        "manifest_path": str(manifest_path) if manifest_path else "Sulaiman_Model/split_manifest.json",
+        "manifest_path": str(manifest_path) if manifest_path else "JP_Model/split_manifest.json",
         "classes": num_classes,
         "head_epochs": head_epochs,
         "fine_tune_epochs": fine_tune_epochs,

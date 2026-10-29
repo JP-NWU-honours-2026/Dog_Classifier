@@ -53,8 +53,11 @@ and 2 blocks, 3, 6, 12 and 24 attention heads, and window size 7 (Liu
 
 ![Swin-T architecture](swin_architecture.png)
 
-*Figure: Swin-T as used in this project. Drawn for this report, based on Liu
-et al. (2021).*
+*Figure: Swin-T as trained in this project. Top: the four stages and the new
+head, with the parts frozen in both phases (grey), fine-tuned in phase 2
+(blue) and newly added (red). Bottom left: regular and shifted windows.
+Bottom right: the layers inside one pair of Swin blocks. Drawn for this
+report, based on Liu et al. (2021).*
 
 ### 4.x.3 Transfer learning approach
 
