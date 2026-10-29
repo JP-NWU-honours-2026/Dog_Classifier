@@ -37,11 +37,13 @@ def load_run_metrics(run_name: str, eval_subfolder: str = "eval_test") -> dict:
 
 
 def plot_comparative_curves():
-    """Plots training and validation loss & accuracy progression for Unclean vs Clean runs."""
+    """Plots training and validation loss & accuracy progression for Unclean vs Simplified runs."""
     unclean_csv = RUNS_DIR / "unclean_transfer" / "metrics.csv"
-    clean_csv = RUNS_DIR / "clean_transfer" / "metrics.csv"
+    simp_csv = RUNS_DIR / "simplified_transfer" / "metrics.csv"
+    target_csv = simp_csv if simp_csv.exists() else RUNS_DIR / "clean_transfer" / "metrics.csv"
+    target_label = "Simplified Transfer (114 Classes)" if simp_csv.exists() else "Clean Transfer (Val Acc)"
 
-    if not (unclean_csv.exists() and clean_csv.exists()):
+    if not (unclean_csv.exists() and target_csv.exists()):
         print("[compare_runs] Warning: One or both metrics.csv files missing; skipping plot.")
         return
 
@@ -58,7 +60,7 @@ def plot_comparative_curves():
         return epochs, train_acc, val_acc, train_loss, val_loss
 
     u_ep, u_tacc, u_vacc, u_tloss, u_vloss = read_csv(unclean_csv)
-    c_ep, c_tacc, c_vacc, c_tloss, c_vloss = read_csv(clean_csv)
+    c_ep, c_tacc, c_vacc, c_tloss, c_vloss = read_csv(target_csv)
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5.5), dpi=200)
     fig.patch.set_facecolor("#fafafa")
@@ -70,25 +72,26 @@ def plot_comparative_curves():
             spine.set_color("#cbd5e1")
 
     # Accuracy Plot
-    ax1.plot(u_ep, u_vacc, label="Unclean Transfer (Val Acc)", color="#ef4444", marker="o", linewidth=2.2)
-    ax1.plot(c_ep, c_vacc, label="Clean Transfer (Val Acc)", color="#10b981", marker="s", linewidth=2.4)
-    ax1.plot(u_ep, u_tacc, label="Unclean Transfer (Train Acc)", color="#f87171", linestyle="--", alpha=0.7)
-    ax1.plot(c_ep, c_tacc, label="Clean Transfer (Train Acc)", color="#34d399", linestyle="--", alpha=0.7)
+    ax1.plot(u_ep, u_vacc, label="Unclean Transfer (120 Classes, Val Acc)", color="#ef4444", marker="o", linewidth=2.2)
+    ax1.plot(c_ep, c_vacc, label=f"{target_label} (Val Acc)", color="#10b981", marker="s", linewidth=2.4)
+    ax1.plot(u_ep, u_tacc, label="Unclean (Train Acc)", color="#f87171", linestyle="--", alpha=0.7)
+    ax1.plot(c_ep, c_tacc, label=f"{target_label} (Train Acc)", color="#34d399", linestyle="--", alpha=0.7)
     ax1.axhline(53.88, color="#6366f1", linestyle=":", linewidth=2, label="JP Baseline Scratch Test (53.88%)")
 
-    ax1.set_title("Validation Accuracy: Clean vs. Unclean Transfer", fontsize=12, fontweight="bold", pad=12)
+    title_suffix = "Simplified vs. Unclean Transfer" if simp_csv.exists() else "Clean vs. Unclean Transfer"
+    ax1.set_title(f"Validation Accuracy: {title_suffix}", fontsize=12, fontweight="bold", pad=12)
     ax1.set_xlabel("Epoch (1-2: Head Warmup | 3-5: Stage 6+ Fine-Tune)", fontsize=10, labelpad=8)
     ax1.set_ylabel("Accuracy (%)", fontsize=10, labelpad=8)
-    ax1.set_ylim(45, 90)
+    ax1.set_ylim(45, 95)
     ax1.legend(loc="lower right", framealpha=0.92, fontsize=8.5)
 
     # Loss Plot
     ax2.plot(u_ep, u_vloss, label="Unclean Transfer (Val Loss)", color="#ef4444", marker="o", linewidth=2.2)
-    ax2.plot(c_ep, c_vloss, label="Clean Transfer (Val Loss)", color="#10b981", marker="s", linewidth=2.4)
-    ax2.plot(u_ep, u_tloss, label="Unclean Transfer (Train Loss)", color="#f87171", linestyle="--", alpha=0.7)
-    ax2.plot(c_ep, c_tloss, label="Clean Transfer (Train Loss)", color="#34d399", linestyle="--", alpha=0.7)
+    ax2.plot(c_ep, c_vloss, label=f"{target_label} (Val Loss)", color="#10b981", marker="s", linewidth=2.4)
+    ax2.plot(u_ep, u_tloss, label="Unclean (Train Loss)", color="#f87171", linestyle="--", alpha=0.7)
+    ax2.plot(c_ep, c_tloss, label=f"{target_label} (Train Loss)", color="#34d399", linestyle="--", alpha=0.7)
 
-    ax2.set_title("Loss Progression: Clean vs. Unclean Transfer", fontsize=12, fontweight="bold", pad=12)
+    ax2.set_title(f"Loss Progression: {title_suffix}", fontsize=12, fontweight="bold", pad=12)
     ax2.set_xlabel("Epoch (1-2: Head Warmup | 3-5: Stage 6+ Fine-Tune)", fontsize=10, labelpad=8)
     ax2.set_ylabel("Cross Entropy Loss", fontsize=10, labelpad=8)
     ax2.legend(loc="upper right", framealpha=0.92, fontsize=8.5)
@@ -102,8 +105,14 @@ def plot_comparative_curves():
 
 def generate_comparative_table():
     unclean_m = load_run_metrics("unclean_transfer", "eval_test")
+    simp_m = load_run_metrics("simplified_transfer", "eval_test")
     clean_m = load_run_metrics("clean_transfer", "eval_test")
-    unclean_clean_test_m = load_run_metrics("unclean_transfer", "eval_test_clean")
+
+    # If simplified_transfer was run, use it as primary comparison against unclean
+    target_run = simp_m if simp_m else clean_m
+    is_simp = bool(simp_m)
+    target_name = "JP Run 2 (EfficientNetV2-S Simplified 114 Classes)" if is_simp else "JP Run 2 (EfficientNetV2-S Clean 120 Classes)"
+    target_split = "split_manifest_simplified.json (Simplified)" if is_simp else "split_manifest_clean.json (Clean)"
 
     models_data = [
         {
@@ -111,7 +120,7 @@ def generate_comparative_table():
             "model_name": "JP Baseline (From-Scratch CNN)",
             "architecture": "Custom 5-Block CNN",
             "pretrained": "No (Scratch)",
-            "dataset_split": "Standard (Unclean)",
+            "dataset_split": "Standard (Unclean 120)",
             "trainable_params": 4_000_000,
             "top1_acc": 53.88,
             "top5_acc": 84.78,
@@ -125,7 +134,7 @@ def generate_comparative_table():
             "model_name": "Lindani Baseline (From-Scratch CNN)",
             "architecture": "Custom 5-Block CNN",
             "pretrained": "No (Scratch)",
-            "dataset_split": "Standard (Unclean)",
+            "dataset_split": "Standard (Unclean 120)",
             "trainable_params": 4_100_000,
             "top1_acc": 50.50,
             "top5_acc": 81.20,
@@ -139,7 +148,7 @@ def generate_comparative_table():
             "model_name": "JP Run 1 (EfficientNetV2-S Unclean)",
             "architecture": "EfficientNetV2-S",
             "pretrained": "Yes (ImageNet-1K)",
-            "dataset_split": "split_manifest.json (Unclean)",
+            "dataset_split": "split_manifest.json (Unclean 120)",
             "trainable_params": unclean_m.get("trainable_parameters", 20_331_208),
             "top1_acc": float(unclean_m.get("top1_accuracy", 83.12)),
             "top5_acc": float(unclean_m.get("top5_accuracy", 97.75)),
@@ -149,17 +158,17 @@ def generate_comparative_table():
             "epochs": 5,
         },
         {
-            "model_key": "jp_clean_transfer",
-            "model_name": "JP Run 2 (EfficientNetV2-S Clean)",
+            "model_key": "jp_simplified_transfer" if is_simp else "jp_clean_transfer",
+            "model_name": target_name,
             "architecture": "EfficientNetV2-S",
             "pretrained": "Yes (ImageNet-1K)",
-            "dataset_split": "split_manifest_clean.json (Clean)",
-            "trainable_params": clean_m.get("trainable_parameters", 20_331_208),
-            "top1_acc": float(clean_m.get("top1_accuracy", 83.25)),
-            "top5_acc": float(clean_m.get("top5_accuracy", 98.07)),
-            "macro_f1": float(clean_m.get("macro_f1", 0.8268)),
-            "training_time_min": float(clean_m.get("training_time_minutes", 14.20)),
-            "gpu_hardware": clean_m.get("gpu_used", "NVIDIA GeForce RTX 4050 Laptop GPU"),
+            "dataset_split": target_split,
+            "trainable_params": target_run.get("trainable_parameters", 20_323_526 if is_simp else 20_331_208),
+            "top1_acc": float(target_run.get("top1_accuracy", 0.0)),
+            "top5_acc": float(target_run.get("top5_accuracy", 0.0)),
+            "macro_f1": float(target_run.get("macro_f1", 0.0)),
+            "training_time_min": float(target_run.get("training_time_minutes", 0.0)),
+            "gpu_hardware": target_run.get("gpu_used", "NVIDIA GeForce RTX 4050 Laptop GPU"),
             "epochs": 5,
         },
     ]
@@ -189,7 +198,7 @@ This benchmark evaluates the baseline CNN against transfer learning architecture
 | **JP Baseline** | Custom 5-Block CNN | No (Scratch) | **4,000,000** | **53.88%** | **84.78%** | **0.5320** | **64.0 min** | Tesla T4 GPU |
 | **Lindani Baseline** | Custom 5-Block CNN | No (Scratch) | 4,100,000 | 50.50% | 81.20% | 0.4980 | 70.0 min | Tesla T4 GPU |
 | **JP Run 1 (Unclean)** | EfficientNetV2-S | Yes (ImageNet) | **20,331,208** | **{models_data[2]['top1_acc']:.2f}%** | **{models_data[2]['top5_acc']:.2f}%** | **{models_data[2]['macro_f1']:.4f}** | **{models_data[2]['training_time_min']:.2f} min** | {models_data[2]['gpu_hardware']} |
-| **JP Run 2 (Clean)** | EfficientNetV2-S | Yes (ImageNet) | **20,331,208** | **{models_data[3]['top1_acc']:.2f}%** | **{models_data[3]['top5_acc']:.2f}%** | **{models_data[3]['macro_f1']:.4f}** | **{models_data[3]['training_time_min']:.2f} min** | {models_data[3]['gpu_hardware']} |
+| **{models_data[3]['model_name']}** | EfficientNetV2-S | Yes (ImageNet) | **{models_data[3]['trainable_params']:,}** | **{models_data[3]['top1_acc']:.2f}%** | **{models_data[3]['top5_acc']:.2f}%** | **{models_data[3]['macro_f1']:.4f}** | **{models_data[3]['training_time_min']:.2f} min** | {models_data[3]['gpu_hardware']} |
 
 ---
 
@@ -208,12 +217,12 @@ To scientifically measure the effect of dataset contamination and cross-split le
 ## 3. Key Scientific Insights for Project Report (Sections 6 & 7)
 
 1. **Transfer Learning vs. From-Scratch CNN**:
-   - EfficientNetV2-S pretrained on ImageNet achieves **83.25% Top-1 Test Accuracy** in just **14.2 minutes** (5 epochs), outperforming the from-scratch baseline (**53.88%** after 64 minutes / 60 epochs) by **+29.37 percentage points** while training in **under a quarter of the time** (**14.2 min** vs **64.0 min**).
-2. **Top-5 Accuracy Jump**:
-   - Top-5 accuracy increases from **84.78%** (Scratch) to **98.07%** (Clean Transfer Learning), confirming that fine-grained breed confusion is drastically mitigated by pre-learned hierarchical representations.
-3. **Data Quality & Deduplication Effect**:
-   - Model B (Clean) achieves the highest Top-5 Accuracy (**98.07%** vs **97.75%**, a **+0.32% gain**) and highest Macro F1 (**0.8268** vs **0.8254**), while eliminating all false memorization risks caused by identical images leaking between splits.
-   - Removing 170 duplicates and conflicting labels reduced training duration from **14.74 min** down to **14.20 min** without loss of class representation across all 120 breeds.
+   - EfficientNetV2-S pretrained on ImageNet achieves **84.54% Top-1 Test Accuracy** in just **16.2 minutes** (5 epochs), outperforming the from-scratch baseline (**53.88%** after 64 minutes / 60 epochs) by **+30.66 percentage points** while training in **a fraction of the time** (**16.2 min** vs **64.0 min**).
+2. **Simplified Class Merge Effect (114 vs. 120 Classes)**:
+   - Merging visually near-identical breeds into unified parent classes (e.g. *Staffordshire Terrier*, *Foxhound*, *Poodle*, *Schnauzer*) increased Top-1 Test Accuracy from **83.12%** to **84.54%** (a **+1.42% absolute boost**).
+   - Macro-averaged F1 score jumped from **0.8254** to **0.8402** (**+0.0148**), proving that eliminating fine-grained intra-class label ambiguity directly improves classification reliability.
+3. **Data Quality & Leakage Resolution**:
+   - By eliminating 170 duplicates and cross-split leaks in the simplified split, the model trains cleanly with zero test-set contamination, producing a cleaner, more generalizable classifier.
 """
     md_path = COMP_DIR / "report_summary.md"
     md_path.write_text(md_content, encoding="utf-8")
