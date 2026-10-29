@@ -4,13 +4,14 @@
 **Architecture**: Pretrained EfficientNetV2-S (Transfer Learning)  
 **Dataset**: Stanford Dogs Dataset (120 Breeds, 20,580 Images)  
 **Hardware Target**: NVIDIA GeForce RTX 4050 Laptop GPU (CUDA + AMP)  
-**Status**: Ready to Execute  
+**Status**: Ready to Execute
 
 ---
 
 ## Executive Summary
 
 This roadmap outlines the complete pipeline to:
+
 1. **Verify dataset parity** with Lindani's model to preserve scientific experimental integrity.
 2. **Execute full two-phase transfer learning** with EfficientNetV2-S across all 120 breeds.
 3. **Evaluate and benchmark** on the held-out test split (Top-1, Top-5, and Macro F1).
@@ -36,8 +37,8 @@ This roadmap outlines the complete pipeline to:
 Ensure complete scientific consistency between baseline and transfer learning models.
 
 - [x] **Split Manifest Verification**: Confirm that [`JP_Model/split_manifest.json`](file:///c:/Users/jpret/Documents/NWU/2026/Sem%202/ITRI626%20AI/Mini-Project/Dog_Classifier/JP_Model/split_manifest.json) is 100% bit-for-bit identical to [`Lindani_Model/split_manifest.json`](file:///c:/Users/jpret/Documents/NWU/2026/Sem%202/ITRI626%20AI/Mini-Project/Dog_Classifier/Lindani_Model/split_manifest.json).
-  - *Result*: MD5 checksum `07f51ae3b9b67263e83f136b9ba74757` verified identical across all 20,580 photographs.
-  - *Distribution*: 14,355 Train (70%) / 3,086 Validation (15%) / 3,139 Test (15%).
+  - _Result_: MD5 checksum `07f51ae3b9b67263e83f136b9ba74757` verified identical across all 20,580 photographs.
+  - _Distribution_: 14,355 Train (70%) / 3,086 Validation (15%) / 3,139 Test (15%).
 - [x] **Data Pipeline Integrity**:
   - [x] Standardize resolution to $224 \times 224 \times 3$.
   - [x] Apply standard ImageNet channel normalization (`mean=[0.485, 0.456, 0.406]`, `std=[0.229, 0.224, 0.225]`).
@@ -59,7 +60,7 @@ Train the 20.3M parameter **EfficientNetV2-S** model using a two-phase transfer 
 - [x] **Phase 1: Classifier Head Warmup (Frozen Backbone)**:
   - [x] Freeze all convolutional stages (`requires_grad = False` on `features`).
   - [x] Train classifier head for **2 epochs** (`lr=3e-4`, AdamW, label smoothing 0.1).
-  - [x] *Checkpoint*: Epoch 2 reached **78.28% validation accuracy** across all 120 breeds!
+  - [x] _Checkpoint_: Epoch 2 reached **78.28% validation accuracy** across all 120 breeds!
 - [x] **Phase 2: Fine-Tuning (Unfrozen Upper Stages)**:
   - [x] Unfreeze upper feature stages 6 and 7 (`requires_grad = True`), keeping lower stages 0–5 frozen to preserve general edge/texture filters.
   - [x] Train for **3 epochs** with `lr=1e-5` and `CosineAnnealingLR`.
@@ -153,10 +154,10 @@ Deliver a high-aesthetic, responsive, glassmorphic interface that highlights the
 
 ## Command Reference
 
-| Action | Command |
-| :--- | :--- |
-| **Verify Dataset Split** | `python JP_Model/dataset.py` |
-| **Run Quick Smoke Test (5% data)** | `python JP_Model/train.py --quick_test` |
-| **Run Full 120-Breed Training** | `python JP_Model/train.py --head_epochs 2 --fine_tune_epochs 3 --batch_size 32` |
-| **Evaluate Test Set** | `python JP_Model/evaluate.py --checkpoint JP_Model/best_model.pth` |
-| **Run Web Application** | `python Dog_Classifier_App/server.py` |
+| Action                             | Command                                                                         |
+| :--------------------------------- | :------------------------------------------------------------------------------ |
+| **Verify Dataset Split**           | `python JP_Model/dataset.py`                                                    |
+| **Run Quick Smoke Test (5% data)** | `python JP_Model/train.py --quick_test`                                         |
+| **Run Full 120-Breed Training**    | `python JP_Model/train.py --head_epochs 2 --fine_tune_epochs 3 --batch_size 32` |
+| **Evaluate Test Set**              | `python JP_Model/evaluate.py --checkpoint JP_Model/best_model.pth`              |
+| **Run Web Application**            | `python Dog_Classifier_App/server.py`                                           |
