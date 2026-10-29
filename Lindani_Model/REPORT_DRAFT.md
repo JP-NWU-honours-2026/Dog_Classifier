@@ -465,10 +465,44 @@ dataset-internal duplication is **not** the mechanism that inflates published ac
 Stanford Dogs. The mechanism of concern is the overlap between the test photographs and the
 ImageNet pretraining corpus, which affects the two pretrained models and not this one.
 
-### 4.5 Comparison with the pretrained models [PENDING]
+### 4.5 Comparison with the pretrained models
 
-Insert the three-model table once the other members' figures are available: accuracy, macro
-F1, parameter count, training time and inference cost.
+Figures below for the other two models were read from their committed files on the group
+repository on 28 October 2026. **[CONFIRM each figure with its owner before submission,
+and ask JP for his parameter count and training time, which are not in his committed
+files.]**
+
+| Model | Weights | Parameters | Test accuracy | Top-5 | Macro F1 | Training |
+|---|---|---|---|---|---|---|
+| Baseline CNN (this work) | None, from scratch | 4,581,784 | 53.84 % | 84.78 % | 0.5320 | 64 min, Tesla T4 |
+| EfficientNetV2-S | ImageNet pretrained | [PENDING] | 83.13 % | 97.75 % | 0.8254 | [PENDING] |
+| Swin-T | ImageNet pretrained | 27,611,634 | 85.38 % | 98.56 % | 0.8490 | 19 min, RTX 4060 |
+
+All three models were trained on the same split, seed 42, 224 by 224 input, without label
+smoothing.
+
+**The headline difference is approximately 29 to 32 percentage points of accuracy.** The
+pretrained models reach 83 and 85 per cent where the from-scratch network reaches 54.
+
+Two caveats belong with that number. First, the epoch budgets differ substantially: this
+model ran 59 of a 60 epoch budget and stopped early, whereas Swin-T reached its 15 epoch
+cap with its best epoch at 15, meaning it may not have converged and its figure is
+arguably a lower bound. Second, training times are not comparable across different GPUs
+and epoch counts, and are reported for transparency rather than as a benchmark.
+
+**The clean test comparison is the more interesting column.** Removing the 34 test
+photographs that have a confirmed duplicate in training moves the scores as follows:
+
+| Model | Full test (3,200) | Clean test (3,166) | Change |
+|---|---|---|---|
+| Baseline CNN | 53.84 % | 53.63 % | −0.21 points |
+| Swin-T | 85.38 % | 85.50 % | +0.12 points |
+
+Neither model moves meaningfully, and they move in opposite directions, which is what
+random variation on 34 photographs looks like. **Duplicate photographs inside the dataset
+therefore explain none of the 30 point gap between the pretrained models and this one.**
+That matters for the argument in section 5.4, because it eliminates the most obvious
+alternative explanation by measurement rather than by assertion.
 
 ---
 
@@ -547,13 +581,30 @@ Scottish deerhound with Irish wolfhound. These are the errors a stronger model w
 expected to reduce, and they are the appropriate basis for comparison with the pretrained
 models.
 
-### 5.4 Interpreting the comparison with pretrained models **[PENDING once their figures exist]**
+### 5.4 Interpreting the comparison with pretrained models
 
-The claim to make is narrow and defensible. Stanford Dogs is constructed from ImageNet, so
-models initialised with standard ImageNet pretrained weights have encountered the test
-photographs, with labels, during pretraining. The test partition is therefore not held out
-with respect to those models, and their reported accuracy measures something other than
-generalisation to unseen photographs.
+The measured difference is large: 53.84 per cent from scratch against 83.13 and 85.38 per
+cent with ImageNet pretrained weights, a gap of roughly 29 to 32 percentage points on
+identical data, with the same split, seed and input size.
+
+The claim to make about that gap is narrow and defensible. Stanford Dogs is constructed
+from ImageNet, so models initialised with standard ImageNet pretrained weights have
+encountered the test photographs, with labels, during pretraining. The test partition is
+therefore not held out with respect to those models, and their reported accuracy measures
+something other than generalisation to unseen photographs.
+
+Two alternative explanations for the gap were considered and can be set aside:
+
+1. **Duplicate photographs inside the dataset.** Measured, and the effect is nil. Removing
+   the 34 affected test photographs changes this model by −0.21 points and Swin-T by +0.12,
+   in opposite directions and within noise on a 34 photograph subset.
+2. **Architecture alone.** The pretrained models are larger, 6 and 27.6 million parameters
+   against 4.6 million, but iteration 2B showed that tripling this model's parameters
+   bought 6.8 points of macro F1, not 30. Capacity is worth something; it is not worth the
+   gap.
+
+What remains is prior exposure to the data distribution, and for this dataset specifically,
+prior exposure to these very photographs.
 
 The claim to avoid is that transfer learning is illegitimate. It is standard practice and
 usually advantageous. The precise statement is that for this particular dataset the test
