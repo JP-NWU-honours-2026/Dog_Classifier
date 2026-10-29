@@ -152,15 +152,19 @@ def score(rows):
     if judged:
         rate = counts["disagree"] / judged
         low, high = wilson_interval(counts["disagree"], judged)
-        lower_bound = counts["disagree"] / len(rows)
+        # Over everything actually looked at, counting unsure as correct. Rows
+        # with no verdict are excluded: an unjudged photograph is not evidence
+        # of a correct label.
+        recorded = len(rows) - blank
         lines += [
             "",
             "OBSERVED LABEL DISAGREEMENT",
             f"  Excluding unsure       {counts['disagree']} of {judged} "
             f"({100 * rate:.1f} per cent)",
             f"  95 per cent interval   {100 * low:.1f} to {100 * high:.1f} per cent",
-            f"  Of the whole sample    {counts['disagree']} of {len(rows)} "
-            f"({100 * lower_bound:.1f} per cent), treating every unsure as correct",
+            f"  Of all judged          {counts['disagree']} of {recorded} "
+            f"({100 * counts['disagree'] / recorded:.1f} per cent), counting unsure as correct",
+            f"  Sample completed       {recorded} of {len(rows)} photographs",
             "",
             "Both figures belong in the report. The first is the rate among the",
             "photographs that could be judged. The second is the cautious floor.",
