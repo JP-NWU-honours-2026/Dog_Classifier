@@ -59,6 +59,17 @@
           <span>Data Cleaning Studio</span>
           <span class="badge-tab-count" id="auditPendingBadge">173</span>
         </button>
+        <button type="button" class="nav-tab" id="tabMerger">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="8" height="8" rx="2"/>
+            <rect x="14" y="2" width="8" height="8" rx="2"/>
+            <rect x="8" y="14" width="8" height="8" rx="2"/>
+            <path d="M6 10v2a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2"/>
+            <line x1="12" y1="14" x2="12" y2="12"/>
+          </svg>
+          <span>Breed Merger Studio</span>
+          <span class="badge-tab-count" id="mergerReductionBadge" style="display:none;">0</span>
+        </button>
       </nav>
 
       <div class="header-badges">
@@ -350,6 +361,147 @@
         <div class="gallery-empty-state">
           <div class="btn-spinner" style="width: 32px; height: 32px; margin: 0 auto 12px auto;"></div>
           <p>Loading candidate duplicate pairs...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: Class Simplifier & Breed Merger Studio -->
+    <section class="card merger-card hidden" id="viewMerger">
+      <div class="merger-header">
+        <div>
+          <div class="step-tag">Data Taxonomy Simplification</div>
+          <h2>Breed Simplification & Merger Studio</h2>
+          <p class="card-desc">Group morphologically and taxonomically similar dog breeds into unified parent classes and generate <code>split_manifest_simplified.json</code>.</p>
+        </div>
+        <div class="merger-top-actions">
+          <div class="source-picker-wrap">
+            <label for="mergerSourceSelect" class="source-label">Source Manifest:</label>
+            <select id="mergerSourceSelect" class="source-select">
+              <option value="split_manifest_clean.json" selected>split_manifest_clean.json (Cleaned Split)</option>
+              <option value="split_manifest.json">split_manifest.json (Original Raw Split)</option>
+            </select>
+          </div>
+          <button type="button" class="btn-generate-clean" id="btnGenerateSimplifiedManifest">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            <span>Generate Simplified Manifest</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Telemetry Stats Cards -->
+      <div class="merger-stats-grid">
+        <div class="audit-stat-card">
+          <span class="stat-num" id="statMergerOrigClasses">120</span>
+          <span class="stat-label">Original Classes</span>
+        </div>
+        <div class="audit-stat-card stat-pending">
+          <span class="stat-num" id="statMergerActiveGroups">0</span>
+          <span class="stat-label">Active Merge Groups</span>
+        </div>
+        <div class="audit-stat-card stat-kept">
+          <span class="stat-num" id="statMergerResultingClasses">120</span>
+          <span class="stat-label">Resulting Classes (K)</span>
+        </div>
+        <div class="audit-stat-card stat-removed">
+          <span class="stat-num" id="statMergerReduction">0% (0)</span>
+          <span class="stat-label">Class Reduction</span>
+        </div>
+      </div>
+
+      <!-- Alert / Success Notification Banner -->
+      <div class="manifest-alert hidden" id="mergerAlert">
+        <span class="alert-icon">✓</span>
+        <div class="alert-content">
+          <strong>Simplified Manifest Generated Successfully!</strong>
+          <span id="mergerAlertText">split_manifest_simplified.json has been written to JP_Model.</span>
+        </div>
+        <a href="/api/merger/download" class="btn-download-manifest" id="btnDownloadSimplifiedManifest" download="split_manifest_simplified.json">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download JSON</span>
+        </a>
+      </div>
+
+      <!-- Main Two-Column Studio Layout -->
+      <div class="merger-studio-layout">
+        <!-- Left Column: Suggested Similarity Clusters & Custom Builder -->
+        <div class="merger-left-col">
+          <div class="section-subhead">
+            <div>
+              <h3>1. Suggested Similar Breed Clusters</h3>
+              <p class="subhead-desc">Pre-detected taxonomic and morphological sibling breeds. Toggle on to merge with smart default names, or edit inline.</p>
+            </div>
+            <div class="subhead-actions">
+              <button type="button" class="btn-link-action" id="btnSelectAllSuggested">Select All</button>
+              <span class="subhead-sep">&bull;</span>
+              <button type="button" class="btn-link-action" id="btnDeselectAllSuggested">Deselect All</button>
+            </div>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="merger-category-pills" id="mergerCategoryPills">
+            <button type="button" class="filter-pill active" data-cat="all">All Clusters (14)</button>
+            <button type="button" class="filter-pill" data-cat="Terriers">Terriers</button>
+            <button type="button" class="filter-pill" data-cat="Hounds">Hounds</button>
+            <button type="button" class="filter-pill" data-cat="Gundogs">Gundogs</button>
+            <button type="button" class="filter-pill" data-cat="Working">Working & Herding</button>
+            <button type="button" class="filter-pill" data-cat="Toy">Toy & Companion</button>
+          </div>
+
+          <!-- Suggested Clusters Container -->
+          <div class="merger-clusters-list" id="mergerClustersList">
+            <div class="gallery-empty-state">
+              <div class="btn-spinner" style="width: 28px; height: 28px; margin: 0 auto 10px auto;"></div>
+              <p>Loading suggested similarity clusters...</p>
+            </div>
+          </div>
+
+          <!-- Custom Breed Merger Box -->
+          <div class="custom-merger-box">
+            <div class="custom-merger-header">
+              <div class="custom-icon">✨</div>
+              <div>
+                <h4>2. Custom Breed Group Builder</h4>
+                <p>Combine any arbitrary breeds from the 120-breed dataset into your own custom class.</p>
+              </div>
+            </div>
+            <div class="custom-merger-form">
+              <div class="custom-input-group">
+                <label for="customTargetNameInput">New Unified Class Name:</label>
+                <input type="text" id="customTargetNameInput" placeholder="e.g. Mastiff Family or Shepherd Types" class="merger-text-input">
+              </div>
+              <div class="custom-input-group">
+                <label for="customBreedSearchInput">Select Breeds to Merge (at least 2):</label>
+                <input type="text" id="customBreedSearchInput" placeholder="Filter breeds to pick..." class="merger-text-input">
+                <div class="custom-breed-selector-box" id="customBreedSelectorBox">
+                  <!-- Populated dynamically with checkboxes -->
+                </div>
+              </div>
+              <button type="button" class="btn-batch-action" id="btnAddCustomGroup">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Add Custom Merge Group</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Live Resulting Classes Inspector -->
+        <div class="merger-right-col">
+          <div class="section-subhead">
+            <div>
+              <h3>3. Live Resulting Classes</h3>
+              <p class="subhead-desc">Instant preview of all <span id="resultingClassesCountBadge" class="accent-text font-bold">120</span> classes and newly assigned integer label IDs ($0 \dots K-1$).</p>
+            </div>
+            <div class="resulting-search-wrap">
+              <input type="text" id="resultingSearchInput" placeholder="Filter classes..." class="search-input">
+            </div>
+          </div>
+
+          <!-- Resulting Classes List Deck -->
+          <div class="resulting-classes-deck" id="resultingClassesDeck">
+            <div class="gallery-empty-state">
+              <p>Calculating preview...</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

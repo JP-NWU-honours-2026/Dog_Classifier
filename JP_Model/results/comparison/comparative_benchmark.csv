@@ -1,0 +1,5 @@
+model_name,architecture,pretrained,dataset_split,trainable_params,top1_acc,top5_acc,macro_f1,training_time_min,gpu_hardware,epochs
+JP Baseline (From-Scratch CNN),Custom 5-Block CNN,No (Scratch),Standard (Unclean),4000000,53.88,84.78,0.532,64.0,Tesla T4 GPU,60
+Lindani Baseline (From-Scratch CNN),Custom 5-Block CNN,No (Scratch),Standard (Unclean),4100000,50.5,81.2,0.498,70.0,Tesla T4 GPU,60
+JP Run 1 (EfficientNetV2-S Unclean),EfficientNetV2-S,Yes (ImageNet-1K),split_manifest.json (Unclean),20331208,83.12,97.75,0.8254,14.74,NVIDIA GeForce RTX 4050 Laptop GPU,5
+JP Run 2 (EfficientNetV2-S Clean),EfficientNetV2-S,Yes (ImageNet-1K),split_manifest_clean.json (Clean),20331208,83.25,98.07,0.8268,14.2,NVIDIA GeForce RTX 4050 Laptop GPU,5

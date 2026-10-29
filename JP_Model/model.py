@@ -61,6 +61,11 @@ def unfreeze_backbone(model: nn.Module, unfreeze_from_stage: int = 0) -> None:
             param.requires_grad = True
 
 
+def count_parameters(model: nn.Module) -> int:
+    """Returns total number of trainable parameters in the model."""
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+
 def get_parameter_summary(model: nn.Module, verbose: bool = False) -> Dict[str, Any]:
     """
     Returns counts of trainable, frozen, and total parameters,

@@ -207,6 +207,7 @@ class DogBreedDataset(Dataset):
 
 def get_dataloaders(
     workspace_root: Optional[Path] = None,
+    manifest_path: Optional[Path] = None,
     batch_size: int = 32,
     num_workers: int = 0,
     seed: int = 42,
@@ -214,19 +215,28 @@ def get_dataloaders(
 ) -> Tuple[DataLoader, DataLoader, DataLoader, Dict[int, str]]:
     """
     High-level factory function returning (train_loader, val_loader, test_loader, class_names).
+    Supports loading custom split manifests (e.g. split_manifest_clean.json or split_manifest.json).
     Optionally accepts subset_fraction for quick debugging/testing (e.g. 0.05 = 5% of data).
     """
     if workspace_root is None:
         workspace_root = Path(__file__).resolve().parent.parent
 
-    dataset_root = workspace_root / "archive" / "images" / "Images"
-    output_dir = workspace_root / "JP_Model"
+    if manifest_path is not None:
+        manifest_p = Path(manifest_path)
+        if not manifest_p.exists():
+            raise FileNotFoundError(f"Specified manifest not found: {manifest_p}")
+        print(f"[dataset] Loading split manifest from: {manifest_p}")
+        with open(manifest_p, "r", encoding="utf-8") as f:
+            manifest = json.load(f)
+    else:
+        dataset_root = workspace_root / "archive" / "images" / "Images"
+        output_dir = workspace_root / "JP_Model"
 
-    manifest = create_or_load_splits(
-        dataset_root=dataset_root,
-        output_dir=output_dir,
-        seed=seed,
-    )
+        manifest = create_or_load_splits(
+            dataset_root=dataset_root,
+            output_dir=output_dir,
+            seed=seed,
+        )
 
     splits = manifest["splits"]
     train_items = splits["train"]
