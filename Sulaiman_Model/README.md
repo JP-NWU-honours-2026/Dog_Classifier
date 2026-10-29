@@ -34,7 +34,8 @@ scores 83.12 % / 0.8254 (unclean) and 84.54 % / 0.8402 (simplified).
 | `dataset.py` | JP's data loader. Only change: JP's split files contain paths from his laptop, so missing paths are redirected to `archive/images/Images/<breed>/<file>` |
 | `model.py` | JP's model file with Swin-T: `get_model`, `freeze_backbone`, `unfreeze_backbone`, `get_parameter_summary` |
 | `train.py` | JP's two-phase trainer, model labels changed only |
-| `evaluate.py` | JP's evaluator, printed labels changed only |
+| `evaluate.py` | JP's evaluator; printed labels changed, and it also writes `predictions.csv` (one row per test photo) |
+| `compare_all.py` | The group comparison: runs Lindani's shared scorer (`Lindani_Model/compare_models.py`) on every model's `predictions.csv`, plus validation curves of both pretrained models |
 | `swin_notebook.ipynb` | Shows every setting, training curve, test metric, confusion matrix, per-breed table and comparison, outputs visible |
 | `REPORT_SECTIONS.md` | Draft Swin-T text for the group report |
 | `IMPLEMENTATION_GUIDE.md` | How the code is put together, how to run it, problems already met |
@@ -42,6 +43,7 @@ scores 83.12 % / 0.8254 (unclean) and 84.54 % / 0.8402 (simplified).
 | `make_architecture_figure.py` | Draws `swin_architecture.png` |
 | `requirements.txt` | Library versions |
 | `results/runs/<run>/` | `run_config.json`, `metrics.csv`, `history.json`, `training_curves.png`, `best_model.pth`, `eval_test/` |
+| `results/comparison/` | Output of `compare_all.py`: `original/` and `simplified/` comparison tables, per-model metrics, per-breed and confusion files, `validation_curves.png` |
 | `previous_run_lindani_pipeline/` | The earlier 85.4 % run with its own code, split file, guide, diagram and docs, kept for reference (see its `ABOUT.md`) |
 
 The split files are not copied here: all three runs read them from
@@ -51,7 +53,8 @@ The split files are not copied here: all three runs read them from
 
 Each `eval_test/` folder holds `metrics.json`, `metrics_summary.txt`,
 `per_class_metrics.csv`, `confusion_matrix.csv`, `confusion_matrix.png` and
-`sample_predictions.png`, in exactly JP's format.
+`sample_predictions.png`, in exactly JP's format, plus `predictions.csv` for
+the shared scorer.
 
 `best_model.pth` (about 110 MB) is not in git (`*.pth` is ignored). Rerun
 training to recreate it.
@@ -87,7 +90,15 @@ python Sulaiman_Model/evaluate.py --run unclean_transfer    --manifest JP_Model/
 python Sulaiman_Model/evaluate.py --run simplified_transfer --manifest JP_Model/split_manifest_simplified.json
 
 jupyter nbconvert --to notebook --execute --inplace Sulaiman_Model/swin_notebook.ipynb
+
+python Sulaiman_Model/compare_all.py      # needs Lindani_Model/compare_models.py (Lindani's branch)
 ```
+
+`compare_all.py` scores every model whose `predictions.csv` exists and lists
+the ones it skipped. It checks that all models were scored on the same
+photographs, and reports a clean score without the 36 test photos removed by
+JP's cleaning (the same definition as `split_manifest_clean.json`). It only
+reads the other members' folders and writes to `results/comparison/`.
 
 Each training run takes about 9 minutes on an RTX 4060 Laptop GPU. The
 first run downloads the Swin-T weights (about 110 MB) once. Add

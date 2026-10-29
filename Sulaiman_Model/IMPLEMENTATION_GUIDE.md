@@ -36,10 +36,11 @@ All four scripts are copies of JP's, changed only where Swin-T needs it:
 | `dataset.py` | `JP_Model/dataset.py` | JP's split files store paths from his laptop; a path that does not exist on this machine is redirected to `archive/images/Images/<breed>/<file>` |
 | `model.py` | `JP_Model/model.py` | builds `swin_t` instead of `efficientnet_v2_s`; `freeze_backbone` / `unfreeze_backbone` act on Swin's `features`, `norm` and `head` |
 | `train.py` | `JP_Model/train.py` | model names in the logs; `5%` written as `5%%` in one help text (Python 3.14 rejects a bare `%`) |
-| `evaluate.py` | `JP_Model/evaluate.py` | printed labels only |
+| `evaluate.py` | `JP_Model/evaluate.py` | printed labels; also writes `predictions.csv` (one row per test photo) for the shared scorer |
 
-`make_architecture_figure.py` draws `swin_architecture.png` and is not part of
-the pipeline.
+`compare_all.py` produces the group comparison (section 4b).
+`make_architecture_figure.py` draws `swin_architecture.png`. Neither is part
+of training.
 
 ### The model
 
@@ -156,8 +157,48 @@ results/runs/<run>/
     └── sample_predictions.png first 12 test photos, correct in green, wrong in red
 ```
 
-These are exactly the files JP's runs produce, so the two models can be put
-side by side or read by the same comparison script.
+These are exactly the files JP's runs produce, plus `eval_test/predictions.csv`:
+
+```
+photo,true_breed,predicted_breed,confidence,correct,true_in_top5,true_label,predicted_label
+n02085620-Chihuahua/n02085620_199.jpg,Chihuahua,Chihuahua,0.9871,True,True,0,0
+```
+
+---
+
+## 4b. The group comparison (`compare_all.py`)
+
+The comparison table is computed by **one scorer for all three models**:
+Lindani's `Lindani_Model/compare_models.py`, which recomputes accuracy,
+top-5, macro precision, recall and F1 (with a 95 % interval) from each
+model's per-photo `predictions.csv`, and checks that all models were scored
+on the same photographs. `compare_all.py` collects the files, adds parameter
+counts, training time and GPU from each `run_config.json`, and runs the
+scorer twice:
+
+| Comparison | Models | Test photos |
+|---|---|---|
+| `original/` | baseline CNN, EfficientNetV2-S, Swin-T | 3,200 (120 classes), plus a clean score without JP's 36 removed test photos |
+| `simplified/` | EfficientNetV2-S, Swin-T | 3,164 (114 classes) |
+
+It also draws `validation_curves.png` (validation accuracy and loss per epoch
+for both pretrained models on both splits). Missing predictions files are
+skipped and listed.
+
+```powershell
+git fetch
+git merge origin/Lindani-branch        # brings in Lindani_Model/compare_models.py; changes only his folder
+python Sulaiman_Model/compare_all.py
+```
+
+**For JP's runs to appear**, JP's `evaluate.py` needs the same export. In
+`evaluate_run()`, add `prediction_rows = []` before the loop; inside the loop,
+after the top-5 lines, append one dict per photo (`photo` as
+`breed_folder/file_name`, `true_breed`, `predicted_breed`, `confidence`,
+`correct`, `true_in_top5`); after the loop, write the list to
+`eval_out_dir / "predictions.csv"` with `csv.DictWriter`. The exact lines are
+in `Sulaiman_Model/evaluate.py` (search for "predictions.csv"). Then rerun
+his three `evaluate.py` commands; no retraining is needed.
 
 ---
 

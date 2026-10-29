@@ -20,6 +20,10 @@ Aligns with ITRI626 Rubric Section 8:
     confusion_matrix.csv
     per_class_metrics.csv
     sample_predictions.png
+    predictions.csv          (Sulaiman_Model addition) one row per test photo:
+                             photo, true_breed, predicted_breed, confidence,
+                             correct, true_in_top5 - the input format of
+                             Lindani_Model/compare_models.py
 """
 
 import os
@@ -200,6 +204,7 @@ def evaluate_run(run_name: str, manifest_path: Optional[Path] = None, batch_size
     total_samples = 0
     inference_durations = []
     samples_for_vis = []
+    prediction_rows = []   # per-photo predictions for compare_models.py
 
     print(f"[evaluate] Running inference on {len(test_loader.dataset)} test samples...")
     start_eval_time = time.time()
@@ -220,6 +225,21 @@ def evaluate_run(run_name: str, manifest_path: Optional[Path] = None, batch_size
             # Top 5
             _, top5_preds = probs.topk(5, 1, True, True)
             top5_correct += (top5_preds == labels.view(-1, 1)).sum().item()
+
+            # Per-photo record: 'breed_folder/file_name', as in the other members' files
+            hits = (top5_preds == labels.view(-1, 1)).any(dim=1)
+            for j in range(images.size(0)):
+                t, p = labels[j].item(), preds[j].item()
+                prediction_rows.append({
+                    "photo": "/".join(Path(paths[j]).parts[-2:]),
+                    "true_breed": class_names.get(t, str(t)),
+                    "predicted_breed": class_names.get(p, str(p)),
+                    "confidence": round(confs[j].item(), 4),
+                    "correct": t == p,
+                    "true_in_top5": bool(hits[j].item()),
+                    "true_label": t,
+                    "predicted_label": p,
+                })
 
             all_labels.extend(labels.cpu().numpy().tolist())
             all_preds.extend(preds.cpu().numpy().tolist())
@@ -264,6 +284,13 @@ def evaluate_run(run_name: str, manifest_path: Optional[Path] = None, batch_size
                 round(float(f1_class[idx]), 4),
                 int(support_class[idx])
             ])
+
+    # Per-photo predictions (Sulaiman_Model addition)
+    with open(eval_out_dir / "predictions.csv", "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=list(prediction_rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(prediction_rows)
+    print(f"[evaluate] Per-photo predictions saved to: {eval_out_dir / 'predictions.csv'}")
 
     # Plot sample predictions
     plot_sample_predictions(samples_for_vis, class_names, eval_out_dir / "sample_predictions.png")
