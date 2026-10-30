@@ -13,6 +13,7 @@ a convenience, not a general converter.
 Needs: pip install python-docx
 """
 
+import os
 import re
 
 from docx import Document
@@ -21,8 +22,8 @@ from docx.shared import Pt, RGBColor
 
 from split_check import LINDANI_DIR
 
-SOURCE = LINDANI_DIR / "REPORT_DRAFT.md"
-OUTPUT = LINDANI_DIR / "REPORT_DRAFT.docx"
+SOURCE = LINDANI_DIR / os.environ.get("REPORT_SOURCE", "REPORT_DRAFT.md")
+OUTPUT = SOURCE.with_suffix(".docx")
 
 INLINE = re.compile(r"(\*\*.+?\*\*|`.+?`|\*.+?\*)")
 
