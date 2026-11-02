@@ -1,0 +1,17 @@
+{
+  "run_name": "mobilenet_simplified",
+  "model_name": "Transfer-MobileNetV3-Large",
+  "top1_accuracy": 68.74,
+  "top5_accuracy": 92.48,
+  "macro_precision": 70.04,
+  "macro_recall": 68.33,
+  "macro_f1": 0.6841,
+  "macro_f1_pct": 68.41,
+  "test_samples": 3164,
+  "total_classes": 114,
+  "latency_ms_per_image": 0.57,
+  "trainable_parameters": 4348066,
+  "training_time_minutes": 13.01,
+  "gpu_used": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "manifest_used": "split_manifest_simplified.json"
+}

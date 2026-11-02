@@ -1,0 +1,70 @@
+photo,pile,breed,copy_in_train,copy_breed,dhash_distance,phash_distance,exact_copy,same_breed
+n02085782-Japanese_spaniel/n02085782_186.jpg,val,Japanese Spaniel,n02086646-Blenheim_spaniel/n02086646_172.jpg,Blenheim Spaniel,0,0,True,False
+n02087046-toy_terrier/n02087046_2419.jpg,val,Toy Terrier,n02087046-toy_terrier/n02087046_6003.jpg,Toy Terrier,4,8,False,True
+n02088094-Afghan_hound/n02088094_3989.jpg,val,Afghan Hound,n02088094-Afghan_hound/n02088094_1270.jpg,Afghan Hound,4,6,False,True
+n02088466-bloodhound/n02088466_7462.jpg,val,Bloodhound,n02090379-redbone/n02090379_3300.jpg,Redbone,0,0,True,False
+n02088466-bloodhound/n02088466_9356.jpg,val,Bloodhound,n02088466-bloodhound/n02088466_9023.jpg,Bloodhound,1,0,False,True
+n02089078-black-and-tan_coonhound/n02089078_19.jpg,val,Black-And-Tan Coonhound,n02089078-black-and-tan_coonhound/n02089078_3078.jpg,Black-And-Tan Coonhound,0,4,False,True
+n02089078-black-and-tan_coonhound/n02089078_2417.jpg,val,Black-And-Tan Coonhound,n02089078-black-and-tan_coonhound/n02089078_3078.jpg,Black-And-Tan Coonhound,1,2,False,True
+n02089867-Walker_hound/n02089867_24.jpg,test,Walker Hound,n02089867-Walker_hound/n02089867_2382.jpg,Walker Hound,2,0,False,True
+n02089867-Walker_hound/n02089867_2880.jpg,test,Walker Hound,n02089973-English_foxhound/n02089973_3160.jpg,English Foxhound,0,2,False,False
+n02089867-Walker_hound/n02089867_3108.jpg,test,Walker Hound,n02089867-Walker_hound/n02089867_3177.jpg,Walker Hound,0,0,True,True
+n02090379-redbone/n02090379_4667.jpg,test,Redbone,n02090379-redbone/n02090379_855.jpg,Redbone,0,0,True,True
+n02091635-otterhound/n02091635_873.jpg,test,Otterhound,n02091635-otterhound/n02091635_4698.jpg,Otterhound,1,2,False,True
+n02091831-Saluki/n02091831_13767.jpg,val,Saluki,n02091831-Saluki/n02091831_6323.jpg,Saluki,0,0,True,True
+n02092002-Scottish_deerhound/n02092002_2448.jpg,test,Scottish Deerhound,n02092002-Scottish_deerhound/n02092002_6503.jpg,Scottish Deerhound,0,0,True,True
+n02093647-Bedlington_terrier/n02093647_518.jpg,test,Bedlington Terrier,n02093647-Bedlington_terrier/n02093647_2585.jpg,Bedlington Terrier,0,0,True,True
+n02093859-Kerry_blue_terrier/n02093859_3209.jpg,val,Kerry Blue Terrier,n02093859-Kerry_blue_terrier/n02093859_324.jpg,Kerry Blue Terrier,0,0,True,True
+n02093991-Irish_terrier/n02093991_2923.jpg,test,Irish Terrier,n02093991-Irish_terrier/n02093991_4670.jpg,Irish Terrier,0,0,True,True
+n02095314-wire-haired_fox_terrier/n02095314_3227.jpg,val,Wire-Haired Fox Terrier,n02095314-wire-haired_fox_terrier/n02095314_3189.jpg,Wire-Haired Fox Terrier,0,0,True,True
+n02095570-Lakeland_terrier/n02095570_845.jpg,val,Lakeland Terrier,n02095570-Lakeland_terrier/n02095570_1482.jpg,Lakeland Terrier,3,4,False,True
+n02095889-Sealyham_terrier/n02095889_1582.jpg,val,Sealyham Terrier,n02095570-Lakeland_terrier/n02095570_1575.jpg,Lakeland Terrier,0,0,True,False
+n02095889-Sealyham_terrier/n02095889_47.jpg,test,Sealyham Terrier,n02095889-Sealyham_terrier/n02095889_1019.jpg,Sealyham Terrier,0,0,True,True
+n02095889-Sealyham_terrier/n02095889_2031.jpg,test,Sealyham Terrier,n02095889-Sealyham_terrier/n02095889_5011.jpg,Sealyham Terrier,0,0,True,True
+n02095889-Sealyham_terrier/n02095889_2471.jpg,test,Sealyham Terrier,n02095889-Sealyham_terrier/n02095889_2134.jpg,Sealyham Terrier,0,0,True,True
+n02095889-Sealyham_terrier/n02095889_2162.jpg,val,Sealyham Terrier,n02095889-Sealyham_terrier/n02095889_4649.jpg,Sealyham Terrier,5,4,False,True
+n02096437-Dandie_Dinmont/n02096437_3112.jpg,val,Dandie Dinmont,n02096437-Dandie_Dinmont/n02096437_2580.jpg,Dandie Dinmont,0,6,False,True
+n02097209-standard_schnauzer/n02097209_1170.jpg,test,Standard Schnauzer,n02097047-miniature_schnauzer/n02097047_2426.jpg,Miniature Schnauzer,1,0,False,False
+n02097130-giant_schnauzer/n02097130_857.jpg,test,Giant Schnauzer,n02097209-standard_schnauzer/n02097209_585.jpg,Standard Schnauzer,0,0,True,False
+n02097209-standard_schnauzer/n02097209_2992.jpg,test,Standard Schnauzer,n02097209-standard_schnauzer/n02097209_3831.jpg,Standard Schnauzer,3,6,False,True
+n02097474-Tibetan_terrier/n02097474_494.jpg,test,Tibetan Terrier,n02097474-Tibetan_terrier/n02097474_6306.jpg,Tibetan Terrier,4,10,False,True
+n02098105-soft-coated_wheaten_terrier/n02098105_2945.jpg,val,Soft-Coated Wheaten Terrier,n02098105-soft-coated_wheaten_terrier/n02098105_1090.jpg,Soft-Coated Wheaten Terrier,0,0,True,True
+n02099712-Labrador_retriever/n02099712_6619.jpg,val,Labrador Retriever,n02099712-Labrador_retriever/n02099712_5689.jpg,Labrador Retriever,5,6,False,True
+n02101556-clumber/n02101556_4994.jpg,test,Clumber,n02101556-clumber/n02101556_4965.jpg,Clumber,0,4,False,True
+n02102177-Welsh_springer_spaniel/n02102177_2388.jpg,val,Welsh Springer Spaniel,n02102177-Welsh_springer_spaniel/n02102177_1999.jpg,Welsh Springer Spaniel,0,0,True,True
+n02102480-Sussex_spaniel/n02102480_101.jpg,test,Sussex Spaniel,n02102480-Sussex_spaniel/n02102480_6229.jpg,Sussex Spaniel,0,0,True,True
+n02102480-Sussex_spaniel/n02102480_5651.jpg,test,Sussex Spaniel,n02102480-Sussex_spaniel/n02102480_4373.jpg,Sussex Spaniel,4,4,False,True
+n02102480-Sussex_spaniel/n02102480_5734.jpg,test,Sussex Spaniel,n02102480-Sussex_spaniel/n02102480_5031.jpg,Sussex Spaniel,4,2,False,True
+n02102480-Sussex_spaniel/n02102480_8240.jpg,val,Sussex Spaniel,n02102480-Sussex_spaniel/n02102480_5031.jpg,Sussex Spaniel,5,8,False,True
+n02102480-Sussex_spaniel/n02102480_5158.jpg,val,Sussex Spaniel,n02102480-Sussex_spaniel/n02102480_6027.jpg,Sussex Spaniel,0,4,False,True
+n02102973-Irish_water_spaniel/n02102973_2442.jpg,val,Irish Water Spaniel,n02102973-Irish_water_spaniel/n02102973_541.jpg,Irish Water Spaniel,0,0,True,True
+n02102973-Irish_water_spaniel/n02102973_2645.jpg,val,Irish Water Spaniel,n02102973-Irish_water_spaniel/n02102973_4469.jpg,Irish Water Spaniel,0,0,True,True
+n02104365-schipperke/n02104365_9552.jpg,test,Schipperke,n02105056-groenendael/n02105056_2194.jpg,Groenendael,0,0,True,False
+n02105056-groenendael/n02105056_961.jpg,test,Groenendael,n02105056-groenendael/n02105056_3499.jpg,Groenendael,0,0,True,True
+n02105162-malinois/n02105162_2079.jpg,val,Malinois,n02105162-malinois/n02105162_6449.jpg,Malinois,0,0,True,True
+n02106030-collie/n02106030_16338.jpg,val,Collie,n02106166-Border_collie/n02106166_6710.jpg,Border Collie,0,0,True,False
+n02106030-collie/n02106030_2522.jpg,test,Collie,n02106166-Border_collie/n02106166_1031.jpg,Border Collie,0,0,True,False
+n02106166-Border_collie/n02106166_346.jpg,val,Border Collie,n02106030-collie/n02106030_873.jpg,Collie,0,0,True,False
+n02106550-Rottweiler/n02106550_6074.jpg,test,Rottweiler,n02106550-Rottweiler/n02106550_11693.jpg,Rottweiler,5,6,False,True
+n02107574-Greater_Swiss_Mountain_dog/n02107574_2325.jpg,val,Greater Swiss Mountain Dog,n02107574-Greater_Swiss_Mountain_dog/n02107574_988.jpg,Greater Swiss Mountain Dog,0,0,True,True
+n02107574-Greater_Swiss_Mountain_dog/n02107574_910.jpg,val,Greater Swiss Mountain Dog,n02107574-Greater_Swiss_Mountain_dog/n02107574_261.jpg,Greater Swiss Mountain Dog,1,2,False,True
+n02107683-Bernese_mountain_dog/n02107683_71.jpg,test,Bernese Mountain Dog,n02107908-Appenzeller/n02107908_47.jpg,Appenzeller,0,0,True,False
+n02108000-EntleBucher/n02108000_2891.jpg,val,Entlebucher,n02108000-EntleBucher/n02108000_331.jpg,Entlebucher,0,0,True,True
+n02108000-EntleBucher/n02108000_3497.jpg,test,Entlebucher,n02108000-EntleBucher/n02108000_3113.jpg,Entlebucher,4,0,False,True
+n02108551-Tibetan_mastiff/n02108551_4421.jpg,test,Tibetan Mastiff,n02108551-Tibetan_mastiff/n02108551_728.jpg,Tibetan Mastiff,0,0,True,True
+n02109961-Eskimo_dog/n02109961_2317.jpg,test,Eskimo Dog,n02110185-Siberian_husky/n02110185_1614.jpg,Siberian Husky,0,0,True,False
+n02109961-Eskimo_dog/n02109961_5924.jpg,test,Eskimo Dog,n02110185-Siberian_husky/n02110185_4115.jpg,Siberian Husky,0,0,True,False
+n02110627-affenpinscher/n02110627_11783.jpg,val,Affenpinscher,n02110627-affenpinscher/n02110627_12025.jpg,Affenpinscher,4,10,False,True
+n02111129-Leonberg/n02111129_1115.jpg,val,Leonberg,n02111129-Leonberg/n02111129_4423.jpg,Leonberg,2,6,False,True
+n02111129-Leonberg/n02111129_3388.jpg,val,Leonberg,n02111129-Leonberg/n02111129_4792.jpg,Leonberg,3,0,False,True
+n02111129-Leonberg/n02111129_976.jpg,val,Leonberg,n02111129-Leonberg/n02111129_571.jpg,Leonberg,4,4,False,True
+n02112706-Brabancon_griffon/n02112706_2161.jpg,test,Brabancon Griffon,n02112706-Brabancon_griffon/n02112706_1202.jpg,Brabancon Griffon,0,0,True,True
+n02112706-Brabancon_griffon/n02112706_866.jpg,test,Brabancon Griffon,n02112706-Brabancon_griffon/n02112706_62.jpg,Brabancon Griffon,0,0,True,True
+n02113186-Cardigan/n02113186_11400.jpg,test,Cardigan,n02113186-Cardigan/n02113186_1030.jpg,Cardigan,0,0,True,True
+n02113624-toy_poodle/n02113624_2244.jpg,test,Toy Poodle,n02113712-miniature_poodle/n02113712_1546.jpg,Miniature Poodle,0,0,True,False
+n02113624-toy_poodle/n02113624_2258.jpg,val,Toy Poodle,n02113712-miniature_poodle/n02113712_1558.jpg,Miniature Poodle,0,0,True,False
+n02113978-Mexican_hairless/n02113978_1323.jpg,test,Mexican Hairless,n02113978-Mexican_hairless/n02113978_737.jpg,Mexican Hairless,0,0,True,True
+n02113978-Mexican_hairless/n02113978_2572.jpg,val,Mexican Hairless,n02113978-Mexican_hairless/n02113978_1632.jpg,Mexican Hairless,0,0,True,True
+n02113978-Mexican_hairless/n02113978_2141.jpg,val,Mexican Hairless,n02113978-Mexican_hairless/n02113978_3832.jpg,Mexican Hairless,0,0,True,True
+n02115641-dingo/n02115641_13565.jpg,val,Dingo,n02115641-dingo/n02115641_6577.jpg,Dingo,4,10,False,True
+n02115913-dhole/n02115913_1142.jpg,test,Dhole,n02115913-dhole/n02115913_2029.jpg,Dhole,0,0,True,True

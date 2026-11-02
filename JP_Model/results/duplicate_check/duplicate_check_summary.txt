@@ -1,0 +1,13 @@
+JP_MODEL DUPLICATE & DATA LEAKAGE AUDIT SUMMARY
+======================================================================
+Total Photos Audited:          20580
+Total Candidate Pairs (<=10):   1645
+Confirmed Duplicate Pairs:     173
+  - Cross-Breed Conflicts:     50 (Same image, conflicting labels)
+  - Cross-Split Leaks:         74
+  - Test Photos Leaked:        34
+  - Validation Photos Leaked:  35
+
+Interactive Visual Review File: candidate_duplicates.json
+Approved Removals File:         approved_removals.json (Generated after UI review)
+Clean Manifest Target:          split_manifest_clean.json

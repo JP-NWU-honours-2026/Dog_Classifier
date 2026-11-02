@@ -1,0 +1,2 @@
+model,weights,parameters,photographs,accuracy,interval,top5,macro_f1,macro_precision,macro_recall,clean_accuracy,clean_macro_f1,training_minutes,gpu
+baseline_cnn,,,3200,53.84,52.11 to 55.57,84.78,0.532,0.5403,0.5341,53.63,0.5298,,

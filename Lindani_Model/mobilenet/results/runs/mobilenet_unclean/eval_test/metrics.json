@@ -1,0 +1,17 @@
+{
+  "run_name": "mobilenet_unclean",
+  "model_name": "Transfer-MobileNetV3-Large",
+  "top1_accuracy": 67.53,
+  "top5_accuracy": 91.75,
+  "macro_precision": 68.89,
+  "macro_recall": 67.04,
+  "macro_f1": 0.6712,
+  "macro_f1_pct": 67.12,
+  "test_samples": 3200,
+  "total_classes": 120,
+  "latency_ms_per_image": 0.57,
+  "trainable_parameters": 4355752,
+  "training_time_minutes": 13.87,
+  "gpu_used": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "manifest_used": "split_manifest.json"
+}

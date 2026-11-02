@@ -1,0 +1,66 @@
+{
+  "run_name": "mobilenet_simplified",
+  "model_name": "Transfer-MobileNetV3-Large",
+  "num_classes": 114,
+  "device": "cuda",
+  "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "head_epochs": 2,
+  "fine_tune_epochs": 3,
+  "total_epochs": 5,
+  "head_lr": 0.0003,
+  "fine_tune_lr": 1e-05,
+  "unfreeze_from_stage": 14,
+  "batch_size": 32,
+  "seed": 42,
+  "train_loss": [
+    3.075665599075551,
+    2.1911452251354593,
+    1.979041581402372,
+    1.8947079004324643,
+    1.851897893275052
+  ],
+  "train_acc": [
+    36.93624184611068,
+    60.875359472539806,
+    68.12092305534124,
+    70.58988567019709,
+    72.30833976292348
+  ],
+  "val_loss": [
+    2.1560088047497885,
+    2.0644649414363694,
+    1.925451333963899,
+    1.8892663073164837,
+    1.8780385714863088
+  ],
+  "val_acc": [
+    60.62228169956507,
+    64.97156239545,
+    68.95282703245232,
+    70.05687520910003,
+    70.35797925727668
+  ],
+  "val_top5": [
+    87.78855804616929,
+    90.53195048511208,
+    92.27166276346604,
+    92.77350284376045,
+    93.00769488123119
+  ],
+  "val_macro_f1": [
+    0.6014024773490476,
+    0.646090545417822,
+    0.6862171685490902,
+    0.6967702959722777,
+    0.6996202516873368
+  ],
+  "phase": [
+    "Head (Frozen)",
+    "Head (Frozen)",
+    "Fine-Tune (Upper Stages)",
+    "Fine-Tune (Upper Stages)",
+    "Fine-Tune (Upper Stages)"
+  ],
+  "total_training_time_seconds": 780.4,
+  "best_val_accuracy": 70.36
+}

@@ -1,0 +1,121 @@
+label,breed,support,precision,recall,f1
+0,Chihuahua,22,0.3929,0.5,0.44
+1,Japanese Spaniel,27,0.6774,0.7778,0.7241
+2,Maltese Dog,37,0.6458,0.8378,0.7294
+3,Pekinese,22,0.6667,0.5455,0.6
+4,Shih-Tzu,32,0.619,0.4062,0.4906
+5,Blenheim Spaniel,28,0.7407,0.7143,0.7273
+6,Papillon,29,0.8636,0.6552,0.7451
+7,Toy Terrier,25,0.4839,0.6,0.5357
+8,Rhodesian Ridgeback,25,0.4412,0.6,0.5085
+9,Afghan Hound,35,0.8214,0.6571,0.7302
+10,Basset,26,0.4359,0.6538,0.5231
+11,Beagle,29,0.5417,0.4483,0.4906
+12,Bloodhound,28,0.6071,0.6071,0.6071
+13,Bluetick,25,0.375,0.24,0.2927
+14,Black-And-Tan Coonhound,23,0.5172,0.6522,0.5769
+15,Walker Hound,22,0.5789,0.5,0.5366
+16,English Foxhound,23,0.7059,0.5217,0.6
+17,Redbone,22,0.4211,0.3636,0.3902
+18,Borzoi,22,0.6818,0.6818,0.6818
+19,Irish Wolfhound,32,0.4,0.5625,0.4675
+20,Italian Greyhound,27,0.4348,0.3704,0.4
+21,Whippet,28,0.3929,0.3929,0.3929
+22,Ibizan Hound,28,0.7059,0.8571,0.7742
+23,Norwegian Elkhound,29,0.7742,0.8276,0.8
+24,Otterhound,22,0.5185,0.6364,0.5714
+25,Saluki,30,0.4211,0.5333,0.4706
+26,Scottish Deerhound,34,0.5833,0.6176,0.6
+27,Weimaraner,24,0.625,0.625,0.625
+28,Staffordshire Bullterrier,23,0.5,0.5217,0.5106
+29,American Staffordshire Terrier,24,0.3333,0.1667,0.2222
+30,Bedlington Terrier,27,0.7037,0.7037,0.7037
+31,Border Terrier,25,0.6818,0.6,0.6383
+32,Kerry Blue Terrier,26,0.7273,0.6154,0.6667
+33,Irish Terrier,25,0.36,0.36,0.36
+34,Norfolk Terrier,25,0.4667,0.56,0.5091
+35,Norwich Terrier,27,0.5312,0.6296,0.5763
+36,Yorkshire Terrier,24,0.3667,0.4583,0.4074
+37,Wire-Haired Fox Terrier,23,0.8824,0.6522,0.75
+38,Lakeland Terrier,29,0.5,0.4483,0.4727
+39,Sealyham Terrier,30,0.5833,0.7,0.6364
+40,Airedale,30,0.6667,0.6,0.6316
+41,Cairn,29,0.6071,0.5862,0.5965
+42,Australian Terrier,29,0.5806,0.6207,0.6
+43,Dandie Dinmont,27,0.8333,0.5556,0.6667
+44,Boston Bull,27,0.6364,0.7778,0.7
+45,Miniature Schnauzer,23,0.6842,0.5652,0.619
+46,Giant Schnauzer,23,0.4348,0.4348,0.4348
+47,Standard Schnauzer,23,0.4074,0.4783,0.44
+48,Scotch Terrier,23,0.7143,0.6522,0.6818
+49,Tibetan Terrier,30,0.5185,0.4667,0.4912
+50,Silky Terrier,27,0.4545,0.3704,0.4082
+51,Soft-Coated Wheaten Terrier,23,0.75,0.5217,0.6154
+52,West Highland White Terrier,25,0.6667,0.56,0.6087
+53,Lhasa,27,0.4167,0.3704,0.3922
+54,Flat-Coated Retriever,22,0.44,0.5,0.4681
+55,Curly-Coated Retriever,22,0.5417,0.5909,0.5652
+56,Golden Retriever,22,0.6667,0.4545,0.5405
+57,Labrador Retriever,25,0.4737,0.36,0.4091
+58,Chesapeake Bay Retriever,25,0.4167,0.4,0.4082
+59,German Short-Haired Pointer,22,0.5,0.5,0.5
+60,Vizsla,23,0.619,0.5652,0.5909
+61,English Setter,24,0.52,0.5417,0.5306
+62,Irish Setter,23,0.5161,0.6957,0.5926
+63,Gordon Setter,22,0.75,0.6818,0.7143
+64,Brittany Spaniel,22,0.4,0.2727,0.3243
+65,Clumber,22,0.64,0.7273,0.6809
+66,English Springer,23,0.72,0.7826,0.75
+67,Welsh Springer Spaniel,22,0.6667,0.6364,0.6512
+68,Cocker Spaniel,23,0.4545,0.4348,0.4444
+69,Sussex Spaniel,22,0.7727,0.7727,0.7727
+70,Irish Water Spaniel,22,0.7368,0.6364,0.6829
+71,Kuvasz,22,0.5333,0.3636,0.4324
+72,Schipperke,23,0.75,0.6522,0.6977
+73,Groenendael,22,0.6,0.8182,0.6923
+74,Malinois,22,0.68,0.7727,0.7234
+75,Briard,22,0.4167,0.4545,0.4348
+76,Kelpie,22,0.2222,0.2727,0.2449
+77,Komondor,23,0.6154,0.6957,0.6531
+78,Old English Sheepdog,25,0.72,0.72,0.72
+79,Shetland Sheepdog,23,0.6071,0.7391,0.6667
+80,Collie,22,0.4444,0.3636,0.4
+81,Border Collie,22,0.375,0.4091,0.3913
+82,Bouvier Des Flandres,22,0.4762,0.4545,0.4651
+83,Rottweiler,22,0.44,0.5,0.4681
+84,German Shepherd,22,0.6,0.5455,0.5714
+85,Doberman,22,0.55,0.5,0.5238
+86,Miniature Pinscher,27,0.6,0.5556,0.5769
+87,Greater Swiss Mountain Dog,25,0.5926,0.64,0.6154
+88,Bernese Mountain Dog,32,0.7273,0.75,0.7385
+89,Appenzeller,22,0.4815,0.5909,0.5306
+90,Entlebucher,30,0.8077,0.7,0.75
+91,Boxer,22,0.4783,0.5,0.4889
+92,Bull Mastiff,23,0.7273,0.6957,0.7111
+93,Tibetan Mastiff,22,0.5882,0.4545,0.5128
+94,French Bulldog,23,0.7059,0.5217,0.6
+95,Great Dane,23,0.5714,0.3478,0.4324
+96,Saint Bernard,25,0.7619,0.64,0.6957
+97,Eskimo Dog,22,0.3478,0.3636,0.3556
+98,Malamute,26,0.4667,0.5385,0.5
+99,Siberian Husky,28,0.3448,0.3571,0.3509
+100,Affenpinscher,22,0.4375,0.6364,0.5185
+101,Basenji,31,0.4865,0.5806,0.5294
+102,Pug,30,0.4667,0.7,0.56
+103,Leonberg,31,0.7714,0.871,0.8182
+104,Newfoundland,29,0.4194,0.4483,0.4333
+105,Great Pyrenees,31,0.359,0.4516,0.4
+106,Samoyed,32,0.6897,0.625,0.6557
+107,Pomeranian,32,0.6857,0.75,0.7164
+108,Chow,29,0.8636,0.6552,0.7451
+109,Keeshond,23,0.9474,0.7826,0.8571
+110,Brabancon Griffon,22,0.7143,0.9091,0.8
+111,Pembroke,27,0.7391,0.6296,0.68
+112,Cardigan,23,0.5625,0.3913,0.4615
+113,Toy Poodle,22,0.1905,0.1818,0.186
+114,Miniature Poodle,23,0.4706,0.3478,0.4
+115,Standard Poodle,23,0.2381,0.2174,0.2273
+116,Mexican Hairless,23,0.8824,0.6522,0.75
+117,Dingo,23,0.4815,0.5652,0.52
+118,Dhole,22,0.8095,0.7727,0.7907
+119,African Hunting Dog,25,0.7692,0.8,0.7843

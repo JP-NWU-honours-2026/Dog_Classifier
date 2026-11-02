@@ -1,0 +1,21 @@
+true_breed,predicted_breed,times
+Beagle,Basset,12
+Eskimo Dog,Siberian Husky,10
+Siberian Husky,Eskimo Dog,10
+Shih-Tzu,Lhasa,9
+Silky Terrier,Yorkshire Terrier,8
+Toy Poodle,Miniature Poodle,8
+Miniature Schnauzer,Standard Schnauzer,7
+Standard Schnauzer,Miniature Schnauzer,7
+French Bulldog,Boston Bull,7
+Rhodesian Ridgeback,Bloodhound,6
+Redbone,Rhodesian Ridgeback,6
+Australian Terrier,Silky Terrier,6
+Lhasa,Shih-Tzu,6
+Shetland Sheepdog,Collie,6
+Doberman,Miniature Pinscher,6
+Tibetan Mastiff,Newfoundland,6
+Great Pyrenees,Kuvasz,6
+Miniature Poodle,Toy Poodle,6
+Walker Hound,English Foxhound,5
+Irish Wolfhound,Scottish Deerhound,5

@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-10-29T09:59:07.603461",
+  "source_manifest": "split_manifest_clean.json",
+  "output_manifest": "split_manifest_simplified.json",
+  "original_classes": 120,
+  "resulting_classes": 114,
+  "classes_reduced": 6,
+  "reduction_percentage": 5.0,
+  "merged_groups_applied": [
+    {
+      "group_id": "staffordshire",
+      "target_name": "Staffordshire Terrier",
+      "breeds": [
+        "Staffordshire Bullterrier",
+        "American Staffordshire Terrier"
+      ]
+    },
+    {
+      "group_id": "foxhound",
+      "target_name": "Foxhound",
+      "breeds": [
+        "English Foxhound",
+        "Walker Hound"
+      ]
+    },
+    {
+      "group_id": "poodle",
+      "target_name": "Poodle",
+      "breeds": [
+        "Toy Poodle",
+        "Miniature Poodle",
+        "Standard Poodle"
+      ]
+    },
+    {
+      "group_id": "schnauzer",
+      "target_name": "Schnauzer",
+      "breeds": [
+        "Miniature Schnauzer",
+        "Standard Schnauzer",
+        "Giant Schnauzer"
+      ]
+    }
+  ],
+  "split_counts": {
+    "train": 14257,
+    "val": 2989,
+    "test": 3164,
+    "total": 20410
+  }
+}

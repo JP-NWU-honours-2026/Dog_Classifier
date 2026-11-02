@@ -1,0 +1,38 @@
+EVALUATION OF ITER2_REGULARISED ON THE VAL SET
+==============================================================================
+Weights                  epoch 52 (validation macro F1 0.4911 when trained)
+Trainable parameters     1,631,128
+Photographs scored       3025
+Breeds                   120, chance level 0.83 per cent
+
+HEADLINE
+  Accuracy               50.05 per cent (95 per cent interval 48.27 to 51.83)
+  Top-5 accuracy         81.62 per cent
+  Macro F1               0.4911
+  Macro precision        0.4986
+  Macro recall           0.4967
+  Weighted F1            0.4945
+
+STRONGEST BREEDS BY F1
+  Saint Bernard                      F1 0.840  (25 photographs)
+  Brabancon Griffon                  F1 0.824  (22 photographs)
+  Leonberg                           F1 0.806  (31 photographs)
+  African Hunting Dog                F1 0.755  (25 photographs)
+  English Springer                   F1 0.745  (23 photographs)
+
+WEAKEST BREEDS BY F1
+  Standard Poodle                    F1 0.061  (23 photographs)
+  Toy Poodle                         F1 0.171  (22 photographs)
+  American Staffordshire Terrier     F1 0.222  (24 photographs)
+  Cardigan                           F1 0.235  (23 photographs)
+  Basset                             F1 0.241  (26 photographs)
+
+MOST FREQUENT MISTAKES, top 8
+  Shih-Tzu                       called Lhasa                          9 times
+  Beagle                         called Basset                         8 times
+  Greater Swiss Mountain Dog     called Appenzeller                    8 times
+  Yorkshire Terrier              called Australian Terrier             7 times
+  Chow                           called Pomeranian                     7 times
+  Whippet                        called Italian Greyhound              6 times
+  Bernese Mountain Dog           called Greater Swiss Mountain Dog     6 times
+  Entlebucher                    called Appenzeller                    6 times

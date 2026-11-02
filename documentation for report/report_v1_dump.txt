@@ -1,0 +1,229 @@
+P0 [Heading 1]: Abstract
+P1 [Normal]: Four convolutional and transformer models were trained to classify photographs of dogs into 120 breeds using the Stanford Dogs dataset: a convolutional network built and trained from scratch, and three models initialised from ImageNet pretrained weights (MobileNetV3-Large, EfficientNetV2-S and Swin-T). All models used an identical 70/15/15 split, identical preprocessing and, for the three pretrained models, an identical two-phase training schedule.
+P2 [Normal]: The pretrained models reached 67.5 to 88 per cent test accuracy; the from-scratch network reached 53.84 per cent. Duplicate photographs within the dataset account for 0.2 percentage points or less across four independently trained models. A size-matched pretrained model, MobileNetV3-Large at 4,355,752 parameters against the baseline's 4,581,784, isolates pretraining at 13.69 points, leaving 20.50 points to capacity and architecture together. Transfer learning is therefore worth roughly two fifths of the difference rather than all of it.
+P3 [Normal]: The dataset itself was found to carry contradictory labels: 50 pairs of duplicate photographs are filed under two different breeds, affecting 40 of the 120 breeds, which places a ceiling on attainable accuracy. Seven of the twenty most frequent errors made by the from-scratch model fall on exactly those pairs.
+P4 [Normal]: 
+P5 [Heading 1]: The problem
+P6 [Normal]: Image classification is a task of assigning an image to one of a set of predefined classes, and fine-grained image classification is a form of this task in which all the classes belong to the same broader category. This task is hard because the differences between the groups are usually very small and only in certain parts of the image. Also, images that belong to the smaller group can look very different because of things like the way the subject is positioned the light how big the subject is and what is, in the background. Dog breeds illustrate the difficulty clearly: the Eskimo dog and the Siberian husky, for example, share similar coat patterns and build, and the Stanford Dogs dataset was constructed as a benchmark for exactly this kind of distinction (Khosla et al., 2011). 
+
+The problem is also of practical relevance, since breed information is used by animal shelters, veterinary practices and pet owners, and is often recorded inaccurately when assigned by eye. Deep neural networks typically require large volumes of labelled data to learn reliable features, and fine-grained datasets such as Stanford Dogs rarely provide this, offering roughly 170 photographs per class. Transfer learning addresses this limitation by initialising a network with weights learned on a large dataset, such as ImageNet (Deng et al., 2009), and adapting them to the new task. On Stanford Dogs, however, this advantage is difficult to interpret, because the dataset was itself drawn from ImageNet, so pretrained models may have encountered some of its photographs during pretraining.
+P7 [Normal]: This project aims to determine which of three model families, a custom convolutional neural network, the EfficientNetV2 family and the Swin Transformer family, is best suited to classifying dog breeds from photographs, and to recommend a model on that basis. A secondary aim is to estimate how much of the pretrained models’ advantage can be attributed to pretraining itself, rather than to network size or to duplicate photographs within the dataset. This is examined by including MobileNetV3-Large, a pretrained model with a similar number of parameters to the baseline, and by scoring the test set both with and without photographs that have near-duplicates in the training data. The target classes are the 120 breeds defined in Stanford Dogs, each photograph is assigned to exactly one class, and all models are trained and evaluated on the same 70/15/15 split.
+P8 [Normal]: The report proceeds from the data to the models: Section 2 documents the dataset and its preparation, Section 3 describes the model families and the transfer learning strategy, and Section 4 sets out the experimental configuration. The results are presented in Section 5 and interpreted in Section 6, which also addresses classification errors and limitations, before Section 7 concludes with the recommended model.
+P9 [Normal]: 
+P10 [Heading 2]: Dataset
+P11 [Subtitle]: 2.1 Dataset
+P12 [Normal]: Stanford Dogs (Khosla et al., 2011) was selected as the dataset for this project and comprises 20,580 photographs of 120 dog breeds. In addition to a breed label, every photograph is supplied with an annotation file marking the position of each dog in the image with a rectangular bounding box. The copy used in this project was obtained from Kaggle, at https://www.kaggle.com/datasets/jessicali9530/stanford-dogs-dataset.
+P13 [Normal]: The photographs and their breed labels were drawn from ImageNet (Deng et al., 2009) rather than gathered specifically for the dataset (Khosla et al., 2011). As a result, the dataset shares its source with the data used to pretrain three of the four models in this project, which affects how their test results are interpreted (Section 6.3). The applicable terms are therefore taken to be those of ImageNet, which restrict use of the database to non-commercial research and educational purposes (ImageNet, n.d.). 
+P14 [Normal]: 
+P15 [Normal]: 
+P16 [Subtitle]: 2.2 Class definitions
+P17 [Normal]: Each of the 120 classes corresponds to a single dog breed, defined by an ImageNet synset, which is a WordNet concept identified by a code such as n02085620 for the Chihuahua. The breed definitions are therefore inherited from ImageNet’s taxonomy and were not redefined for this project. Figure 1 shows a representative photograph from each of the 120 classes. 
+P18 [Normal]: The full set of 120 breeds was used as the primary classification task. Retaining the complete set keeps the task consistent with how the dataset is normally used, and avoids making the problem easier by excluding the breeds that are hardest to separate. The effect of merging the most similar breeds is instead examined separately, through the simplified condition described in Section 2.7.
+P19 [Normal]: 
+P20 [Normal]: Figure 1: Representative photographs from each of the 120 Stanford Dogs classes
+P21 [Normal]: 
+P22 [Caption]: Figure 1: Representative photographs from twelve Stanford Dogs classes
+P23 [Subtitle]: Section 2.3, Composition, balance and image properties
+P24 [Caption]: Table 1
+P25 [Normal]: 
+P26 [Normal]: As summarised in Table 1, the number of photographs per breed ranges from 148 (redbone) to 252 (Maltese dog), with a mean of 171.5 and a median of 159.5. The distribution is right-skewed (Figure 2): most breeds contain close to 150 photographs, while a minority contain considerably more. The ratio between the largest and smallest class is 1.70 to 1, which was judged to be a mild imbalance. Macro-averaged F1 is nevertheless reported alongside accuracy, since it gives each breed equal weight and so cannot be inflated by strong performance on the larger classes. 
+P27 [Normal]: 
+P28 [Caption]: Figure 2: Photographs per breed, sorted, and the distribution of breed sizes
+P29 [Normal]: Image dimensions vary widely, from 97 to 3,264 pixels in width and from 100 to 2,562 pixels in height, with median dimensions of 500 by 375 pixels. The distribution of dimensions shows a sharp boundary at 500 pixels on both axes, which suggests that most photographs were downscaled to a maximum of 500 pixels on their longest side before publication, reducing the fine detail available for distinguishing breeds. In addition, 7.66 per cent of photographs (1,577) fall below 224 pixels on at least one side, the input size used by all models, and are enlarged at load time with some loss of sharpness. Most photographs are landscape (68.72 per cent), with 25.95 per cent portrait and 5.33 per cent approximately square, so resizing to a square input alters the proportions of most images (Section 4.1). 
+P30 [Normal]: The bounding-box annotations show that the dog occupies a median of 55.3 per cent of the frame, and that in 14.52 per cent of photographs it occupies less than a quarter. Furthermore, 6.60 per cent of photographs contain more than one dog, up to six in a single image, while carrying only one breed label. Such photographs are inherently ambiguous, since a model may correctly identify a dog in the image without matching the labelled one, an effect examined in Section 6.2.
+P31 [Normal]: 
+P32 [Subtitle]: Section 2.4, Cleaning
+P33 [Normal]: Cleaning began with an integrity check of every file in the dataset. All 20,580 photographs and their 20,580 annotation files were present, and every photograph decoded without error. The only formatting problem found was a single photograph in RGBA format, which includes a transparency channel, and it is converted to RGB at load time so that all inputs share the same three colour channels.
+
+Duplicate photographs were searched for next, because the specification requires that near-identical images are not divided between training and test data. Byte-for-byte copies were found by comparing a unique digital fingerprint (a SHA-256 hash) of every file, yielding 89 groups of identical files, of which 37 fell into different partitions. Because resized or recompressed copies of the same photograph have different bytes, two perceptual fingerprints were also computed for every image, a difference hash (dHash) and a perceptual hash (pHash), each of which changes only slightly when an image is altered slightly. Choosing the matching threshold required judgement, so seven thresholds were evaluated: agreement between the two methods fell from 93.9 per cent at the strictest setting to 13.4 per cent at a distance of 10, and visual inspection of sampled pairs showed that matches beyond a distance of 6 were frequently different photographs. A pair was therefore treated as a duplicate only if both methods agreed, with a difference-hash distance of 5 or less and a perceptual-hash distance of 10 or less, which identified 173 confirmed pairs, 74 of them split across partitions.
+P34 [Normal]: In the main 120-class condition, no photographs were removed: the duplicates were instead flagged and their effect on test performance measured (Section 2.6), so that all models could continue to use the shared split.Removal was applied only in the simplified condition, in which 170 duplicate and leaked photographs were excluded (Section 2.7).
+P35 [Subtitle]: Section 2.5, Label checking
+P36 [Normal]: Labels in Stanford Dogs are those assigned when the photographs were collected for ImageNet, and no relabeling is reported by the dataset’s authors (Khosla et al., 2011). ImageNet’s labels were verified by crowd workers through Amazon Mechanical Turk rather than by breed experts (Deng et al., 2009), so their reliability for closely related breeds could not be assumed. Among the duplicate pairs identified in Section 2.4, 50 carry two different breed labels, and these pairs involve 40 of the 120 breeds. In most such cases, one of the labels must be wrong, although a photograph containing more than one dog could legitimately appear under two breeds.  
+P37 [Subtitle]: 2.6 Split and leakage
+P38 [Normal]: The data was split 70/15/15 into training, validation and test sets, stratified by breed so that each breed appears in the same proportion in every set, using random seed 42. The sets are slightly uneven because per-breed counts were rounded down, with the remainder added to the test set. The split was checked before use: it can be regenerated exactly from the seed, no photograph appears in more than one set, every label matches its breed folder, and all 120 breeds appear in every set.
+P39 [Normal]: The split was made by random selection and did not account for duplicates, so 34 test photographs (1.06 per cent) have a near-duplicate in the training set. Instead of regenerating the split, the test set was scored twice, with and without these 34 photographs, so that the effect of leakage could be measured (Section 5.5). This measures leakage rather than preventing it, which is listed as a limitation in Section 6.4.
+P40 [Subtitle]: 2.7 Simplified condition 
+P41 [Normal]: The simplified condition merges four groups of near-identical breeds and removes 170 duplicate and leaked photographs, leaving 114 classes (Table 2). Its purpose is to show how much accuracy is lost to breeds that the dataset labels inconsistently. Results on 114 classes are not directly comparable with those on 120, because merging removes the hardest decisions, so the two are always reported separately.
+P42 [Caption]: Table 2: The two data conditions
+P43 [Subtitle]: 
+P44 [Subtitle]: 2.8 Ethics 
+P45 [Normal]: Many photographs include people who could be identified, and neither source records their consent. This project collected no personal data, and the models only predict dog breeds. The trained models are used only in a private demonstration app and are not publicly deployed or shared.
+P46 [Heading 1]: Model selection and methodology
+P47 [Subtitle]: 3.1 Model Selection
+P48 [Caption]: Table 3
+P49 [Normal]: 
+P50 [Normal]: Three model families were compared (Table 4): a custom convolutional neural network (CNN) trained from scratch, EfficientNetV2-S and Swin-T. They were chosen to contrast learning from scratch with transfer learning, and convolution with attention. MobileNetV3-Large (Howard et al., 2019) is added as a control: it is pretrained but about the same size as the custom CNN, so comparing the two separates the effect of pretraining from the effect of size.
+P51 [Subtitle]: 3.2 Custom CNN
+P52 [Normal]: The custom CNN follows a simple VGG-style design (Simonyan & Zisserman, 2015): five blocks of 3×3 convolution, batch normalisation, ReLU and max pooling, with the number of channels doubling from 32 to 512 as the image shrinks from 224 to 7 pixels. A second convolution in the last two blocks brings the network to 4,581,784 parameters, and global average pooling, dropout and a single output layer complete it. Global average pooling, which averages each feature map into one value, was used instead of a large fully connected layer, saving about 524,000 parameters.
+P53 [Normal]: 3.3 EfficientNetV2-S
+P54 [Normal]: EfficientNetV2-S is the smallest model in the EfficientNetV2 family (Tan & Le, 2021), a convolutional design built for both accuracy and training speed. Its main ideas are scaling the network’s depth, width and resolution together, and using simpler, faster “fused” blocks in the early layers. With 20.3 million parameters, it was chosen as a strong but practical convolutional network that can run on ordinary hardware. 
+P55 [Subtitle]: 
+P56 [Subtitle]: 3.4 Swin-T
+P57 [Normal]: Swin-T (Liu et al., 2021) is a vision transformer, a model that uses self-attention to compare parts of an image with each other directly, rather than scanning it with small filters as a CNN does. A standard Vision Transformer (Dosovitskiy et al., 2021) becomes expensive on larger images and needs very large training sets, which makes it a poor fit for about 20,000 photographs. Swin computes attention within small, shifting windows instead of across the whole image, and merges patches as it goes deeper, much as a CNN shrinks its feature maps. Swin-T is the smallest standard version, with 27.6 million parameters.
+P58 [Normal]: 
+P59 [Subtitle]: 3.5 Transfer learning strategy
+P60 [Normal]: Transfer learning starts from a network already trained on ImageNet and replaces only its final layer with one for the 120 breeds. Training runs in two phases, 2 epochs with the pretrained layers frozen, followed by 3 epochs with the upper layers unfrozen at a lower learning rate. Freezing first stops the large, random updates from the new layer damaging the pretrained features, and the low learning rate afterwards lets those features adapt to dog breeds without being overwritten. 
+P61 [Normal]: The unfrozen share was matched by parameters, not by layers, at about 72 to 74 per cent for the two CNNs. Swin-T’s structure does not divide as finely, so unfreezing its final stage leaves about 56 per cent trainable, and this difference is reported rather than hidden. All models use the original ImageNet-1K weights, chosen explicitly so that no model starts from a better-trained version than the others.
+P62 [Heading 1]: Experimental setup and reproducibility
+P63 [Subtitle]: 4.1 Preprocessing and augmentation
+P64 [Normal]: All photographs are resized directly to 224×224 pixels and normalised with the ImageNet mean and standard deviation, which the pretrained models expect. Resizing without cropping distorts non-square photographs, but it keeps the whole dog in frame, whereas a centre crop could cut part of it off. Training images are augmented with horizontal flips, rotations of up to 15 degrees and mild colour jitter, while validation and test images are left unchanged. These changes reflect real photographs: a dog facing left is the same breed facing right, photographs are often slightly tilted, and lighting varies, whereas strong colour changes were avoided because coat colour helps identify breeds. 
+P65 [Subtitle]: 4.2 Training settings
+P66 [Caption]: Table 4: Training Configuration
+P67 [Normal]: 
+P68 [Normal]: Table 5 lists the training settings, which are identical for the three pretrained models and differ for the custom CNN only where training from scratch requires it. Training from scratch needs far longer, so the custom CNN ran for up to 60 epochs with early stopping and a higher learning rate. 
+P69 [Normal]: 
+P70 [Subtitle]: 4.3 Fairness of the comparison
+P71 [Normal]: To keep the comparison fair, all models share the same split, input size, augmentation, normalisation and evaluation metrics. EfficientNetV2-S and MobileNetV3-Large share identical training and evaluation code, differing only in the model definition. The custom CNN’s longer schedule gives it more opportunity to learn, not less, so the differences do not favour the pretrained models.
+P72 [Subtitle]: 4.4 Software, hardware and reproducibility
+P73 [Caption]: Table 5: Hardware and training time
+P74 [Normal]: 
+P75 [Normal]: All models were implemented in PyTorch 2.11.0 (Paszke et al., 2019) with torchvision 0.26.0 and CUDA 12.8, on Windows 11 and Kaggle’s Linux environment. As different GPUs were used, the times indicate scale only, and the clearer contrast is 5 epochs for the pretrained models against 59 for the custom CNN. Seeding fixes the data order and starting weights, but not every GPU operation; repeated runs differed by up to 1.2 points of macro F1, which is taken as the noise level for all comparisons. All development decisions were made on the validation set, and the test set was scored once per final model. Every run saves its settings, library versions and GPU to a configuration file, and full reproduction steps are given in the README.
+P76 [Subtitle]: 4.5 Custom CNN development
+P77 [Caption]: Table 6: Custome CNN dev runs
+P78 [Normal]: 
+P79 [Normal]: The custom CNN’s final configuration was chosen from five runs, each changing one factor and judged on validation data only (Table 7). The first run appeared to overfit, but stronger regularisation (run 2A) narrowed the gap between training and validation accuracy without improving results, while adding capacity (run 2B) raised macro F1 by 6.8 points despite doubling that gap. This showed that the size of the overfitting gap was a poor guide to what would improve the model. Run 2B was selected, as later runs either matched it within noise (3A) or performed worse (3B).
+P80 [Heading 1]: Section 5: Results 
+P81 [Subtitle]: 5.1 Overall Performance
+P82 [Caption]: Table 7
+P83 [Normal]: 
+P84 [Normal]: On the test set, Swin-T achieved the highest accuracy at 88.03 per cent, followed by EfficientNetV2-S (83.12), MobileNetV3-Large (67.53) and the custom CNN (53.84) (Table 8). For every model, macro F1 is within about one point of accuracy, so performance is spread evenly across breeds rather than concentrated in the larger classes. At almost identical size, the pretrained MobileNetV3-Large outperformed the custom CNN by 13.69 points while training for 5 epochs rather than 59. Top-5 accuracy is high for every model, from 84.78 per cent for the custom CNN to 99.31 per cent for Swin-T, so the correct breed is usually among each model’s five best guesses.
+P85 [Subtitle]: 5.2 Learning Curve 
+P86 [Normal]: The learning curves for all models are shown in Figures 3 and 4. The pretrained models reach most of their final accuracy within the first two epochs, while the custom CNN improves gradually over 59 epochs. All models had levelled off by their final epoch.
+P87 [Normal]: 
+P88 [Caption]: Figure 3: Custom CNN training and validation loss, and validation macro F1
+P89 [Normal]: 
+P90 [Caption]: Figure 4: Validation accuracy per epoch for the pretrained models
+P91 [Subtitle]: 5.3 Per-Class performance 
+P92 [Normal]: Table 9 lists the weakest classes for the best and worst models, and full per-class precision, recall and F1 are given in Appendix A. The weakest classes are largely shared between models, with the Eskimo dog among the weakest for both.
+P93 [Normal]: 
+P94 [Caption]: Table 8
+P95 [Normal]: 
+P96 [Subtitle]: 5.4 Confusion matrices
+P97 [Normal]: Figure 5 shows the confusion matrix for Swin-T, with a zoomed view of the breeds most often confused. For the custom CNN, the Eskimo dog was predicted as a Siberian husky 10 times, more often than it was classified correctly. 
+P98 [Normal]: 
+P99 [Caption]: Figure 5
+P100 [Normal]: 
+P101 [Normal]: 
+P102 [Subtitle]: 5.5 Example predictions
+P103 [Normal]: Figure 6 shows examples of correct and incorrect predictions from Swin-T, with the predicted breed and confidence for each. The errors fall into three types, matching the dataset issues in Section 2: look-alike breeds, small dogs and photographs with more than one dog. Removing the 34 test photographs with a duplicate in training changed top-1 accuracy by less than a quarter of a point for every model, in both directions (Table 8). Merging the look-alike breeds raised accuracy for every pretrained model by 1.2 to 1.9 points, although these figures are not directly comparable with the 120-class results (Section 2.7). Only Swin-T’s gain (1.89 points) clearly exceeds the noise level, which suggests that the look-alike breeds account for a small share of the remaining errors.
+P104 [Normal]: 
+P105 [Caption]: Figure 6: Swin-T example predictions
+P106 [Heading 1]: 6 Discussion
+P107 [Subtitle]: 6.1 Why the models differ
+P108 [Normal]: Pretraining made the largest single difference: all three pretrained models outperformed the custom CNN, including the one of the same size. A pretrained network starts with general visual features already learned, so the small amount of training data can be spent on breed differences alone. Swin-T outperformed EfficientNetV2-S by 4.91 points, possibly because attention can relate distant parts of the dog, such as the ears and tail, but it is also the larger model, so the two effects cannot be separated here.
+P109 [Normal]: 
+P110 [Subtitle]: 6.2 Error analysis
+P111 [Normal]: The gap between the custom CNN’s top-1 (53.84 per cent) and top-5 accuracy (84.78 per cent) shows that it usually narrows a photograph down to the right few breeds but then picks the wrong one. Only 7.7 per cent of its errors were made with 90 per cent confidence or more, so the model is usually uncertain when it is wrong. Its failures are therefore mostly about telling similar breeds apart, not about recognising dogs at all. 
+
+Many of the most frequent errors fall on breed pairs with contradictory labels, such as the Eskimo dog and Siberian husky. Errors that run both ways suggest that the boundary between the breeds is unclear in the data itself, rather than that the model is biased towards one breed. Swin-T’s weakest classes include the same Eskimo dog and husky pair, so two very different architectures struggle on the same breeds, which points to the data rather than the models.
+
+Some breeds can barely be separated from a photograph: the poodle and schnauzer varieties differ mainly in height, and a 224×224 image gives no sense of scale. These classes are among the weakest for the custom CNN, and they are also the groups merged in the simplified condition. Photographs with more than one dog (6.60 per cent) produce errors that standard metrics count as wrong even when the predicted breed is present, as in a schipperke photograph classified as a collie (Figure 6). 
+P112 [Normal]: 
+P113 [Subtitle]: 6.3 What the comparison supports 
+P114 [Normal]: One way to read the 34.19-point gap is in two steps: pretraining at the same size added 13.69 points (custom CNN to MobileNetV3-Large), and moving to larger, newer architectures added a further 20.50 (MobileNetV3-Large to Swin-T).  This should not be read as transfer learning being worth a fixed share of the gap, because the benefit of pretraining is likely to grow with model size, and a transformer trained from scratch on this little data would probably perform far worse than the custom CNN. MobileNetV3-Large also differs from the custom CNN in architecture, so the 13.69 points reflect pretraining and a more refined design together. Even so, MobileNetV3-Large reused settings designed for EfficientNetV2-S and trained for only 5 epochs, so its result is unlikely to overstate the benefit of pretraining. 
+P115 [Normal]: Since Stanford Dogs comes from ImageNet, the pretrained models may have encountered some test photographs before (Section 2.1). The size of this effect was not measured, so the pretrained scores should be treated as possibly optimistic. Transfer learning remains standard and useful practice, and the point is only that on this dataset its scores need to be read with care.
+P116 [Subtitle]: 6.4 Limitations
+P117 [Normal]: Each model was trained once, so differences smaller than about 1.2 points may be noise.
+P118 [Normal]: The pretrained models trained for only 5 epochs and may still have been improving.
+P119 [Normal]: Possible overlap between the ImageNet pretraining data, and the test set was not measured.
+P120 [Normal]: The split did not keep duplicates together, so leakage was measured rather than prevented.
+P121 [Normal]: Contradictory labels and photographs with several dogs limit the accuracy any model can reach.
+P122 [Normal]: Photographs were downscaled before publication and distorted by square resizing.
+P123 [Normal]: The label audit covered only 100 photographs and was carried out by non-experts.
+P124 [Normal]: Models ran on different GPUs, so training times are not directly comparable.
+P125 [Heading 1]: Section 7, Conclusion
+P126 [Subtitle]: Findings
+P127 [Normal]: This project compared a custom CNN, EfficientNetV2-S and Swin-T, with MobileNetV3-Large as a size-matched control, on the 120-class Stanford Dogs task. The pretrained models clearly outperformed the custom CNN, with Swin-T reaching 88.03 per cent top-1 accuracy against 53.84 per cent, and pretraining at the same model size added 13.69 points. The dataset audit found that leakage made almost no difference, but that inconsistent labels limit how accurate any model can be.
+P128 [Normal]: Swin-T is recommended, as it achieved the highest accuracy and macro F1 of the models tested. EfficientNetV2-S is a reasonable alternative where a convolutional model is preferred, at a cost of about 5 points. Future work should evaluate the models on a separately collected test set to remove any overlap with ImageNet. Training Swin-T from scratch would show directly how much pretraining matters for a transformer. 
+P129 [Normal]: 
+P130 [Normal]: 
+P131 [Heading 1]: References
+P132 [Normal]: DENG, J., DONG, W., SOCHER, R., LI, L.-J., LI, K. & FEI-FEI, L. 2009. ImageNet: a large-scale hierarchical image database. Paper presented at the IEEE Conference on Computer Vision and Pattern Recognition, Miami, FL.
+P133 [Normal]: DOSOVITSKIY, A., BEYER, L., KOLESNIKOV, A., WEISSENBORN, D., ZHAI, X., UNTERTHINER, T., DEHGHANI, M., MINDERER, M., HEIGOLD, G., GELLY, S., USZKOREIT, J. & HOULSBY, N. 2021. An image is worth 16x16 words: transformers for image recognition at scale. Paper presented at the International Conference on Learning Representations.
+P134 [Normal]: HE, K., ZHANG, X., REN, S. & SUN, J. 2015. Delving deep into rectifiers: surpassing human-level performance on ImageNet classification. Paper presented at the IEEE International Conference on Computer Vision, Santiago.
+P135 [Normal]: HOWARD, A., SANDLER, M., CHU, G., CHEN, L.-C., CHEN, B., TAN, M., WANG, W., ZHU, Y., PANG, R., VASUDEVAN, V., LE, Q.V. & ADAM, H. 2019. Searching for MobileNetV3. Paper presented at the IEEE International Conference on Computer Vision, Seoul.
+P136 [Normal]: IOFFE, S. & SZEGEDY, C. 2015. Batch normalization: accelerating deep network training by reducing internal covariate shift. Paper presented at the International Conference on Machine Learning, Lille.
+P137 [Normal]: KHOSLA, A., JAYADEVAPRAKASH, N., YAO, B. & FEI-FEI, L. 2011. Novel dataset for fine-grained image categorization. Paper presented at the First Workshop on Fine-Grained Visual Categorization, IEEE Conference on Computer Vision and Pattern Recognition, Colorado Springs, CO.
+P138 [Normal]: LIU, Z., LIN, Y., CAO, Y., HU, H., WEI, Y., ZHANG, Z., LIN, S. & GUO, B. 2021. Swin Transformer: hierarchical vision transformer using shifted windows. Paper presented at the IEEE International Conference on Computer Vision, Montreal.
+P139 [Normal]: LOSHCHILOV, I. & HUTTER, F. 2019. Decoupled weight decay regularization. Paper presented at the International Conference on Learning Representations, New Orleans, LA.
+P140 [Normal]: PASZKE, A., GROSS, S., MASSA, F., LERER, A., BRADBURY, J., CHANAN, G., KILLEEN, T., LIN, Z., GIMELSHEIN, N., ANTIGA, L., DESMAISON, A., KOPF, A., YANG, E., DEVITO, Z., RAISON, M., TEJANI, A., CHILAMKURTHY, S., STEINER, B., FANG, L., BAI, J. & CHINTALA, S. 2019. PyTorch: an imperative style, high-performance deep learning library. Paper presented at Advances in Neural Information Processing Systems, Vancouver.
+P141 [Normal]: PYTORCH. 2026. torchvision models documentation. [Online.] Available: https://pytorch.org/vision/stable/models.html [Accessed: 18 October 2026.]
+P142 [Normal]: SIMONYAN, K. & ZISSERMAN, A. 2015. Very deep convolutional networks for large-scale image recognition. Paper presented at the International Conference on Learning Representations, San Diego, CA.
+P143 [Normal]: TAN, M. & LE, Q.V. 2021. EfficientNetV2: smaller models and faster training. Paper presented at the International Conference on Machine Learning.
+P144 [Heading 1]: Appendix A: Per-class results
+P145 [Normal]: Precision, recall and F1 for all 120 breeds, for every model, are provided as CSV files in the project repository rather than reproduced here, since the full tables run to several pages. For the custom CNN see Lindani_Model/results/runs/iter2_deeper/eval_test/per_class_metrics.csv, for MobileNetV3-Large see Lindani_Model/mobilenet/results/runs/mobilenet_unclean/eval_test/per_class_metrics.csv, and for the other two models the equivalent files in JP_Model and Sulaiman_Model. Appendices do not count towards the page limit.
+P146 [Normal]: 
+P147 [Normal]: 
+P148 [Normal]: 
+P149 [Normal]: 
+P150 [Normal]: 
+P151 [Normal]: 
+P152 [Normal]: 
+P153 [Normal]: 
+P154 [Normal]: 
+P155 [Normal]: 
+P156 [Normal]: 
+
+--- TABLE 0 ---
+Row 0: ['Measure', 'Value']
+Row 1: ['Photographs', '20,580']
+Row 2: ['Breeds (classes)', '120']
+Row 3: ['Photographs per breed', '148 (redbone) to 252 (Maltese dog)']
+Row 4: ['Mean, median per breed', '171.5, 159.5']
+Row 5: ['Largest to smallest class ratio', '1.70 to 1']
+Row 6: ['Median image size', '500 × 375 pixels']
+Row 7: ['Smaller than 224 pixels on one side', '1,577 (7.66%)']
+Row 8: ['Median share of frame occupied by the dog', '55.3%']
+Row 9: ['Photographs with more than one dog', '6.60%']
+
+--- TABLE 1 ---
+Row 0: ['Condition', 'Classes', 'Training', 'Validation', 'Test']
+Row 1: ['Original (120 class)', '120', '14,355', '3,025', '3,200']
+Row 2: ['Simplified (114 class)', '114', '14,257', '2,989', '3,164']
+Row 3: ['Difference', '4 groups merged', '98 removed', '36 removed', '36 removed']
+
+--- TABLE 2 ---
+Row 0: ['Model', 'Family', 'Pretrained weights', 'Parameters', 'Trainable in phase 2', 'Role']
+Row 1: ['Custom CNN', 'VGG-style CNN', 'None', '4,581,784', 'All (from scratch)', 'Baseline, no pretraining']
+Row 2: ['EfficientNetV2-S', 'EfficientNet', 'ImageNet-1K', '20,331,208', '74.0%', 'Efficient CNN']
+Row 3: ['Swin-T', 'Swin Transformer', 'ImageNet-1K V1', '27,611,634', 'About 56%', 'Transformer']
+Row 4: ['MobileNetV3-Large', 'MobileNet', 'ImageNet-1K V1', '4,355,752', '72.0%', 'Size-matched control']
+
+--- TABLE 3 ---
+Row 0: ['Setting', 'Pretrained models', 'Custom CNN']
+Row 1: ['Optimiser', 'AdamW, weight decay 0.01', 'AdamW, weight decay 1e-4']
+Row 2: ['Learning rate', '3e-4 (phase 1), 1e-5 (phase 2)', '1e-3, cosine decay']
+Row 3: ['Epochs', '2 + 3', 'Up to 60, early stopping (patience 5)']
+Row 4: ['Loss', 'Cross-entropy, label smoothing 0.1', 'Cross-entropy']
+Row 5: ['Batch size', '32', '64']
+Row 6: ['Mixed precision, seed', 'Yes, 42', 'Yes, 42']
+
+--- TABLE 4 ---
+Row 0: ['Model', 'GPU', 'Training time']
+Row 1: ['Custom CNN', 'Tesla T4 (Kaggle), 14.6 GB', '64.7 min (59 epochs)']
+Row 2: ['EfficientNetV2-S', 'RTX 4050 Laptop, 8 GB', '14.7 min']
+Row 3: ['Swin-T', 'RTX 4060 Laptop, 8 GB', '9.1 min']
+Row 4: ['MobileNetV3-Large', 'RTX 4050 Laptop, 8 GB', '13.87 min']
+
+--- TABLE 5 ---
+Row 0: ['Run', 'Change', 'Val macro F1', 'Train−val gap']
+Row 1: ['1', 'Initial design', '0.4969', '15.8']
+Row 2: ['2A', 'Stronger regularisation', '0.4911', '8.9']
+Row 3: ['2B', 'Extra convolution in blocks 4 and 5', '0.5649', '33.0']
+Row 4: ['3A', '2B + stronger regularisation', '0.5602', '27.2']
+Row 5: ['3B', '2B over 120 epochs', '0.5270', '23.9']
+
+--- TABLE 6 ---
+Row 0: ['Model', 'Params (M)', 'Top-1', 'Top-5', 'Macro F1', 'Clean test top-1 (3,166)', 'Top-1, 114 classes']
+Row 1: ['Custom CNN', '4.58', '53.84%', '84.78%', '0.532', '53.63%', 'Not run']
+Row 2: ['MobileNetV3-Large', '4.36', '67.53%', '91.75%', '0.671', 'Not computed', '68.74%']
+Row 3: ['EfficientNetV2-S', '20.33', '83.12%', '97.75%', '0.825', '83.25%', '84.54%']
+Row 4: ['Swin-T', '27.61', '88.03%', '99.31%', '0.875', '88.21%', '89.92%']
+
+--- TABLE 7 ---
+Row 0: ['Custom CNN', 'F1', 'MobileNetV3-Large', 'F1', 'Swin-T', 'F1']
+Row 1: ['Miniature poodle', '0.195', 'Rhodesian ridgeback', '0.286', 'Eskimo dog', '0.276']
+Row 2: ['Am. Staffordshire terrier', '0.208', 'Miniature poodle', '0.294', 'Collie', '0.303']
+Row 3: ['Eskimo dog', '0.208', 'Collie', '0.316', 'Lhasa', '0.480']
+Row 4: ['Standard schnauzer', '0.227', 'Lhasa', '0.392', '', '']
+Row 5: ['Miniature schnauzer', '0.233', 'Redbone', '0.394', '', '']

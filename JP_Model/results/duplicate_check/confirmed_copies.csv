@@ -1,0 +1,174 @@
+photo_a,photo_b,breed_a,breed_b,pile_a,pile_b,dhash_dist,phash_dist,exact,same_breed,crosses_piles,category
+n02085782-Japanese_spaniel/n02085782_186.jpg,n02086646-Blenheim_spaniel/n02086646_172.jpg,Japanese Spaniel,Blenheim Spaniel,val,train,0,0,True,False,True,label_conflict
+n02085782-Japanese_spaniel/n02085782_2459.jpg,n02097474-Tibetan_terrier/n02097474_1962.jpg,Japanese Spaniel,Tibetan Terrier,train,train,0,0,True,False,False,label_conflict
+n02085782-Japanese_spaniel/n02085782_2655.jpg,n02085782-Japanese_spaniel/n02085782_2796.jpg,Japanese Spaniel,Japanese Spaniel,train,train,0,0,True,True,False,same_split_duplicate
+n02085782-Japanese_spaniel/n02085782_313.jpg,n02086646-Blenheim_spaniel/n02086646_280.jpg,Japanese Spaniel,Blenheim Spaniel,train,train,0,0,True,False,False,label_conflict
+n02085782-Japanese_spaniel/n02085782_381.jpg,n02102040-English_springer/n02102040_639.jpg,Japanese Spaniel,English Springer,train,train,0,0,True,False,False,label_conflict
+n02085782-Japanese_spaniel/n02085782_50.jpg,n02086910-papillon/n02086910_103.jpg,Japanese Spaniel,Papillon,train,train,0,0,True,False,False,label_conflict
+n02086240-Shih-Tzu/n02086240_3921.jpg,n02097474-Tibetan_terrier/n02097474_7300.jpg,Shih-Tzu,Tibetan Terrier,train,train,0,0,True,False,False,label_conflict
+n02086646-Blenheim_spaniel/n02086646_1445.jpg,n02086646-Blenheim_spaniel/n02086646_422.jpg,Blenheim Spaniel,Blenheim Spaniel,train,train,0,0,True,True,False,same_split_duplicate
+n02087046-toy_terrier/n02087046_2419.jpg,n02087046-toy_terrier/n02087046_6003.jpg,Toy Terrier,Toy Terrier,val,train,4,8,False,True,True,cross_split_leak
+n02088094-Afghan_hound/n02088094_1270.jpg,n02088094-Afghan_hound/n02088094_3989.jpg,Afghan Hound,Afghan Hound,train,val,4,6,False,True,True,cross_split_leak
+n02088466-bloodhound/n02088466_7015.jpg,n02088466-bloodhound/n02088466_8078.jpg,Bloodhound,Bloodhound,train,train,0,0,True,True,False,same_split_duplicate
+n02088466-bloodhound/n02088466_7462.jpg,n02090379-redbone/n02090379_3300.jpg,Bloodhound,Redbone,val,train,0,0,True,False,True,label_conflict
+n02088466-bloodhound/n02088466_9023.jpg,n02088466-bloodhound/n02088466_9356.jpg,Bloodhound,Bloodhound,train,val,1,0,False,True,True,cross_split_leak
+n02088632-bluetick/n02088632_4334.jpg,n02088632-bluetick/n02088632_4584.jpg,Bluetick,Bluetick,train,train,0,0,True,True,False,same_split_duplicate
+n02088632-bluetick/n02088632_4360.jpg,n02088632-bluetick/n02088632_600.jpg,Bluetick,Bluetick,train,train,0,0,True,True,False,same_split_duplicate
+n02088632-bluetick/n02088632_819.jpg,n02088632-bluetick/n02088632_982.jpg,Bluetick,Bluetick,train,train,0,0,True,True,False,same_split_duplicate
+n02089078-black-and-tan_coonhound/n02089078_19.jpg,n02089078-black-and-tan_coonhound/n02089078_2417.jpg,Black-And-Tan Coonhound,Black-And-Tan Coonhound,val,val,1,4,False,True,False,same_split_duplicate
+n02089078-black-and-tan_coonhound/n02089078_19.jpg,n02089078-black-and-tan_coonhound/n02089078_3078.jpg,Black-And-Tan Coonhound,Black-And-Tan Coonhound,val,train,0,4,False,True,True,cross_split_leak
+n02089078-black-and-tan_coonhound/n02089078_2417.jpg,n02089078-black-and-tan_coonhound/n02089078_3078.jpg,Black-And-Tan Coonhound,Black-And-Tan Coonhound,val,train,1,2,False,True,True,cross_split_leak
+n02089867-Walker_hound/n02089867_1882.jpg,n02089973-English_foxhound/n02089973_2093.jpg,Walker Hound,English Foxhound,train,train,0,0,True,False,False,label_conflict
+n02089867-Walker_hound/n02089867_2382.jpg,n02089867-Walker_hound/n02089867_24.jpg,Walker Hound,Walker Hound,train,test,2,0,False,True,True,cross_split_leak
+n02089867-Walker_hound/n02089867_2653.jpg,n02089973-English_foxhound/n02089973_2905.jpg,Walker Hound,English Foxhound,train,train,1,0,False,False,False,label_conflict
+n02089867-Walker_hound/n02089867_2880.jpg,n02089973-English_foxhound/n02089973_3160.jpg,Walker Hound,English Foxhound,test,train,0,2,False,False,True,label_conflict
+n02089867-Walker_hound/n02089867_3108.jpg,n02089867-Walker_hound/n02089867_3177.jpg,Walker Hound,Walker Hound,test,train,0,0,True,True,True,cross_split_leak
+n02089867-Walker_hound/n02089867_3608.jpg,n02089973-English_foxhound/n02089973_1076.jpg,Walker Hound,English Foxhound,test,test,2,2,False,False,False,label_conflict
+n02089867-Walker_hound/n02089867_3840.jpg,n02089973-English_foxhound/n02089973_2211.jpg,Walker Hound,English Foxhound,val,val,0,0,True,False,False,label_conflict
+n02089867-Walker_hound/n02089867_4001.jpg,n02089973-English_foxhound/n02089973_1957.jpg,Walker Hound,English Foxhound,val,val,0,0,True,False,False,label_conflict
+n02089973-English_foxhound/n02089973_2045.jpg,n02089973-English_foxhound/n02089973_2608.jpg,English Foxhound,English Foxhound,train,train,4,2,False,True,False,same_split_duplicate
+n02090379-redbone/n02090379_4667.jpg,n02090379-redbone/n02090379_855.jpg,Redbone,Redbone,test,train,0,0,True,True,True,cross_split_leak
+n02091134-whippet/n02091134_16337.jpg,n02105251-briard/n02105251_4659.jpg,Whippet,Briard,train,train,5,6,False,False,False,label_conflict
+n02091134-whippet/n02091134_16337.jpg,n02105251-briard/n02105251_7647.jpg,Whippet,Briard,train,train,0,0,True,False,False,label_conflict
+n02091635-otterhound/n02091635_4698.jpg,n02091635-otterhound/n02091635_873.jpg,Otterhound,Otterhound,train,test,1,2,False,True,True,cross_split_leak
+n02091831-Saluki/n02091831_13767.jpg,n02091831-Saluki/n02091831_6323.jpg,Saluki,Saluki,val,train,0,0,True,True,True,cross_split_leak
+n02092002-Scottish_deerhound/n02092002_1767.jpg,n02092002-Scottish_deerhound/n02092002_4745.jpg,Scottish Deerhound,Scottish Deerhound,train,train,0,0,True,True,False,same_split_duplicate
+n02092002-Scottish_deerhound/n02092002_2448.jpg,n02092002-Scottish_deerhound/n02092002_6503.jpg,Scottish Deerhound,Scottish Deerhound,test,train,0,0,True,True,True,cross_split_leak
+n02092002-Scottish_deerhound/n02092002_5504.jpg,n02092002-Scottish_deerhound/n02092002_5557.jpg,Scottish Deerhound,Scottish Deerhound,train,train,0,0,True,True,False,same_split_duplicate
+n02093256-Staffordshire_bullterrier/n02093256_4090.jpg,n02093428-American_Staffordshire_terrier/n02093428_5635.jpg,Staffordshire Bullterrier,American Staffordshire Terrier,test,val,0,0,True,False,True,label_conflict
+n02093256-Staffordshire_bullterrier/n02093256_5988.jpg,n02093428-American_Staffordshire_terrier/n02093428_1378.jpg,Staffordshire Bullterrier,American Staffordshire Terrier,val,test,0,0,True,False,True,label_conflict
+n02093256-Staffordshire_bullterrier/n02093256_6177.jpg,n02093428-American_Staffordshire_terrier/n02093428_8454.jpg,Staffordshire Bullterrier,American Staffordshire Terrier,train,train,0,0,True,False,False,label_conflict
+n02093647-Bedlington_terrier/n02093647_1766.jpg,n02093647-Bedlington_terrier/n02093647_3277.jpg,Bedlington Terrier,Bedlington Terrier,train,train,0,0,True,True,False,same_split_duplicate
+n02093647-Bedlington_terrier/n02093647_2585.jpg,n02093647-Bedlington_terrier/n02093647_518.jpg,Bedlington Terrier,Bedlington Terrier,train,test,0,0,True,True,True,cross_split_leak
+n02093647-Bedlington_terrier/n02093647_2626.jpg,n02093647-Bedlington_terrier/n02093647_2687.jpg,Bedlington Terrier,Bedlington Terrier,val,test,0,0,True,True,True,cross_split_leak
+n02093859-Kerry_blue_terrier/n02093859_1697.jpg,n02095314-wire-haired_fox_terrier/n02095314_3495.jpg,Kerry Blue Terrier,Wire-Haired Fox Terrier,train,train,0,0,True,False,False,label_conflict
+n02093859-Kerry_blue_terrier/n02093859_2579.jpg,n02093859-Kerry_blue_terrier/n02093859_998.jpg,Kerry Blue Terrier,Kerry Blue Terrier,train,train,5,4,False,True,False,same_split_duplicate
+n02093859-Kerry_blue_terrier/n02093859_3209.jpg,n02093859-Kerry_blue_terrier/n02093859_324.jpg,Kerry Blue Terrier,Kerry Blue Terrier,val,train,0,0,True,True,True,cross_split_leak
+n02093991-Irish_terrier/n02093991_114.jpg,n02095314-wire-haired_fox_terrier/n02095314_80.jpg,Irish Terrier,Wire-Haired Fox Terrier,test,test,0,0,True,False,False,label_conflict
+n02093991-Irish_terrier/n02093991_2923.jpg,n02093991-Irish_terrier/n02093991_4670.jpg,Irish Terrier,Irish Terrier,test,train,0,0,True,True,True,cross_split_leak
+n02094114-Norfolk_terrier/n02094114_1020.jpg,n02094114-Norfolk_terrier/n02094114_745.jpg,Norfolk Terrier,Norfolk Terrier,train,train,2,6,False,True,False,same_split_duplicate
+n02094114-Norfolk_terrier/n02094114_1020.jpg,n02094258-Norwich_terrier/n02094258_880.jpg,Norfolk Terrier,Norwich Terrier,train,train,0,0,True,False,False,label_conflict
+n02094114-Norfolk_terrier/n02094114_1676.jpg,n02094114-Norfolk_terrier/n02094114_3172.jpg,Norfolk Terrier,Norfolk Terrier,train,train,4,8,False,True,False,same_split_duplicate
+n02094114-Norfolk_terrier/n02094114_1676.jpg,n02094114-Norfolk_terrier/n02094114_754.jpg,Norfolk Terrier,Norfolk Terrier,train,train,5,4,False,True,False,same_split_duplicate
+n02094114-Norfolk_terrier/n02094114_1696.jpg,n02094258-Norwich_terrier/n02094258_1408.jpg,Norfolk Terrier,Norwich Terrier,train,train,0,0,True,False,False,label_conflict
+n02094114-Norfolk_terrier/n02094114_745.jpg,n02094258-Norwich_terrier/n02094258_880.jpg,Norfolk Terrier,Norwich Terrier,train,train,2,6,False,False,False,label_conflict
+n02095314-wire-haired_fox_terrier/n02095314_1820.jpg,n02095314-wire-haired_fox_terrier/n02095314_1894.jpg,Wire-Haired Fox Terrier,Wire-Haired Fox Terrier,val,val,1,4,False,True,False,same_split_duplicate
+n02095314-wire-haired_fox_terrier/n02095314_2038.jpg,n02095570-Lakeland_terrier/n02095570_95.jpg,Wire-Haired Fox Terrier,Lakeland Terrier,train,train,0,0,True,False,False,label_conflict
+n02095314-wire-haired_fox_terrier/n02095314_2754.jpg,n02095570-Lakeland_terrier/n02095570_3101.jpg,Wire-Haired Fox Terrier,Lakeland Terrier,train,train,0,0,True,False,False,label_conflict
+n02095314-wire-haired_fox_terrier/n02095314_2964.jpg,n02095570-Lakeland_terrier/n02095570_5404.jpg,Wire-Haired Fox Terrier,Lakeland Terrier,train,train,0,0,True,False,False,label_conflict
+n02095314-wire-haired_fox_terrier/n02095314_3166.jpg,n02095889-Sealyham_terrier/n02095889_1820.jpg,Wire-Haired Fox Terrier,Sealyham Terrier,train,train,1,0,False,False,False,label_conflict
+n02095314-wire-haired_fox_terrier/n02095314_3189.jpg,n02095314-wire-haired_fox_terrier/n02095314_3227.jpg,Wire-Haired Fox Terrier,Wire-Haired Fox Terrier,train,val,0,0,True,True,True,cross_split_leak
+n02095314-wire-haired_fox_terrier/n02095314_3509.jpg,n02095570-Lakeland_terrier/n02095570_6443.jpg,Wire-Haired Fox Terrier,Lakeland Terrier,train,train,0,0,True,False,False,label_conflict
+n02095570-Lakeland_terrier/n02095570_1482.jpg,n02095570-Lakeland_terrier/n02095570_845.jpg,Lakeland Terrier,Lakeland Terrier,train,val,3,4,False,True,True,cross_split_leak
+n02095570-Lakeland_terrier/n02095570_1575.jpg,n02095889-Sealyham_terrier/n02095889_1582.jpg,Lakeland Terrier,Sealyham Terrier,train,val,0,0,True,False,True,label_conflict
+n02095570-Lakeland_terrier/n02095570_2418.jpg,n02095570-Lakeland_terrier/n02095570_3711.jpg,Lakeland Terrier,Lakeland Terrier,test,test,4,8,False,True,False,same_split_duplicate
+n02095889-Sealyham_terrier/n02095889_1019.jpg,n02095889-Sealyham_terrier/n02095889_47.jpg,Sealyham Terrier,Sealyham Terrier,train,test,0,0,True,True,True,cross_split_leak
+n02095889-Sealyham_terrier/n02095889_2031.jpg,n02095889-Sealyham_terrier/n02095889_5011.jpg,Sealyham Terrier,Sealyham Terrier,test,train,0,0,True,True,True,cross_split_leak
+n02095889-Sealyham_terrier/n02095889_2134.jpg,n02095889-Sealyham_terrier/n02095889_2471.jpg,Sealyham Terrier,Sealyham Terrier,train,test,0,0,True,True,True,cross_split_leak
+n02095889-Sealyham_terrier/n02095889_2162.jpg,n02095889-Sealyham_terrier/n02095889_4649.jpg,Sealyham Terrier,Sealyham Terrier,val,train,5,4,False,True,True,cross_split_leak
+n02095889-Sealyham_terrier/n02095889_3354.jpg,n02095889-Sealyham_terrier/n02095889_6458.jpg,Sealyham Terrier,Sealyham Terrier,train,train,0,0,True,True,False,same_split_duplicate
+n02096437-Dandie_Dinmont/n02096437_2580.jpg,n02096437-Dandie_Dinmont/n02096437_3112.jpg,Dandie Dinmont,Dandie Dinmont,train,val,0,6,False,True,True,cross_split_leak
+n02097047-miniature_schnauzer/n02097047_2426.jpg,n02097209-standard_schnauzer/n02097209_1170.jpg,Miniature Schnauzer,Standard Schnauzer,train,test,1,0,False,False,True,label_conflict
+n02097047-miniature_schnauzer/n02097047_951.jpg,n02097209-standard_schnauzer/n02097209_583.jpg,Miniature Schnauzer,Standard Schnauzer,train,train,0,0,True,False,False,label_conflict
+n02097130-giant_schnauzer/n02097130_4193.jpg,n02097130-giant_schnauzer/n02097130_5576.jpg,Giant Schnauzer,Giant Schnauzer,train,train,0,0,True,True,False,same_split_duplicate
+n02097130-giant_schnauzer/n02097130_857.jpg,n02097209-standard_schnauzer/n02097209_585.jpg,Giant Schnauzer,Standard Schnauzer,test,train,0,0,True,False,True,label_conflict
+n02097209-standard_schnauzer/n02097209_2992.jpg,n02097209-standard_schnauzer/n02097209_3831.jpg,Standard Schnauzer,Standard Schnauzer,test,train,3,6,False,True,True,cross_split_leak
+n02097298-Scotch_terrier/n02097298_2083.jpg,n02098286-West_Highland_white_terrier/n02098286_830.jpg,Scotch Terrier,West Highland White Terrier,test,test,0,0,True,False,False,label_conflict
+n02097474-Tibetan_terrier/n02097474_2113.jpg,n02097474-Tibetan_terrier/n02097474_4287.jpg,Tibetan Terrier,Tibetan Terrier,train,train,5,6,False,True,False,same_split_duplicate
+n02097474-Tibetan_terrier/n02097474_4907.jpg,n02098105-soft-coated_wheaten_terrier/n02098105_2456.jpg,Tibetan Terrier,Soft-Coated Wheaten Terrier,train,train,0,0,True,False,False,label_conflict
+n02097474-Tibetan_terrier/n02097474_494.jpg,n02097474-Tibetan_terrier/n02097474_6306.jpg,Tibetan Terrier,Tibetan Terrier,test,train,4,10,False,True,True,cross_split_leak
+n02097658-silky_terrier/n02097658_4201.jpg,n02097658-silky_terrier/n02097658_8018.jpg,Silky Terrier,Silky Terrier,train,train,0,0,True,True,False,same_split_duplicate
+n02098105-soft-coated_wheaten_terrier/n02098105_1090.jpg,n02098105-soft-coated_wheaten_terrier/n02098105_2945.jpg,Soft-Coated Wheaten Terrier,Soft-Coated Wheaten Terrier,train,val,0,0,True,True,True,cross_split_leak
+n02099429-curly-coated_retriever/n02099429_2263.jpg,n02099429-curly-coated_retriever/n02099429_3513.jpg,Curly-Coated Retriever,Curly-Coated Retriever,train,train,0,0,True,True,False,same_split_duplicate
+n02099712-Labrador_retriever/n02099712_5689.jpg,n02099712-Labrador_retriever/n02099712_6619.jpg,Labrador Retriever,Labrador Retriever,train,val,5,6,False,True,True,cross_split_leak
+n02100735-English_setter/n02100735_2684.jpg,n02100735-English_setter/n02100735_5988.jpg,English Setter,English Setter,train,train,0,0,True,True,False,same_split_duplicate
+n02101556-clumber/n02101556_4965.jpg,n02101556-clumber/n02101556_4994.jpg,Clumber,Clumber,train,test,0,4,False,True,True,cross_split_leak
+n02101556-clumber/n02101556_5512.jpg,n02101556-clumber/n02101556_5903.jpg,Clumber,Clumber,train,train,0,0,True,True,False,same_split_duplicate
+n02102177-Welsh_springer_spaniel/n02102177_1999.jpg,n02102177-Welsh_springer_spaniel/n02102177_2388.jpg,Welsh Springer Spaniel,Welsh Springer Spaniel,train,val,0,0,True,True,True,cross_split_leak
+n02102480-Sussex_spaniel/n02102480_101.jpg,n02102480-Sussex_spaniel/n02102480_6229.jpg,Sussex Spaniel,Sussex Spaniel,test,train,0,0,True,True,True,cross_split_leak
+n02102480-Sussex_spaniel/n02102480_2041.jpg,n02102480-Sussex_spaniel/n02102480_3436.jpg,Sussex Spaniel,Sussex Spaniel,train,train,0,0,True,True,False,same_split_duplicate
+n02102480-Sussex_spaniel/n02102480_4322.jpg,n02102480-Sussex_spaniel/n02102480_6593.jpg,Sussex Spaniel,Sussex Spaniel,train,train,5,4,False,True,False,same_split_duplicate
+n02102480-Sussex_spaniel/n02102480_4373.jpg,n02102480-Sussex_spaniel/n02102480_5651.jpg,Sussex Spaniel,Sussex Spaniel,train,test,4,4,False,True,True,cross_split_leak
+n02102480-Sussex_spaniel/n02102480_5031.jpg,n02102480-Sussex_spaniel/n02102480_5734.jpg,Sussex Spaniel,Sussex Spaniel,train,test,4,2,False,True,True,cross_split_leak
+n02102480-Sussex_spaniel/n02102480_5031.jpg,n02102480-Sussex_spaniel/n02102480_8240.jpg,Sussex Spaniel,Sussex Spaniel,train,val,5,8,False,True,True,cross_split_leak
+n02102480-Sussex_spaniel/n02102480_5158.jpg,n02102480-Sussex_spaniel/n02102480_6027.jpg,Sussex Spaniel,Sussex Spaniel,val,train,0,4,False,True,True,cross_split_leak
+n02102480-Sussex_spaniel/n02102480_5734.jpg,n02102480-Sussex_spaniel/n02102480_8240.jpg,Sussex Spaniel,Sussex Spaniel,test,val,1,10,False,True,True,cross_split_leak
+n02102973-Irish_water_spaniel/n02102973_1615.jpg,n02102973-Irish_water_spaniel/n02102973_1714.jpg,Irish Water Spaniel,Irish Water Spaniel,train,train,0,0,True,True,False,same_split_duplicate
+n02102973-Irish_water_spaniel/n02102973_1723.jpg,n02102973-Irish_water_spaniel/n02102973_3564.jpg,Irish Water Spaniel,Irish Water Spaniel,train,train,0,2,False,True,False,same_split_duplicate
+n02102973-Irish_water_spaniel/n02102973_2442.jpg,n02102973-Irish_water_spaniel/n02102973_541.jpg,Irish Water Spaniel,Irish Water Spaniel,val,train,0,0,True,True,True,cross_split_leak
+n02102973-Irish_water_spaniel/n02102973_2645.jpg,n02102973-Irish_water_spaniel/n02102973_4469.jpg,Irish Water Spaniel,Irish Water Spaniel,val,train,0,0,True,True,True,cross_split_leak
+n02104029-kuvasz/n02104029_2417.jpg,n02104029-kuvasz/n02104029_690.jpg,Kuvasz,Kuvasz,train,train,3,6,False,True,False,same_split_duplicate
+n02104029-kuvasz/n02104029_3526.jpg,n02104029-kuvasz/n02104029_4392.jpg,Kuvasz,Kuvasz,train,train,3,2,False,True,False,same_split_duplicate
+n02104365-schipperke/n02104365_4190.jpg,n02104365-schipperke/n02104365_5670.jpg,Schipperke,Schipperke,train,train,0,0,True,True,False,same_split_duplicate
+n02104365-schipperke/n02104365_5740.jpg,n02104365-schipperke/n02104365_7953.jpg,Schipperke,Schipperke,train,train,0,0,True,True,False,same_split_duplicate
+n02104365-schipperke/n02104365_9552.jpg,n02105056-groenendael/n02105056_2194.jpg,Schipperke,Groenendael,test,train,0,0,True,False,True,label_conflict
+n02105056-groenendael/n02105056_3499.jpg,n02105056-groenendael/n02105056_961.jpg,Groenendael,Groenendael,train,test,0,0,True,True,True,cross_split_leak
+n02105056-groenendael/n02105056_5700.jpg,n02105056-groenendael/n02105056_785.jpg,Groenendael,Groenendael,train,train,0,0,True,True,False,same_split_duplicate
+n02105162-malinois/n02105162_2079.jpg,n02105162-malinois/n02105162_6449.jpg,Malinois,Malinois,val,train,0,0,True,True,True,cross_split_leak
+n02105251-briard/n02105251_224.jpg,n02105251-briard/n02105251_8560.jpg,Briard,Briard,train,train,4,10,False,True,False,same_split_duplicate
+n02105251-briard/n02105251_4659.jpg,n02105251-briard/n02105251_7647.jpg,Briard,Briard,train,train,5,6,False,True,False,same_split_duplicate
+n02105251-briard/n02105251_4893.jpg,n02105251-briard/n02105251_7600.jpg,Briard,Briard,train,train,4,10,False,True,False,same_split_duplicate
+n02106030-collie/n02106030_10021.jpg,n02106166-Border_collie/n02106166_4107.jpg,Collie,Border Collie,train,train,0,0,True,False,False,label_conflict
+n02106030-collie/n02106030_14811.jpg,n02106166-Border_collie/n02106166_6084.jpg,Collie,Border Collie,train,train,0,0,True,False,False,label_conflict
+n02106030-collie/n02106030_15829.jpg,n02106166-Border_collie/n02106166_6512.jpg,Collie,Border Collie,train,train,0,0,True,False,False,label_conflict
+n02106030-collie/n02106030_16338.jpg,n02106166-Border_collie/n02106166_6710.jpg,Collie,Border Collie,val,train,0,0,True,False,True,label_conflict
+n02106030-collie/n02106030_2522.jpg,n02106166-Border_collie/n02106166_1031.jpg,Collie,Border Collie,test,train,0,0,True,False,True,label_conflict
+n02106030-collie/n02106030_873.jpg,n02106166-Border_collie/n02106166_346.jpg,Collie,Border Collie,train,val,0,0,True,False,True,label_conflict
+n02106382-Bouvier_des_Flandres/n02106382_1454.jpg,n02106382-Bouvier_des_Flandres/n02106382_2021.jpg,Bouvier Des Flandres,Bouvier Des Flandres,train,train,3,6,False,True,False,same_split_duplicate
+n02106382-Bouvier_des_Flandres/n02106382_29.jpg,n02106382-Bouvier_des_Flandres/n02106382_4291.jpg,Bouvier Des Flandres,Bouvier Des Flandres,train,train,0,0,True,True,False,same_split_duplicate
+n02106550-Rottweiler/n02106550_11693.jpg,n02106550-Rottweiler/n02106550_6074.jpg,Rottweiler,Rottweiler,train,test,5,6,False,True,True,cross_split_leak
+n02107574-Greater_Swiss_Mountain_dog/n02107574_1180.jpg,n02107574-Greater_Swiss_Mountain_dog/n02107574_1706.jpg,Greater Swiss Mountain Dog,Greater Swiss Mountain Dog,train,train,0,0,True,True,False,same_split_duplicate
+n02107574-Greater_Swiss_Mountain_dog/n02107574_2100.jpg,n02107574-Greater_Swiss_Mountain_dog/n02107574_870.jpg,Greater Swiss Mountain Dog,Greater Swiss Mountain Dog,train,train,0,0,True,True,False,same_split_duplicate
+n02107574-Greater_Swiss_Mountain_dog/n02107574_2325.jpg,n02107574-Greater_Swiss_Mountain_dog/n02107574_988.jpg,Greater Swiss Mountain Dog,Greater Swiss Mountain Dog,val,train,0,0,True,True,True,cross_split_leak
+n02107574-Greater_Swiss_Mountain_dog/n02107574_261.jpg,n02107574-Greater_Swiss_Mountain_dog/n02107574_910.jpg,Greater Swiss Mountain Dog,Greater Swiss Mountain Dog,train,val,1,2,False,True,True,cross_split_leak
+n02107683-Bernese_mountain_dog/n02107683_2881.jpg,n02107683-Bernese_mountain_dog/n02107683_570.jpg,Bernese Mountain Dog,Bernese Mountain Dog,test,test,1,6,False,True,False,same_split_duplicate
+n02107683-Bernese_mountain_dog/n02107683_5397.jpg,n02107908-Appenzeller/n02107908_3531.jpg,Bernese Mountain Dog,Appenzeller,train,train,0,0,True,False,False,label_conflict
+n02107683-Bernese_mountain_dog/n02107683_71.jpg,n02107908-Appenzeller/n02107908_47.jpg,Bernese Mountain Dog,Appenzeller,test,train,0,0,True,False,True,label_conflict
+n02107908-Appenzeller/n02107908_2608.jpg,n02107908-Appenzeller/n02107908_599.jpg,Appenzeller,Appenzeller,train,train,2,8,False,True,False,same_split_duplicate
+n02108000-EntleBucher/n02108000_2891.jpg,n02108000-EntleBucher/n02108000_331.jpg,Entlebucher,Entlebucher,val,train,0,0,True,True,True,cross_split_leak
+n02108000-EntleBucher/n02108000_3113.jpg,n02108000-EntleBucher/n02108000_3497.jpg,Entlebucher,Entlebucher,train,test,4,0,False,True,True,cross_split_leak
+n02108422-bull_mastiff/n02108422_1166.jpg,n02108422-bull_mastiff/n02108422_647.jpg,Bull Mastiff,Bull Mastiff,val,val,5,2,False,True,False,same_split_duplicate
+n02108551-Tibetan_mastiff/n02108551_4421.jpg,n02108551-Tibetan_mastiff/n02108551_728.jpg,Tibetan Mastiff,Tibetan Mastiff,test,train,0,0,True,True,True,cross_split_leak
+n02109525-Saint_Bernard/n02109525_1314.jpg,n02109525-Saint_Bernard/n02109525_7982.jpg,Saint Bernard,Saint Bernard,train,train,0,0,True,True,False,same_split_duplicate
+n02109961-Eskimo_dog/n02109961_2317.jpg,n02110185-Siberian_husky/n02110185_1614.jpg,Eskimo Dog,Siberian Husky,test,train,0,0,True,False,True,label_conflict
+n02109961-Eskimo_dog/n02109961_5924.jpg,n02110185-Siberian_husky/n02110185_4115.jpg,Eskimo Dog,Siberian Husky,test,train,0,0,True,False,True,label_conflict
+n02110627-affenpinscher/n02110627_11783.jpg,n02110627-affenpinscher/n02110627_12025.jpg,Affenpinscher,Affenpinscher,val,train,4,10,False,True,True,cross_split_leak
+n02110627-affenpinscher/n02110627_12272.jpg,n02110627-affenpinscher/n02110627_8621.jpg,Affenpinscher,Affenpinscher,train,train,0,2,False,True,False,same_split_duplicate
+n02110627-affenpinscher/n02110627_12431.jpg,n02110627-affenpinscher/n02110627_4433.jpg,Affenpinscher,Affenpinscher,val,test,4,4,False,True,True,cross_split_leak
+n02111129-Leonberg/n02111129_1115.jpg,n02111129-Leonberg/n02111129_4423.jpg,Leonberg,Leonberg,val,train,2,6,False,True,True,cross_split_leak
+n02111129-Leonberg/n02111129_1178.jpg,n02111129-Leonberg/n02111129_593.jpg,Leonberg,Leonberg,val,val,3,4,False,True,False,same_split_duplicate
+n02111129-Leonberg/n02111129_1832.jpg,n02111129-Leonberg/n02111129_253.jpg,Leonberg,Leonberg,train,train,3,4,False,True,False,same_split_duplicate
+n02111129-Leonberg/n02111129_1940.jpg,n02111129-Leonberg/n02111129_3884.jpg,Leonberg,Leonberg,train,train,4,2,False,True,False,same_split_duplicate
+n02111129-Leonberg/n02111129_2330.jpg,n02111129-Leonberg/n02111129_4903.jpg,Leonberg,Leonberg,train,train,4,6,False,True,False,same_split_duplicate
+n02111129-Leonberg/n02111129_3388.jpg,n02111129-Leonberg/n02111129_4792.jpg,Leonberg,Leonberg,val,train,3,0,False,True,True,cross_split_leak
+n02111129-Leonberg/n02111129_4017.jpg,n02111129-Leonberg/n02111129_571.jpg,Leonberg,Leonberg,train,train,3,4,False,True,False,same_split_duplicate
+n02111129-Leonberg/n02111129_571.jpg,n02111129-Leonberg/n02111129_976.jpg,Leonberg,Leonberg,train,val,4,4,False,True,True,cross_split_leak
+n02112706-Brabancon_griffon/n02112706_1202.jpg,n02112706-Brabancon_griffon/n02112706_2161.jpg,Brabancon Griffon,Brabancon Griffon,train,test,0,0,True,True,True,cross_split_leak
+n02112706-Brabancon_griffon/n02112706_1379.jpg,n02112706-Brabancon_griffon/n02112706_2191.jpg,Brabancon Griffon,Brabancon Griffon,val,val,0,0,True,True,False,same_split_duplicate
+n02112706-Brabancon_griffon/n02112706_1568.jpg,n02112706-Brabancon_griffon/n02112706_539.jpg,Brabancon Griffon,Brabancon Griffon,train,train,0,0,True,True,False,same_split_duplicate
+n02112706-Brabancon_griffon/n02112706_1833.jpg,n02112706-Brabancon_griffon/n02112706_2074.jpg,Brabancon Griffon,Brabancon Griffon,train,train,0,0,True,True,False,same_split_duplicate
+n02112706-Brabancon_griffon/n02112706_1882.jpg,n02112706-Brabancon_griffon/n02112706_2070.jpg,Brabancon Griffon,Brabancon Griffon,train,train,0,0,True,True,False,same_split_duplicate
+n02112706-Brabancon_griffon/n02112706_2550.jpg,n02112706-Brabancon_griffon/n02112706_420.jpg,Brabancon Griffon,Brabancon Griffon,train,train,0,0,True,True,False,same_split_duplicate
+n02112706-Brabancon_griffon/n02112706_62.jpg,n02112706-Brabancon_griffon/n02112706_866.jpg,Brabancon Griffon,Brabancon Griffon,train,test,0,0,True,True,True,cross_split_leak
+n02113186-Cardigan/n02113186_1030.jpg,n02113186-Cardigan/n02113186_11400.jpg,Cardigan,Cardigan,train,test,0,0,True,True,True,cross_split_leak
+n02113624-toy_poodle/n02113624_1804.jpg,n02113712-miniature_poodle/n02113712_1252.jpg,Toy Poodle,Miniature Poodle,train,train,0,0,True,False,False,label_conflict
+n02113624-toy_poodle/n02113624_2244.jpg,n02113712-miniature_poodle/n02113712_1546.jpg,Toy Poodle,Miniature Poodle,test,train,0,0,True,False,True,label_conflict
+n02113624-toy_poodle/n02113624_2258.jpg,n02113712-miniature_poodle/n02113712_1558.jpg,Toy Poodle,Miniature Poodle,val,train,0,0,True,False,True,label_conflict
+n02113712-miniature_poodle/n02113712_230.jpg,n02113799-standard_poodle/n02113799_254.jpg,Miniature Poodle,Standard Poodle,val,val,0,0,True,False,False,label_conflict
+n02113978-Mexican_hairless/n02113978_1069.jpg,n02113978-Mexican_hairless/n02113978_3474.jpg,Mexican Hairless,Mexican Hairless,train,train,0,0,True,True,False,same_split_duplicate
+n02113978-Mexican_hairless/n02113978_131.jpg,n02113978-Mexican_hairless/n02113978_3419.jpg,Mexican Hairless,Mexican Hairless,train,train,1,2,False,True,False,same_split_duplicate
+n02113978-Mexican_hairless/n02113978_1323.jpg,n02113978-Mexican_hairless/n02113978_737.jpg,Mexican Hairless,Mexican Hairless,test,train,0,0,True,True,True,cross_split_leak
+n02113978-Mexican_hairless/n02113978_1632.jpg,n02113978-Mexican_hairless/n02113978_2572.jpg,Mexican Hairless,Mexican Hairless,train,val,0,0,True,True,True,cross_split_leak
+n02113978-Mexican_hairless/n02113978_1956.jpg,n02113978-Mexican_hairless/n02113978_2167.jpg,Mexican Hairless,Mexican Hairless,train,train,2,0,False,True,False,same_split_duplicate
+n02113978-Mexican_hairless/n02113978_1956.jpg,n02113978-Mexican_hairless/n02113978_3134.jpg,Mexican Hairless,Mexican Hairless,train,train,1,2,False,True,False,same_split_duplicate
+n02113978-Mexican_hairless/n02113978_2141.jpg,n02113978-Mexican_hairless/n02113978_3832.jpg,Mexican Hairless,Mexican Hairless,val,train,0,0,True,True,True,cross_split_leak
+n02113978-Mexican_hairless/n02113978_2167.jpg,n02113978-Mexican_hairless/n02113978_3134.jpg,Mexican Hairless,Mexican Hairless,train,train,1,2,False,True,False,same_split_duplicate
+n02113978-Mexican_hairless/n02113978_3178.jpg,n02113978-Mexican_hairless/n02113978_530.jpg,Mexican Hairless,Mexican Hairless,train,train,0,0,True,True,False,same_split_duplicate
+n02113978-Mexican_hairless/n02113978_3921.jpg,n02113978-Mexican_hairless/n02113978_937.jpg,Mexican Hairless,Mexican Hairless,train,train,2,8,False,True,False,same_split_duplicate
+n02115641-dingo/n02115641_13565.jpg,n02115641-dingo/n02115641_6577.jpg,Dingo,Dingo,val,train,4,10,False,True,True,cross_split_leak
+n02115641-dingo/n02115641_2440.jpg,n02115913-dhole/n02115913_739.jpg,Dingo,Dhole,test,test,0,0,True,False,False,label_conflict
+n02115913-dhole/n02115913_1142.jpg,n02115913-dhole/n02115913_2029.jpg,Dhole,Dhole,test,train,0,0,True,True,True,cross_split_leak
+n02115913-dhole/n02115913_1552.jpg,n02115913-dhole/n02115913_3270.jpg,Dhole,Dhole,train,train,0,0,True,True,False,same_split_duplicate
+n02115913-dhole/n02115913_262.jpg,n02115913-dhole/n02115913_4032.jpg,Dhole,Dhole,train,train,0,0,True,True,False,same_split_duplicate
+n02115913-dhole/n02115913_4117.jpg,n02115913-dhole/n02115913_564.jpg,Dhole,Dhole,train,train,0,0,True,True,False,same_split_duplicate
+n02115913-dhole/n02115913_4119.jpg,n02115913-dhole/n02115913_750.jpg,Dhole,Dhole,train,train,0,0,True,True,False,same_split_duplicate

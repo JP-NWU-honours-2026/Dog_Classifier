@@ -1,0 +1,49 @@
+EVALUATION OF SWIN_T ON THE TEST SET
+==============================================================================
+Weights                  epoch 15 (validation macro F1 0.8644 when trained)
+Parameters               27,611,634
+Photographs scored       3200
+Breeds                   120, chance level 0.83 per cent
+
+HEADLINE
+  Accuracy               85.38 per cent (95 per cent interval 84.11 to 86.56)
+  Top-5 accuracy         98.56 per cent
+  Macro F1               0.8490
+  Macro precision        0.8542
+  Macro recall           0.8502
+  Weighted F1            0.8515
+
+STRONGEST BREEDS BY F1
+  Chow                               F1 1.000  (30 photographs)
+  Pug                                F1 0.984  (30 photographs)
+  Norwegian Elkhound                 F1 0.983  (30 photographs)
+  Saint Bernard                      F1 0.981  (27 photographs)
+  Old English Sheepdog               F1 0.980  (26 photographs)
+
+WEAKEST BREEDS BY F1
+  Eskimo Dog                         F1 0.410  (23 photographs)
+  Collie                             F1 0.439  (24 photographs)
+  Miniature Poodle                   F1 0.444  (24 photographs)
+  Lhasa                              F1 0.528  (29 photographs)
+  Siberian Husky                     F1 0.557  (30 photographs)
+
+MOST FREQUENT MISTAKES, top 8
+  Eskimo Dog                     called Siberian Husky                 11 times
+  Miniature Poodle               called Toy Poodle                     9 times
+  English Foxhound               called Walker Hound                   8 times
+  Collie                         called Border Collie                  8 times
+  Lhasa                          called Shih-Tzu                       7 times
+  Border Collie                  called Collie                         7 times
+  American Staffordshire Terrier called Staffordshire Bullterrier      6 times
+  Kuvasz                         called Great Pyrenees                 6 times
+
+LEAKAGE CHECK
+  Full test set          3200 photographs, 85.38 per cent, macro F1 0.8490
+  Clean test set         3166 photographs, 85.50 per cent, macro F1 0.8500
+  Difference             -0.13 percentage points
+  The clean set leaves out test photos with a confirmed near-copy in
+  training (Lindani's duplicate check). A positive difference is the
+  inflation those copies caused.
+  Separate, larger caveat: Swin-T's ImageNet pretraining very likely
+  included these exact photos, since Stanford Dogs was built from
+  ImageNet. Removing 34 duplicates does not undo that.
