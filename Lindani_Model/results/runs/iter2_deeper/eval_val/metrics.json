@@ -1,0 +1,12 @@
+{
+  "split": "val",
+  "photographs": 3025,
+  "top5_accuracy": 0.8489256198347107,
+  "accuracy": 0.5695867768595041,
+  "macro_precision": 0.5760949999565442,
+  "macro_recall": 0.5649876896809689,
+  "macro_f1": 0.5647850939892992,
+  "weighted_precision": 0.5791657485639885,
+  "weighted_recall": 0.5695867768595041,
+  "weighted_f1": 0.5685971607414181
+}

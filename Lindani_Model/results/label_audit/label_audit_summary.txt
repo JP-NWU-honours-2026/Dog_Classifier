@@ -1,0 +1,23 @@
+LABEL AUDIT, SAMPLE OF 100 PHOTOGRAPHS
+========================================================================
+Sample                   100 photographs, drawn with seed 42
+Verdicts recorded        20
+Still blank              80
+
+  Agree                  19
+  Disagree               1
+  Unsure                 0
+
+OBSERVED LABEL DISAGREEMENT
+  Excluding unsure       1 of 20 (5.0 per cent)
+  95 per cent interval   0.9 to 23.6 per cent
+  Of all judged          1 of 20 (5.0 per cent), counting unsure as correct
+  Sample completed       20 of 100 photographs
+
+Both figures belong in the report. The first is the rate among the
+photographs that could be judged. The second is the cautious floor.
+The interval is wide because the sample is small, and saying so is
+better than quoting a single number as though it were precise.
+
+Disagreements, for the report or a figure:
+   11. Collie (train) n02106030-collie/n02106030_17567.jpg  note: WRONG

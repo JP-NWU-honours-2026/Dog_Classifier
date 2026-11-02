@@ -1,0 +1,32 @@
+SHARED SPLIT AUDIT
+================================================================
+Split file audited   split_manifest.json
+SHA-256 of that file 4d9109a7a3f65ef2acf32feeced6893ab206b87718b0065cad97c1c9b9e9fd97
+Seed in the file     42
+
+Photos               20580
+Train                14355 (69.8 per cent)
+Validation           3025 (14.7 per cent)
+Test                 3200 (15.5 per cent)
+
+Breeds               120
+Smallest breed       n02090379-redbone (148 photos)
+Largest breed        n02085936-Maltese_dog (252 photos)
+Train share range    69.4 to 70.0 per cent per breed
+Validation range     14.4 to 15.0 per cent per breed
+Test share range     15.0 to 15.9 per cent per breed
+
+CHECKS
+----------------------------------------------------------------
+[PASS] 1. Every photo in the split exists on this machine
+       20580 listed, 0 missing
+[PASS] 2. Rerunning with seed 42 gives the identical split
+       train: 14355 rerun vs 14355 in file, val: 3025 rerun vs 3025 in file, test: 3200 rerun vs 3200 in file
+[PASS] 3. No photo appears in more than one pile
+       shared: train and val 0, train and test 0, val and test 0; listed twice: train 0, val 0, test 0
+[PASS] 4. Labels agree with the breed folders
+       120 classes in file, class list matches folders: True, mislabelled entries: 0
+[PASS] 5. Every breed appears in all three piles
+       120 breeds, 0 missing from at least one pile
+----------------------------------------------------------------
+Not checked here: near-duplicate photos across piles. See script 2.

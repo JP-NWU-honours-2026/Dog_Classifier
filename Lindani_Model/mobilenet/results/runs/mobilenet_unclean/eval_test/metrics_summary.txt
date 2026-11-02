@@ -1,0 +1,25 @@
+======================================================================
+ITRI626 EVALUATION SUMMARY - RUN: mobilenet_unclean
+======================================================================
+Architecture:           Transfer-MobileNetV3-Large
+Manifest Evaluated:     split_manifest.json
+Total Test Samples:     3200 (120 classes)
+Trainable Parameters:   4,355,752
+Hardware Used:          NVIDIA GeForce RTX 4050 Laptop GPU
+Training Time:          13.87 minutes
+
+CORE TEST METRICS:
+  * Top-1 Test Accuracy:   67.53%
+  * Top-5 Test Accuracy:   91.75%
+  * Macro-Averaged F1:     0.6712 (67.12%)
+  * Macro Precision:       68.89%
+  * Macro Recall:          67.04%
+  * Inference Latency:     0.57 ms / image
+
+Artifacts Written to: C:\Users\jpret\Documents\NWU\2026\Sem 2\ITRI626 AI\Mini-Project\Dog_Classifier\Lindani_Model\mobilenet\results\runs\mobilenet_unclean\eval_test
+  - metrics.json
+  - confusion_matrix.png
+  - confusion_matrix.csv
+  - per_class_metrics.csv
+  - sample_predictions.png
+======================================================================
