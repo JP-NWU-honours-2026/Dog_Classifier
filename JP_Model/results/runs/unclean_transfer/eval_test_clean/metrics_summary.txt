@@ -1,0 +1,25 @@
+======================================================================
+ITRI626 EVALUATION SUMMARY - RUN: unclean_transfer
+======================================================================
+Architecture:           Transfer-EfficientNetV2-S
+Manifest Evaluated:     JP_Model\split_manifest_clean.json
+Total Test Samples:     3164 (120 classes)
+Trainable Parameters:   20,331,208
+Hardware Used:          NVIDIA GeForce RTX 4050 Laptop GPU
+Training Time:          14.74 minutes
+
+CORE TEST METRICS:
+  * Top-1 Test Accuracy:   83.25%
+  * Top-5 Test Accuracy:   97.72%
+  * Macro-Averaged F1:     0.8266 (82.66%)
+  * Macro Precision:       83.41%
+  * Macro Recall:          82.96%
+  * Inference Latency:     1.21 ms / image
+
+Artifacts Written to: C:\Users\jpret\Documents\NWU\2026\Sem 2\ITRI626 AI\Mini-Project\Dog_Classifier\JP_Model\results\runs\unclean_transfer\eval_test_clean
+  - metrics.json
+  - confusion_matrix.png
+  - confusion_matrix.csv
+  - per_class_metrics.csv
+  - sample_predictions.png
+======================================================================

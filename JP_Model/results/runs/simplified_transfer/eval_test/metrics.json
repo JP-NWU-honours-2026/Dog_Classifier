@@ -1,0 +1,17 @@
+{
+  "run_name": "simplified_transfer",
+  "model_name": "Transfer-EfficientNetV2-S",
+  "top1_accuracy": 84.54,
+  "top5_accuracy": 97.79,
+  "macro_precision": 85.06,
+  "macro_recall": 84.17,
+  "macro_f1": 0.8402,
+  "macro_f1_pct": 84.02,
+  "test_samples": 3164,
+  "total_classes": 114,
+  "latency_ms_per_image": 1.25,
+  "trainable_parameters": 20323522,
+  "training_time_minutes": 16.23,
+  "gpu_used": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "manifest_used": "JP_Model\\split_manifest_simplified.json"
+}

@@ -1,0 +1,16 @@
+{
+  "original_total": 20580,
+  "clean_total": 20410,
+  "total_removed": 170,
+  "removed_per_split": {
+    "train": 98,
+    "val": 36,
+    "test": 36
+  },
+  "retained_per_split": {
+    "train": 14257,
+    "val": 2989,
+    "test": 3164
+  },
+  "classes_count": 120
+}
