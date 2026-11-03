@@ -47,7 +47,7 @@ recommended model.
 Stanford Dogs (Khosla *et al.*, 2011), 20,580 photographs across 120 breeds,
 taken from the Kaggle mirror `jessicali9530/stanford-dogs-dataset`.
 
-**The photographs are not in this repository.** They are roughly 750 MB and are
+**The photographs are not in this repository.** They are about 820 MB and are
 excluded by `.gitignore`. To obtain them:
 
 ```bash
